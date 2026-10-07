@@ -1,0 +1,184 @@
+{
+  "number": 12,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–4",
+        "type": "fill",
+        "paragraphs": [
+          "Holiday length: 2 days",
+          "Type of transportation: {{1}}",
+          "Maximum group size: {{2}}",
+          "Next tour date: {{3}}",
+          "Hotel name: The {{4}}"
+        ],
+        "limit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+        "heading": "Dreamtime travel agency",
+        "box": true,
+        "instruction": "Complete the notes below."
+      },
+      {
+        "title": "Questions 5–6",
+        "type": "multiple",
+        "numbers": [
+          5,
+          6
+        ],
+        "prompt": "Which TWO things are included in the price of the tour?",
+        "options": [
+          "fishing trip",
+          "guided bushwalk",
+          "reptile park entry",
+          "table tennis",
+          "tennis"
+        ],
+        "instruction": "Choose TWO answers."
+      },
+      {
+        "title": "Questions 7–10",
+        "type": "fill",
+        "paragraphs": [
+          "The tour costs $ {{7}}.",
+          "Bookings must be made no later than {{8}} days in advance.",
+          "A {{9}} deposit is required.",
+          "The customer’s reference number is {{10}}."
+        ],
+        "limit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+        "instruction": "Complete the sentences below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–19",
+        "type": "table",
+        "columns": [
+          "Brand of Cot",
+          "Good Points",
+          "Problems",
+          "Verdict"
+        ],
+        "rows": [
+          [
+            "Baby Safe",
+            "Easy to {{11}}",
+            "• Did not have any {{12}}\n• Babies could trap their {{13}} in the side bar",
+            "{{14}}"
+          ],
+          [
+            "Choice Cots",
+            "Easy to {{15}}",
+            "• Side did not drop down\n• Spaces between the bars were {{16}}",
+            "{{17}}"
+          ],
+          [
+            "Mother’s Choice",
+            "Base of cot could be moved",
+            "• Did not have any {{18}}\n• Pictures could be removed easily",
+            "{{19}}"
+          ]
+        ],
+        "limit": "NO MORE THAN THREE WORDS",
+        "heading": ""
+      },
+      {
+        "title": "Question 20",
+        "type": "fill",
+        "paragraphs": [
+          "• Metal should not be rusted or bent\n• Edges of cot should not be {{20}}"
+        ],
+        "limit": "ONE WORD ONLY",
+        "box": true,
+        "instruction": "Complete the notes below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 21–23",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 21,
+            "prompt": "Andrew has worked at the hospital for",
+            "options": [
+              "two years.",
+              "three years.",
+              "five years."
+            ]
+          },
+          {
+            "number": 22,
+            "prompt": "During the course Andrew’s employers will pay",
+            "options": [
+              "his fees.",
+              "his living costs.",
+              "his salary."
+            ]
+          },
+          {
+            "number": 23,
+            "prompt": "The part-time course lasts for",
+            "options": [
+              "one whole year.",
+              "18 months.",
+              "two years."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Questions 24–25",
+        "type": "multiple",
+        "numbers": [
+          24,
+          25
+        ],
+        "prompt": "What TWO types of coursework are required each month on the part-time course?",
+        "options": [
+          "a case study",
+          "an essay",
+          "a survey",
+          "a short report",
+          "a study diary"
+        ],
+        "instruction": "Choose TWO answers."
+      },
+      {
+        "title": "Questions 26–30",
+        "type": "fill",
+        "paragraphs": [
+          "Students study {{26}} during each module. A module takes {{27}} and the work is very {{28}}. To get a Diploma each student has to study {{29}} and then work on {{30}} in depth."
+        ],
+        "limit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+        "heading": "Modular Courses",
+        "box": true,
+        "instruction": "Complete the summary below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–35",
+        "type": "fill",
+        "paragraphs": [
+          "According to George Bernard Shaw, men are supposed to understand {{31}}, economics and finance.",
+          "However, women are more prepared to {{32}} about them.",
+          "Women tend to save for {{33}} and a house.",
+          "Men tend to save for {{34}} and for retirement.",
+          "Women who are left alone may have to pay for {{35}} when they are old."
+        ],
+        "limit": "NO MORE THAN THREE WORDS",
+        "instruction": "Complete the sentences below."
+      },
+      {
+        "title": "Questions 36–40",
+        "type": "fill",
+        "paragraphs": [
+          "Research indicates that many women only think about their financial future when a {{36}} occurs. This is the worst time to make decisions. It is best for women to start thinking about pensions when they are in their {{37}}. A good way for women to develop their {{38}} in dealing with financial affairs would be to attend classes in {{39}}. When investing in stocks and shares, it is suggested that women should put a high proportion of their savings in {{40}}. In such ways, women can have a comfortable, independent retirement."
+        ],
+        "limit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+        "heading": "Saving for the future",
+        "box": true,
+        "instruction": "Complete the summary below."
+      }
+    ]
+  ]
+}

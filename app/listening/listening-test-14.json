@@ -1,0 +1,193 @@
+{
+  "number": 14,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–5",
+        "type": "fill",
+        "paragraphs": [
+          "Last name: {{1}}",
+          "Date of Birth: Day: 11th; Month: December; Year: {{2}}",
+          "Type of Membership: {{3}}",
+          "Activities: Badminton and {{4}}",
+          "Payment details: Total: £450\nTo be paid {{5}}"
+        ],
+        "limit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+        "heading": "SARAH’S HEALTH & FITNESS CLUB MEMBERSHIP FORM",
+        "box": true,
+        "instruction": "Complete the notes below."
+      },
+      {
+        "title": "Questions 6–10",
+        "type": "fill",
+        "paragraphs": [
+          "What exercise do you do regularly? {{6}}",
+          "Do you have any injuries? has a {{7}}",
+          "What is your goal or target? a better {{8}}",
+          "What is your occupation? a {{9}}",
+          "How did you hear about the club? {{10}}"
+        ],
+        "limit": "NO MORE THAN TWO WORDS",
+        "heading": "Lifestyle questionnaire",
+        "box": true,
+        "instruction": "Answer the questions below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–14",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 11,
+            "prompt": "The next event at the hotel will be a",
+            "options": [
+              "trade fair.",
+              "wedding.",
+              "party."
+            ]
+          },
+          {
+            "number": 12,
+            "prompt": "The number of guests will be",
+            "options": [
+              "less than 50.",
+              "from 50 to 100.",
+              "more than 100."
+            ]
+          },
+          {
+            "number": 13,
+            "prompt": "Guests will start arriving at",
+            "options": [
+              "7.15.",
+              "7.30.",
+              "7.45."
+            ]
+          },
+          {
+            "number": 14,
+            "prompt": "The entertainment will be a",
+            "options": [
+              "live band.",
+              "comedian.",
+              "magician."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Questions 15–17",
+        "type": "match",
+        "questions": [
+          {
+            "number": 15,
+            "prompt": "offer drinks to guests"
+          },
+          {
+            "number": 16,
+            "prompt": "take guests’ coats and hats"
+          },
+          {
+            "number": 17,
+            "prompt": "show guests where to go"
+          }
+        ],
+        "options": [
+          {
+            "label": "A",
+            "text": "Susan"
+          },
+          {
+            "label": "B",
+            "text": "Ahmed"
+          },
+          {
+            "label": "C",
+            "text": "Gary"
+          },
+          {
+            "label": "D",
+            "text": "Olav"
+          },
+          {
+            "label": "E",
+            "text": "Monica"
+          }
+        ],
+        "heading": null,
+        "instruction": "Who will be responsible for the following jobs as the guests arrive? Choose the correct letter, A–E."
+      },
+      {
+        "title": "Questions 18–20",
+        "type": "fill",
+        "paragraphs": [
+          "In order to get the guests to move to the restaurant the hotel manager will {{18}}.",
+          "Seating plans will be placed on each table and also in the {{19}}.",
+          "There will be a total of three {{20}}."
+        ],
+        "limit": "NO MORE THAN THREE WORDS",
+        "heading": "General instructions",
+        "box": false,
+        "instruction": "Complete the sentences below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 21–25",
+        "type": "paperflow",
+        "limit": "NO MORE THAN TWO WORDS",
+        "heading": "Paper Production and Recycling"
+      },
+      {
+        "title": "Questions 26–30",
+        "type": "fill",
+        "paragraphs": [
+          "What part of the assignment is Alan going to start working on?\n{{26}}",
+          "Where will Melanie get more information on used paper collection?\n{{27}}",
+          "What will they add to the assignment to make it more interesting?\n{{28}}",
+          "What do they agree to complete by the end of the month?\n{{29}}",
+          "Who will they ask to review their work?\n{{30}}"
+        ],
+        "limit": "NO MORE THAN TWO WORDS",
+        "heading": null,
+        "box": false,
+        "instruction": "Answer the questions below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–38",
+        "type": "fill",
+        "paragraphs": [
+          "**Facts about hair**",
+          "main purposes – warmth and {{31}}",
+          "main component keratin – makes fingernails {{32}}",
+          "full head of hair can support a large weight – equal to two {{33}}",
+          "average number of strands of hair – {{34}} for an adult",
+          "large amount of money spent on {{35}} for hair in the UK",
+          "**Structure of hair**\nThree main parts:",
+          "a) bulb – like a {{36}} over end of hair follicle",
+          "b) root – contains glands that supply {{37}} to hair strand",
+          "c) shaft – not {{38}}"
+        ],
+        "limit": "ONE WORD AND/OR A NUMBER",
+        "heading": "HAIR",
+        "box": true,
+        "instruction": "Complete the notes below."
+      },
+      {
+        "title": "Questions 39–40",
+        "type": "fill",
+        "paragraphs": [
+          "Changes in diet will take longer to affect your hair than your {{39}}.",
+          "Vitamins C, D and E are all important for healthy hair and {{40}} are one of the best sources of Vitamin C."
+        ],
+        "limit": "ONE WORD ONLY",
+        "heading": "Health and Hair",
+        "box": false,
+        "instruction": "Complete the summary below."
+      }
+    ]
+  ]
+}

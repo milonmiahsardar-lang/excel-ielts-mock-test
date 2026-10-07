@@ -1,0 +1,387 @@
+{
+  "number": 13,
+  "passages": [
+    {
+      "title": "REVIEW OF RESEARCH ON THE EFFECTS OF FOOD PROMOTION TO CHILDREN",
+      "paragraphs": [
+        "This review was commissioned by the Food Standards Agency to examine the current research evidence on:",
+        "• the extent and nature of food promotion to children",
+        "• the effect, if any, that this promotion has on their food knowledge, preferences and behaviour.",
+        "A\nChildren’s food promotion is dominated by television advertising, and the great majority of this promotes the so-called ‘Big Four’ of pre-sugared breakfast cereals, soft-drinks, confectionary and savoury snacks. In the last ten years advertising for fast food outlets has rapidly increased. There is some evidence that the dominance of television has recently begun to wane. The importance of strong, global branding reinforces a need for multi-faceted communications combining television with merchandising, ‘tie-ins’ and point of sale activity. The advertised diet contrasts sharply with that recommended by public health advisors, and themes of fun and fantasy or taste, rather than health and nutrition, are used to promote it to children. Meanwhile, the recommended diet gets little promotional support.",
+        "B\nThere is plenty of evidence that children notice and enjoy food promotion. However, establishing whether this actually influences them is a complex problem. The review tackled it by looking at studies that had examined possible effects on what children know about food, their food preferences, their actual food behaviour (both buying and eating), and their health outcomes (eg. obesity or cholesterol levels). The majority of studies examined food advertising, but a few examined other forms of food promotion. In terms of nutritional knowledge, food advertising seems to have little influence on children’s general perceptions of what constitutes a healthy diet, but, in certain contexts, it does have an effect on more specific types of nutritional knowledge. For example, seeing soft drink and cereal adverts reduced primary aged children’s ability to determine correctly whether or not certain products contained real fruit.",
+        "C\nThe review also found evidence that food promotion influences children’s food preferences and their purchase behaviour. A study of primary school children, for instance, found that exposure to advertising influenced which foods they claimed to like; and another showed that labelling and signage on a vending machine had an effect on what was bought by secondary school pupils. A number of studies have also shown that food advertising can influence what children eat. One, for example, showed that advertising influenced a primary class’s choice of daily snack at playtime.",
+        "D\nThe next step, of trying to establish whether or not a link exists between food promotion and diet or obesity, is extremely difficult as it requires research to be done in real world settings. A number of studies have attempted this by using amount of television viewing as a proxy for exposure to television advertising. They have established a clear link between television viewing and diet, obesity, and cholesterol levels. It is impossible to say, however, whether this effect is caused by the advertising, the sedentary nature of television viewing or snacking that might take place whilst viewing. One study resolved this problem by taking a detailed diary of children’s viewing habits. This showed that the more food adverts they saw, the more snacks and calories they consumed.",
+        "E\nThus the literature does suggest food promotion is influencing children’s diet in a number of ways. This does not amount to proof; as noted above with this kind of research, incontrovertible proof simply isn’t attainable. Nor do all studies point to this conclusion; several have not found an effect. In addition, very few studies have attempted to measure how strong these effects are relative to other factors influencing children’s food choices. Nonetheless, many studies have found clear effects and they have used sophisticated methodologies that make it possible to determine that i) these effects are not just due to chance; ii) they are independent of other factors that may influence diet, such as parents’ eating habits or attitudes; and iii) they occur at a brand and category level.",
+        "F\nFurthermore, two factors suggest that these findings actually downplay the effect that food promotion has on children. First, the literature focuses principally on television advertising; the cumulative effect of this combined with other forms of promotion and marketing is likely to be significantly greater. Second, the studies have looked at direct effects on individual children, and understate indirect influences. For example, promotion for fast food outlets may not only influence the child, but also encourage parents to take them for meals and reinforce the idea that this is a normal and desirable behaviour.",
+        "G\nThis does not amount to proof of an effect, but in our view does provide sufficient evidence to conclude that an effect exists. The debate should now shift to what action is needed, and specifically to how the power of commercial marketing can be used to bring about improvements in young people’s eating."
+      ],
+      "start": 1,
+      "end": 13,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 1-7",
+          "instructions": [
+            "Reading Passage 1 has seven paragraphs, A-G.",
+            "Choose the most suitable heading for paragraphs A-G from the list of headings below.",
+            "Write the appropriate number, i-x, in boxes 1-7 on your answer sheet."
+          ],
+          "options": [
+            {
+              "label": "i",
+              "text": "General points of agreements and disagreements of researchers"
+            },
+            {
+              "label": "ii",
+              "text": "How much children really know about food"
+            },
+            {
+              "label": "iii",
+              "text": "Need to take action"
+            },
+            {
+              "label": "iv",
+              "text": "Advertising effects of the “Big Four”"
+            },
+            {
+              "label": "v",
+              "text": "Connection of advertising and children’s weight problems"
+            },
+            {
+              "label": "vi",
+              "text": "Evidence that advertising affects what children buy to eat"
+            },
+            {
+              "label": "vii",
+              "text": "How parents influence children’s eating habits"
+            },
+            {
+              "label": "viii",
+              "text": "Advertising’s focus on unhealthy options"
+            },
+            {
+              "label": "ix",
+              "text": "Children often buy what they want"
+            },
+            {
+              "label": "x",
+              "text": "Underestimating the effects advertising has on children"
+            }
+          ],
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Paragraph A"
+            },
+            {
+              "number": 2,
+              "prompt": "Paragraph B"
+            },
+            {
+              "number": 3,
+              "prompt": "Paragraph C"
+            },
+            {
+              "number": 4,
+              "prompt": "Paragraph D"
+            },
+            {
+              "number": 5,
+              "prompt": "Paragraph E"
+            },
+            {
+              "number": 6,
+              "prompt": "Paragraph F"
+            },
+            {
+              "number": 7,
+              "prompt": "Paragraph G"
+            }
+          ],
+          "optionTitle": "List of Headings"
+        },
+        {
+          "type": "truth",
+          "title": "Questions 8-13",
+          "instructions": [
+            "Do the following statements agree with the views of the writer in Reading Passage 1?"
+          ],
+          "labels": [
+            "YES",
+            "NO",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 8,
+              "prompt": "There is little difference between the number of healthy food advertisements and the number of unhealthy food advertisements."
+            },
+            {
+              "number": 9,
+              "prompt": "TV advertising has successfully taught children nutritional knowledge about vitamins and others."
+            },
+            {
+              "number": 10,
+              "prompt": "It is hard to decide which aspect of TV viewing has caused weight problems of children."
+            },
+            {
+              "number": 11,
+              "prompt": "The preference of food for children is affected by their age and gender."
+            },
+            {
+              "number": 12,
+              "prompt": "Wealthy parents tend to buy more “sensible food” for their children."
+            },
+            {
+              "number": 13,
+              "prompt": "There is a lack of investigation on food promotion methods other than TV advertising."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Ant and the Mandarin",
+      "paragraphs": [
+        "In 1476, the farmers of Berne in Switzerland decided there was only one way to rid their fields of the cutworms attacking their crops. They took the pests to court. The worms were tried, found guilty and excommunicated by the archbishop. In China, farmers had a more practical approach to pest control. Rather than relying on divine intervention, they put their faith in frogs, ducks and ants. Frogs and ducks were encouraged to snap up the pests in the paddies and the occasional plague of locusts. But the notion of biological control began with an ant. More specifically, it started with the predatory yellow citrus ant Oecophylla smaragdina, which has been polishing off pests in the orange groves of southern China for at least 1,700 years. The yellow citrus ant is a type of weaver ant, which binds leaves and twigs with silk to form a neat, tent-like nest. In the beginning, farmers made do with the odd ants' nests here and there. But it wasn't long before growing demand led to the development of a thriving trade in nests and a new type of agriculture - ant farming.",
+        "For an insect that bites, the yellow citrus ant is remarkably popular. Even by ant standards, Oecophylla smaragdina is a fearsome predator. It's big, runs fast and has a powerful nip - painful to humans but lethal to many of the insects that plague the orange groves of Guangdong and Guangxi in southern China. And for at least 17 centuries, Chinese orange growers have harnessed these six-legged killing machines to keep their fruit groves healthy and productive.",
+        "Citrus fruits evolved in the Far East and the Chinese discovered the delights of their flesh early on. As the ancestral home of oranges, lemons and pomelos, China also has the greatest diversity of citrus pests. And the trees that produce the sweetest fruits, the mandarins - or kan - attract a host of plant-eating insects, from black ants and sap-sucking mealy bugs to leaf devouring caterpillars. With so many enemies, fruit growers clearly had to have some way of protecting their orchards.",
+        "The West did not discover the Chinese orange growers' secret weapon until the early 20th century. At the time, Florida was suffering an epidemic of citrus canker and in 1915 Walter Swingle, a plant physiologist working for the US f Department of Agriculture, was sent to China in search of varieties of orange that were resistant to the disease. Swingle spent some time studying the citrus orchards around Guangzhou, and there he came across the story of the cultivated ant. These ants, he was told, were \"grown'' by the people of a small village nearby who sold them to the orange growers by the nestful.",
+        "The earliest report of citrus ants at work among the orange trees appeared in a book on tropical and subtropical botany written by Hsi Han in AD 304. \"The people of Chiao-Chih sell in their markets ants in bags of rush matting. The nests are like silk. The bags are all attached to twigs and leaves which, with the ants inside the nests, are for sale. The ants are reddish-yellow in colour, bigger than ordinary ants. In the south, if the kan trees do not have this kind of ant, the fruits will all be damaged by many harmful insects, and not a single fruit will be perfect.\"",
+        "Initially, farmers relied on nests which they collected from the wild or bought in the market where trade in nests was brisk. \"It is said that in the south orange trees which are free of ants will have wormy fruits. Therefore, people race to buy nests for their orange trees,\" wrote Liu Hsun in Strange Things Noted in the South in about 890.",
+        "The business quickly became more sophisticated. From the 10th century, country people began to trap ants in artificial nests baited with fat. \"Fruit-growing families buy these ants from vendors who make a business of collecting and selling such creatures,\" wrote Chuang Chi-Yu in 1130. \"They trap them by filling hogs' or sheep's bladders with fat and placing them with the cavities open next to the ants' nests. They wait until the ants have migrated into the bladders and take them away. This is known as 'rearing orange ants'.\" Farmers attached k the bladders to their trees, and in time the ants spread to other trees and built new nests.",
+        "By the 17th century, growers were building bamboo walkways between their trees to speed the colonisation of their orchards. The ants ran along these narrow bridges from one tree to another and established nests \"by the hundreds of thousands”.",
+        "Did it work? The orange growers clearly thought so. One authority, Chhii Ta-Chun, writing in 1700, stressed how important it was to keep the fruit trees free of insect pests, especially caterpillars. \"It is essential to eliminate them so that the trees are not injured. But hand labour is not nearly as efficient as ant power...\"",
+        "Swingle was just as impressed. Yet despite his reports, many Western biologists t were sceptical. In the West, the idea of using one insect to destroy another was new and highly controversial. The first breakthrough had come in 1888, when the infant orange industry in California had been saved from extinction by the Australian vedalia beetle. This beetle was the only thing that had made any in-roads into the explosion of cottony cushion scale that was threatening to destroy the state's citrus crops. But, as Swingle now knew, California's \"first'' was nothing of the sort. The Chinese had been expert in bio-control for many centuries.",
+        "The long tradition of ants in the Chinese orchards only began to waver in the 1950s and 1960s with the introduction of powerful organic insecticides. Although most fruit growers switched to chemicals, a few hung onto their ants. Those who abandoned ants in favour of chemicals quickly became disillusioned. As costs soared and pests began to develop resistance to the chemicals, growers began to revive the old ant patrols in the late 1960s. They had good reason to have faith in their insect workforce.",
+        "Research in the early 1960s showed that as long as there were enough ants in the trees, they did an excellent job of dispatching some pests - mainly the larger insects - and had modest success against others. Trees with yellow ants produced almost 20 per cent more healthy leaves than those without. More recent trials have shown that these trees yield just as big a crop as those protected by expensive chemical sprays.",
+        "One apparent drawback of using ants - and one of the main reasons for the early scepticism by Western scientists - was that citrus ants do nothing to control mealy bugs, waxy-coated scale insects which can do considerable damage to fruit trees. In fact, the ants protect mealy bugs in exchange for the sweet honeydew they secrete. The orange growers always denied this was a problem but Western scientists thought they knew better.",
+        "Research in the 1980s suggests that the growers were right all along. Where X mealy bugs proliferate under the ants' protection, they are usually heavily parasitised and this limits the harm they can do.",
+        "Orange growers who rely on carnivorous ants rather than poisonous chemicals maintain a better balance of species in their orchards. While the ants deal with the bigger insect pests, other predatory species keep down the numbers of smaller pests such as scale insects and aphids. In the long run, ants do a lot less damage than chemicals - and they're certainly more effective than excommunication."
+      ],
+      "start": 14,
+      "end": 26,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 14-18",
+          "instructions": [
+            "Look at the following events (Questions 14-18) and the list of dates below.",
+            "Match each event with the correct time A-G.",
+            "Write the correct letter A-G in boxes 14-18 on your answer sheet."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "1888"
+            },
+            {
+              "label": "B",
+              "text": "AD 890"
+            },
+            {
+              "label": "C",
+              "text": "AD 304"
+            },
+            {
+              "label": "D",
+              "text": "1950s"
+            },
+            {
+              "label": "E",
+              "text": "1960s"
+            },
+            {
+              "label": "F",
+              "text": "1915"
+            },
+            {
+              "label": "G",
+              "text": "1130"
+            }
+          ],
+          "questions": [
+            {
+              "number": 14,
+              "prompt": "The first description of citrus ants is traded in the marketplace."
+            },
+            {
+              "number": 15,
+              "prompt": "Swingle came to Asia for research."
+            },
+            {
+              "number": 16,
+              "prompt": "The first record of one insect is used to tackle other insects in the western world."
+            },
+            {
+              "number": 17,
+              "prompt": "Chinese fruit growers started to use pesticides in place of citrus ants."
+            },
+            {
+              "number": 18,
+              "prompt": "Some Chinese farmers returned to the traditional bio-method"
+            }
+          ],
+          "optionTitle": "List of Dates"
+        },
+        {
+          "type": "truth",
+          "title": "Questions 19-26",
+          "instructions": [
+            "Do the following statements agree with the information given in Reading Passage 2?"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 19,
+              "prompt": "China has more citrus pests than any other country in the world."
+            },
+            {
+              "number": 20,
+              "prompt": "Swingle came to China to search for an insect to bring back to the US."
+            },
+            {
+              "number": 21,
+              "prompt": "Many people were very impressed by Swingle's discovery."
+            },
+            {
+              "number": 22,
+              "prompt": "Chinese farmers found that pesticides became increasingly expensive."
+            },
+            {
+              "number": 23,
+              "prompt": "Some Chinese farmers abandoned the use of pesticide."
+            },
+            {
+              "number": 24,
+              "prompt": "Trees with ants had more leaves fall than those without."
+            },
+            {
+              "number": 25,
+              "prompt": "Fields using ants yield as large a crop as fields using chemical pesticides."
+            },
+            {
+              "number": 26,
+              "prompt": "Citrus ants often cause considerable damage to the bio-environment of the orchards."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Fruit Book",
+      "paragraphs": [
+        "It’s not every scientist who writes books for people who can’t read. And how many scientists want their books to look as dog-eared as possible? But Patricia Shanley, an ethnobotanist, wanted to give something back. After the poorest people of the Amazon allowed her to study their land and its ecology, she turned her research findings into a picture book that tells the local people how to get a good return on their trees without succumbing to the lure of a quick buck from a logging company. It has proved a big success.",
+        "A\nThe book is called Fruit Trees and Useful Plants in the Lives of Amazonians, but is better known simply as the “fruit book”. The second edition was produced at the request of politicians in western Amazonia. Its blend of hard science and local knowledge on the use and trade of 35 native forest species has been so well received (and well used) that no less a dignitary than Brazil’s environment minister, Marina Silva, has written the foreword. “There is nothing else like the Shanley book,” says Adalberto Verrísimo, director of the Institute of People and the Environment of the Amazon. “It gives science back to the poor, to the people who really need it.”",
+        "B\nShanley’s work on the book began a decade ago, with a plea for help from the Rural Workers’ Union of Paragominas, a Brazilian town whose prosperity is based on exploitation of timber. The union realised that logging companies would soon be knocking on the doors of the caboclos, peasant farmers living on the Rio Capim, an Amazon tributary in the Brazilian state of Pará. Isolated and illiterate, the caboclos would have little concept of the true value of their trees; communities downstream had already sold off large blocks of forest for a pittance. “What they wanted to know was how valuable the forests were,” recalls Shanley, then a researcher in the area for the Massachusetts-based Woods Hole Research Centre.",
+        "C\nThe Rural Workers’ Union wanted to know whether harvesting wild fruits would make economic sense in the Rio Capim. “There was a lot of interest in trading non-timber forest products (NTFPs),” Shanley says. At the time, environmental groups and green-minded businesses were promoting the idea. This was the view presented in a seminal paper, Valuation of an Amazonian Rainforest, published in Nature in 1989. The researchers had calculated that revenues from the sale of fruits could far exceed those from a one-off sale of trees to loggers. “The union was keen to discover whether it made more sense conserving the forest for subsistence use and the possible sale of fruit, game and medicinal plants, than selling trees for timber,” says Shanley. Whether it would work for the caboclos was far from clear.",
+        "D\nAlthough Shanley had been invited to work in the Rio Capim, some caboclos were suspicious. “When Patricia asked if she could study my forest,” says Joao Fernando Moreira Brito, \"my neighbours said she was a foreigner who’d come to rob me of my trees.\" In the end, Moreira Brito, or Mangueira as he is known, welcomed Shanley and worked on her study. His land, an hour's walk from the Rio Capim, is almost entirely covered with primary forest. A study of this and other tracts of forest selected by the communities enabled Shanley to identify three trees, found throughout the Amazon, whose fruit was much favoured by the caboclos: bacuri (Platonia insignis), uxi (Endopleura uchi) and piquia (Cayocas villosum). The caboclos used their fruits, extracted oils, and knew what sort of wildlife they attracted. But, in the face of aggressive tactics from the logging companies, they had no measure of the trees' financial worth. The only way to find out, Shanley decided, was to start from scratch with a scientific study. “From a scientific point of view, hardly anything was known about these trees,” she says. But six years of field research yielded a mass of data on their flowering and fruiting behaviour. During 1993 and 1994, 30 families weighed everything they used from the forest - game, fruit, fibre, medicinal plants - and documented its source.",
+        "E\nAfter three logging sales and a major fire in 1997, the researchers were also able to study the ecosystem's reaction to logging and disturbance. They carried out a similar, though less exhaustive, study in 1999, this time with 15 families. The changes were striking. Average annual household consumption of forest fruit had fallen from 89 to 28 kilogrammes between 1993 and 1999. “What we found,” says Shanley, “was that fruit collection could coexist with a certain amount of logging, but after the forest fire, it dropped dramatically.” Over the same period, fibre use also dropped from around 20 to 4 kilogrammes. The fire and logging also changed the nature of the caboclo diet. In 1993 most households ate game two or three times a month. By 1999 some were fortunate if they ate game more than two or three times a year.",
+        "F\nThe loss of certain species of tree was especially significant. Shanley’s team persuaded local hunters to weigh their catch, noting the trees under which the animals were caught. Over the year, they trapped five species of game averaging 232 kilogrammes under piquia trees. Under copaiba, they caught just two species averaging 63 kilogrammes; and under uxi, four species weighing 38 kilogrammes. At last, the team was getting a handle on which trees were worth keeping, and which could reasonably be sold. “This showed that selling piquia trees to loggers for a few dollars made little sense,” explains Shanley. “Their local value lies in providing a prized fruit, as well as flowers which attract more game than any other species.”",
+        "G\nAs a result of these studies, Shanley had to tell the Rural Workers’ Union of Paragominas that the Nature thesis could not be applied wholesale to their community - harvesting NTFPs would not always yield more than timber sales. Fruiting patterns of trees such as uxi were unpredictable, for example. In 1994, one household collected 3,654 uxi fruits; the following year, none at all.",
+        "H\nThis is not to say that wild fruit trees were unimportant. On the contrary, argues Shanley, they are critical for subsistence, something that is often ignored in much of the current research on NTFPs, which tends to focus on their commercial potential. Geography was another factor preventing the Rio Capim caboclos from establishing a serious trade in wild fruit: villagers in remote areas could not compete with communities collecting NTFPs close to urban markets, although they could sell them to passing river boats.",
+        "I\nBut Shanley and her colleagues decided to do more than just report their results to the union. Together with two of her research colleagues, Shanley wrote the fruit book. This, the Bible and a publication on medicinal plants co-authored by Shanley and designed for people with minimal literacy skills are about the only books you will see along this stretch of the Rio Capim. The first print ran to only 3,000 copies, but the fruit book has been remarkably influential, and is used by colleges, peasant unions, industries and the caboclos themselves. Its success is largely due to the fact that people with poor literacy skills can understand much of the information it contains about the non-timber forest products, thanks to its illustrations, anecdotes, stories and songs. “The book doesn’t tell people what to do,” says Shanley, “but it does provide them with choices.” The caboclos who have used the book now have a much better understanding of which trees to sell to the loggers, and which to protect."
+      ],
+      "start": 27,
+      "end": 40,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 27-32",
+          "instructions": [
+            "Reading Passage 3 has nine paragraphs A-I.",
+            "Which paragraph contains the following information?",
+            "Write the correct letter A-I in boxes 27-32 on your answer sheet."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "A"
+            },
+            {
+              "label": "B",
+              "text": "B"
+            },
+            {
+              "label": "C",
+              "text": "C"
+            },
+            {
+              "label": "D",
+              "text": "D"
+            },
+            {
+              "label": "E",
+              "text": "E"
+            },
+            {
+              "label": "F",
+              "text": "F"
+            },
+            {
+              "label": "G",
+              "text": "G"
+            },
+            {
+              "label": "H",
+              "text": "H"
+            },
+            {
+              "label": "I",
+              "text": "I"
+            }
+          ],
+          "questions": [
+            {
+              "number": 27,
+              "prompt": "A description of Shanley’s initial data collection"
+            },
+            {
+              "number": 28,
+              "prompt": "Why a government official also contributes to the book"
+            },
+            {
+              "number": 29,
+              "prompt": "Reasons why the community asked Shanley to conduct the research"
+            },
+            {
+              "number": 30,
+              "prompt": "Reference to the starting point of her research"
+            },
+            {
+              "number": 31,
+              "prompt": "Two factors that alter food consumption patterns"
+            },
+            {
+              "number": 32,
+              "prompt": "Why the book is successful"
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 33-40",
+          "instructions": [
+            "Complete the summary below.",
+            "Choose **NO MORE THAN THREE WORDS** from the passage for each answer.",
+            "Write your answers in boxes 33-40 on your answer sheet."
+          ],
+          "paragraphs": [
+            "Forest fire has caused local villagers to consume less:",
+            "{{33}}",
+            "{{34}}",
+            "Game",
+            "There is the least amount of game hunted under {{35}} yield is also {{36}}. Thus, it is more reasonable to keep {{37}}.",
+            "All the trees can also be used for {{38}} besides selling them to loggers. But this is often ignored, because most researches usually focus on the {{39}} of the trees.",
+            "The purpose of the book:",
+            "To give information about {{40}}."
+          ]
+        }
+      ]
+    }
+  ]
+}

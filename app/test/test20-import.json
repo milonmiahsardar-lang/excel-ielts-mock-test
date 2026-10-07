@@ -1,0 +1,396 @@
+{
+  "number": 20,
+  "passages": [
+    {
+      "title": "COD IN TROUBLE",
+      "paragraphs": [
+        "A\nIn 1992, the devastating collapse of the cod stocks off the east coast of Newfoundland forced the Canadian government to take drastic measures and close the fishery. Over 40,000 people lost their jobs, communities are still struggling to recover and the marine ecosystem is still in a state of collapse. The disintegration of this vital fishery sounded a warning bell to governments around the world, who were shocked that a relatively sophisticated, scientifically based fisheries management programme, not unlike their own, could have gone so wrong. Prior to this, the Canadian government had ignored warnings that its fleets were employing destructive fishing practices and had refused to significantly reduce quotas, citing the loss of jobs as too great a concern.",
+        "B\nIn the 1950s Canadian and US east coast waters provided an annual 100,000 tons in cod catches rising to 800,000 by 1970. This over-fishing led to a catch of only 300,000 tons by 1975. Canada and the US reacted by passing legislation to extend their national jurisdictions over marine living resources out to 200 nautical miles and catches naturally declined to 139,000 tons in 1980. However, the Canadians began fishing intensively once more, and catches rose again until, from 1985, the Canadians were landing more than 250,000 tons of northern cod annually. This exploitation ravaged the stocks and by 1990 the catch was so low (29,000 tons) that in 1992 (12,500 tons) Canada had to ban all fishing in east coast waters. In a fishery that had for over a century yielded quarter-million ton catches, there remained a biomass of less than 1,700 tons, and the fisheries department predicted that, even with an immediate recovery, stocks needed at least 15 years before they would be healthy enough to withstand previous levels of fishing.",
+        "C\nThis situation arose from massive investment poured into constructing huge “draggers”. Draggers haul enormous nets held open by a combination of massive steel plates and heavy chains and rollers that plough the ocean bottom. They drag up anything in the way, inflicting immense damage, destroying critical habitats and contributing to the destabilisation of the northern cod ecosystem. The draggers targeted huge aggregations of cod while they were spawning, a time when the fish population is highly vulnerable to capture. Excessive trawling on spawning stocks became highly disruptive to the spawning process and ecosystem. In addition, trawling resulted in a physical dispersion of eggs, leading to higher fertilisation failure. Physical and chemical damage to larvae caused by trawling also reduced their chances of survival. These draggers are now banned from Canadian waters.",
+        "D\nThe media in Canada often cite excessive fishing by overseas fleets as the primary cause of the fishing out of the north Atlantic cod stocks. Many nations took fish off the coast of Newfoundland, all used deep-sea trawlers, and many often exceeded established catch quotas and treaty agreements blatantly. There can be little doubt that non-North American fishing was a contributing factor in the cod stock collapse, and that the dynamics that were at work in Canada were all too similar for the foreign vessels and companies. But not all of the blame can be put there, no matter how easy it is to do, as it does not account for the management of the resources.",
+        "E\nSo, who was to blame? As the exploitation of the Newfoundland fishery was so predominantly guided by the government, it could be argued that a fishery is not a private area, as the fisher lacks management rights normally associated with property and common property. The state had appropriated the property, and made all of the management decisions. Fishermen were told who could fish, what they could fish and, essentially, what to do with the fish once they were caught. Viewed from this angle, much of the blame for the collapse of the Newfoundland fisheries can be placed on the government.",
+        "F\nFollowing the 1992 ban on the fishing of northern cod and most other species, an estimated 30,000 people, who had already lost their jobs after the 1992 Northern Cod prohibition took effect, were joined by an additional 12,000 fishermen and plant workers. With more than 40,000 people out of work, Newfoundland became an economic disaster area, as processing plants shut down and vessels from the smallest dory to the monster draggers were made idle or sold overseas at bargain prices. Several hundred Newfoundland communities were devastated.",
+        "G\nEuropeans need only look across the North Atlantic to see what could be in store for their cod fishery. In Canada they were too busy making plans, setting expansive goals and then allocating fish, and lots of it, instead of making sound business plans to match fishing with the limited availability of the resource. Cod populations in European waters are now so depleted that scientists have recently warned that all fisheries that target cod in this area should be closed. The Canadian calamity demonstrates that we now have the technological capability to find and annihilate every commercial fish stock in any ocean and do irreparable damage to entire ecosystems in the process. In Canada’s case, a $2 billion recovery bill may only be part of the total long-term costs. The costs to individuals and desperate communities now deprived of meaningful and sustainable employment are staggering."
+      ],
+      "start": 1,
+      "end": 14,
+      "groups": [
+        {
+          "title": "Questions 1–6",
+          "instructions": [
+            "Choose the correct heading for each paragraph."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Paragraph    B"
+            },
+            {
+              "number": 2,
+              "prompt": "Paragraph    C"
+            },
+            {
+              "number": 3,
+              "prompt": "Paragraph    D"
+            },
+            {
+              "number": 4,
+              "prompt": "Paragraph    E"
+            },
+            {
+              "number": 5,
+              "prompt": "Paragraph    F"
+            },
+            {
+              "number": 6,
+              "prompt": "Paragraph    G"
+            }
+          ],
+          "options": [
+            {
+              "label": "i",
+              "text": "Factory Closures"
+            },
+            {
+              "label": "ii",
+              "text": "The Human Cost"
+            },
+            {
+              "label": "iii",
+              "text": "Government Mismanagement"
+            },
+            {
+              "label": "iv",
+              "text": "A Lesson Learnt from Canada"
+            },
+            {
+              "label": "v",
+              "text": "European Techniques"
+            },
+            {
+              "label": "vi",
+              "text": "Destructive Trawling Technology"
+            },
+            {
+              "label": "vii",
+              "text": "Lessons to be Learned"
+            },
+            {
+              "label": "viii",
+              "text": "The Demise of the Northern Cod"
+            },
+            {
+              "label": "ix",
+              "text": "Canadian Territorial Waters"
+            },
+            {
+              "label": "x",
+              "text": "The Breaking of Agreements"
+            },
+            {
+              "label": "xi",
+              "text": "Foreign Over-fishing"
+            }
+          ],
+          "optionTitle": "List of Headings",
+          "examples": [
+            "Paragraph A: **iv**"
+          ]
+        },
+        {
+          "title": "Questions 7–10",
+          "instructions": [
+            "Choose the correct answer."
+          ],
+          "type": "choice",
+          "questions": [
+            {
+              "number": 7,
+              "prompt": "Why didn't the Canadian government want to reduce cod catches pre-1992?",
+              "options": [
+                "Worry over possible rising unemployment",
+                "Worry over the ecological effects.",
+                "Fear that cod prices would rise too much.",
+                "Fear that it was too drastic a measure."
+              ]
+            },
+            {
+              "number": 8,
+              "prompt": "How did Canada and the US respond to the 1975 drop in catches?",
+              "options": [
+                "They levied a tax on foreign cod imports.",
+                "They expanded the marine area under their control",
+                "They created a new quota system for their fishermen.",
+                "They didn't do anything."
+              ]
+            },
+            {
+              "number": 9,
+              "prompt": "Who does the writer blame for the collapse of the Newfoundland cod fishery?",
+              "options": [
+                "The Canadian fishing industry.",
+                "The foreign fishing industry.",
+                "The Canadian government.",
+                "The US fishing industry."
+              ]
+            },
+            {
+              "number": 10,
+              "prompt": "What is NOT true of Newfoundland in the years following the 1992 ban on cod fishing?",
+              "options": [
+                "Unemployment continued to rise.",
+                "The ban affected only people who fished cod.",
+                "The loss of cod fishing jobs had a knock-on effect in related sectors.",
+                "Some owners of fishing boats were able to sell them."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Questions 11–14",
+          "instructions": [],
+          "type": "truth",
+          "labels": [
+            "YES",
+            "NO",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 11,
+              "prompt": "Disruption of cod brooding was a major factor in the Newfoundland cod disaster."
+            },
+            {
+              "number": 12,
+              "prompt": "Foreign trawlers frequently broke the catch allowances."
+            },
+            {
+              "number": 13,
+              "prompt": "There was often conflict between the foreign fishermen and the Canadian authorities."
+            },
+            {
+              "number": 14,
+              "prompt": "Cod fishing in Canada is irrelevant to cod fishing in Europe."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE RISE OF ANTIBIOTIC-RESISTANT INFECTIONS",
+      "paragraphs": [
+        "A\nWhen penicillin became widely available during the Second World War, it was a medical miracle, rapidly vanquishing the biggest wartime killer - infected wounds. Discovered initially by a French medical student, Ernest Duchesne, in 1896, and then rediscovered by Scottish physician, Alexander Fleming, in 1928, Penicillium crippled many types of disease-causing bacteria. But just 4 years after drug companies began mass-producing penicillin in 1943, microbes began appearing that could resist it.",
+        "B\n“There was complacency in the 1980s. The perception was that we had licked the bacterial infection problem. Drug companies were not working on new agents. They were concentrating on other areas, such as viral infections,” says Michael Blum, MD, medical officer in the Food and Drug Administration’s division of anti-infective drug products. “In the meantime, resistance increased to a number of commonly used antibiotics, possibly related to overuse. Since the 1990s, we have come to a point for certain infections where we do not have agents available.”",
+        "C\nThe increased prevalence of antibiotic resistance is an outcome of evolution. Any population of organisms, bacteria included, naturally includes variants with unusual traits - in this case, the ability to withstand an antibiotic’s attack on a microbe. When a person takes an antibiotic, the drug kills the defenceless bacteria, leaving behind - or “selecting” in biological terms - those that can resist it. These renegade bacteria then multiply, increasing their numbers a millionfold in a day, becoming the predominant microorganism. “Whenever antibiotics are used, there is selective pressure for resistance to occur. More and more organisms develop resistance to more and more drugs,” says Joe Cranston, PhD, director of the department of drug policy and standards at the American Medical Association in Chicago.",
+        "D\nDisease-causing microbes thwart antibiotics by interfering with their mechanism of action. For example, penicillin kills bacteria by attaching to their cell walls, then destroying a key part of the wall. The wall falls apart, and the bacterium dies. Resistant microbes, however, either alter their cell walls so penicillin cannot bind or produce enzymes that dismantle the antibiotic. Antibiotic resistance results from gene action. Bacteria acquire genes conferring resistance in different ways. Bacterial DNA may mutate spontaneously. Drug-resistant tuberculosis arises in this way. Another way is called \"transformation\", where one bacterium may take up DNA from another bacterium. Most frightening, however, is resistance acquired from a small circle of DNA know as \"a plasmid\", which can flit from one type of bacterium to another. A single plasmid can provide a slew of different resistances.",
+        "E\nMany of us have come to take antibiotics for granted. A child develops a sore throat or an ear infection, and soon a bottle of pink medicine makes everything better. Linda McCaig, a scientist at the Center for Disease Control (CDC), comments: “Many consumers have an expectation that when they’re ill, antibiotics are the answer. Most of the time the illness is viral, and antibiotics are not the answer. This large burden of antibiotics is certainly selecting resistant bacteria.” McCaig and Peter Killeen, a fellow scientist at the CDC, tracked antibiotic use in treating common illnesses. The report cites nearly 6 million antibiotic prescriptions for sinusitis alone in 1985, and nearly 13 million in 1992. Ironically, advances in modern medicine have made more people predisposed to infection. McCaig notes: “There are a number of immunocompromised patients who wouldn’t have survived in earlier times. Radical procedures produce patients who are in difficult shape in the hospital, and there is routine use of antibiotics to prevent infection in these patients.”",
+        "F\nThere are measures we can take to slow the inevitable resistance. Barbara Murray, MD, of the University of Texas Medical School at Houston writes: “Simple improvements in public health measures can go a long way towards preventing infection.” Such approaches include more frequent hand washing by health-care workers, quick identification and isolation of patients with drug-resistant infections, and improving sewage systems and water purity. Drug manufacturers are also once again becoming interested in developing new antibiotics. The FDA is doing all it can to speed development and availability of new antibiotic drugs. “We can’t identify new agents - that’s the job of the pharmaceutical industry. But once they have identified a promising new drug, what we can do is to meet with the company very early and help design the development plan and clinical trials,” says Blum. \"In addition, drugs in development can be used on an emergency compassionate use basis for AIDS or cancer patients with multi-drug-resistant infections,” Blum adds.  Appropriate prescribing is important. This means that physicians use narrow spectrum antibiotics - those that target only a few bacterial types - whenever possible, so that resistances can be restricted. “There has been a shift to using costlier, broader spectrum agents. This prescribing trend heightens the resistance problem because more diverse bacteria are being exposed to antibiotics,” writes Killeen. So, while awaiting the next wonder drug, we must appreciate, and use correctly, the ones that we already have. Another problem with antibiotic use is that patients often stop taking the drug too soon because symptoms improve. However, this merely encourages resistant microbes to proliferate. The infection returns a few weeks later, and this time a different drug must be used to treat it. The conclusion: resistance can be slowed if patients take medications correctly."
+      ],
+      "start": 15,
+      "end": 27,
+      "groups": [
+        {
+          "title": "Questions 15–21",
+          "instructions": [
+            "Match each statement with the correct option."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 15,
+              "prompt": "Antibiotics are sometimes used to only prevent infections."
+            },
+            {
+              "number": 16,
+              "prompt": "Choosing the correct antibiotic for particular infections is important."
+            },
+            {
+              "number": 17,
+              "prompt": "Today there are some bacterial infections for which we have no effective antibiotic"
+            },
+            {
+              "number": 18,
+              "prompt": "Untested drugs can be used on terminal patients as a last resort."
+            },
+            {
+              "number": 19,
+              "prompt": "Resistance develops every time an antibiotic is used."
+            },
+            {
+              "number": 20,
+              "prompt": "Merely washing hands can have a positive effect."
+            },
+            {
+              "number": 21,
+              "prompt": "Antibiotics are often used impotently against viruses"
+            }
+          ],
+          "options": [
+            {
+              "label": "PK",
+              "text": "Peter Killeen"
+            },
+            {
+              "label": "JC",
+              "text": "Joe Cranston"
+            },
+            {
+              "label": "LM",
+              "text": "Linda McCaig"
+            },
+            {
+              "label": "MB",
+              "text": "Michael Blum"
+            },
+            {
+              "label": "BM",
+              "text": "Barbara Murray"
+            }
+          ],
+          "optionTitle": "List of People"
+        },
+        {
+          "title": "Questions 22–27",
+          "instructions": [
+            "Which paragraph contains the following information? You may use any letter more than once."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 22,
+              "prompt": "How antibiotic resistance happens."
+            },
+            {
+              "number": 23,
+              "prompt": "The survival of the fittest bacteria"
+            },
+            {
+              "number": 24,
+              "prompt": "Factors to consider in solving the antibiotic-resistant bacteria problem"
+            },
+            {
+              "number": 25,
+              "prompt": "The impact of the discovery of the first antibiotic."
+            },
+            {
+              "number": 26,
+              "prompt": "The misuse and overuse of antibiotics"
+            },
+            {
+              "number": 27,
+              "prompt": "The cessation of research into combating bacterial infections."
+            }
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "A"
+            },
+            {
+              "label": "B",
+              "text": "B"
+            },
+            {
+              "label": "C",
+              "text": "C"
+            },
+            {
+              "label": "D",
+              "text": "D"
+            },
+            {
+              "label": "E",
+              "text": "E"
+            },
+            {
+              "label": "F",
+              "text": "F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SKIING'S EFFECT ON THE ENVIRONMENT",
+      "paragraphs": [
+        "Skiing is one of the world’s most popular winter sports. With ever-increasing numbers of people taking part, questions have been raised about the effect skiing has on the mountain environments where it takes place. Most skiing today is divided into two disciplines. Firstly, there is on-piste skiing, which is done on prepared routes with controlled amounts of snow. The other form is off-piste skiing, which involves leaving the prepared tracks and skiing in natural surroundings.",
+        "Many skiers now seek the delights of off-piste skiing on untouched snow through forests, but this pleasure comes at a significant cost to the environment. Young mountain trees have a difficult life, requiring 30 to 50 years to grow a mere four metres. They have a growing season of only three months and have to suffer intense cold, heat, frosts and thaws as well as acid rain, air pollution and viruses. Skiers frequently exacerbate the situation, as the edges of a ski are sharp enough to break the bark of a young tree and destroy buds, thereby preventing the growth of any new shoots. High altitude forest is an essential regulator of the mountain climate, and damage of this type can have serious long-term effects.",
+        "Off-piste skiing can also cause damage to fauna; mountain animals unaccustomed to human contact instinctively panic and run so hard to avoid skiers that they weaken themselves in the deep snow. These animals’ instinct is to keep on running, even if exhaustion finally kills them. Supporters of skiing claim that most animals avoid areas with skiers and many resorts say they protect wildlife by fencing off ski slopes and areas of hibernation; however, this fencing requires never-ending care and upkeep, which increase costs. In many resorts, sensitive mountain areas such as breeding and tree plantation zones are simply left undefended against off-piste skiers.",
+        "Some people maintain that off-piste skiing is a sustainable activity and that ecologists overstate the issues. Given the revenue that resorts earn from skiers, even critics of skiing realise that prohibiting off-piste skiing everywhere is unrealistic. The most effective way ahead is a mixture of compromise and education. Resort developers and forest managers must agree on banning skiing in sensitive areas and utilising less vulnerable areas for resorts. Resorts must ensure that all skiers are informed of areas to avoid, and that closed areas are clearly signposted. In these ways, damage to mountain environments can be minimised.",
+        "Off-piste skiing is not the only source of problems, however. In times of low snowfall, resort operators are increasingly turning to the use of artificial snow. This is made by snow cannons spraying water at great pressure into the cold mountain air, as a result of which the water freezes and then falls as snow. To obtain good-quality artificial snow, bacteria are frequently mixed with the water to form better snowflakes. The long-term environmental effects of this are still uncertain. However, the manufacture of artificial snow is costly and uses large amounts of water, the same water which often shelters rare species of animal and which in itself is a commodity. According to some sources, one day’s use of snow cannons in a busy resort can consume as much water as a small town in two days. Water companies have stated that this can affect water supplies to ordinary households in the areas around snow resorts.",
+        "Water for artificial snow can come from various sources. Natural lakes can be used, but environmentalists often disapprove of using this type of water source. Accordingly, the creation of an artificial lake sometimes becomes necessary. If this is well planned, it may also serve as a reservoir for fire-fighting water.",
+        "Artificial lakes need maintenance so that they do not affect the environment. As they usually lack the water flow of natural lakes and therefore do not get enough oxygen, carbon dioxide levels in the water build up and create a significant increase in algae. The resulting byproducts of these tiny plant organisms become poisonous over time and can kill any introduced fish or other animals. When the water is used to create artificial snow, it can spread this poison onto the land as well. To prevent low oxygen levels in artificial lakes, it is possible to aerate the bottom water. Aeration is done by using a small turbine on the lake bottom that creates compressed air. This air continuously moves large volumes of low oxygen water from the bottom to the surface of the lake. When the entire lake is oxygenated, fish are able to feed on small organisms in all parts of the lake. This method of aeration limits the growth of algae by reducing the release of nutrients from lake sediments. The benefits include improved water quality and clarity, the prevention of fish death and a reduced occurrence of destructive algal growth, disease and odour.",
+        "Whatever one’s views on skiing and how bad it is for mountain environments are, it is clear that skiing is here to stay. In fact, many ski resorts do exhibit concern for the environment and are open to suggestions on how they can help protect the flora and fauna that depend on mountain ecosystems. Environmentalists and resorts must educate each other in order to create places where people can have fun and where nature is protected."
+      ],
+      "start": 28,
+      "end": 40,
+      "groups": [
+        {
+          "title": "Questions 28–32",
+          "instructions": [],
+          "type": "truth",
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 28,
+              "prompt": "Harm done to trees by skiers could change the weather in the future |"
+            },
+            {
+              "number": 29,
+              "prompt": "Damage to growing trees is monitored by ski guides patrolling alpine forests."
+            },
+            {
+              "number": 30,
+              "prompt": "Animals on the mountain are unable to escape the skiers due to the level of the STOW"
+            },
+            {
+              "number": 31,
+              "prompt": "Some resorts do not have barriers to protect habitats due to the high cast"
+            },
+            {
+              "number": 32,
+              "prompt": "Banning off-piste skiing would require too much investment from resorts to be realistic"
+            }
+          ]
+        },
+        {
+          "title": "Questions 33–37",
+          "instructions": [
+            "Complete the sentences below.",
+            "Write **NO MORE THAN TWO WORDS** from the passage for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "**33.** Which bodies should be responsible for educating skiers in terms of where they should not ski?\n{{33}}",
+            "**34.** What are often combined with water to produce improved artificial snow using snow cannons?\n{{34}}",
+            "**35.** Which organisations have warned that snow cannon use could affect local homes?\n{{35}}",
+            "**36.** What is the other possible use stated for the artificial snow water collected in an artificial reservoir lake?\n{{36}}",
+            "**37.** What can low oxygen levels in artificial lakes cause a growth of?\n{{37}}"
+          ],
+          "shortAnswers": true
+        },
+        {
+          "title": "Questions 38–40",
+          "instructions": [
+            "Label the diagram below.",
+            "Write **NO MORE THAN THREE WORDS** from the passage for each answer."
+          ],
+          "type": "diagram",
+          "image": "/images/test20-image1.png",
+          "numbers": [
+            38,
+            39,
+            40
+          ],
+          "alt": "Aeration process of an artificial lake, with label locations 38–40.",
+          "heading": "The Aeration Process of an Artificial Lake"
+        }
+      ]
+    }
+  ]
+}

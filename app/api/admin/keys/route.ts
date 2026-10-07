@@ -1,0 +1,4 @@
+import { actor, body, endpoint, reject, reply, testId } from "@/lib/results/http";
+import { config, emptyConfig, saveConfig, validateConfig } from "@/lib/results/store";
+export async function GET(request: Request) {return endpoint(async()=>{await actor("admin");const params=new URL(request.url).searchParams,test=testId(Number(params.get("test"))),skill=params.get("skill");if(skill!=="listening"&&skill!=="reading")reject(400,"Invalid skill.");return reply(config(test,skill)||emptyConfig());});}
+export async function PUT(request: Request) {return endpoint(async()=>{const user=await actor("admin"),b=await body(request),test=testId(b.testId),skill=b.skill;if(skill!=="listening"&&skill!=="reading")reject(400,"Invalid skill.");saveConfig(user,test,skill,validateConfig(b.config));return reply({saved:true});});}

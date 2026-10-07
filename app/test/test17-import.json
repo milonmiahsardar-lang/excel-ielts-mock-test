@@ -1,0 +1,330 @@
+{
+  "number": 17,
+  "passages": [
+    {
+      "title": "A Short History of English Dictionaries",
+      "paragraphs": [
+        "The earliest English dictionaries were bilingual dictionaries, facilitating translation from one language to another. Three examples are Sir Thomas Elyot’s Latin–English dictionary published in 1538 (and, interestingly, the first English book to use the word \"dictionary\" in its title), Hollyband’s French–English dictionary (1593) and  Florio‘s 1598 Italian–English dictionary, A World of Words. However, there were also short English–English glossaries explaining difficult or technical words in books, such as the glossary of Bible words which William Tyndale attached to his 1530 translation of the first five books of the Bible.",
+        "The first true monolingual English dictionary is Robert Cawdrey’s A Table Alphabeticall (i.e. An Alphabetical Table) published in 1604 with definitions of some 3,000 words. The stated aim of the dictionary was to provide in \"plain English words\" the meanings of \"hard words\" derived from languages such as Greek, Hebrew, Latin and French for \"the benefit and help of ladies, gentlewomen or any other unskilful persons\" (a sentiment one could hardly get away with expressing nowadays!).",
+        "Among the dictionaries that followed Cawdrey’s were Edward Phillips’s The New World of English Words (a title reminiscent of that of Florio’s Italian dictionary) in 1658, and John Kersey’s A New English Dictionary in 1702. (Kersey was the first dictionary writer to provide proper coverage of everyday words as well as \"hard\" words.) And then there are Nathan Bailey’s Universal Etymological English Dictionary, published in 1721, and his even larger Dictionarium Britannicum (\"British Dictionary\") of 1730, which was later used by the more famous lexicographer Samuel Johnson as the working file for his own dictionary labours.",
+        "Around this time, many English scholars and writers were greatly concerned about \"ascertaining\" or \"fixing\" the English language, that is to say, establishing and codifying the rules of correct usage so that the language would, so they hoped, remain fixed and unchanging thereafter. It was generally agreed that one thing necessary for this process was a good, reliable dictionary, which, notwithstanding the works mentioned above, some scholars felt English still lacked. With financial backing from some London booksellers, a contract for a new dictionary was signed with the writer and critic Samuel Johnson, who in 1747 produced his dictionary proposal, the Plan of a Dictionary of the English Language. The dictionary itself was published in 1755.",
+        "Some of Johnson’s definitions are still famous, and some are quite amusing: for example, OATS – \"a grain, which in England is generally given to horses, but in Scotland supports the people.\" More importantly for modern English, with regard to spelling, Johnson mostly accepted established usage, including its inconsistencies such as 'convey' and 'inveigh', 'deceit' and 'receipt', 'fancy' and 'phantom'. Sadly, then, an opportunity to make English spelling simpler and more consistent was lost.",
+        "From Samuel Johnson, we now turn our attention to the work of the American lexicographer Noah Webster (1758–1843). Webster produced two major dictionaries: A Compendious Dictionary of the English Language (1806) and the much larger American Dictionary of the English Language (1828). At first, Webster was as conservative in his spellings as Johnson had been, but he later decided that spelling reform was both possible and desirable and advocated some quite radical changes, including the omission of silent letters such as the A in bread and head, the U of built and the E of give, and the replacement of some consonants and vowels by simpler equivalents, suggesting, for example, laf and tuf for laugh and tough. In Webster’s opinion, such changes would make English spelling \"sufficiently correct and regular\", and also, he noted as an American patriot, make American spelling quite different from British spelling. However, Webster’s new spellings found little support, and in his dictionaries he abandoned many of them in favour of more traditional spellings. Nevertheless, in 1864, the United States Government printing office adopted Webster-inspired spellings such as color and honor, characteristic of present day American English.",
+        "Returning now to the United Kingdom, we come finally to the Oxford English Dictionary. In 1857, members of the Philological Society of London decided that the current dictionaries of English were unsatisfactory and incomplete, although it was not until more than 20 years later, in 1879, that an agreement was made with James Murray and the Oxford University Press for work to begin on a completely new four-volume dictionary. The project was expected to take about ten years, but when the work completed had only progressed as far as the word 'ant' after five years, it was clear that the proposed schedule had been seriously over-optimistic. Although the first part of the dictionary was published in 1884, the last section did not appear until 1928. And instead of the four volumes originally proposed, the final dictionary comprised of ten volumes.",
+        "A one-volume supplement to the dictionary was published in 1933, and a new four-volume supplement was published between 1972 and 1986, including more scientific and technical terms and more words from beyond the United Kingdom. A second edition of the dictionary was published in twenty volumes in 1989. Fortunately, new technology has allowed a move away from paper and the book format altogether, and the Oxford English Dictionary made history when a CD-ROM version was published in 1992, reducing the space-consuming 20 volumes to a single disk. How dictionary publishing has progressed from Elyot’s Dictionary and Cawdrey’s A Table Alphabeticall!"
+      ],
+      "start": 1,
+      "end": 13,
+      "groups": [
+        {
+          "title": "Questions 1–6",
+          "instructions": [
+            "Match each statement with the correct option."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "His was the first dictionary to look at commonly used vocabulary."
+            },
+            {
+              "number": 2,
+              "prompt": "One of the aims of his dictionary was to stop the English language changing."
+            },
+            {
+              "number": 3,
+              "prompt": "Before his dictionary, dictionaries were only used for translation purposes."
+            },
+            {
+              "number": 4,
+              "prompt": "The spelling changes he made are one reason for the different varieties of English."
+            },
+            {
+              "number": 5,
+              "prompt": "His work is one reason why words with similar sounds are still spelt differently today."
+            },
+            {
+              "number": 6,
+              "prompt": "His dictionary had a similar name to a book which was written earlier."
+            }
+          ],
+          "options": [
+            {
+              "label": "EP",
+              "text": "Edward Phillips"
+            },
+            {
+              "label": "JK",
+              "text": "John Kersey"
+            },
+            {
+              "label": "NW",
+              "text": "Noah Webster"
+            },
+            {
+              "label": "RC",
+              "text": "Robert Cawdrey"
+            },
+            {
+              "label": "SJ",
+              "text": "Samuel Johnson"
+            }
+          ],
+          "optionTitle": "List of People"
+        },
+        {
+          "title": "Questions 7–13",
+          "instructions": [
+            "Complete the summary below.",
+            "Write **NO MORE THAN TWO WORDS** from the passage for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "The most comprehensive dictionary ever written is the Oxford English Dictionary. Work began on the dictionary in 1879 as previous efforts were thought to be inadequate and {{7}} The writers clearly underestimated how long the {{8}} would take and it was eventually completed some thirty years after the proposal in the original {{9}} The dictionary was also much longer than originally anticipated with the final version containing six more {{10}} than was originally thought necessary.",
+            "Over the following decades more supplements were published in order to include more technical {{11}} Just over a hundred years after the original section was published an updated {{12}} was released. At twenty volumes, this was twice the length of the original. The Oxford English Dictionary was also the first ever dictionary to be available in a new {{13}} digital with the release of a CD-ROM. This means that as the English language grows. the space needed to store the dictionary has shrunk enormously!"
+          ],
+          "heading": "The Oxford English Dictionary"
+        }
+      ]
+    },
+    {
+      "title": "Göbekli Tepe",
+      "paragraphs": [
+        "A\nEvery year, hundreds of thousands of tourists flock to Turkey for its remarkable wealth of historical sites, from the mosques and minarets of Istanbul to the Roman ruins lying along the western and southern coasts. Further inland, in Cappadocia, they admire ruins from the prehistoric Hittite civilisation that dwelt there well over a millennium before the Greeks and Romans settled along the coast. In the south-east of the region, far from the tourist trail, archaeologists have recently unearthed a mysterious site known as Göbekli Tepe, which is believed to have flourished a further 8,000 years back and has challenged many assumptions about prehistory.",
+        "B\nIt all started in the early 1960s, when the top of a pillar jutting out of a dusty mound was noticed by a shepherd working in the area. Archaeologists from the University of Chicago arrived at the site, but quickly dismissed it as being of little interest. Their explanation was that although some signs of Neolithic settlement were possible, the site was in fact predominantly a Byzantine or Islamic cemetery. Some years later, Klaus Schmidt of the German Archaeological Institute happened upon the previous researchers' brief description of the hilltop. Having recently completed work on another Neolithic site in the region, Schmidt was eager to further his work in the area and was immediately intrigued by what he saw.",
+        "C\nSoon after his arrival, it became clear to Schmidt that Göbekli Tepe's significance had been incorrectly assessed. Flint chips found in the area suggested to him that the location had been a working site at some point prior to the development of metal tools and pottery, while he viewed the limestone slabs previously believed to be Byzantine graves as in fact something much older. As the dig progressed, the team first found a ring of standing pillars similar to those at Stonehenge, but predating them by almost half a millennium. Limestone blocks over 2 metres tall formed a ring facing inwards towards a pair of pillars more than twice the size. Three further similar enclosures have since been excavated, and geophysical surveys suggest there may be as many as 20 in total, at different depths below the surface.",
+        "D\nThe most striking visual difference between the blocks found at Göbekli Tepe and those at Stonehenge is the addition of extraordinary bas-reliefs depicting an array of animals – including lions, snakes, foxes, scorpions and wild boars – to the former, although their precise role is not yet known. What is particularly interesting about the construction of the site is that it would have required a far larger gathering of people than had probably ever happened before, all working without the assistance of the wheel or beasts of burden. No signs of a mess kitchen, cooking fires or lodgings for the hundreds of workers that would have been required for the construction of the site have yet been unearthed. Furthermore, at this point in mankind's evolution, proximity to some kind of fresh water would have been imperative, yet the nearest stream to Göbekli Tepe was at least 5 kilometres away.",
+        "E\nAs is to be expected given the mystery of the site and the novelty of its discovery, there has been much disagreement as to its purpose and meaning. Due to the presence of what is believed to be the world's oldest known temple at Göbekli Tepe, some have argued that this site is the earliest known example of a pilgrimage site. They believe it may have played a key part in alleviating tensions between groups of hunter-gatherers who were settling down to create larger societies. In comparison with their earlier semi-nomadic existence, which focussed mainly on day-to-day existence, a settled society required longer term projects which could only be accomplished if its citizens were able to work together without hostility.",
+        "F\nIndeed, Schmidt believes that this role came prior to many other key features accompanying the dawn of civilisation, including most notably the development of agriculture. He asserts that a way of providing sufficient quantities of food for those gathering at Göbekli Tepe was required and that this in turn led to intensive cultivation of wild crops and the first instances of plant domestication. This is corroborated by independent research suggesting that one centre of early agriculture emerged in the same area of southern Turkey during precisely the same period, as well as discoveries of the closest known wild ancestors of modern wheat just 100 kilometres from the site.",
+        "G\nHowever, not everyone agrees with Schmidt's theories. A number of his colleagues have queried his assumption about the site's role and that a lack of evidence of houses means that nobody lived at Göbekli Tepe. In addition, archaeologists are increasingly sceptical of the one-size-fits-all scenario to explain the origins of civilisation as having one fundamental trigger. Instead, they suggest that Göbekli Tepe is an example of numerous experiments taking place throughout the area – in agriculture, art, religion, technology, social organisation - that ultimately combined at a later point.",
+        "H\nGiven the outlined ambiguities concerning the purpose and nature of the site, it is no surprise that Professor Schmidt feels there is much work yet to be done. He compares the scale of the project to that of other key archaeological sites – among them Troy and Pergamon – where excavation work began more than a century ago. “It’s hard to give a detailed schedule on how long further excavation will take,” he comments, before adding, “There's work for more than one generation of archaeologists at the place.”"
+      ],
+      "start": 14,
+      "end": 27,
+      "groups": [
+        {
+          "title": "Questions 14–20",
+          "instructions": [
+            "Choose the correct heading for each paragraph."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 14,
+              "prompt": "Paragraph B"
+            },
+            {
+              "number": 15,
+              "prompt": "Paragraph C"
+            },
+            {
+              "number": 16,
+              "prompt": "Paragraph D"
+            },
+            {
+              "number": 17,
+              "prompt": "Paragraph E"
+            },
+            {
+              "number": 18,
+              "prompt": "Paragraph F"
+            },
+            {
+              "number": 19,
+              "prompt": "Paragraph G"
+            },
+            {
+              "number": 20,
+              "prompt": "Paragraph H"
+            }
+          ],
+          "options": [
+            {
+              "label": "i",
+              "text": "An ongoing project"
+            },
+            {
+              "label": "ii",
+              "text": "Picking up where others left off"
+            },
+            {
+              "label": "iii",
+              "text": "A country rich in archaeological sites"
+            },
+            {
+              "label": "iv",
+              "text": "The influence of Göbekli Tepe on future sites"
+            },
+            {
+              "label": "v",
+              "text": "Göbekli Tepe as a precursor to modern farming"
+            },
+            {
+              "label": "vi",
+              "text": "Keeping the peace"
+            },
+            {
+              "label": "vii",
+              "text": "Unanswered questions about the construction of Göbekli Tepe"
+            },
+            {
+              "label": "viii",
+              "text": "Similar discoveries in Troy and Pergamon"
+            },
+            {
+              "label": "ix",
+              "text": "Who built Göbekli Tepe?"
+            },
+            {
+              "label": "x",
+              "text": "A series of discoveries"
+            },
+            {
+              "label": "xi",
+              "text": "Various independent explorations at the dawn of civilisation"
+            }
+          ],
+          "optionTitle": "List of Headings",
+          "examples": [
+            "Paragraph A: **iii**"
+          ]
+        },
+        {
+          "title": "Questions 21–24",
+          "instructions": [
+            "Complete the sentences below.",
+            "Write **NO MORE THAN THREE WORDS** from the passage for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "It was the presence of {{21}} at the Gobekli Tepe site that led Professor Schmidt to believe that it was very old.",
+            "These blocks were originally thought to be {{22}}.",
+            "The pillars at Gobekli Tepe are roughly {{23}} older than those at Stonehenge.",
+            "Images of various {{24}} have been carved on the limestone blocks at Gobekli Tepe."
+          ]
+        },
+        {
+          "title": "Questions 25–27",
+          "instructions": [
+            "Choose the correct answer."
+          ],
+          "type": "choice",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "One of the main mysteries about Gobekli Tepe concerns...",
+              "options": [
+                "who sculpted the bas-reliefs.",
+                "how people travelled there without wheeled transport.",
+                "where the people who built it cooked.",
+                "why it wasn't built closer to a source of water."
+              ]
+            },
+            {
+              "number": 26,
+              "prompt": "Professor Schmidt theorises that the site may have",
+              "options": [
+                "been built as a temple for hunter-gatherers.",
+                "acted as a catalyst to the development of civilisation.",
+                "been a centre for experimentation in agriculture.",
+                "been the birthplace of a religious cult."
+              ]
+            },
+            {
+              "number": 27,
+              "prompt": "Other archaeologists believe that...",
+              "options": [
+                "Gobekli Tepe was a pilgrimage site.",
+                "people could have lived at Gobekli Tepe.",
+                "Professor Schmidt's conclusions are premature.",
+                "a lot more excavation is needed before conclusions can be drawn."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Stammering",
+      "paragraphs": [
+        "The terms stammering and stuttering both refer to the same speech disorder. The word stammering is mostly used in British English, while the word stuttering is more common in American English. A person who stammers has trouble producing words fluently. The disorder causes them to repeat or elongate sounds, words or syllables. A stammer can also manifest itself as pauses in speech.",
+        "In order to understand stammering, we first need to understand how the voice is produced. The human voice begins when air is pushed from the lungs through the vocal folds, which are more commonly known as the vocal cords. These vocal folds are housed within the larynx, or voice box, which serves the dual purposes of producing sound and stopping food from entering your lungs. The muscles of the lungs, throat and body are precisely coordinated by the brain to produce intelligible speech. People stammer because their brain has trouble coordinating all these muscles.",
+        "There are three types of speech disorder which can affect the human voice. Articulation disorders involve substitution, omission or distortion of sounds such as the pronunciation of the word \"rabbit\" as \"wabbit\". Voice disorders affect the sound of the voice itself, like laryngitis, which can cause hoarseness or a temporary loss of voice. Finally, fluency disorders affect the flow of speaking. Stammering is a relatively rare fluency disorder affecting around 1 per cent of the adult population in the UK and 5 per cent of preschool children, according to The British Stammering Association.",
+        "The two main types of stammering are developmental stammering and neurogenic stammering. Developmental stammering is common in young children who are learning to speak, and it probably begins as their brain is developing in early life. Neurogenic stammering, on the other hand, usually begins in later life. It can be the result of brain injury such as that produced following a stroke or severe head trauma. A third type of stammering, psychogenic stammering, is caused by emotional trauma. Historically, this was believed to be the prime cause of stammering; however, it has since been found that this type of stammering is rare and can almost always be overcome.",
+        "In their book \"Stammering: Advice for all ages,\" Byrne and Wright stress that stammering which happens in a child's early years is not the same as established stammering later in life. Early stammerers may go on to develop a chronic disorder but, as Dr Ehud Yairi explains, many preschool children grow out of stammering without a need for formal therapy. Researchers have shown that three quarters of stammering children can recover completely, without treatment, within four years.",
+        "Scholars have researched the causes of stammering since as far back as the Ancient Greeks, although the most enlightening research is more recent. Current research using Magnetic Resonance Imaging (MRI) scanners has found that stammerers have an abnormality in part of the brain called Broca's area, which is involved in moving the mouth muscles and producing speech. Researchers have also found that stammering has a genetic element. Dr Dennis Drayma identified three gene mutations which are very common in families that have a history of stammering. Therefore, if someone in your family had a stammer, there is a higher likelihood that you or your children will also stammer.",
+        "People have tried to find a cure for stammering since 300 BC. The Greek politician Demosthenes had several problems with his voice, including a stammer and trouble pronouncing the letter \"r\". He enlisted the help of actor Satyrus, who told him to put pebbles in his mouth to cure the stammer. This has the effect of slowing down the speech, which can ease stammering. It is still a recommended strategy these days, although there are more effective strategies. Throughout history, people have also resorted to surgery to try and cure their stammering, including cutting the frenulum (the connective membrane which attaches the underside of the tongue to the floor of the mouth), stretching the tongue and cutting the nerves which control it. Given what we now know about stammering, it seems unlikely that these strategies were successful.",
+        "Modern treatments help stammerers to manage the disorder. Many treatments are forms of speech therapy, although there are also a range of technologies and medications. There is currently no known cure for stammering, but with training stammerers can learn how to speak fluently. However, research suggests that the neurological abnormality that produces the stammer does not go away completely, even if the person trains themselves to speak without stammering. Christian Kell of the Frankfurt Brain Institute found that recovered stammerers use another part of their brain to control speech, effectively bypassing the area of the brain which is damaged. This area is not specialised in speech, so the stammer will be reduced but not cured completely.",
+        "Despite the challenges of living with a stammer, many public figures have a history of stammering. Some have even made successful careers using their voice such as: UK prime minister Winston Churchill, famed for his rousing speeches; Hollywood actor Samuel L. Jackson; and actress and singer Marilyn Monroe. James Earl Jones, who played Darth Vader in the original Star Wars movies, says that his stammer was so strong as a child that he barely ever spoke. His voice went on to become one of the most iconic voices of the 20th century."
+      ],
+      "start": 28,
+      "end": 40,
+      "groups": [
+        {
+          "title": "Questions 28–36",
+          "instructions": [],
+          "type": "truth",
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 28,
+              "prompt": "Stammering originates in the brain, not in the organs that are used to produce speech."
+            },
+            {
+              "number": 29,
+              "prompt": "The percentage of British pre-school children affected by stammering is steadily on the rise."
+            },
+            {
+              "number": 30,
+              "prompt": "The most common trigger of stammering is psychological trauma."
+            },
+            {
+              "number": 31,
+              "prompt": "In some cases, stammering disappears spontaneously."
+            },
+            {
+              "number": 32,
+              "prompt": "The underlying cause of stammering may be genetic."
+            },
+            {
+              "number": 33,
+              "prompt": "Speaking more slowly makes stammering worse."
+            },
+            {
+              "number": 34,
+              "prompt": "Surgical procedures for dealing with stammering are now thought to be ineffective."
+            },
+            {
+              "number": 35,
+              "prompt": "Modern techniques focus on overcoming the problem rather than curing it."
+            },
+            {
+              "number": 36,
+              "prompt": "People who stammer are particularly drawn to roles that involve using the voice."
+            }
+          ]
+        },
+        {
+          "title": "Questions 37–40",
+          "instructions": [
+            "Label the diagram below.",
+            "Write **NO MORE THAN TWO WORDS** from the passage for each answer."
+          ],
+          "type": "diagram",
+          "image": "/images/test17-image1.png",
+          "numbers": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "alt": "Human voice production diagram with label locations 37–40."
+        }
+      ]
+    }
+  ]
+}

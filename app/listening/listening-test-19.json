@@ -1,0 +1,246 @@
+{
+  "number": 19,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–10",
+        "type": "fill",
+        "paragraphs": [
+          "Occupation: {{1}}",
+          "Age group: {{2}}",
+          "Type of membership: {{3}}",
+          "Length of membership: {{4}} years",
+          "Why joined: Recommended by a {{5}}",
+          "Visits to club per month: Eight (on average)",
+          "Facility used most: {{6}}",
+          "Facility not used (if any): Tennis courts (because reluctant to {{7}})",
+          "**Suggestions for improvements:**\nHave more {{8}}\nInstall {{9}} in the gym.\nOpen {{10}} later at weekends."
+        ],
+        "limit": "NO MORE THAN TWO WORDS OR A NUMBER",
+        "heading": "Health club customer research",
+        "box": true,
+        "instruction": "Complete the form below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–16",
+        "type": "selectflow",
+        "heading": "Making a steam pit",
+        "instruction": "Complete the flow chart below. Choose SIX answers from the box and write the correct letter A–G next to Questions 11–16.",
+        "options": [
+          {
+            "label": "A",
+            "text": "air"
+          },
+          {
+            "label": "B",
+            "text": "ash"
+          },
+          {
+            "label": "C",
+            "text": "earth"
+          },
+          {
+            "label": "D",
+            "text": "grass"
+          },
+          {
+            "label": "E",
+            "text": "sticks"
+          },
+          {
+            "label": "F",
+            "text": "stones"
+          },
+          {
+            "label": "G",
+            "text": "water"
+          }
+        ],
+        "paragraphs": [
+          "Dig a pit.",
+          "Arrange a row of {{11}} over the pit.",
+          "Place {{12}} on top.",
+          "Light the wood and let it burn out.",
+          "Remove {{13}}.",
+          "Insert a stick.",
+          "Cover the pit with {{14}}.",
+          "Place wrapped food on top, and cover it with {{15}}.",
+          "Remove the stick and put {{16}} into the hole."
+        ]
+      },
+      {
+        "title": "Questions 17–18",
+        "type": "multiple",
+        "numbers": [
+          17,
+          18
+        ],
+        "prompt": "Which TWO characteristics apply to the bamboo oven?",
+        "options": [
+          "It’s suitable for windy weather.",
+          "The fire is lit below the bottom end of the bamboo.",
+          "The bamboo is cut into equal lengths.",
+          "The oven hangs from a stick.",
+          "It cooks food by steaming it."
+        ],
+        "instruction": "Choose TWO answers."
+      },
+      {
+        "title": "Questions 19–20",
+        "type": "multiple",
+        "numbers": [
+          19,
+          20
+        ],
+        "prompt": "Which TWO pieces of advice does the speaker give about eating wild fungi?",
+        "options": [
+          "Cooking doesn’t make poisonous fungi edible.",
+          "Edible wild fungi can be eaten without cooking.",
+          "Wild fungi are highly nutritious.",
+          "Some edible fungi look very similar to poisonous varieties.",
+          "Fungi which cannot be identified should only be eaten in small quantities."
+        ],
+        "instruction": "Choose TWO answers."
+      }
+    ],
+    [
+      {
+        "title": "Questions 21–25",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 21,
+            "prompt": "Phoebe’s main reason for choosing her topic was that",
+            "options": [
+              "her classmates had been very interested in it.",
+              "it would help prepare her for her first teaching post.",
+              "she had been inspired by a particular book."
+            ]
+          },
+          {
+            "number": 22,
+            "prompt": "Phoebe’s main research question related to",
+            "options": [
+              "the effect of teacher discipline.",
+              "the variety of learning activities.",
+              "levels of pupil confidence."
+            ]
+          },
+          {
+            "number": 23,
+            "prompt": "Phoebe was most surprised by her finding that",
+            "options": [
+              "gender did not influence behaviour significantly.",
+              "girls were more negative about school than boys.",
+              "boys were more talkative than girls in class."
+            ]
+          },
+          {
+            "number": 24,
+            "prompt": "Regarding teaching, Phoebe says she has learned that",
+            "options": [
+              "teachers should be flexible in their lesson planning.",
+              "brighter children learn from supporting weaker ones.",
+              "children vary from each other in unpredictable ways."
+            ]
+          },
+          {
+            "number": 25,
+            "prompt": "Tony is particularly impressed by Phoebe’s ability to",
+            "options": [
+              "recognise the limitations of such small-scale research.",
+              "reflect on her own research experience in an interesting way.",
+              "design her research in such a way as to minimise difficulties."
+            ]
+          }
+        ],
+        "heading": "Research project on attitudes towards study"
+      },
+      {
+        "title": "Questions 26–30",
+        "type": "match",
+        "instruction": "What did Phoebe find difficult about the different research techniques she used? Choose FIVE answers from the box and write the correct letter A–G next to Questions 26–30.",
+        "options": [
+          {
+            "label": "A",
+            "text": "Obtaining permission"
+          },
+          {
+            "label": "B",
+            "text": "Deciding on a suitable focus"
+          },
+          {
+            "label": "C",
+            "text": "Concentrating while gathering data"
+          },
+          {
+            "label": "D",
+            "text": "Working collaboratively"
+          },
+          {
+            "label": "E",
+            "text": "Processing data she had gathered"
+          },
+          {
+            "label": "F",
+            "text": "Finding a suitable time to conduct the research"
+          },
+          {
+            "label": "G",
+            "text": "Getting hold of suitable equipment"
+          }
+        ],
+        "questions": [
+          {
+            "number": 26,
+            "prompt": "Observing lessons"
+          },
+          {
+            "number": 27,
+            "prompt": "Interviewing teachers"
+          },
+          {
+            "number": 28,
+            "prompt": "Interviewing pupils"
+          },
+          {
+            "number": 29,
+            "prompt": "Using questionnaires"
+          },
+          {
+            "number": 30,
+            "prompt": "Taking photographs"
+          }
+        ],
+        "heading": "Difficulties"
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–40",
+        "type": "fill",
+        "paragraphs": [
+          "**Background**",
+          "Juniper was one of the first plants to colonise Britain after the last {{31}}.",
+          "Its smoke is virtually {{32}}, so juniper wood was used as fuel in illegal activities.",
+          "Oils from the plant were used to prevent {{33}} spreading.",
+          "Nowadays, its berries are widely used to {{34}} food and drink.",
+          "**Ecology**",
+          "Juniper plants also support several species of insects and {{35}}.",
+          "**Problems**",
+          "In current juniper populations, ratios of the {{36}} are poor.",
+          "Many of the bushes in each group are of the same age so {{37}} of whole populations is rapid.",
+          "**Solutions**",
+          "Plantlife is trialling novel techniques across {{38}} areas of England.",
+          "One measure is to introduce {{39}} for seedlings.",
+          "A further step is to plant {{40}} from healthy bushes."
+        ],
+        "limit": "NO MORE THAN TWO WORDS",
+        "heading": "Saving the juniper plant",
+        "instruction": "Complete the sentences below."
+      }
+    ]
+  ]
+}

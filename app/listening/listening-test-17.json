@@ -1,0 +1,276 @@
+{
+  "number": 17,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–6",
+        "type": "table",
+        "limit": "NO MORE THAN ONE WORD AND/OR A NUMBER",
+        "heading": "Community Centre Evening Classes",
+        "columns": [
+          "Class",
+          "Where",
+          "When",
+          "What to bring",
+          "Cost"
+        ],
+        "rows": [
+          [
+            "Painting with watercolours",
+            "—",
+            "at {{1}} pm on Tuesdays",
+            "water jar and set of {{2}}",
+            "£45 – four classes"
+          ],
+          [
+            "Maori language",
+            "the small room at the {{3}} of the building",
+            "starts in {{4}}",
+            "small recorder",
+            "£40 – five classes"
+          ],
+          [
+            "Digital photography",
+            "room 9",
+            "6 pm Wednesday evenings",
+            "the {{5}} for the camera",
+            "£{{6}} – eight classes"
+          ]
+        ]
+      },
+      {
+        "title": "Questions 7–10",
+        "type": "fill",
+        "paragraphs": [
+          "The watercolours class suits people who are {{7}}.",
+          "To find out about the Maori language class, contact Jason {{8}}.",
+          "For the photography class, check the {{9}} for the camera.",
+          "There is a trip to a local {{10}} in the final week of the photography class."
+        ],
+        "limit": "ONE WORD ONLY",
+        "heading": null,
+        "box": false,
+        "instruction": "Complete the sentences below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–12",
+        "type": "multiple",
+        "numbers": [
+          11,
+          12
+        ],
+        "prompt": "Which TWO tasks will the volunteers in Group A be responsible for?",
+        "options": [
+          "widening pathways",
+          "planting trees",
+          "picking up rubbish",
+          "putting up signs",
+          "building fences"
+        ]
+      },
+      {
+        "title": "Questions 13–14",
+        "type": "multiple",
+        "numbers": [
+          13,
+          14
+        ],
+        "prompt": "Which TWO items should volunteers in Group A bring with them?",
+        "options": [
+          "food and water",
+          "boots",
+          "gloves",
+          "raincoats",
+          "their own tools"
+        ]
+      },
+      {
+        "title": "Questions 15–20",
+        "type": "map",
+        "heading": "Hadley Park Community Gardens Project",
+        "image": "/images/listening-test-17-map.png",
+        "viewBox": "0 280 533 407",
+        "imageWidth": 533,
+        "imageHeight": 687,
+        "alt": "Hadley Park Community Gardens Project plan with areas A–I, island, bicycle track, fruit bushes, bamboo fences, footpaths and car park.",
+        "questions": [
+          {
+            "number": 15,
+            "prompt": "Vegetable beds"
+          },
+          {
+            "number": 16,
+            "prompt": "Bee hives"
+          },
+          {
+            "number": 17,
+            "prompt": "Seating"
+          },
+          {
+            "number": 18,
+            "prompt": "Adventure playground"
+          },
+          {
+            "number": 19,
+            "prompt": "Sand area"
+          },
+          {
+            "number": 20,
+            "prompt": "Pond"
+          }
+        ],
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Questions 21–25",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 21,
+            "prompt": "What point does Robert make about the 2013 study in Britain?",
+            "options": [
+              "It focused more on packaging than wasted food.",
+              "It proved that households produced more waste than restaurants.",
+              "It included liquid waste as well as solid waste."
+            ]
+          },
+          {
+            "number": 22,
+            "prompt": "The speakers agree that food waste reports should emphasise the connection between carbon dioxide emissions and",
+            "options": [
+              "food production.",
+              "transport of food to landfill sites.",
+              "distribution of food products."
+            ]
+          },
+          {
+            "number": 23,
+            "prompt": "Television programmes now tend to focus on",
+            "options": [
+              "the nutritional value of food products.",
+              "the origin of food products.",
+              "the chemicals found in food products."
+            ]
+          },
+          {
+            "number": 24,
+            "prompt": "For Anna, the most significant point about food waste is",
+            "options": [
+              "the moral aspect.",
+              "the environmental impact.",
+              "the economic effect."
+            ]
+          },
+          {
+            "number": 25,
+            "prompt": "Anna and Robert decide to begin their presentation by",
+            "options": [
+              "handing out a questionnaire.",
+              "providing statistical evidence.",
+              "showing images of wasted food."
+            ]
+          }
+        ],
+        "heading": "Food Waste"
+      },
+      {
+        "title": "Questions 26–30",
+        "type": "match",
+        "questions": [
+          {
+            "number": 26,
+            "prompt": "edible patch"
+          },
+          {
+            "number": 27,
+            "prompt": "ripeness sensor"
+          },
+          {
+            "number": 28,
+            "prompt": "waste tracking technology"
+          },
+          {
+            "number": 29,
+            "prompt": "smartphone application"
+          },
+          {
+            "number": 30,
+            "prompt": "food waste composting"
+          }
+        ],
+        "options": [
+          {
+            "label": "A",
+            "text": "It should save time."
+          },
+          {
+            "label": "B",
+            "text": "It will create new jobs."
+          },
+          {
+            "label": "C",
+            "text": "It will benefit local communities."
+          },
+          {
+            "label": "D",
+            "text": "It will make money."
+          },
+          {
+            "label": "E",
+            "text": "It will encourage personal responsibility."
+          },
+          {
+            "label": "F",
+            "text": "It will be easy to advertise."
+          },
+          {
+            "label": "G",
+            "text": "It will involve very little cost."
+          }
+        ],
+        "heading": "Advantages",
+        "instruction": "What advantage do the speakers identify for each of the following projects? Choose the correct letter, A–G."
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–40",
+        "type": "fill",
+        "paragraphs": [
+          "**Making and appearance of the kites**",
+          "The priests who made the kites had rules for size and scale",
+          "{{31}} was not allowed during a kite’s preparation",
+          "**Kites:**",
+          "often represented a bird, a god, or a {{32}}",
+          "had frames that were decorated with grasses and {{33}}",
+          "had a line of noisy {{34}} attached to them",
+          "could be triangular, rectangular or {{35}} shaped",
+          "had patterns made from clay mixed with {{36}} oil",
+          "sometimes had human-head masks with {{37}} and a tattoo",
+          "**Purpose and function of kites:**",
+          "a way of sending {{38}} to the gods",
+          "a way of telling other villages that a {{39}} was necessary",
+          "a means of {{40}} if enemies were coming"
+        ],
+        "limit": "ONE WORD",
+        "heading": "Kite-making by the Maori people of New Zealand",
+        "box": true,
+        "instruction": "Complete the notes below."
+      }
+    ]
+  ]
+}

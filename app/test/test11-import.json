@@ -1,0 +1,420 @@
+{
+  "number": 11,
+  "passages": [
+    {
+      "title": "The Concept of Childhood in Western Countries",
+      "paragraphs": [
+        "The history of childhood has been a heated topic in social history since the highly influential book Centuries of Childhood’, written by French historian Philippe Aries, emerged in 1960. He claimed that ‘childhood’ is a concept created by modern society.",
+        "Whether childhood is itself a recent invention has been one of the most intensely debated issues in the history of childhood. Historian Philippe Aries asserted that children were regarded as miniature adults, with all the intellect and personality that this implies, in Western Europe during the Middle Ages (up to about the end of the 15th century). After scrutinising medieval pictures and diaries, he concluded that there was no distinction between children and adults for they shared similar leisure activities and work; However, this does not mean children were neglected, forsaken or despised, he argued. The idea of childhood corresponds to awareness about the peculiar nature of childhood, which distinguishes the child from adult, even the young adult. Therefore, the concept of childhood is not to be confused with affection for children.",
+        "Traditionally, children played a functional role in contributing to the family income in the history. Under this circumstance, children were considered to be useful. Back in the Middle Ages, children of 5 or 6 years old did necessary chores for their parents. During the 16th century, children of 9 or 10 years old were often encouraged or even forced to leave their family to work as servants for wealthier families or apprentices for a trade.",
+        "In the 18th and 19th centuries, industrialisation created a new demand for child labour; thus many children were forced to work for a long time in mines, workshops and factories. The issue of whether long hours of labouring would interfere with children’s growing bodies began to perplex social reformers. Some of them started to realise the potential of systematic studies to monitor how far these early deprivations might be influencing children’s development.",
+        "The concerns of reformers gradually had some impact upon the working condition of children. For example, in Britain, the Factory Act of 1833 signified the emergence of legal protection of children from exploitation and was also associated with the rise of schools for factory children. Due partly to factory reform, the worst forms of child exploitation were eliminated gradually. The influence of trade unions and economic changes also contributed to the evolution by leaving some forms of child labour redundant during the 19th century. Initiating children into work as ‘useful’ children was no longer a priority, and childhood was deemed to be a time for play and education for all children instead of a privileged minority. Childhood was increasingly understood as a more extended phase of dependency, development and learning with the delay of the age for starting full-time work- Even so, work continued to play a significant, if less essential, role in children’s lives in the later 19th and 20th centuries. Finally, the ‘useful child’ has become a controversial concept during the first decade of the 21st century, especially in the context of global concern about large numbers of children engaged in child labour.",
+        "The half-time schools established upon the Factory Act of 1833 allowed children to work and attend school. However, a significant proportion of children never attended school in the 1840s, and even if they did, they dropped out by the age of 10 or 11. By the end of the 19th century in Britain, the situation changed dramatically, and schools became the core to the concept of a ‘normal’ childhood.",
+        "It is no longer a privilege for children to attend school and all children are expected to spend a significant part of their day in a classroom. Once in school, children’s lives could be separated from domestic life and the adult world of work. In this way, school turns into an institution dedicated to shaping the minds, behaviour and morals of the young. Besides, education dominated the management of children’s waking hours through the hours spent in the classroom, homework (the growth of ‘after school’ activities), and the importance attached to parental involvement.",
+        "Industrialisation, urbanisation and mass schooling pose new challenges for those who are responsible for protecting children’s welfare, as well as promoting their learning. An increasing number of children are being treated as a group with unique needs, and are organised into groups in the light of their age. For instance, teachers need to know some information about what to expect of children in their classrooms, what kinds of instruction are appropriate for different age groups, and what is the best way to assess children’s progress. Also, they want tools enabling them to sort and select children according to their abilities and potential."
+      ],
+      "start": 1,
+      "end": 13,
+      "groups": [
+        {
+          "type": "truth",
+          "title": "Questions 1–7",
+          "instructions": [
+            "Do the following statements agree with the information give in Reading Passage 1?",
+            "In boxes 1-7 on your answer sheet, write"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Aries pointed out that children did different types of work to adults during the Middle Ages."
+            },
+            {
+              "number": 2,
+              "prompt": "Working children during the Middle Ages were generally unloved."
+            },
+            {
+              "number": 3,
+              "prompt": "Some scientists thought that overwork might damage the health of young children."
+            },
+            {
+              "number": 4,
+              "prompt": "The rise of trade unions majorly contributed to the protection of children from exploitation in the 19th century."
+            },
+            {
+              "number": 5,
+              "prompt": "the aid of half-time schools, most children went to school in the mid-19th century."
+            },
+            {
+              "number": 6,
+              "prompt": "the 20th century, almost all children needed to go to school with a full-time schedule."
+            },
+            {
+              "number": 7,
+              "prompt": "Nowadays, children’s needs are much differentiated and categorised based on how old they are."
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 8–13",
+          "instructions": [
+            "Answer the questions below.",
+            "Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+            "Write your answers in boxes 8-13 on your answer sheet."
+          ],
+          "shortAnswers": true,
+          "paragraphs": [
+            "**8.** What had not become a hot topic until the French historian Philippe Aries’ book caused great attention?\n{{8}}",
+            "**9.** According to Aries, what was the typical image of children in Western Europe during the Middle Ages?\n{{9}}",
+            "**10.** What historical event generated the need for a large number of children to work for a long time in the 18th and 19th centuries?\n{{10}}",
+            "**11.** What bill was enacted to protect children from exploitation in Britain in the 1800s?\n{{11}}",
+            "**12.** Which activities were becoming regarded as preferable for almost all children in the 19th century?\n{{12}}",
+            "**13.** In what place did children spend the majority of time during their day in school?\n{{13}}"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Study of Chimpanzee Culture",
+      "paragraphs": [
+        "A\nAfter studying the similarities between chimpanzees and humans for years, researchers have recognised these resemblances run much deeper than anyone first thought in the latest decade. For instance, the nut cracking observed in the Tai Forest is not a simple chimpanzee behaviour, but a separate adaptation found only in that particular part of Africa, as well as a trait which is considered to be an expression of chimpanzee culture by biologists. These researchers frequently quote the word ‘culture’ to describe elementary animal behaviours, like the regional dialects of different species of songbirds, but it turns out that the rich and varied cultural traditions chimpanzees enjoyed rank secondly in complexity only to human traditions.",
+        "B\nDuring the past two years, the major research group which studies chimpanzees collaborated unprecedentedly and documented some distinct cultural patterns, ranging from animals’ use of tools to their forms of communication and social customs. This emerging picture of chimpanzees affects how human beings ponder upon these amazing creatures. Also, it alters our conception of human uniqueness and shows us the extraordinary ability of our ancient ancestors to create cultures.",
+        "C\nAlthough we know that Homo sapiens and Pan Troglodytes have coexisted for hundreds of millennia and their genetic similarities surpass 98 per cent, we still knew next to nothing about chimpanzee behaviour in the wild until 40 years ago. All this began to change in the 1960s when Toshisada Nishida of Kyoto University in Japan and renowned British primatologist Jane Goodall launched their studies of wild chimpanzees at two field sites in Tanzania. (Goodall’s research station at Gombe—the first of its kind—is more famous, but Nishida’s site at Mahale is the second oldest chimpanzee research site in the world.)",
+        "D\nDuring these primary studies, as the chimpanzees became more and more accustomed to close observation, the remarkable discoveries emerged. Researchers witnessed a variety of unexpected behaviours, ranging from fashioning and using tools, hunting, meat eating, food sharing to lethal fights between members of neighbouring communities.",
+        "E\nIn 1973, 13 forms of tool use and 8 social activities which appeared to differ between the Gombe chimpanzees and chimpanzee species elsewhere were recorded by Goodall. She speculated that some variations shared what she referred to as a ‘cultural origin’. But what exactly did Goodall mean by ‘culture’? According to the Oxford Encyclopedic English Dictionary, culture is defined as ‘the customs. . .and achievements of a particular time or people.’ The diversity of human cultures extends from technological variations to marriage rituals, from culinary habits to myths and legends. Of course, animals do not have myths and legends, but they do share the capacity to pass on behavioural traits from one generation to another, not through their genes but via learning. From biologists’ view, this is the fundamental criterion for a cultural trait—something can be learnt by observing the established skills of others and then passed on to following generations.",
+        "F\nWhat are the implications for chimpanzees themselves? We must place a high value upon the tragic loss of chimpanzees, who are decimated just when finally we are coming to appreciate these astonishing animals more completely. The population of chimpanzees has plummeted and continued to fall due to illegal trapping, logging and, most recently, the bushmeat trade within the past century. The latter is particularly alarming because logging has driven roadways, which are now used to ship wild animal meat—including chimpanzee meat to consumers as far afield as Europe, into forests. Such destruction threatens not only the animals themselves but also a host of fascinatingly different ape cultures.",
+        "G\nHowever, the cultural richness of the ape may contribute to its salvation. For example, the conservation efforts have already altered the attitudes of some local people. After several organisations showed videotapes illustrating the cognitive prowess of chimpanzees, one Zairian viewer was heard to exclaim, ‘Ah, this ape is so like me, I can no longer eat him.’",
+        "H\nHow did an international team of chimpanzee experts perform the most comprehensive survey of the animals ever attempted? Although scientists have been delving into chimpanzee culture for several decades, sometimes their studies contained a fatal defect. So far, most attempts to document cultural diversity among chimpanzees have solely relied upon officially published accounts of the behaviours reported at each research site. But this approach probably neglects a good deal of cultural variation for three reasons.",
+        "I\nFirst, scientists normally don’t publish an extensive list of all the activities they do not see at a particular location. Yet this is the very information we need to know—which behaviours were and were not observed at each site. Second, there are many reports describing chimpanzee behaviours without expressing how common they are; without this information, we can’t determine whether a particular action was a transient phenomenon or a routine event that should be considered part of its culture. Finally, researchers’ description of potentially significant chimpanzee behaviours often lacks sufficient detail, which makes it difficult for scientists from other spots to report the presence or absence of the activities.",
+        "J\nTo tackle these problems, my colleague and I determined to take a new approach. We asked field researchers at each site to list all the behaviours which they suspected were local traditions. With this information, we assembled a comprehensive list of 65 candidates for cultural behaviours.",
+        "K\nThen we distributed our list to team leaders at each site. They consulted with their colleagues and classified each behaviour regarding its occurrence or absence in the chimpanzee community. The major brackets contained customary behaviour (occurs in most or all of the able-bodied members of at least one age or sex class, such as all adult males), habitual (less common than customary but occurs repeatedly in several individuals), present (observed at the site but not habitual), absent (never seen), and unknown."
+      ],
+      "start": 14,
+      "end": 27,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 14–18",
+          "instructions": [
+            "Reading Passage 2 has eleven paragraphs, A-K.",
+            "Which paragraph contains the following information?",
+            "Write the correct letter, A-K, in boxes 14-18 on your answer sheet."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "A"
+            },
+            {
+              "label": "B",
+              "text": "B"
+            },
+            {
+              "label": "C",
+              "text": "C"
+            },
+            {
+              "label": "D",
+              "text": "D"
+            },
+            {
+              "label": "E",
+              "text": "E"
+            },
+            {
+              "label": "F",
+              "text": "F"
+            },
+            {
+              "label": "G",
+              "text": "G"
+            },
+            {
+              "label": "H",
+              "text": "H"
+            },
+            {
+              "label": "I",
+              "text": "I"
+            },
+            {
+              "label": "J",
+              "text": "J"
+            },
+            {
+              "label": "K",
+              "text": "K"
+            }
+          ],
+          "questions": [
+            {
+              "number": 14,
+              "prompt": "an approach to research on chimpanzees culture that is only based on official sources"
+            },
+            {
+              "number": 15,
+              "prompt": "mention of a new system designed by two scientists who aim to solve the problem"
+            },
+            {
+              "number": 16,
+              "prompt": "reasons why previous research on ape culture is problematic"
+            },
+            {
+              "number": 17,
+              "prompt": "new classification of data observed or collected"
+            },
+            {
+              "number": 18,
+              "prompt": "an example showing that the tragic outcome of animals leads to an indication of a change in local people’s attitude in the preservation"
+            }
+          ]
+        },
+        {
+          "type": "truth",
+          "title": "Questions 19–23",
+          "instructions": [
+            "Do the following statements agree with the information given in Reading Passage 2?",
+            "In boxes 19-23 on your answer sheet, write"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 19,
+              "prompt": "The research found that scientists can make chimpanzees possess the same complex culture as human beings."
+            },
+            {
+              "number": 20,
+              "prompt": "Humans and apes lived together long time ago and shared most of their genetic substance."
+            },
+            {
+              "number": 21,
+              "prompt": "Even Toshisada Nishida and Jane Goodall’s beginning studies observed many surprising features of civilised behaviours among chimpanzees."
+            },
+            {
+              "number": 22,
+              "prompt": "Chimpanzees, like humans, have the ability to deliver cultural behaviours mostly from genetic inheritance."
+            },
+            {
+              "number": 23,
+              "prompt": "For decades, researchers have investigated chimpanzees by data obtained from both unobserved and observed approaches."
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 24–27",
+          "instructions": [
+            "Answer the questions below.",
+            "Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+            "Write your answers in boxes 24-27 on your answer sheet."
+          ],
+          "shortAnswers": true,
+          "paragraphs": [
+            "**24.** When did the unexpected discoveries of chimpanzee behaviour start?\n{{24}}",
+            "**25.** Which country is the researching site of Toshisada Nishida and Jane Goodall?\n{{25}}",
+            "**26.** What did the chimpanzee have to get used to in the initial study?\n{{26}}",
+            "**27.** What term can be used to depict that Jane Goodall found the chimpanzees in different regions used the different tools in 1973?\n{{27}}"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Texting the Television",
+      "paragraphs": [
+        "A\nOnce upon a time, if a television show with any self-respect wanted to target a young audience, it needed to have an e-mail address. However, in Europe’s TV shows, such addresses are gradually substituted by telephone numbers so that audiences can text the show from their mobile phones. Therefore, it comes as no shock that according to Gartner’s research, texting has recently surpassed Internet usage across Europe. Besides, among the many uses of text messaging, one of the fastest-growing uses is to interact with television. The statistics provided by Gartner can display that 20% of French teenagers, 11% in Britain and 9% in Germany have responded to TV programmes by sending a text message.",
+        "B\nThis phenomenon can be largely attributed to the rapid growth of reality TV shows such as ‘Big Brother’, where viewers get to decide the result through voting. The majority of reality shows are now open to text-message voting, and in some shows like the latest series of Norway’s ‘Big Brother’, most votes are collected in this manner. But TV-texting isn’t just about voting. News shows encourage viewers to, comment by texting messages; game shows enable the audience to be part of the competition; music shows answer requests by taking text messages; and broadcasters set up on-screen chatrooms. TV audiences tend to sit on the sofa with their mobile phones right by their sides, and ‘it’s a supernatural way to interact.’ says Adam Daum of Gartner.",
+        "C\nMobile service providers charge appreciable rates for messages to certain numbers, which is why TV-texting can bring in a lot of cash. Take the latest British series of ‘Big Brother’ as an example. It brought about 5.4m text-message votes and £1.35m ($2,1m) of profit. In Germany, MTV’s ‘Videoclash’ encourages the audience to vote for one of two rival videos, and induces up to 40,000 texts per hour, and each one of those texts costs €0.30 ($0.29), according to a consultancy based in Amsterdam. The Belgian quiz show ‘1 Against 100’ had an eight-round texting match on the side, which brought in 110,000 participants in one month, and each of them paid €0.50 for each question. In Spain, a cryptic-crossword clue invites the audience to send their answers through text at the expense of €1, so that they can be enrolled in the poll to win a €300 prize. Normally, 6,000 viewers would participate within one day.",
+        "At the moment, TV-related text messaging takes up a considerable proportion of mobile service providers’ data revenues. In July, Mm02 (a British operator) reported an unexpectedly satisfactory result, which could be attributed to the massive text waves created by ‘Big Brother’. Providers usually own 40%-50% of the profits from each text, and the rest is divided among the broadcaster, the programme producer and the company which supplies the message-processing technology. So far, revenues generated from text messages have been an indispensable part of the business model for various shows. Obviously, there has been grumbling that the providers take too much of the share. Endemol, the Netherlands-based production firm that is responsible for many reality TV, shows including ‘Big Brother’, has begun constructing its own database for mobile-phone users. It plans to set up a direct billing system with the users and bypass the providers.",
+        "D\nHow come the joining forces of television and text message turn out to be this successful? One crucial aspect is the emergence of one-of-a-kind four-, five- or six-digit numbers known as ‘short codes’. Every provider has control over its own short codes, but not until recently have they come to realise that it would make much more sense to work together to offer short codes compatible with all networks. The emergence of this universal short codes was a game-changer, because short codes are much easier to remember on the screen, according to Lars Becker of Flytxt, a mobile-marketing company.",
+        "E\nOperators’ co-operation on enlarging the market is by a larger trend, observes Katrina Bond of Analysys, a consultancy. When challenged by the dilemma between holding on tight to their margins and permitting the emergence of a new medium, no provider has ever chosen the latter WAP, a technology for mobile-phone users to read cut-down web pages on their screens, failed because of service providers’ reluctance towards revenue sharing with content providers. Now that they’ve learnt their lesson, they are altering the way of operating. Orange, a French operator, has come such a long way as to launch a rate card for sharing revenue of text messages, a new level of transparency that used to be unimaginable.",
+        "F\nAt a recent conference, Han Weegink of CMG, a company that offers the television market text-message infrastructure, pointed out that the television industry is changing in a subtle yet fundamental way. Instead of the traditional one-way presentation, more and more TV shows are now getting viewers’ reactions involved.",
+        "Certainly, engaging the audiences more has always been the promise of interactive TV. An interactive TV was originally designed to work with exquisite set-top devices, which could be directly plugged into the TV. However, as Mr Daum points out, that method was flawed in many ways. Developing and testing software for multiple and incompatible types of set-top box could be costly, not to mention that the 40% (or lower) market penetration is below that of mobile phones (around 85%). What’s more, it’s quicker to develop and set up apps for mobile phones. ‘You can approach the market quicker, and you don’t have to go through as many greedy middlemen,’ Mr Daum says. Providers of set-top box technology are now adding texting function to the design of their products.",
+        "G\nThe triumph of TV-related texting reminds everyone in the business of how easily a fancy technology can all of a sudden be replaced by a less complicated, lower-tech method. That being said, the old-fashioned approach to interactive TV is not necessarily over; at least it proves that strong demands for interactive services still exist. It appears that the viewers would sincerely like to do more than simply staring at the TV screen. After all, couch potatoes would love some thumb exercises."
+      ],
+      "start": 28,
+      "end": 40,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 28–32",
+          "instructions": [
+            "Reading Passage 3 has seven sections, A-G.",
+            "Choose the correct heading for sections B-E and G from the list of headings below.",
+            "Write the correct number, i-ix, inboxes 28-32 on your answer sheet."
+          ],
+          "options": [
+            {
+              "label": "i",
+              "text": "An application of short codes on the TV screen"
+            },
+            {
+              "label": "ii",
+              "text": "An overview of a fast-growing business"
+            },
+            {
+              "label": "iii",
+              "text": "The trend that profitable games are gaining more concerns"
+            },
+            {
+              "label": "iv",
+              "text": "Why Netherlands takes the leading role"
+            },
+            {
+              "label": "v",
+              "text": "A new perspective towards sharing the business opportunities"
+            },
+            {
+              "label": "vi",
+              "text": "Factors relevant to the rapid increase in interactive TV"
+            },
+            {
+              "label": "vii",
+              "text": "The revenue gains and bonus share"
+            },
+            {
+              "label": "viii",
+              "text": "The possibility of the complex technology replaced by the simpler ones"
+            },
+            {
+              "label": "ix",
+              "text": "The mind change of set-top box providers"
+            }
+          ],
+          "questions": [
+            {
+              "number": 28,
+              "prompt": "Section B"
+            },
+            {
+              "number": 29,
+              "prompt": "Section C"
+            },
+            {
+              "number": 30,
+              "prompt": "Section D"
+            },
+            {
+              "number": 31,
+              "prompt": "Section E"
+            },
+            {
+              "number": 32,
+              "prompt": "Section G"
+            }
+          ],
+          "optionTitle": "List of Headings",
+          "examples": [
+            "Section A — ii",
+            "Section F — ix"
+          ]
+        },
+        {
+          "type": "choice",
+          "title": "Questions 33–35",
+          "instructions": [
+            "Choose the correct answer."
+          ],
+          "questions": [
+            {
+              "number": 33,
+              "prompt": "In Europe, a research hints that young audiences spend more money on",
+              "options": [
+                "thumbing text messages.",
+                "writing e-mails.",
+                "watching TV programmes.",
+                "talking through mobile phones."
+              ]
+            },
+            {
+              "number": 34,
+              "prompt": "What would happen when reality TV shows invite the audience to vote?",
+              "options": [
+                "Viewers would get attractive bonus.",
+                "They would be part of the competition.",
+                "Their questions would be replied.",
+                "Their participation could change the result."
+              ]
+            },
+            {
+              "number": 35,
+              "prompt": "Interactive TV will change from concentrating on set-top devices to",
+              "options": [
+                "increasing their share in the market.",
+                "setting up a modified set-top box.",
+                "building an embedded message platform.",
+                "marching into the European market."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "match",
+          "title": "Questions 36–40",
+          "instructions": [
+            "Look at the following descriptions (Questions 36-40) and the list of companies below.",
+            "Match each description with the correct company, A-F.",
+            "Write the correct letter, A-F, in boxes 36-40 on your answer sheet."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "Flytxt"
+            },
+            {
+              "label": "B",
+              "text": "Analysys"
+            },
+            {
+              "label": "C",
+              "text": "Endemol"
+            },
+            {
+              "label": "D",
+              "text": "CMG"
+            },
+            {
+              "label": "E",
+              "text": "Mm02"
+            },
+            {
+              "label": "F",
+              "text": "Gartner"
+            }
+          ],
+          "questions": [
+            {
+              "number": 36,
+              "prompt": "offered mobile phone message technology"
+            },
+            {
+              "number": 37,
+              "prompt": "earned considerable amount of money through a famous programme"
+            },
+            {
+              "number": 38,
+              "prompt": "expressed the view that short codes are convenient to remember when turning up"
+            },
+            {
+              "number": 39,
+              "prompt": "built their own mobile phone operating applications"
+            },
+            {
+              "number": 40,
+              "prompt": "indicated that it is easy for people to send message in an interactive TV"
+            }
+          ],
+          "optionTitle": "List of Companies"
+        }
+      ]
+    }
+  ]
+}

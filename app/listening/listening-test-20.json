@@ -1,0 +1,248 @@
+{
+  "number": 20,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–10",
+        "type": "fill",
+        "paragraphs": [
+          "Description of main item: black with thin {{1}} stripes",
+          "Other items: a set of {{2}} keys\nsome documents\na {{3}} in a box\na blue {{4}}",
+          "**Journey details**",
+          "Date and time: 2.00–2.30 pm on {{5}}",
+          "Basic route: caller travelled from the {{6}} to Highbury",
+          "Mode of travel: caller thinks she left the suitcase in a {{7}}",
+          "**Personal details**",
+          "Name: Lisa {{8}}",
+          "Address: 15A {{9}} Rd, Highbury",
+          "Phone number: {{10}}"
+        ],
+        "limit": "ONE WORD AND/OR A NUMBER",
+        "heading": "City Transport Lost Property Enquiry",
+        "box": true,
+        "instruction": "Complete the form below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–15",
+        "type": "map",
+        "image": "/images/listening-test-20-map.png",
+        "viewBox": "60 120 395 235",
+        "imageWidth": 516,
+        "imageHeight": 551,
+        "alt": "Town map with locations A–H around Mountain Road, Pine Street, Willow Lane, town hall, pond, old railway station, ski passes and tourist information centre.",
+        "questions": [
+          {
+            "number": 11,
+            "prompt": "supermarket"
+          },
+          {
+            "number": 12,
+            "prompt": "climbing supplies store"
+          },
+          {
+            "number": 13,
+            "prompt": "museum"
+          },
+          {
+            "number": 14,
+            "prompt": "bike hire"
+          },
+          {
+            "number": 15,
+            "prompt": "café"
+          }
+        ],
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ]
+      },
+      {
+        "title": "Questions 16–20",
+        "type": "match",
+        "questions": [
+          {
+            "number": 16,
+            "prompt": "North Point"
+          },
+          {
+            "number": 17,
+            "prompt": "Silver River"
+          },
+          {
+            "number": 18,
+            "prompt": "Valley Crossing"
+          },
+          {
+            "number": 19,
+            "prompt": "Stonebridge"
+          },
+          {
+            "number": 20,
+            "prompt": "Henderson Ridge"
+          }
+        ],
+        "options": [
+          {
+            "label": "A",
+            "text": "It is possible to get lost here."
+          },
+          {
+            "label": "B",
+            "text": "It only offers basic accommodation."
+          },
+          {
+            "label": "C",
+            "text": "It requires physical strength."
+          }
+        ],
+        "heading": "Tracks",
+        "instruction": "What comment does the speaker make about each of the following tracks? Choose the correct letter, A, B or C."
+      }
+    ],
+    [
+      {
+        "title": "Questions 21–25",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 21,
+            "prompt": "Why has James chosen to do a case study on the company Furniture Rossi?",
+            "options": [
+              "It has enjoyed global success.",
+              "It is still in a developmental phase.",
+              "It is an example of a foreign company being rebranded for Australia."
+            ]
+          },
+          {
+            "number": 22,
+            "prompt": "According to James, why did Luca Rossi start a furniture company?",
+            "options": [
+              "Furniture-making was already a family occupation.",
+              "Rossi saw a need for hand-crafted furniture.",
+              "The work Rossi had done previously was unrewarding."
+            ]
+          },
+          {
+            "number": 23,
+            "prompt": "What gave Furniture Rossi a competitive advantage over other furniture companies?",
+            "options": [
+              "its staff",
+              "its lower prices",
+              "its locally sourced products"
+            ]
+          },
+          {
+            "number": 24,
+            "prompt": "What does the tutor recommend James does when writing the second draft of his case study?",
+            "options": [
+              "provide more detailed references",
+              "check for written accuracy",
+              "add his own views"
+            ]
+          },
+          {
+            "number": 25,
+            "prompt": "What do the tutor and James agree was wrong with James’ last presentation?",
+            "options": [
+              "It was too short.",
+              "It focused too much on statistics.",
+              "There was not enough interaction with the audience."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Questions 26–30",
+        "type": "selectflow",
+        "heading": "History of Furniture Rossi",
+        "options": [
+          {
+            "label": "A",
+            "text": "website"
+          },
+          {
+            "label": "B",
+            "text": "locations"
+          },
+          {
+            "label": "C",
+            "text": "designs"
+          },
+          {
+            "label": "D",
+            "text": "TV advertising campaigns"
+          },
+          {
+            "label": "E",
+            "text": "quality"
+          },
+          {
+            "label": "F",
+            "text": "values"
+          },
+          {
+            "label": "G",
+            "text": "software programs"
+          }
+        ],
+        "paragraphs": [
+          "The product {{26}} led to a wider customer base.",
+          "Greater customer demand meant other {{27}} were needed.",
+          "Better {{28}} increased overall profitability.",
+          "Changes to the {{29}} were brought on by customer complaints.",
+          "Furniture Rossi wants to make people more aware of its {{30}}."
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–36",
+        "type": "fill",
+        "paragraphs": [
+          "**Why rock art is important to researchers**",
+          "It provides evidence about",
+          "evolution",
+          "{{31}}",
+          "**Global similarities in rock art**",
+          "humans often had large {{32}}",
+          "animals were common, but a {{33}} was always drawn from the side or from above",
+          "unlikely that contact through {{34}} resulted in similar artistic styles",
+          "**Why our ancestors produced rock art**",
+          "Research suggests rock art was produced",
+          "firstly for reasons of {{35}}",
+          "later for social, spiritual and {{36}} reasons"
+        ],
+        "limit": "ONE WORD ONLY",
+        "heading": "Rock art",
+        "box": true,
+        "instruction": "Complete the notes below."
+      },
+      {
+        "title": "Questions 37–40",
+        "type": "fill",
+        "paragraphs": [
+          "**What TWO images drawn by Aboriginal people show their contact with Europeans?**",
+          "{{37}}",
+          "{{38}}",
+          "**Which human activities does the lecturer say are the main threats to Aboriginal rock art?**",
+          "{{39}}",
+          "vandalism",
+          "{{40}}"
+        ],
+        "limit": "ONE WORD ONLY",
+        "heading": null,
+        "box": false,
+        "instruction": "Answer the questions below."
+      }
+    ]
+  ]
+}

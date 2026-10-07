@@ -1,0 +1,363 @@
+{
+  "number": 18,
+  "passages": [
+    {
+      "title": "Crop Dusting in the United States",
+      "paragraphs": [
+        "A\nCrop dusting is the process of dropping fertiliser or insecticide on farm fields. The first agricultural aircraft to attempt something of this nature was not actually a plane at all, but a balloon. John Chayton used the device to spread seeds over a valley floor in New Zealand which had been swamped in 1906. In 1921, the US Agriculture Department and the Army Signal Corps joined forces to develop modern crop dusting. On 3 August of that year, John Macready piloted a modified Curtiss JN-4 Jenny to spread lead arsenate to eliminate Catalpa Sphinx caterpillars near Troy, Ohio.",
+        "B\nOriginally, crop duster planes used dry chemicals in order to treat crops, which is how they earned their name. When most people think of crop dusting, they picture a grizzled old man in an ancient biplane, flying low over a field. He appears suddenly on the horizon and disappears almost before you have the chance to register him. Because the expression “crop dusting” automatically brings to mind this image, today’s pilots generally prefer the term “aerial application\". Today’s crop dusting business is completely different, with million-dollar turbine-engine planes, intricate GPS systems for planning the low flights and triggering the sprayers, and well-trained, experienced pilots.",
+        "C\nConcerns have been voiced over the years about the chemicals sprayed by crop dusters. Some chemicals are detrimental to people’s health, especially if they have respiratory problems, and there have been accusations of gardens being destroyed by dispersed chemicals. In the 1970s particularly, environmental concerns about the use of agricultural planes to spread pesticides led to more stringent regulations regarding the chemicals that could be used via aerial application. Agricultural planes and various techniques used by pilots have been improved significantly over the past few decades and present-day aerial application is considered to be safe for both people and the environment.",
+        "D\nAerial application is often the only, or most economical, method for timely pesticide application. It allows large and often remote areas to be treated far faster than by any other form of application. In addition, when wet soil conditions, rolling terrain or dense plant foliage prevent other methods of treating an area, aerial application may be the only remaining method of pest treatment. This is especially important, as some pests and diseases can cause significant damage in a short period and so farmers rely on agricultural planes to control such problems quickly. Aerial application is conducive to higher crop yields as, by treating from above it and not within it, the method is non-disruptive to the crop. Furthermore, this method of application does not cause soil compaction, hence preventing soil runoff. Greater harvest yields in turn result in less land being used for agricultural production. This enables the preservation of wetland and forest eco-systems that are used by threatened and endangered species.",
+        "E\nEven though they are known as crop dusters, agricultural planes also perform many other functions to assist farmers. Although most crop dusters are used to spray crops with pesticide, planes and helicopters are also used to seed rice and wheat, defoliate cotton prior to harvest, fight forest and grassland fires, protect forests, drop food for fish farms, melt snow and control mosquitoes that threaten public health. All of these activities are in addition to the usual function of applying herbicides, insecticides and fertilisers to fruit, vegetable and feed grain crops.",
+        "F\nAerial application is one of the most demanding career choices for a flier, next to flying a jet fighter. The crop dusting planes usually fly at very low altitudes and must be manoeuvred around obstacles, as they attempt to keep seeds and chemicals contained to the fields and away from homes or roadways. The pilot must have better than average focus for the job in hand and faster than average eyes on the instruments. As the pilot descends to spray, he will be following GPS guidance instruments for accurate positioning in the field. At the same time, he will need to press a smoker button to check the wind, drop a flag to mark his place and start the spray with his left hand. During all this, as the pilot will have only a limited amount of space between him and the ground, he will need to rise and descend gently to follow the ground and watch for obstacles. All this is done at 140 miles per hour.",
+        "G\nAt first, the planes used for aerial application were war surplus. One of the most familiar is the Second World War trainer, the open-cockpit Stearman biplane. Stearmans were plentiful and inexpensive, which gave many veterans an opportunity to get into the business. But by the 1950s, the aerial application industry began to develop planes made especially for this purpose. Today, the newest and biggest planes carry as much as 800 gallons in the hopper, are powered by turboprop engines and can cost $1 million or more.",
+        "H\nClearly, an industry of this scope requires regulation, and the body that is responsible for this in the United States is the National Agriculture Aviation Association (NAAA). According to their records, aerial application operations are located in 44 states all over the country. There are approximately 1,350 businesses of this type in the United States, 94 per cent of whose owners are also pilots. An additional 1,330 pilots fly crop-dusting planes, but do not own an aerial application business."
+      ],
+      "start": 1,
+      "end": 13,
+      "groups": [
+        {
+          "title": "Questions 1–7",
+          "instructions": [
+            "Choose the correct heading for each paragraph."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Paragraph  B"
+            },
+            {
+              "number": 2,
+              "prompt": "Paragraph  C"
+            },
+            {
+              "number": 3,
+              "prompt": "Paragraph  D"
+            },
+            {
+              "number": 4,
+              "prompt": "Paragraph  E"
+            },
+            {
+              "number": 5,
+              "prompt": "Paragraph  F"
+            },
+            {
+              "number": 6,
+              "prompt": "Paragraph  G"
+            },
+            {
+              "number": 7,
+              "prompt": "Paragraph  H"
+            }
+          ],
+          "options": [
+            {
+              "label": "i",
+              "text": "Why Do We Need Crop Dusters?"
+            },
+            {
+              "label": "ii",
+              "text": "Increasing Costs"
+            },
+            {
+              "label": "iii",
+              "text": "A Change in Terminology"
+            },
+            {
+              "label": "iv",
+              "text": "The Early Days"
+            },
+            {
+              "label": "v",
+              "text": "Plane Development"
+            },
+            {
+              "label": "vi",
+              "text": "Controversy around Crop Dusting"
+            },
+            {
+              "label": "vii",
+              "text": "Pilot Skills"
+            },
+            {
+              "label": "viii",
+              "text": "An Alternative to Crop Dusters"
+            },
+            {
+              "label": "ix",
+              "text": "Overseeing the Practice"
+            },
+            {
+              "label": "x",
+              "text": "Various Roles of Crop Dusters"
+            }
+          ],
+          "optionTitle": "List of Headings",
+          "examples": [
+            "Paragraph A: **iv**"
+          ]
+        },
+        {
+          "title": "Questions 8–10",
+          "instructions": [
+            "Complete the sentences below.",
+            "Write **NO MORE THAN TWO WORDS** from the passage for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "**8.** What type of aircraft was the first to be used for agricultural purposes?\n{{8}}",
+            "**9.** What term do today's pilots like better than 'crop dusting'?\n{{9}}",
+            "**10.** Which type of medical condition is said to be worsened by crop-dusting chemicals?\n{{10}}"
+          ],
+          "shortAnswers": true
+        },
+        {
+          "title": "Questions 11–13",
+          "instructions": [
+            "Choose the correct answer."
+          ],
+          "type": "choice",
+          "questions": [
+            {
+              "number": 11,
+              "prompt": "Which of the following is NOT stated as a reason for using crop dusters?",
+              "options": [
+                "Financial advantages",
+                "Ability to apply environmentally friendly products",
+                "Speed of application",
+                "Lack of effect on final harvest"
+              ]
+            },
+            {
+              "number": 12,
+              "prompt": "Which of the following is NOT stated as a function of crop-duster planes?",
+              "options": [
+                "Dropping seeds",
+                "Fighting fires",
+                "Feeding fish",
+                "Mapping"
+              ]
+            },
+            {
+              "number": 13,
+              "prompt": "Which of the following is given as a key characteristic for a crop-duster pilot?",
+              "options": [
+                "Excellent concentration skills",
+                "20/20 vision",
+                "Excellent GPS skills",
+                "Being comfortable in confined spaces"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Today's Jellyfish Problem",
+      "paragraphs": [
+        "Jellyfish are marine animals with a gelatinous body (hence the name) and long trailing tentacles. Scientists have found that these animals are surprisingly resilient in the face of changing oceans, and this is producing a variation in marine ecology that is a potential disaster for other fish populations. In some cases, according to some recent research, these developments have been so significant that global jellyfish populations are literally inverting marine ecology from the Black Sea to Southeast Asia.",
+        "Jellyfish tend to congregate in large groups called \"swarms\" or \"blooms\". Some gigantic swarms have recently been found in places a long way from their traditional habitats. Swarms of Mediterranean jellyfish, for example, have been sighted in the North Atlantic, where once they would have died because of the difference in environment. Now warming ocean currents are making this difference less significant. Because jellyfish are predators of small fish, the movement of large swarms potentially threatens the spawning populations of other fish which were not previously subject to this predation.",
+        "The increase in the number of jellyfish can be attributed to a variety of causes. Overfishing is the key one, creating more opportunity for jellyfish to feed and breed. The overfishing of salmon in particular removes one of the jellyfish’s few predators. Without a curb on their population, growing hordes of jellyfish start eating the eggs of smaller fish, as well as their food supply. They also wreak havoc on the food chain when they are introduced to new ecosystems, usually via ballast water that shipping tankers take on and release as a counterbalance to cargo.",
+        "Another contributor to the jellyfish boom is a process known as “eutrophication\". This occurs when sewage, fertilisers and pesticides, and other substances rich in phosphorus and nitrogen, are washed into the ocean by rivers. These chemicals affect plankton, the tiny aquatic plants that constitute the food source for vast numbers of sea creatures. Normally, plankton live on nutrients from chemicals released by the sea bed, but their populations explode when feeding on the nitrogen and phosphorous the pollution brings. When these small organisms die, they absorb oxygen from the sea, creating “dead zones”. Since most marine creatures can’t survive in areas with little oxygen, their numbers fall. Jellyfish, however, are an exception as they need very little oxygen to survive. So as the numbers of other animals dwindle, jellyfish colonies expand.",
+        "Other human activities help jellyfish to reproduce. The polyp sacks that produce baby jellyfish are key to their ability to bloom in such an incredibly rapid fashion. A few centuries ago, the hard surfaces available for polyp sacks to cling on to included mainly seabed rocks and oyster shells; those polyp sacks that could not find such surfaces were unable to reproduce. Thanks to the proliferation of human structures, the world today offers many more hard surfaces. Piers, drilling platforms, offshore wind turbines and boats are just a few of the new surfaces polyps can attach themselves to.",
+        "One of the key effects of the increase in jellyfish numbers in the Mediterranean is their influence on fish stocks there. This was demonstrated in the early 1980s when Mnemiopsis leidyi, a jellyfish species that normally resides in the Atlantic, was accidentally introduced into the Black Sea and had such an overwhelming impact on fish populations there that fisheries almost collapsed. This shows that, although normally only the impact of human fishing activities is taken into account when setting sustainable fishing limits, jellyfish numbers should be factored in as well.",
+        "The surge in the number of jellyfish threatens not only the biodiversity of one of the world’s most overfished seas, but also the health of tens of thousands of summer tourists. There are now Mediterranean beaches where swimming without the danger of being stung is feasible for only 1 week in the summer. Throughout the rest of the season, tourists have to find other methods of keeping cool. This will affect the numbers of tourists in following years, as they avoid resorts where swimming can result in very painful stings, and in turn will have a negative impact on the revenue earned from tourism.",
+        "The surge in jellyfish numbers can have other unexpected effects. Recently, the world’s largest boiling water nuclear reactor, Sweden’s Oskarshamn plant, was paralysed after a bloom of moon jellyfish clogged the plant’s cooling systems and forced it to shut down. Jellyfish have also been responsible for nuclear shut-downs due to cooling system problems in California, Florida, Israel, Scotland, India and Japan. In 1999, a jellyfish bloom clogged the cooling system of a major coal-fired plant in the Philippines, leaving 40 million people without power. And in 2006, jellyfish in Brisbane, Australia, afflicted a massive nuclear-powered US aircraft carrier with an acute case of fouling, clogging its cooling systems and forcing it to leave the harbour.",
+        "Scientists have not yet come up with a foolproof way to tackle the problem of burgeoning jellyfish populations. One possible solution that is being explored is to create robots that can seek out swarms of jellyfish using a camera and GPS. Once the jellyfish are located, the robots can set about shredding the jellies with an underwater propeller. In spite of the developers’ enthusiasm, it seems that this will not prove to be a realistic and effective long-term solution as the number of robots needed to cope with the jellyfish problem would not make the project viable."
+      ],
+      "start": 14,
+      "end": 26,
+      "groups": [
+        {
+          "title": "Questions 14–20",
+          "instructions": [],
+          "type": "truth",
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 14,
+              "prompt": "One reason jellyfish are causing a change in marine ecology is their ability to adapt easily to new environments."
+            },
+            {
+              "number": 15,
+              "prompt": "Jellyfish feed on the same food as many smaller fish."
+            },
+            {
+              "number": 16,
+              "prompt": "Substances negatively affecting plankton ultimately lead to the creation of 'dead zones'."
+            },
+            {
+              "number": 17,
+              "prompt": "A lack of oxygen in the sea is bad for all sea creatures."
+            },
+            {
+              "number": 18,
+              "prompt": "The Mnemiopsis leidyi has been observed to have a detrimental effect on fish populations in the Atlantic."
+            },
+            {
+              "number": 19,
+              "prompt": "The Mediterranean is not yet affected by increases in jellyfish numbers."
+            },
+            {
+              "number": 20,
+              "prompt": "A record number of tourists reported jellyfish stings last year."
+            }
+          ]
+        },
+        {
+          "title": "Questions 21–24",
+          "instructions": [
+            "Complete the sentences below.",
+            "Write **NO MORE THAN THREE WORDS** from the passage for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "Nowadays the {{21}} that jellyfish reproduce in have more man-made hard surfaces to attach themselves to in order to reproduce.",
+            "The {{22}} fishing industry was nearly destroyed by the accidental introduction of a new jellyfish species.",
+            "As well as human fishing activity, the numbers of jellyfish in an ecosystem should be considered when calculating {{23}}",
+            "Countries whose main {{24}} is from tourism are likely to suffer if the jellyfish problem persists from one year to the next."
+          ]
+        },
+        {
+          "title": "Questions 25–26",
+          "instructions": [
+            "Complete the sentences below.",
+            "Write **NO MORE THAN TWO WORDS** from the passage for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "**Power problems**",
+            "Jelly fish blocking {{25}} have caused nuclear shut-downs in energy plants in Sweden, California, Florida, Israel, Scotland, India and Japan, a conventional power station in the Philippines, and a nuclear-powered US aircraft carrier.",
+            "**A solution?**",
+            "A South Korean team has been working on robots to travel the seas, locate jellyfish and destroy them with an {{26}} probably not a long-term answer."
+          ],
+          "heading": "Notes on Today's Jellyfish Problem"
+        }
+      ]
+    },
+    {
+      "title": "Instant Coffee",
+      "paragraphs": [
+        "Instant coffee has been widely used for decades because of its convenience. During the height of its popularity in the 1970s, nearly a third of the roasted coffee imported into the United States was converted into an instant product, resulting in annual sales of more than $300 million. Today, about 15 per cent of the coffee consumed in the United States is prepared by mixing instant granules with hot water, either at home, in offices, or in vending machines. Over time, the development of good-quality instant products has helped popularise coffee in cultures that historically drank tea.",
+        "Since its invention, researchers have sought to improve instant coffee in a variety of ways. For example, some of the early powdered versions did not dissolve easily in water, leaving clumps of damp powder floating in the cup. Coffee aroma dissipates easily, so manufacturers have now developed artificial treatments that will make a jar of instant coffee smell like freshly ground coffee when it is opened. Some modern manufacturing processes also make instant coffee granules that look more like ground coffee. Finally, another major goal has been to produce an instant coffee that tastes as much as possible like the freshly brewed beverage.",
+        "Of the 50 known species of coffee bean, two dominate the beverage coffee industry. Coffee Arabica varieties, grown primarily in Latin America, India and Indonesia, are relatively mild in flavour and, consequently, bring a higher price. They are also relatively expensive to harvest, since individual coffee cherries must be hand picked at their peak of ripeness. Coffee Robusta varieties, grown mainly in Africa, India and Indonesia, have a harsher flavour, but they are cheaper to grow since they can be harvested over a range of ripeness and are more resistant to diseases and insects. Because of their more attractive price, the Robustas are mostly used in the manufacture of instant coffees.",
+        "Instant coffee was invented in 1906 by George C. Washington, an Englishman living in Guatemala and a chemist by trade. An avid coffee-drinker, he noticed a powdery build-up on the spout of his favourite silver coffee pot. That prompted his curiosity and further experimentation followed. He eventually produced a dried coffee crystal much like the one still marketed today.",
+        "The early part of the instant coffee process is the same for all processes. Instant coffee is made from coffee beans that have been roasted and ground. The ground beans are then treated with hot water to recover the coffee flavour and aroma. This part of the process is similar to using a domestic coffee percolator. The coffee extract is then dried in one of two ways - freeze-drying or spray-drying.",
+        "The freeze-drying method preserves more of the original coffee flavour, but it is a more complex and therefore more expensive procedure. First, the coffee is allowed to sit so that the water evaporates naturally, leaving a concentrated coffee solution. This concentrate is then frozen to around minus 40 degrees Celsius. The remaining water freezes into ice crystals. A process called \"sublimation\" (similar to evaporation) is used to remove the ice, and dry grains of coffee are left. The quality of the aroma and flavour are protected by the low temperature and gentle drying conditions.",
+        "The second method is spray-drying. The water is again allowed to evaporate, forming a concentrate. This is sprayed from a high tower in a large hot-air chamber. As the droplets fall, the remaining water evaporates. Dry coffee crystals then fall to the bottom of the chamber. One drawback with this method is that the high temperatures involved affect the oils in the coffee and therefore more flavour is lost.",
+        "Both processes run the risk of losing compounds that contribute to the appeal of the drink. For instance, caffeine sublimates (goes from a solid to a gaseous state without passing through an intermediate liquid state) at 180 degrees Celsius at atmospheric pressure. This high temperature in spray-drying chambers may affect instant coffee’s caffeine content and the content of organic compounds that provide taste and aroma. Whichever process is used, the final product is usually packaged in low oxygen conditions, because the presence of oxygen will cause further loss of aroma and flavour. This intensive processing means instant coffee contains little oxygen and has a water moisture content of only 1 - 4 per cent, much lower than that which microbes need to grow, allowing the product to last for more than 2 years without spoiling.",
+        "Today, most major manufacturers still use a freeze-drying process to make their instant coffees but, because of its higher costs, some instant coffee manufacturers do not use it. Although the price of any retail instant coffee is determined largely by costs related to distribution, freeze-dried instant coffee production costs are 35 per cent higher than the costs of production by spray-drying. Another reason the freeze-drying process is more expensive is because making the same amount of instant coffee by freeze-drying methods requires larger quantities of better-quality beans than does the spray-drying process."
+      ],
+      "start": 27,
+      "end": 40,
+      "groups": [
+        {
+          "title": "Questions 27–32",
+          "instructions": [
+            "Match each statement with the correct option."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 27,
+              "prompt": "This instant coffee process usually uses the Robusta variety of coffee bean."
+            },
+            {
+              "number": 28,
+              "prompt": "The water treatment part of this instant coffee process is similar to using a domestic coffee percolator."
+            },
+            {
+              "number": 29,
+              "prompt": "This process results in coffee which is not as dark in colour as fresh coffee."
+            },
+            {
+              "number": 30,
+              "prompt": "This instant coffee process impacts negatively on the coffee's natural oils."
+            },
+            {
+              "number": 31,
+              "prompt": "This instant coffee process creates an instant coffee that does not go off for at least 2 years."
+            },
+            {
+              "number": 32,
+              "prompt": "This instant coffee process is used by most producers."
+            }
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "The statement refers to the freeze-dry coffee process."
+            },
+            {
+              "label": "B",
+              "text": "The statement refers to the spray-dry coffee process."
+            },
+            {
+              "label": "C",
+              "text": "The statement refers to both the freeze-dry and the spray-dry coffee processes."
+            },
+            {
+              "label": "D",
+              "text": "The statement refers to neither the freeze-dry nor the spray-dry coffee process."
+            }
+          ],
+          "optionTitle": "List of Alternatives"
+        },
+        {
+          "title": "Questions 33–37",
+          "instructions": [],
+          "type": "truth",
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 33,
+              "prompt": "Just over a quarter of current US coffee consumption is instant."
+            },
+            {
+              "number": 34,
+              "prompt": "Some instant coffee producers add synthetic aromas to instant coffee so that a jar of it smells like a freshly ground cup of the real thing."
+            },
+            {
+              "number": 35,
+              "prompt": "The spray-drying instant coffee process is the one most popular with most instant coffee producers."
+            },
+            {
+              "number": 36,
+              "prompt": "The first creator of instant coffee made a lot of money from his invention."
+            },
+            {
+              "number": 37,
+              "prompt": "The spray-drying instant coffee process is cheaper than the freeze-drying instant coffee process."
+            }
+          ]
+        },
+        {
+          "title": "Questions 38–40",
+          "instructions": [
+            "Complete the flow chart.",
+            "Write **NO MORE THAN TWO WORDS** from the passage for each answer."
+          ],
+          "type": "flow",
+          "paragraphs": [
+            "Coffee beans are roasted and {{38}}",
+            "Ground beans are treated with hot water to extract coffee flavour and aroma",
+            "Coffee-laden water left standing - water evaporates and leaves a {{39}} is sprayed from high tower in large hot chamber which",
+            "Remaining water evaporates",
+            "Coffee forms {{40}} and drops to the lower part of the chamber then the product is packaged"
+          ],
+          "heading": "The Spray-Dry Instant Coffee Process"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "number": 16,
+  "passages": [
+    {
+      "title": "Diabetes",
+      "paragraphs": [
+        "Here are some facts that you probably didn't know about diabetes. It is the world’s fastest-growing disease. In 2013, China had the highest number of diabetes sufferers (over 98 million), with India in second place and the United States in third position. It is Australia’s sixth leading cause of death. Over 1 million Australians have it, though 50 per cent of those are as yet unaware of the fact. So much for the statistics; what exactly is diabetes?",
+        "Diabetes is the name given to different conditions in which there is too much glucose in the blood. Here’s what happens: the body needs glucose as its main source of fuel or energy and, through digestion, extracts it from foods that contain carbohydrate. These include starchy vegetables (like potatoes or corn) and cereal foods (like bread, pasta and rice) as well as fruit and milk. Glucose is carried around the body in the blood to all the cells. In order for glucose to be converted into energy inside cells, insulin must also be present in the blood. Insulin is a hormone made by the pancreas, a gland sitting just below the stomach. It acts like a \"key\" to open cell walls and allow glucose to enter the cells. If insulin is not present, glucose cannot enter cells and remains inside the blood, a state known as \"hyperglycaemia\" (high blood sugar). Insulin is also important when people consume more glucose than the body can use immediately. When this occurs, insulin enables the body to convert the extra glucose into a different substance that can be stored, in the liver or muscle tissues, for use later. In diabetes, the pancreas either cannot make insulin or produces it in insufficient quantities. Because of this, glucose builds up in the blood, causing hyperglycaemia, which in turn produces unpleasant symptoms and can, in the long term, result in severe health problems.",
+        "People refer to the disease as diabetes, but there are actually two distinctive types of the disease. Type 1 diabetes is a condition characterised by high blood glucose levels caused by a total lack of insulin. It occurs when the body’s immune system attacks the insulin-producing beta cells in the pancreas and destroys them. The pancreas then produces little or no insulin. This form develops most often in young people but can appear in adults. Type 2 diabetes is the most common form of diabetes. In this version, either the body does not produce enough insulin or cells ignore the signals given by the insulin that would normally \"unlock the door\" and allow glucose into the cells for transformation into energy.",
+        "The diagnosis of diabetes often depends on what type the patient is suffering from. In type 1 diabetes, symptoms are usually sudden and sometimes even life-threatening - severe imbalances in blood sugar levels can lead to comas - and therefore it is mostly diagnosed quite quickly. In type 2 diabetes, many people have no symptoms at all, while other signs can go unnoticed, being seen as part of \"getting older\". Therefore, by the time symptoms are noticed, the blood glucose level for many people can be very high. Common symptoms include being more thirsty than usual, passing more urine, feeling lethargic or always feeling hungry. Other sufferers complain of bad breath, blurred vision, unexplained weight change, mood swings, headaches, dizziness and leg cramps.",
+        "At present there is no cure for diabetes, but there is a huge amount of research being done to find a cure and on ways of providing superior management techniques and products until a cure is found. Whether it is type 1 or type 2 diabetes, the aim of any diabetes treatment is to get a patient's blood glucose levels as close to the non-diabetic range as often as possible. For people with type 1 diabetes, this will mean regular insulin injections as well as leading a healthy lifestyle. For people with type 2 diabetes, healthy eating and regular physical activity may be all that are required at first; sometimes tablets and / or insulin may be needed later on. As blood glucose levels need to be kept as close to the non-diabetic range as possible, frequent self-testing is a good idea. This helps prevent the short-term effects of very low or very high blood glucose levels as well as the possible long-term problems. If someone is dependent on insulin, it has to be injected into the body. Insulin cannot be taken as a pill. The insulin would be broken down during digestion just like the protein in food.",
+        "Diabetes can cause serious complications for patients. Short-term problems are similar to the symptoms, but long-term high blood sugar levels can lead to heart attacks, strokes, kidney failure, amputations and blindness. Patients whose blood pressure and cholesterol levels are outside the recommended ranges face even higher risks of heart attacks and strokes; in fact two out of three people with diabetes eventually die of these complications. Adults aged 18 - 44 who get type 2 diabetes are 14 times more likely to suffer a heart attack, and are up to 30 times more likely to have a stroke than their peers without diabetes. Young women account for almost all the increase in heart attack risk, while young men are twice as likely to suffer a stroke as young women. This means that huge numbers of people are going to get heart disease, heart attacks and strokes years, sometimes even decades, before they should."
+      ],
+      "start": 1,
+      "end": 14,
+      "groups": [
+        {
+          "title": "Questions 1–7",
+          "instructions": [],
+          "type": "truth",
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Consuming glucose is bad for the body."
+            },
+            {
+              "number": 2,
+              "prompt": "Everyone who suffers from diabetes is unable to produce insulin."
+            },
+            {
+              "number": 3,
+              "prompt": "It is possible for adults to get Type 1 diabetes, though it is more common for it to start in childhood."
+            },
+            {
+              "number": 4,
+              "prompt": "Scientists are hopeful that a cure will be discovered in the future."
+            },
+            {
+              "number": 5,
+              "prompt": "Sufferers who need insulin should have multiple daily injections."
+            },
+            {
+              "number": 6,
+              "prompt": "Frequent medical check-ups can drastically reduce the chances of suffering from problems related to diabetes."
+            },
+            {
+              "number": 7,
+              "prompt": "For many diabetes sufferers, higher than advised blood pressure and cholesterol levels can be fatal."
+            }
+          ]
+        },
+        {
+          "title": "Questions 8–11",
+          "instructions": [
+            "Complete each sentence with the correct ending, A–H."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 8,
+              "prompt": "Insulin is a hormone that..."
+            },
+            {
+              "number": 9,
+              "prompt": "Type 1 diabetes…"
+            },
+            {
+              "number": 10,
+              "prompt": "Some people who are diabetic..."
+            },
+            {
+              "number": 11,
+              "prompt": "Non-severe type 2 diabetes…"
+            }
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "…can be controlled by adopting a healthy lifestyle."
+            },
+            {
+              "label": "B",
+              "text": "…never suffer any ill effects."
+            },
+            {
+              "label": "C",
+              "text": "... generally affects young people."
+            },
+            {
+              "label": "D",
+              "text": "…is more common in women."
+            },
+            {
+              "label": "E",
+              "text": "…allows glucose to be absorbed by cells."
+            },
+            {
+              "label": "F",
+              "text": "…can be diagnosed by tests done at home."
+            },
+            {
+              "label": "G",
+              "text": "…do not realise the fact."
+            },
+            {
+              "label": "H",
+              "text": "…is stored in the liver."
+            }
+          ]
+        },
+        {
+          "title": "Questions 12–14",
+          "instructions": [
+            "Choose **THREE** correct answers."
+          ],
+          "type": "multiple",
+          "questions": [
+            {
+              "numbers": [
+                12,
+                13,
+                14
+              ],
+              "prompt": "According to Reading Passage 1. Diabetes, which of the symptoms listed are associated with the condition?",
+              "options": [
+                "Hot flushes",
+                "Muscle pains",
+                "Nausea",
+                "Feeling faint",
+                "Tiredness",
+                "Bleeding gums",
+                "Dilation of the eyes"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Contaminating the Arctic",
+      "paragraphs": [
+        "Our perception of the Arctic region is that its distance from industrial centres keeps it pristine and clear from the impact of pollution. However, through a process known as \"transboundary pollution\", the Arctic is the recipient of contaminants whose sources are thousands of miles away. Large quantities of pollutants pour into our atmosphere, as well as our lakes, rivers, and oceans on a daily basis. In the last 20 years, scientists have detected an increasing variety of toxic contaminants in the north, including pesticides from agriculture, chemicals and heavy metals from industry, and even radioactive fall-out from Chernobyl. These are substances that have invaded ecosystems virtually worldwide, but they are especially worrisome in the Arctic.",
+        "Originally, Arctic contamination was blamed largely on chemical leaks, and these leaks were thought to be “small and localised\". The consensus now is that pollutants from around the world are being carried north by rivers, ocean currents, and atmospheric circulation. Due to extreme conditions in the Arctic, including reduced sunlight, extensive ice cover and cold temperatures, contaminants break down much more slowly than in warmer climates. Contaminants can also become highly concentrated due to their significantly lengthened life span in the Arctic.",
+        "Problems of spring run-off into coastal waters during the growth period of marine life are of critical concern. Spring algae bloom easily, absorbing the concentrated contaminants released by spring melting. These algae are in turn eaten by zooplankton and a wide variety of marine life. The accumulation of these contaminants increases with each step of the food chain or web and can potentially affect northerners who eat marine mammals near the top of the food chain. Pollutants respect no borders; transboundary pollution is the movement of contaminants across political borders, whether by air, rivers, or ocean currents. The eight circumpolar nations, led by the Finnish Initiative of 1989, established the Arctic Environmental Protection Strategy (AEPS) in which participants agreed to develop an Arctic Monitoring and Assessment Programme (AMAP). AMAP has established an international scientific network to monitor the current condition of the Arctic with respect to specific contaminants. This monitoring programme is extremely important because it will give a scientific basis for understanding the scope of the problem.",
+        "In the 1950s, pilots travelling on weather reconnaissance flights in the Canadian high Arctic reported seeing bands of haze in the springtime in the Arctic region. It was during this time that the term “Arctic haze” was first used, referring to this smog of unknown origin. But it was not until 1972 that Dr Glenn Shaw of the Geophysical Institute at the University of Alaska first put forth ideas concerning the nature and long-range origin of Arctic haze. The idea that the source was long range was very difficult for many to accept. Each winter, cold, dense air settles over the Arctic. In the darkness, the Arctic seems to become more and more polluted by a build-up of mid-latitude emissions from fossil fuel combustion, smelting and other industrial processes. By late winter, the Arctic is covered by a layer of this haze the size of the continent of Africa. When the spring light arrives in the Arctic, there is a smog-like haze, which at times resembles the pollution that hangs over cities such as Los Angeles. This polluted air is a well-known and well-characterised feature of the late winter Arctic environment. In the North American Arctic, episodes of brown or black snow had been blamed on continental storm tracks that deliver gaseous and particulate-associated contaminants from Asian deserts and agricultural areas. It is now known that the contaminants originate largely in Europe and Asia.",
+        "Arctic haze has been studied most extensively in Point Barrow, Alaska, across the Canadian Arctic and in Svalbard (Norway). Evidence from ice cores drilled from the ice sheet of Greenland indicates that these haze particles were not always present in the Arctic, but began to appear only in the last century. The Arctic haze particles appear to be similar to smog particles observed in industrial areas farther south, consisting mostly of sulfates mixed with particles of carbon. It is believed that the particles are formed when gaseous sulfur dioxide produced by burning sulfur-bearing coal is irradiated by sunlight and oxidised to sulfate, a process catalysed by trace elements in the air. These sulfate particles or droplets of sulfuric acid quickly capture the carbon particles, which are also floating in the air. Pure sulfate particles or droplets are colourless, so it is believed that the darkness of the haze is caused by the mixed-in carbon particles.",
+        "The impact of the haze on Arctic ecosystems, as well as the global environment, has not been adequately researched. The pollutants have only been studied in their aerosol form over the Arctic. However, little is known about what eventually happens to them. It is known that they are removed somehow. There is a strong possibility that the contaminants end up in the ocean, most likely in the North Atlantic, the Norwegian Sea and possibly the Bering Sea - all three very important fisheries.",
+        "Currently, the major issue among researchers is to understand the impact of Arctic haze on global climate change. The contaminants absorb sunlight and, in turn, heat up the atmosphere. The global impact of this is currently unknown, but the implications are quite powerful."
+      ],
+      "start": 15,
+      "end": 27,
+      "groups": [
+        {
+          "title": "Questions 15–21",
+          "instructions": [],
+          "type": "truth",
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 15,
+              "prompt": "Industry in the Arctic has increased over the last 20 years."
+            },
+            {
+              "number": 16,
+              "prompt": "Arctic conditions mean that the decomposition of pollutants is much accelerated."
+            },
+            {
+              "number": 17,
+              "prompt": "Pollution absorbed by Arctic algae may eventually affect humans."
+            },
+            {
+              "number": 18,
+              "prompt": "The AEPS has set up scientific stations in the Arctic to track pollution."
+            },
+            {
+              "number": 19,
+              "prompt": "Arctic pollution can sometimes resemble US urban pollution."
+            },
+            {
+              "number": 20,
+              "prompt": "The colour of Arctic haze is created by the presence of carbon."
+            },
+            {
+              "number": 21,
+              "prompt": "Research has shown that airborne Arctic pollutants remain in the air forever."
+            }
+          ]
+        },
+        {
+          "title": "Questions 22–27",
+          "instructions": [
+            "Choose words from the list to complete the summary.",
+            "Write the correct letter, A–L, for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "Theories that the origins of spring Arctic haze, first seen over the ice cap in the 1950s, came from far away were at first not {{22}} This haze is a smog formed in the dark, Arctic winter by pollution delivered to the Arctic by storms {{23}} to be a recent phenomenon as proof from {{24}} in Europe and Asia. It is known shows it only starting to occur in the twentieth century. The smog consists of sulfates and carbon, the latter creating the {{25}} of the haze. Due to lack of research, the final destination of the pollution is unknown. but it probably ends up in the {{26}} and therefore gets into the food chain. Scientists are presently more worried about the {{27}} effect it has on climate change."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "ice cores"
+            },
+            {
+              "label": "B",
+              "text": "certain"
+            },
+            {
+              "label": "C",
+              "text": "darkness"
+            },
+            {
+              "label": "D",
+              "text": "density"
+            },
+            {
+              "label": "E",
+              "text": "theories"
+            },
+            {
+              "label": "F",
+              "text": "sea"
+            },
+            {
+              "label": "G",
+              "text": "accepted"
+            },
+            {
+              "label": "H",
+              "text": "air"
+            },
+            {
+              "label": "I",
+              "text": "terrible"
+            },
+            {
+              "label": "J",
+              "text": "originating"
+            },
+            {
+              "label": "K",
+              "text": "dissipating"
+            },
+            {
+              "label": "L",
+              "text": "unknown"
+            }
+          ],
+          "optionTitle": "List of Words"
+        }
+      ]
+    },
+    {
+      "title": "THE STORY OF COFFEE",
+      "paragraphs": [
+        "A\nCoffee was first discovered in Eastern Africa in an area we know today as Ethiopia. There are several different legends concerning its origins; one of the most popular refers to a goat herder by the name of Kaldi, who observed his goats acting unusually friskily after eating berries from a bush. Curious about this phenomenon, Kaldi tried the berries himself and found that they gave him renewed energy.",
+        "B\nThe news of this energy-laden fruit quickly moved throughout the region. Coffee berries were transported from Ethiopia to the Arabian Peninsula, and were first cultivated in what today is the country of Yemen. Coffee remained a secret in Arabia before spreading to Turkey and then to the European continent by means of Venetian trade merchants.",
+        "C\nCoffee was first eaten as a food but later people in Arabia made a drink by boiling the beans, creating a drink known as “qahwa”, a word which, literally translated, means “that which prevents sleep”. It was much later, in Turkey, that the notion of roasting the beans before boiling them came about, possibly more by accident than by design. The roasted beans were first crushed, and then boiled in water, creating a crude version of the beverage we enjoy today. The first coffee houses were opened in Europe in the seventeenth century, and in 1675 the Viennese established the habit of refining the brew by filtering out the grounds, sweetening it and adding a dash of milk.",
+        "D\nIf you were to explore the planet for coffee, you would find about 60 species of coffee plants growing wild in Africa, Malaysia and other regions. But only about ten of them are actually cultivated. Of these ten, two species are responsible for almost all the coffee produced in the world: Coffea Arabica and Coffea Canephora (usually known as “Robusta”). Because of ecological differences existing among the various coffee-producing countries, both types have undergone several mutations and now exist in many subspecies.",
+        "E\nAlthough wild coffee plants can reach 10 - 12 metres, the plantation varieties grow to a height of around 4 metres only. This makes harvesting easier and cultivation more economical. The flowers are white and sweet-scented like Spanish jasmine. These later give way to dark red berries. At first sight, the fruit is like a big cherry both in size and in colour. The berry is coated in a thin, red film (epicarp) that contains a white, sugary mucilaginous flesh (mesocarp). Inside this pulp are the seeds, in the form of two beans coupled at their flat surface. The beans are in turn coated with a kind of resistant, golden-yellow parchment (endocarp). When this is peeled off, the real bean appears with another very thin silvery film surrounding it. The bean is bluish green, verging on bronze, in colour and is at the most 11 millimetres long and 8 millimetres wide.",
+        "F\nCoffee plants require special conditions in order to yield a satisfactory crop. The climate needs to be hot-wet or hot-temperate, with frequent rains and temperatures varying from 15 - 25 degrees centigrade, conditions which are usually found between the Tropics of Cancer and Capricorn. The soil should be deep, hard, permeable and well irrigated, with well-drained subsoil. The perfect altitude for a coffee plantation is between 600 and 1,200 metres, though some varieties thrive as high as 2,000 - 2,200 metres above sea level. Cultivation aimed at protecting the plants at every stage of growth is needed. Sowing should be in sheltered nurseries from which, after about 6 months, the seedlings should be moved to plantations in the rainy season where they are usually alternated with other plants to shield them from wind and excessive sunlight. Only when the plant is 5 years old can it be counted upon to give a regular yield. This is between 400 grams and two kilos of arabica beans for each plant, and 600 grams and two kilos for robusta beans.",
+        "G\nHarvesting time depends on the geographic situation, and it can therefore vary greatly according to the particular environment. During harvesting, the ripe beans are first picked from the branches. Pickers can selectively pick 250 - 300 pounds of coffee cherries a day. At the end of the day, the pickers bring their heavy burlap bags to pulping mills where the coffee cherries can be pulped (or wet milled). The pulped beans then rest, covered in pure rainwater to ferment overnight. The next day the wet beans are hand-distributed on the drying floor to be sun dried. This drying process takes from 1 - 2 weeks depending on the number of sunny days. To make sure they dry evenly, the beans have to be raked many times during this drying time. Two weeks later the sun-dried beans, now called parchment, are scooped up, bagged and taken to be milled. Huge milling machines then remove the parchment and silver skin, a process that renders the green beans suitable for roasting. These are then roasted according to the customers’ specifications and, after cooling, are packaged and dispatched to customers."
+      ],
+      "start": 28,
+      "end": 40,
+      "groups": [
+        {
+          "title": "Questions 28–33",
+          "instructions": [
+            "Choose the correct heading for each paragraph."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 28,
+              "prompt": "Paragraph B"
+            },
+            {
+              "number": 29,
+              "prompt": "Paragraph C"
+            },
+            {
+              "number": 30,
+              "prompt": "Paragraph D"
+            },
+            {
+              "number": 31,
+              "prompt": "Paragraph E"
+            },
+            {
+              "number": 32,
+              "prompt": "Paragraph F"
+            },
+            {
+              "number": 33,
+              "prompt": "Paragraph G"
+            }
+          ],
+          "options": [
+            {
+              "label": "i",
+              "text": "Growing Coffee"
+            },
+            {
+              "label": "ii",
+              "text": "Problems with Manufacture"
+            },
+            {
+              "label": "iii",
+              "text": "Processing the Bean"
+            },
+            {
+              "label": "iv",
+              "text": "First Contact"
+            },
+            {
+              "label": "v",
+              "text": "Arabian Coffee"
+            },
+            {
+              "label": "vi",
+              "text": "Coffee Varieties"
+            },
+            {
+              "label": "vii",
+              "text": "Modern Coffee"
+            },
+            {
+              "label": "viii",
+              "text": "The Spread of Coffee"
+            },
+            {
+              "label": "ix",
+              "text": "Consuming Coffee"
+            },
+            {
+              "label": "x",
+              "text": "Climates for Coffee"
+            },
+            {
+              "label": "xi",
+              "text": "The Coffee Plant"
+            }
+          ],
+          "optionTitle": "List of Headings",
+          "examples": [
+            "Paragraph A: **iv**"
+          ]
+        },
+        {
+          "title": "Questions 34–36",
+          "instructions": [
+            "Label the diagram below.",
+            "Write **NO MORE THAN ONE WORD** from the passage for each answer."
+          ],
+          "type": "diagram",
+          "image": "/images/test16-image1.jpeg",
+          "numbers": [
+            34,
+            35,
+            36
+          ],
+          "alt": "Coffee cherry cross section with label locations 34–36."
+        },
+        {
+          "title": "Questions 37–40",
+          "instructions": [
+            "Complete the flow chart.",
+            "Write **NO MORE THAN THREE WORDS** from the passage for each answer."
+          ],
+          "type": "flow",
+          "paragraphs": [
+            "The coffee cherries are picked by hand and delivered to mills.",
+            "The coffee cherries are pulped or {{37}}",
+            "The pulped beans are left {{38}} to ferment in pure water.",
+            "The wet beans are sun dried for one or two weeks to make parchment - they are {{39}} often to ensure an even drying procedure. ",
+            "The parchment is then bagged and taken to be milled to make the green beans.",
+            "The green beans are then roasted to {{40}}",
+            "The roasted beans are cooled.",
+            "The finished product is packaged and mailed to the customer."
+          ]
+        }
+      ]
+    }
+  ]
+}

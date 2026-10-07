@@ -1,0 +1,240 @@
+{
+  "number": 13,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–6",
+        "type": "fill",
+        "paragraphs": [
+          "Time of appointment: 10:00 am",
+          "Given names: Simon {{1}}",
+          "Family name: Lee",
+          "Date of birth: {{2}} 1989",
+          "Address: {{3}} Adams Terrace, Wellington",
+          "Phone number: 0211558809",
+          "Name of insurance company: {{4}}",
+          "Date of last eye test: {{5}}",
+          "Patient’s observations: Problems seeing {{6}}"
+        ],
+        "limit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+        "heading": "PATIENT RECORD",
+        "box": true,
+        "instruction": "Complete the form below."
+      },
+      {
+        "title": "Questions 7–10",
+        "type": "fill",
+        "paragraphs": [
+          "When must Simon wear his glasses?\n{{7}}",
+          "What type of glasses are the least expensive?\n{{8}}",
+          "What is good about the glasses Simon chooses?\n{{9}}",
+          "How does Simon decide to pay?\n{{10}}"
+        ],
+        "limit": "NO MORE THAN THREE WORDS",
+        "instruction": "Answer the questions below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–12",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 11,
+            "prompt": "Who is buried in the tomb of the Taj Mahal?",
+            "options": [
+              "the emperor Shahjahan",
+              "the wife of Shahjahan",
+              "the emperor and his wife"
+            ]
+          },
+          {
+            "number": 12,
+            "prompt": "Where did the white marble come from?",
+            "options": [
+              "India",
+              "China",
+              "Persia"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Questions 13–16",
+        "type": "map",
+        "instruction": "Label the plan below.",
+        "limit": "NO MORE THAN THREE WORDS",
+        "image": "/images/listening-test-13-plan.png",
+        "viewBox": "20 150 760 620",
+        "imageWidth": 805,
+        "imageHeight": 960,
+        "alt": "Plan of the Taj Mahal showing the Tomb, the Rest House and locations 13–16.",
+        "questions": [
+          {
+            "number": 13,
+            "prompt": ""
+          },
+          {
+            "number": 14,
+            "prompt": ""
+          },
+          {
+            "number": 15,
+            "prompt": ""
+          },
+          {
+            "number": 16,
+            "prompt": ""
+          }
+        ]
+      },
+      {
+        "title": "Question 17",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 17,
+            "prompt": "What is the purpose of the Rest House?",
+            "options": [
+              "a place for the poor to stay",
+              "a meeting place for pilgrims",
+              "an architectural feature"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Questions 18–20",
+        "type": "flow",
+        "instruction": "Complete the flow chart below.",
+        "limit": "NO MORE THAN TWO WORDS",
+        "heading": "How running water is provided",
+        "paragraphs": [
+          "Water taken from the {{18}} by bullocks.",
+          "Water channelled into the {{19}}",
+          "Water piped to the {{20}}"
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Questions 21–24",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 21,
+            "prompt": "What background information does Daisy give about rice?",
+            "options": [
+              "Wild rice is grown throughout Asia",
+              "Some types of rice need less water than others.",
+              "All rice varieties have a lovely aroma"
+            ]
+          },
+          {
+            "number": 22,
+            "prompt": "Erik says that a priority for rice farmers is to be able to",
+            "options": [
+              "grow rice without fertilizers.",
+              "predict the weather patterns.",
+              "manage water resources."
+            ]
+          },
+          {
+            "number": 23,
+            "prompt": "Where is the International Rice Research Institute?",
+            "options": [
+              "The Philippines",
+              "China",
+              "Japan"
+            ]
+          },
+          {
+            "number": 24,
+            "prompt": "Scientists in Bangladesh want to find a",
+            "options": [
+              "more effective type of fertilizer.",
+              "strain of rice resistant to flooding.",
+              "way to reduce the effects of global warming."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Questions 25–30",
+        "type": "match",
+        "instruction": "Which country do the following statements apply to? Choose the correct letter A, B or C.",
+        "options": [
+          {
+            "label": "A",
+            "text": "Japan"
+          },
+          {
+            "label": "B",
+            "text": "China"
+          },
+          {
+            "label": "C",
+            "text": "Thailand"
+          }
+        ],
+        "questions": [
+          {
+            "number": 25,
+            "prompt": "They grow the most rice in the world."
+          },
+          {
+            "number": 26,
+            "prompt": "They export the most rice in the world."
+          },
+          {
+            "number": 27,
+            "prompt": "They aim to increase the nutritional value of rice."
+          },
+          {
+            "number": 28,
+            "prompt": "Less rice is eaten than in the past."
+          },
+          {
+            "number": 29,
+            "prompt": "An annual rice festival takes place."
+          },
+          {
+            "number": 30,
+            "prompt": "A new type of rice is now popular locally."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–33",
+        "type": "fill",
+        "paragraphs": [
+          "You may have to ignore some of the ordinary {{31}} of writing.",
+          "Written words do not indicate things like emphasis, the {{32}} of reading or where to pause.",
+          "A script needs to sound like a {{33}}."
+        ],
+        "limit": "NO MORE THAN ONE WORD",
+        "heading": "RADIO WRITING",
+        "instruction": "Complete the sentences below."
+      },
+      {
+        "title": "Questions 34–40",
+        "type": "fill",
+        "paragraphs": [
+          "**Know who you are talking to**",
+          "Imagine a typical listener:\ne.g. imagine telling your {{34}} about a film.",
+          "Create an informal tone:\ne.g. use words like {{35}}",
+          "Work out what you are going to say",
+          "Remember:\nlisteners cannot ask questions\nyou cannot {{36}} ideas",
+          "Make your script logical:\n{{37}} the information.",
+          "Use concrete images e.g. compare the size of a field to a {{38}}",
+          "Use the {{39}} to get attention.",
+          "Check the script by {{40}}"
+        ],
+        "limit": "NO MORE THAN THREE WORDS",
+        "instruction": "Complete the notes below."
+      }
+    ]
+  ]
+}

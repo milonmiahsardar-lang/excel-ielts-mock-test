@@ -1,0 +1,395 @@
+{
+  "number": 8,
+  "passages": [
+    {
+      "title": "Cathy Freeman – Australian’s track queen",
+      "paragraphs": [
+        "A\nRunner Cathy Freeman is the first Aborigine, the name given to indigenous Australians, ever to compete in the Olympics, and the first to wave the Aboriginal flag at a sporting event. Freeman lit the Olympic flame at the 2000 Olympics in Sydney, and won a gold medal in the 400 meters at those Games.",
+        "B\nFreeman's grandmother was part of the \"stolen generation\" of Aboriginal people in Australia—from the early 20th century until the 1970s; many Aboriginal children were taken from their parents to be raised in state-run institutions. This practice was intended to remove the children from the poverty, disease, and addiction that plagued many aboriginal people, but it also resulted in tragically broken family ties and loss of ancient cultural traditions. Although Freeman was not taken from her family, she had a difficult childhood. Both her younger sister and her father died when she was young.",
+        "C\nWhen Freeman was still a girl; her talent in running was obvious. Her mother, Cecilia, encouraged her to pursue her interest in athletics, and when she was ten, her stepfather told her she could win a gold medal at the Olympics if she trained properly. However, although she had the talent, she was also a member of a minority group that historically had not had access to the same resources that other athletes had. Freeman was one of only a few Aborigines who won a scholarship to a boarding school where she could learn and train.",
+        "D\nAt the age of 15, she competed at the National School Championships, and did well enough to be encouraged to try out for the 1990 Commonwealth Games team. She made the team as a sprinter, and was a member of the 4 X 100-meter relay team, which won gold at the Commonwealth Games. In 1990, she competed in the Australian National Championships, winning the 200 meters, and then ran in the 100, 200, and 4 X 100-meter races at the World Junior Games. During this time, she met Nick Bideau, an Australian track official who would later become her coach, manager, and boyfriend.",
+        "E\nIn 1992, she competed in the 400-meter relay at the Barcelona Olympics, making it to the second qualifying round. She was also a member of the 4 X 100 meter team, which ran in the final but did not win a medal. At the World Junior Championships in 1992, she won a silver medal in the 200 meters. In 1993, she made it to the semifinals in the 200 meters in the World Championships.",
+        "F\nIn 1994, Freeman won the 200 meters and the 400 meters at the Commonwealth Games in Victoria, British Columbia, Canada. After winning the 400 meters, Freeman ran her victory lap, carrying not the Australian national flag, but the red, black, and yellow Aboriginal flag. She was criticised in the press, and Australian team leader Arthur Tunstall told her she should not display the flag again. Freeman used the publicity she got to publicly discuss what the flag meant to Aboriginal people, explaining its symbolism: red for earth, yellow for sun, and black for skin. Defying Tunstall's orders, she ran with the flag again after winning the 200 meters.",
+        "G\nAt the 1996 Olympic games in Atlanta, Freeman won a silver medal in the 400 meters. After those Games, she broke off her romantic relationship with Bideau, although he continued as her manager. Freeman won the World Championships in the 400 meters in 1997 and 1998, even though she suffered a heel injury in 1998.",
+        "H\nIn 1999, Freeman met Alexander Bodecker, an American executive for the Nike shoe company, and the two fell in love. As a result, her relationship with Bideau became strained, and she eventually fired him. Freeman and Bodecker were married on September 19, 1999, in San Francisco. Bideau subsequently claimed that she owed him over $2 million in assets from deals he negotiated while he represented her, leading to a long court battle.",
+        "I\nFreeman was, of course, Australia's favourite to win a gold medal in the 400 meters at the 2000 Olympics, held in Sydney. Like any athlete, Freeman wanted to win in order to meet her own goals, but she also knew that she was viewed as a representative of the Aboriginal people, and she wanted to win for them. \"I could feel the crowd all over me,\" she told Mark Shimabukuro in the Sporting News. \"I felt the emotion being absorbed into every part of my body.\" When she won, with a time of 49.11 seconds, she was so relieved that she dropped to her knees on the track after completing the race.",
+        "J\nFreeman's shoes were yellow, black, and red, traditional Aboriginal colours, but after she won, she took them off and ran her victory lap, in traditional Aboriginal style, carrying both the Australian and Aboriginal flags around the track as the crowd cheered. This time, instead of being criticised for carrying the Aboriginal flag around the track; she was widely celebrated by the Australian media and public."
+      ],
+      "start": 1,
+      "end": 14,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 1–9",
+          "instructions": [
+            "The text has ten paragraphs labelled A–J.",
+            "Choose the correct heading for sections B–J from the list of headings below.",
+            "Choose the correct number, **i–xii**, for each answer.",
+            "The first one is done for you as an example below."
+          ],
+          "optionTitle": "Paragraph Headings",
+          "options": [
+            {
+              "label": "i",
+              "text": "An Australian sporting icon"
+            },
+            {
+              "label": "ii",
+              "text": "A new love"
+            },
+            {
+              "label": "iii",
+              "text": "Early competition"
+            },
+            {
+              "label": "iv",
+              "text": "Winning isn’t everything"
+            },
+            {
+              "label": "v",
+              "text": "Family support for running"
+            },
+            {
+              "label": "vi",
+              "text": "Her first Olympics"
+            },
+            {
+              "label": "vii",
+              "text": "Adored by her nation"
+            },
+            {
+              "label": "viii",
+              "text": "Aboriginal identity on the track"
+            },
+            {
+              "label": "ix",
+              "text": "Winning the top medal at home"
+            },
+            {
+              "label": "x",
+              "text": "Second on the big stage"
+            },
+            {
+              "label": "xi",
+              "text": "A difficult childhood"
+            },
+            {
+              "label": "xii",
+              "text": "Losing in Sydney"
+            }
+          ],
+          "examples": [
+            "Paragraph A: i"
+          ],
+          "questions": [
+            {
+              "prompt": "Paragraph B",
+              "number": 1
+            },
+            {
+              "prompt": "Paragraph C",
+              "number": 2
+            },
+            {
+              "prompt": "Paragraph D",
+              "number": 3
+            },
+            {
+              "prompt": "Paragraph E",
+              "number": 4
+            },
+            {
+              "prompt": "Paragraph F",
+              "number": 5
+            },
+            {
+              "prompt": "Paragraph G",
+              "number": 6
+            },
+            {
+              "prompt": "Paragraph H",
+              "number": 7
+            },
+            {
+              "prompt": "Paragraph I",
+              "number": 8
+            },
+            {
+              "prompt": "Paragraph J",
+              "number": 9
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 10–14",
+          "instructions": [
+            "Complete the notes below.",
+            "Choose **NO MORE THAN TWO WORDS** from the passage for each answer."
+          ],
+          "heading": "How Cathy Freeman became a sports star",
+          "paragraphs": [
+            "Although she had a hard upbringing she got support from her mother and {{10}}",
+            "She won a {{11}} at a young age to train and study which helped her develop as an athlete.",
+            "Her first international success was in 1990 at the {{12}} as part of the Australian sprint team.",
+            "At her second Olympics in 1996 she won a silver medal for coming second in the {{13}}",
+            "• In 2000, she finally won a {{14}} at the Sydney Olympics making here one of the most loved sports star in Australia."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The world’s desire for plastic is dangerous",
+      "paragraphs": [
+        "A\nA million plastic bottles are purchased around the world every minute and the number will jump another 20% by 2021, creating an environmental crisis some campaigners predict will be as serious as climate change. The demand, equivalent to about 20,000 bottles being bought every second, is driven by an apparently insatiable desire for bottled water and the spread of a western, urbanised culture to China and the Asia Pacific region.",
+        "B\nMore than 480 billion plastic drinking bottles were sold in 2016 across the world, up from about 300 billion a decade ago. If placed end to end, they would extend more than halfway to the sun. By 2021 this will increase to 583.3 billion, according to the most up-to-date estimates.",
+        "C\nMost plastic bottles, which are used for soft drinks and water, are made from Pet plastic, which is highly recyclable. But as their use grows rapidly across the globe, efforts to collect and recycle the bottles to keep them from polluting the oceans, are failing to keep up. For instance, fewer than half of the bottles bought in 2016 were collected for recycling and just 7% of those collected were turned into new bottles. Instead most plastic bottles produced end up in rubbish dumps or in the ocean.",
+        "D\nWhilst the production of single use plastics has grown dramatically over the last 20 years, the systems to contain, control, reuse and recycle them just haven’t kept pace. In the UK 38.5 million plastic bottles are used every day – only just over half make it to recycling, while more than 16 million are put into rubbish dumps, burnt or leak into the environment and oceans each day. “Plastic production is set to double in the next 20 years and grow by 4 times that by 2050 so the time to act is now,” according to environmentalist. There has been growing concern about the impact of plastics pollution in oceans around the world. Last month scientists found nearly 18 tonnes of plastic on one of the world’s most remote islands, an uninhabited place in the South Pacific.",
+        "E\nThe majority of plastic bottles used across the globe are for drinking water, according to Rosemary Downey, head of packaging at Euromonitor and one of the world’s experts in plastic bottle production. China is responsible for most of the increase in demand. The Chinese public’s consumption of bottled water accounted for nearly a quarter of global demand, she said. “It is a critical country to understand when examining global sales of plastic Pet bottles, and China’s requirement for plastic bottles continues to expand,” said Downey. In 2015, consumers in China purchased 68.4 billion bottles of water and in 2016 this increased to 73.8 billion bottles, up 5.4 billion. “This increase is being driven by increased urbanisation,” said Downey. “There is a desire for healthy living and there are ongoing concerns about contamination of water and the quality of tap water, which all contribute to the increase in bottle water use,” she said. India and Southeast Asia are also witnessing strong growth, which is bound to cause problems in the future for the planet.",
+        "F\nMajor drinks brands produce the greatest numbers of plastic bottles. Coca-Cola produces more than 100 billion single use plastic bottles every year – or 3,400 a second, according to analysis carried out by Greenpeace after the company refused to publicly disclose its global plastic usage. The top six drinks companies in the world use a combined average of just 6.6% of recycled Pet in their products, according to Greenpeace. A third have no targets to increase their use of recycled plastic and none are aiming to use 100% across their global production.",
+        "G\nPlastic drinking bottles could be made out of 100% recycled plastic, known as RPet – and campaigners are pressing big drinks companies to radically increase the amount of recycled plastic in their bottles. But brands are hostile to using RPet for cosmetic reasons because they want their products in shiny, clear plastic. The industry is also resisting any taxes or charges to reduce demand for single-use plastic bottles – like the 5p charge on plastic bags that is credited with reducing plastic bag use by 80%.",
+        "H\nCoca Cola said it was still considering requests from Greenpeace to publish its global plastics usage. The company said: “Globally, we continue to increase the use of recycled plastic in countries where it is feasible and permitted. We continue to increase the use of RPet in markets where it is feasible and approved for regulatory food-grade use – 44 countries of the more than 200 we operate in.” Coca Cola agreed plastic bottles could be made out of 100 per cent recycled plastic but there was nowhere near enough high quality food grade plastic available on the scale that was needed to increase the quantity of RPet to that level. “So if we are to increase the amount of recycled plastic in our bottles even further then a new approach is needed to create a circular economy for plastic bottles,” Coca Cola said.",
+        "J\nGreenpeace said the big six drinks companies had to do more to increase the recycled content of their plastic bottles. “During Greenpeace’s recent exploration of plastic pollution on remote Scottish coast, we found plastic bottles nearly everywhere we went,” said Louisa Casson, oceans campaigner for Greenpeace. “It’s clear that the soft drinks industry needs to reduce its plastic waste.”"
+      ],
+      "start": 15,
+      "end": 26,
+      "groups": [
+        {
+          "type": "truth",
+          "title": "Questions 15–20",
+          "instructions": [
+            "Do the following statements agree with claims of the writer?"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 15,
+              "prompt": "Experts say that plastic waste is worse than global warming."
+            },
+            {
+              "number": 16,
+              "prompt": "Most bottles manufactured for drinking are made from plastic that can be easily recycled."
+            },
+            {
+              "number": 17,
+              "prompt": "In Britain, only 20% of plastic bottles are recycled and the rest is reused or thrown out."
+            },
+            {
+              "number": 18,
+              "prompt": "By 2020, China’s use of plastic bottles will be greater than the rest of the world."
+            },
+            {
+              "number": 19,
+              "prompt": "Major drink companies only use a small percentage of recycled plastic in their bottles."
+            },
+            {
+              "number": 20,
+              "prompt": "A leading environmental organisation says that the oceans will be filled with plastic if big business doesn’t act."
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "title": "Questions 21–26",
+          "instructions": [
+            "Choose the correct answer."
+          ],
+          "questions": [
+            {
+              "options": [
+                "twelve thousand",
+                "twenty thousand",
+                "fifteen million",
+                "thirty-eight million"
+              ],
+              "prompt": "Every second, approximately how many plastic bottles are purchased on the planet?",
+              "number": 21
+            },
+            {
+              "options": [
+                "set fire to",
+                "put into boats at sea",
+                "put into garbage tips",
+                "sent to companies"
+              ],
+              "prompt": "Most plastic bottles that aren’t recycled are…",
+              "number": 22
+            },
+            {
+              "options": [
+                "storage",
+                "drinking water",
+                "recycling",
+                "Coca Cola"
+              ],
+              "prompt": "The majority of plastic bottles are used for…",
+              "number": 23
+            },
+            {
+              "options": [
+                "6.6%",
+                "30%",
+                "33%",
+                "100%"
+              ],
+              "prompt": "What is the percentage of drinks companies who have no plans to use more recyclable plastic in their products?",
+              "number": 24
+            },
+            {
+              "options": [
+                "a major drinks company",
+                "an expert in plastic bottle production",
+                "bottles made out of highly recyclable material",
+                "bottles made out of 100% recycled plastic"
+              ],
+              "prompt": "According to the article, RPet is",
+              "number": 25
+            },
+            {
+              "options": [
+                "tax plastic manufactures",
+                "clean the oceans",
+                "stop drinking bottled water",
+                "use more recycled material"
+              ],
+              "prompt": "Greenpeace thinks one way to reduce plastic waste is to…",
+              "number": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "On the trail of Africa’s wild dogs",
+      "paragraphs": [
+        "Just before dawn at a National Park in North Eastern South Africa, Micaela Szykman stands on a hill with a radio transmitter held in the air, listening for signals from the radio collars of African wild dogs. If the dogs are within range, Szykman jumps back into her four-wheel drive to catch up with them before they awake. Szykman, a researcher at the Smithsonian National Animal Park in Washington, D.C., is tracking the dogs for a park project.",
+        "The African wild dog, officially named Lycaon pictus, and also called the painted wolf or the Cape hunting dog is the victim mainly of human hunting. The dog is listed as endangered by the World Conservation Union. Lycaon pictus once roamed most of sub-Saharan Africa. Now only about 5,000 dogs can be found in isolated pockets of the continent.",
+        "In 1997, 2000, and 2003, wildlife managers reintroduced several packs of wild dogs from elsewhere in South Africa to this park in the hope of rebuilding the species. Wildlife officials and scientists like Szykman are watching and studying the reintroduction because such programs are integral to Lycaon's survival.",
+        "Adult wild dogs, with round saucer-like ears and a \"painted\" black, white, brown, and yellow coat, weigh up to 25 kilograms and stand about 60 centimetres with a delicate build. \"This is one of the most intensely social animals out there,\" said Szykman, a behavioural scientist. \"The entire pack, sometimes up to 20 dogs, always hunts, plays, walks, and feeds together. They never leave an animal behind and are always strengthening social bonds.\" Each pack has only one breeding pair, and the rest of the pack helps raise the annual litter, up to 20 pups, one of the largest litter sizes of all African animals. Lycaon pictus hunts in packs and Szykman's job is particularly difficult because wild dogs are tough to track. They travel up to 30 kilometres daily, with vast home ranges, 600 to 800 square kilometres on average.",
+        "\"As a discipline, the science of reintroduction has been poorly studied,\" said Steven Monfort, a research veterinarian at the Conservation and Research Centre in Front Royal, Virginia. \"Reintroduction is not easy. Governments set aside land, and other people dump animals in there, which makes them feel good. If the animals increase, the reintroduction is a big success. If numbers fall nobody knows what went wrong,\" Monfort said. The dogs' radio collars provide only limited contact. Monfort has proposed the development of a satellite-tagging system so that Szykman and Monfort can track the animals year-round and mark their range, including how close they come to humans and other threats.",
+        "The researchers also hope to expand the use of satellite collars to hyenas and lions to understand how competition with these animals affects the dogs' reproduction and survival. These two species also play a role in reducing African wild dog numbers. \"If you fence in a reserve or surround a wild area with human settlement then you need to adjust the species levels to maintain healthy populations of dogs, hyenas, and lions which are all interacting on overlapping areas of land,\" said Monfort.",
+        "To Scott Creel, a behavioural scientist at Montana State University in Bozeman, reintroduction is the right approach for South Africa. \"Reintroduction is exciting because it beats caged management in zoos. But in the long term, it is useless unless it results in larger, well-protected reserves or changes patterns of land use. These wild dog populations won't be self sustaining unless the land area is large enough” said Creel, co-author of The African Wild Dog: Behaviour, Ecology and Conservation. \"There’s a long history of reintroduction there. They have a good idea of what works and what doesn't.\"",
+        "Hunting drastically reduced the wild dog population in South Africa except for Kruger National Park where there are approximately 300 to 500 dogs. Though Creel is also not convinced that the reintroduced wild dog population will thrive without hands-on management, he supports the effort because reintroduction of these animals at smaller satellite parks and private reserves raises the national wild dog population and is an insurance policy if disease hits. Already the luck of African wild dogs is changing. In the past, farmers often just shot the dogs on sight. Now when somebody sees the dogs outside the reserve, Szykman gets a call about their location."
+      ],
+      "start": 27,
+      "end": 40,
+      "groups": [
+        {
+          "type": "truth",
+          "title": "Questions 27–32",
+          "instructions": [
+            "Do the following statements agree with claims of the writer in Reading Passage 3?"
+          ],
+          "labels": [
+            "YES",
+            "NO",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 27,
+              "prompt": "The African wild dog has other names associated with it, often being referred to as the ‘hunting wolf’."
+            },
+            {
+              "number": 28,
+              "prompt": "There are more African wild dogs in Sub-Saharan African than in South Africa."
+            },
+            {
+              "number": 29,
+              "prompt": "Scientists are trying to save the African wild dog by putting them in new national parks in South Africa."
+            },
+            {
+              "number": 30,
+              "prompt": "African wild dogs roam large areas and often travel extreme distances"
+            },
+            {
+              "number": 31,
+              "prompt": "Introducing African wild dogs into new areas is quite easy and there has been a lot of research related to this field."
+            },
+            {
+              "number": 32,
+              "prompt": "Radio transmitters help scientist track the movements of hyenas and lions."
+            }
+          ]
+        },
+        {
+          "type": "multiple",
+          "title": "Questions 33–35",
+          "instructions": [
+            "Choose **THREE** answers."
+          ],
+          "questions": [
+            {
+              "numbers": [
+                33,
+                34,
+                35
+              ],
+              "prompt": "Which THREE of the following are given as reasons for African wild dogs currently being endangered?",
+              "options": [
+                "Doing scientific tests on the wild dogs.",
+                "The loss of habitat for the dogs.",
+                "The building of fences to capture them.",
+                "Hyenas and lions competing with them.",
+                "Transporting the dogs to other areas.",
+                "Not having enough food to eat.",
+                "Humans killing wild dogs."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "match",
+          "title": "Questions 36–40",
+          "instructions": [
+            "Look at the statements (Questions 36-40) and the list of scientists and researches below.",
+            "Match each statement with the correct person, A-C.",
+            "**NB** You may use some letters more than once.",
+            "This scientist or researcher…"
+          ],
+          "optionTitle": "List of People",
+          "options": [
+            {
+              "label": "A",
+              "text": "Micaela Szykman"
+            },
+            {
+              "label": "B",
+              "text": "Steven Monfort"
+            },
+            {
+              "label": "C",
+              "text": "Scott Creel"
+            }
+          ],
+          "questions": [
+            {
+              "number": 36,
+              "prompt": "is monitoring the African wild dogs’ movement and behaviour."
+            },
+            {
+              "number": 37,
+              "prompt": "has found that African wild dogs are a family orientated species."
+            },
+            {
+              "number": 38,
+              "prompt": "does not think current systems of tracking African wild dogs is sufficient."
+            },
+            {
+              "number": 39,
+              "prompt": "believes repopulating areas with African wild dogs is currently the best solution for their survival."
+            },
+            {
+              "number": 40,
+              "prompt": "thinks that local attitude towards African wild dogs is changing in a positive way."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

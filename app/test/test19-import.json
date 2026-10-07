@@ -1,0 +1,444 @@
+{
+  "number": 19,
+  "passages": [
+    {
+      "title": "DOGME 95",
+      "paragraphs": [
+        "Since its inception in the 1890s, cinema has seen many technical changes and advances and, as with any art form, there have been many different movements and styles associated with it. In 1995, a collective of Danish film directors wished to change the direction of filmmaking and reinforce the importance of cinematic truth. At the time, Hollywood blockbusters dominated the market. The ‘Dogme 95’ movement was created in order to prove that a big budget did not necessarily equate with quality in filmmaking.",
+        "The avant-garde movement was started by directors Lars Von Trier, later known for Melancholia (2011) and Thomas Vinterberg, director of the 2015 film Far from the Madding Crowd. The two directors created a manifesto which outlined certain rules for filmmakers, with the aim of directorial and editorial simplification. These ten rules of filmmaking were later jokingly dubbed the ‘vow of chastity’ by the directors.",
+        "The first rule stated that all shooting must be done on location. Furthermore, no props and sets could be brought in. If a specific prop, such as a piano, was needed in the plot, a location which already contained the said prop had to be selected.",
+        "The second rule of the manifesto concerned music and sound, asserting that these should be recorded while the film was being shot. If the directors wished to have music in a particular scene, then it had to originate from the characters, such as someone singing or playing a musical instrument on screen. Sound of this type is classified as diegetic; other forms of sound, such as voiceovers, narrations or atmospheric music, are non-diegetic and were therefore not in accordance with the manifesto.",
+        "The third rule stated that all filming should be done with a hand-held camera. Usually in filmmaking, cameras are placed on cranes or jibs in order to create a less shaky image and capture all angles. The fourth and fifth rules permitted only the use of colour film and natural lighting in Dogme films. Special lighting and filters were not allowed. The vow of chastity stated explicitly that should there be an unsatisfactory amount of light, a single lamp might be attached to the camera.",
+        "The sixth, seventh and eighth rules related to the plot. The film had to be set in the here and now, and in the place in which the filming occurred. Genre movies were unacceptable, so the film could not be horror or fantasy, for example, and had to be realistic. Finally, the films were not allowed to contain superficial action such as murders. These rules meant that the films were concerned with everyday aspects of life such as familial relationships, friendships and so on.",
+        "The ninth rule dictated only the use of the Academy 35mm format, the film gauge which is most commonly used in movies. The final rule stated that the director must not be credited. This most likely stemmed from the prevalence of high-budget films at the time, in which the popularity of the directors and actors alike was considered an important factor in choosing to go and see a film. The other aim of the final rule was to stop directors from showcasing their own personal tastes within their films and encouraging then to simply exhibit the truth about the characters and the story.",
+        "With these rules in mind, the two directors each went on to make a film following the rules of the manifesto. The first film to be made in accordance to the vow of chastity was Vinterberg’s Festen (1998). The film tells the story of a family gathering celebrating the head of the family’s sixtieth birthday. Vinterberg shot the film on a digital video camera and proceeded to blow it up to fit the 35mm gauge, giving the film a very grainy effect. Furthermore, Vinterberg confessed to having covered a window during a scene in Festen. Thus two of the rules were broken in this film. Every other aspect of the film followed the rules, however, including the sound which was solely diegetic. The film went on to win many awards, including the Jury Prize in the 1998 Cannes Film Festival.",
+        "The second Dogme 95 film made was Lars Von Trier’s The Idiots (1998). It portrays a group of adults who are seeking a way to display their ‘inner idiots’. Although he generally complied with the rules, Von Trier admitted to having interfered with the location by moving candles around to achieve the desired lighting. He has been chided for his use of non-diegetic music during a scene of the film, an accusation which Von Trier has rebutted, explaining that he used a harmonica player for the music, and although the player was not in the scene itself, the sound was recorded at the same time as the image.",
+        "Following the creation of Festen and Idiots, further Danish directors joined the movement, forming the so-called ‘Dogme Brethren’. Filmmakers from all over the world have since attempted to follow the vow of chastity while creating Dogme 95 films, many finding it an effective way to approach making low-budget films. By 2005, over thirty Dogme 95 films had been made worldwide. Its founders terminated the movement in that year as they felt the manifesto was resulting in formulaic films. Despite this, the influence and importance of Dogme 95 in film history remains undeniable."
+      ],
+      "start": 1,
+      "end": 13,
+      "groups": [
+        {
+          "title": "Questions 1–5",
+          "instructions": [],
+          "type": "truth",
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Dogme 95 aimed to show that good films could be made without spending large sums of money."
+            },
+            {
+              "number": 2,
+              "prompt": "The Dogme 95 manifesto was launched in Copenhagen in 1995."
+            },
+            {
+              "number": 3,
+              "prompt": "The films Melancholia and Far From the Madding Crowd were made in accordance with the principles of the Dogme 95 manifesto."
+            },
+            {
+              "number": 4,
+              "prompt": "None of the Dogme 95 films ever received critical acclaim."
+            },
+            {
+              "number": 5,
+              "prompt": "The founders of the movement eventually became disenchanted with it."
+            }
+          ]
+        },
+        {
+          "title": "Questions 6–10",
+          "instructions": [
+            "Complete each sentence with the correct ending, A–H."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 6,
+              "prompt": "The vow of chastity did not allow directors to…"
+            },
+            {
+              "number": 7,
+              "prompt": "The source of music or sound effects was to…"
+            },
+            {
+              "number": 8,
+              "prompt": "Filmmakers were permitted to…"
+            },
+            {
+              "number": 9,
+              "prompt": "Horror, fantasy and unnecessary violence were to…"
+            },
+            {
+              "number": 10,
+              "prompt": "Directors were not credited in films in order to…"
+            }
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "put cameras on their shoulders."
+            },
+            {
+              "label": "B",
+              "text": "be avoided."
+            },
+            {
+              "label": "C",
+              "text": "prevent them from imposing their own style on a film."
+            },
+            {
+              "label": "D",
+              "text": "use professional musicians on the film soundtrack."
+            },
+            {
+              "label": "E",
+              "text": "use a maximum of one lamp when filming."
+            },
+            {
+              "label": "F",
+              "text": "alter the location they had chosen."
+            },
+            {
+              "label": "G",
+              "text": "tell the actors how to act."
+            },
+            {
+              "label": "H",
+              "text": "be seen on the screen."
+            }
+          ]
+        },
+        {
+          "title": "Questions 11–13",
+          "instructions": [
+            "Choose **THREE** correct answers."
+          ],
+          "type": "multiple",
+          "questions": [
+            {
+              "numbers": [
+                11,
+                12,
+                13
+              ],
+              "prompt": "According to Reading Passage 1, Dogme 95, which three rules were broken in the first two Dogme 95 films?",
+              "options": [
+                "Rule one",
+                "Rule two",
+                "Rule three",
+                "Rule four or five",
+                "Rule six, seven or eight",
+                "Rule nine",
+                "Rule ten"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE STORY OF THE SAXOPHONE",
+      "paragraphs": [
+        "A\nWith its faded gold exterior, looped bell and distinctive soulful sound, the saxophone is one of the most instantly recognisable instruments. Although now most famous for its key role in the development of jazz music, it would be a mistake to believe it has always been this way. Its story is quite unlike that of the equally prominent jazz trio - trombone, clarinet and trumpet - which first appeared in the French military band of the late Middle Ages. In fact it was not until the early 19th Century that the saxophone first appeared on the world stage, thanks to a young Belgian of profound musical ability who had inherited his father's gift for instrument invention.",
+        "B\nBorn in Wallonia in 1814, Adolphe Sax grew up in an environment which struck a perfect harmony of invention and musicality. His father was a keen designer of instruments who made notable improvements to the design of the horn and Adolphe had already created several flutes and clarinets from scratch before heading to the Royal Conservatory of Brussels to study woodwind. Following his studies, Sax emerged as a clarinet virtuoso but - much to his master's disappointment – followed in his father's footsteps and proceeded to focus on the improvement of the clarinet. In 1842, he opened a workshop in Paris - then the artistic capital of Europe - where he set about designing instruments.",
+        "C\nSax’s opportunity came in 1859 when official changes were made to concert pitch, meaning it would be necessary for every band and orchestra to acquire new woodwind instruments. Originally, Sax invented two families of saxophone, one for orchestral use, the other for military use. The latter gained more exposure in the musical world following Sax's triumph at a head-to-head competition with the existing French military orchestra as part of a project to revolutionise French military music, at the time considered to be an embarrassment to patriotism and prestige. Subsequently, the saxophone made its journey beyond France's borders, through the military bands of much of the Western world.",
+        "D\nIn North America, the instrument became a key component of the popular wind bands where clarinetists also frequently experimented with the saxophone. One such dual instrumentalist, Edouard Lefebre, had fallen in love with the instrument whilst visiting Paris and pledged to make it his life’s work to promote the instrument. He settled in the United States where he eventually joined the John Philip Sousa Band, which toured throughout the United States playing its patriotic military marches and providing a platform for some of the saxophone's early icons. The instrument's popularity soon soared, allowing saxophonists to achieve unprecedented acclaim and riches.  However, the fact that many early saxophonists incorporated novel gimmicks – such as simulated animal sounds and wild comic vibratos – within their 'uncultured' performances meant that its potential was yet to be recognised in more high-brow musical circles.",
+        "E\nWhile the saxophone continued to gain approval from the public due to its continued use in music hall and vaudeville shows, early jazz pioneers continued to experiment with more traditional members of the horn and woodwind sections – the clarinet, trumpet, and trombone. In addition to the saxophone's negative associations as a frivolous instrument, another concern at the time was that the sound – smooth and mellow – could not compete with blaring trumpets, noisy drums and loud conversation that accompanied jazz performances. To counter this, the mouthpiece was shortened in order to slightly increase amplitude, making the instrument a suitable mouthpiece for the jazz sound. Through former clarinetists - including Sidney Bechet - who did not like the fact that the clarinet was unable to compete in volume with the brass melody instruments, the soprano saxophone became the first variety of the instrument to make a name for itself within the 1920s New Orleans jazz scene.",
+        "F\nThe saxophone became increasingly important in Swing music in the 1930s, which featured baritone saxophone and brass sections of the band playing call-response patterns between each other. Hugely influential towards the end of the 1930s was the work of Coleman Hawkins whose arrival onto the scene marked  the point at which the saxophone grew to be an equal of the trumpet within the jazz sound. This momentum grew exponentially through the 1940s Bop and 1950s Bebop periods, which employed the saxophone expertly for solos and improvisations. Charlie Parker – now considered one of jazz's most important pioneers and talented virtuosos  – was one of the key exponents of this new style of saxophone-focused jazz.",
+        "G\nThe saxophone has continued to play a prominent role in the development of a variety of types of music up to the present day. Saxophonists such as John Coltrane and Ornette Coleman made full use of the instrument's creative potential through the avant-garde jazz movements of the 1960s and 1970s, experimenting with tonal exploration, harmonics and multiphonics, and Pharaoh Sanders extended its reach to mimic non-Western ethnic sounds. In addition to the occasional flirtations classical music made with the saxophone in the early 20th Century, the instrument has also featured prominently in modern minimalist music as well as film soundtracks. Pop music has had a love affair with the saxophone from the 1950s doo-wop and rock and roll tracks, through to Motown and progressive rock, and platinum sales of albums by saxophone soloists such as Kenny G suggest that our fascination with the instrument remains in full swing."
+      ],
+      "start": 14,
+      "end": 26,
+      "groups": [
+        {
+          "title": "Questions 14–19",
+          "instructions": [
+            "Choose the correct heading for each paragraph."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 14,
+              "prompt": "Paragraph B"
+            },
+            {
+              "number": 15,
+              "prompt": "Paragraph C"
+            },
+            {
+              "number": 16,
+              "prompt": "Paragraph D"
+            },
+            {
+              "number": 17,
+              "prompt": "Paragraph E"
+            },
+            {
+              "number": 18,
+              "prompt": "Paragraph F"
+            },
+            {
+              "number": 19,
+              "prompt": "Paragraph G"
+            }
+          ],
+          "options": [
+            {
+              "label": "i",
+              "text": "The saxophone's popularity falls"
+            },
+            {
+              "label": "ii",
+              "text": "The saxophone takes centre stage"
+            },
+            {
+              "label": "iii",
+              "text": "Success abroad"
+            },
+            {
+              "label": "iv",
+              "text": "Late to the show"
+            },
+            {
+              "label": "v",
+              "text": "A difficult decision"
+            },
+            {
+              "label": "vi",
+              "text": "Two versions - the saxophone's early success"
+            },
+            {
+              "label": "vii",
+              "text": "A child of science and sound"
+            },
+            {
+              "label": "viii",
+              "text": "Problems fitting in and how they were solved"
+            },
+            {
+              "label": "ix",
+              "text": "New sounds and new audiences"
+            },
+            {
+              "label": "x",
+              "text": "The inventor's riches"
+            }
+          ],
+          "optionTitle": "List of Headings",
+          "examples": [
+            "Paragraph A: **iv**"
+          ]
+        },
+        {
+          "title": "Questions 20–22",
+          "instructions": [
+            "Complete the sentences below.",
+            "Write **NO MORE THAN THREE WORDS** from the passage for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "While the other three jazz instruments were first played during the {{20}} the saxophone did not appear until much later.",
+            "Sax's father also had a key role in the development of musical instruments, including the {{21}}",
+            "Like the trumpet, trombone and clarinet, the saxophone also owes much of its early success to its use in {{22}} music."
+          ]
+        },
+        {
+          "title": "Questions 23–26",
+          "instructions": [
+            "Match each statement with the correct option."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 23,
+              "prompt": "introduced the instrument to new places and new people?"
+            },
+            {
+              "number": 24,
+              "prompt": "chose to play the saxophone over another instrument because he thought it was more suited to his style of music?"
+            },
+            {
+              "number": 25,
+              "prompt": "was responsible for making the saxophone as important to jazz as other instruments were?"
+            },
+            {
+              "number": 26,
+              "prompt": "became popular while playing the instrument without a backing band?"
+            }
+          ],
+          "options": [
+            {
+              "label": "CH",
+              "text": "Coleman Hawkins"
+            },
+            {
+              "label": "CP",
+              "text": "Charlie Parker"
+            },
+            {
+              "label": "EL",
+              "text": "Edouard Lefebre"
+            },
+            {
+              "label": "KG",
+              "text": "Kenny G"
+            },
+            {
+              "label": "OC",
+              "text": "Ornette Coleman"
+            },
+            {
+              "label": "SB",
+              "text": "Sidney Bechet"
+            }
+          ],
+          "optionTitle": "List of Musicians"
+        }
+      ]
+    },
+    {
+      "title": "Space clean-up",
+      "paragraphs": [
+        "A\nWhen the Soviet Union successfully launched Sputnik 1 in 1957, it was the first artificial satellite ever to enter orbit around the Earth, and the project's success marked a significant milestone in the history of the exploration of space. There was suddenly a profound change in human perspective, a change which would, in subsequent years, become ever more marked as scientists progressively acquired the ability to study aspects of the planet from a new (and not Earth-bound) point of view. However, the technology employed on that first satellite mission was astoundingly simple when compared to what would follow. To cite just one example of this, Sputnik 1 only employed four very basic radio transmitters. Commercial satellites in 2017 routinely employ dozens of extremely complex ‘transponders’.",
+        "B\nIncreasing use of ever-more sophisticated satellites has now permeated almost all aspects of modern life. Telecommunications could not function without them, and neither could the precision geo-location and navigational aids which we all take for granted. Worldwide monitoring of weather patterns has produced not only better forecasting, but an awareness of the human impact on the planet. Satellite imaging of the Earth is essential in conflict resolution and disaster management. Other satellites, such as the Hubble space telescope, are being used to collect data which help us understand the universe beyond our planet. Indeed, the international space station, on which a constantly changing crew of astronauts live, is another type of satellite.",
+        "C\nWhilst the use of satellite technology has had a far-reaching impact on our lives, the question remains of what happens to these machines when they are no longer functional. In total over 6,600 satellites have been launched since Sputnik 1. Of the estimated 3,600 which are still in Earth’s orbit, only 1,000 remain in operation with the rest having become lifeless space debris. The problem of space debris is also self-perpetuating; when two satellites collide, many more pieces of rubbish are produced. A recent collision between two relatively small satellites created over 2,000 trackable pieces. There are now tens of thousands of objects larger than 5cm in diameter in orbit and an estimated one hundred million man-made pieces larger than 1mm. This ever-growing volume of junk is referred to as the Kessler syndrome, whereby each collision creates ever more debris, increasing chances of further collisions.",
+        "D\nThis growing volume of space waste can have serious consequences. Debris hurtling through space can strike working satellites, rendering them inoperable. Not only is this incredibly costly, but it can also take entire communications or tracking networks offline. The danger increases with the involvement of manned spacecraft. In 2007, a piece of space debris pierced the radiator of US space shuttle Endeavour. The International Space Station has also faced problems. Despite being in an orbit with relatively little space debris, it is frequently forced to make time-consuming manoeuvres out of the path of fragments of rubbish. As a result, it is essential that pieces of space debris are constantly tracked. When they do not have the necessary three days’ warning to change the craft’s path, the crew members are increasing told to take shelter in Soyuz, the evacuation craft.",
+        "E\nWith more satellites and spacecraft being launched every year, the problem of space debris needs a solution, one of which has recently been trialled by the Japanese. At the end of 2016, Kyoritsu was taken into orbit and released. Kyoritsu is a type of satellite from which a kilometre-long cable manufactured by a fishing net company is tethered to a 20-kilogram mass. As this moves through the Earth’s magnetic field, it generates an electric current which slows down space debris it comes into contact with. When travelling at a slower speed the debris is forced down into the Earth’s atmosphere where it burns up and is destroyed upon falling to Earth.  Although the initial trial of Kyoritsu was unsuccessful as the tether failed to deploy, the team are hopeful for its future use.",
+        "F\nA further solution may come in redesigning both the types of satellites we use and the technology to retrieve them. As technology has improved, we have the opportunity to create much more compact satellites with considerably lower deployment costs. Many scientists worry that this will lead to a proliferation of debris as these smaller devices fall out of service. However, when Switzerland recently launched their first satellites, which were no larger than a briefcase, they understood the need to have a system in place to avoid them ending their life cycle as space debris. It is for this reason that they designed CleanSpace 1, a satellite with a cone-shaped net at the front which can unfold and then entrap smaller satellites. Once its targets have been captured, it can then slow down and de-orbit, burning everything up as it re-enters the atmosphere. CleanSpace 1 is scheduled to launch in 2018 to recapture the Swiss satellites.",
+        "G\nBrian Weeden, a technical advisor for the Secure World Foundation, has suggested that space debris was a ‘super wicked problem’. Super wicked problems are complex issues without any clear solution, and little time to find one. This is not helped by the fact that no central organisation takes responsibility. However, there are signs that more people are taking this issue seriously with both commercial and national space organisations understanding the need for sustainability in satellite deployment. Technologies like Kyoritsu and CleanSpace 1 are being developed but more programmes are needed. At present, Kessler syndrome still poses a real threat and the volume of space debris is growing."
+      ],
+      "start": 27,
+      "end": 40,
+      "groups": [
+        {
+          "title": "Questions 27–33",
+          "instructions": [
+            "Which paragraph contains the following information? You may use any letter more than once."
+          ],
+          "type": "match",
+          "questions": [
+            {
+              "number": 27,
+              "prompt": "Satellites being smaller and cheaper to launch than they used to be."
+            },
+            {
+              "number": 28,
+              "prompt": "The fact that the more rubbish there is in space, the more is created."
+            },
+            {
+              "number": 29,
+              "prompt": "Space junk orbiting more slowly if it comes into contact with electricity."
+            },
+            {
+              "number": 30,
+              "prompt": "Some paths round the Earth containing less debris than others."
+            },
+            {
+              "number": 31,
+              "prompt": "Satellites performing a wide range of functions."
+            },
+            {
+              "number": 32,
+              "prompt": "Space junk being an issue that must be addressed with extreme urgency."
+            },
+            {
+              "number": 33,
+              "prompt": "Astronauts facing delays and dangers as a result of space debris."
+            }
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "A"
+            },
+            {
+              "label": "B",
+              "text": "B"
+            },
+            {
+              "label": "C",
+              "text": "C"
+            },
+            {
+              "label": "D",
+              "text": "D"
+            },
+            {
+              "label": "E",
+              "text": "E"
+            },
+            {
+              "label": "F",
+              "text": "F"
+            },
+            {
+              "label": "G",
+              "text": "G"
+            }
+          ]
+        },
+        {
+          "title": "Questions 34–40",
+          "instructions": [
+            "Choose words from the list to complete the summary.",
+            "Write the correct letter, A–J, for each answer."
+          ],
+          "type": "fill",
+          "paragraphs": [
+            "Two solutions to the problem of space debris have been developed and are similar in that they both work by changing the {{34}} of the debris and making it burn up as it enters Earth's atmosphere.",
+            "{{35}} engineers have invented a satellite which uses {{36}} to catch defunct satellites, although this solution will only work with debris of a certain {{37}} while {{38}} scientists have experimented with a satellite attached by a line to a {{39}} to force debris to decelerate",
+            "Both advancements are a step in the right direction but more is needed to address the growing {{40}} of space debris."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "weight"
+            },
+            {
+              "label": "B",
+              "text": "orbit"
+            },
+            {
+              "label": "C",
+              "text": "volume"
+            },
+            {
+              "label": "D",
+              "text": "number"
+            },
+            {
+              "label": "E",
+              "text": "cable"
+            },
+            {
+              "label": "F",
+              "text": "netting"
+            },
+            {
+              "label": "G",
+              "text": "size"
+            },
+            {
+              "label": "H",
+              "text": "Swiss"
+            },
+            {
+              "label": "I",
+              "text": "Japanese"
+            },
+            {
+              "label": "J",
+              "text": "shape"
+            }
+          ],
+          "optionTitle": "List of Words"
+        }
+      ]
+    }
+  ]
+}

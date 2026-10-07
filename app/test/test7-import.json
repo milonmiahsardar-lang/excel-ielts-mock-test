@@ -1,0 +1,391 @@
+{
+  "number": 7,
+  "passages": [
+    {
+      "title": "How we manage the land on Earth",
+      "paragraphs": [
+        "Overpopulation, climate change, mass migration, farming issues and the use of natural resources are all affecting our relationship with terra firma, and it has never been more complicated. It is increasingly looking like Earth’s land is being overlooked rather than valued as precious resource.",
+        "For those living in Malé, the overcrowded capital of the Maldives, there is no choice but to build upwards. Caged by the sea, they have no more land to spread onto, yet the city’s population has soared by nearly 52% since 2006. The last census in 2014 counted 158,000 people crammed into the city’s 5.7 sq km of space, and officials say the figure has since grown further.",
+        "Space is such a premium in Malé that pavements are often less than one metre wide, forcing pedestrians to walk in single file, while many streets have no sidewalk at all.",
+        "Malé, capital of the Maldives, is emblematic of modern-day land issues: A small, increasingly urbanising space with a skyrocketing population. Rents have risen exorbitantly and, in some of the poorest areas, up to 40 people can be squeezed into buildings with just 23.2 sq metres of space - about the same size as a small studio flat.",
+        "With so many people living under each other’s feet, crime, drugs and domestic violence have risen alarmingly while the city frequently runs out of water. An entirely new island has risen next door out of the sea itself simply from the city’s garbage.",
+        "In the early 1990s the tallest buildings in the city were only two storeys high, whereas now the average height is eight storeys and some are as high as 25 storeys high. People are coming here because this is where the health, education and jobs are, but overpopulation is leading to many socioeconomic problems.",
+        "Although extreme, Malé is an example in miniature of something that is happening on a far larger scale around the world. With 83 million more people appearing on the planet every year, rising populations are placing increasing pressure on the land.",
+        "The UN’s latest estimates state that there are 7.6 billion people jostling for space on Earth at present and that number will rise to 9.8 billion by 2050. By the end of the century, their projections say there could be 11.2 billion people on our planet.",
+        "With 83 million more people appearing on the planet every year, rising populations are placing increasing pressure on the land. Each of those people will need somewhere to live, a place to work and fertile land to provide them with food. They will need water and energy to stay warm or to light their way at night. They will want roads to drive on and places to park. For the lucky ones, there will be space for their pastimes and leisure activities.",
+        "At first, it can be easy to dismiss fears that mankind may one day run out of space as ridiculous. Physically, the land can easily accommodate 11 billion people - there are around 51.7million sq miles of ice-free land on the planet.",
+        "But large tracts of land remain virtually uninhabitable due to their climate or their remote location: Enormous tracts of Siberia are too inhospitable to be lived upon, and the huge landmass at the centre of Australia is too arid to support many people, meaning the majority of its population is clustered along its coastline.",
+        "The cities and towns we live in account for less than 3% of the Earth’s total land area, but between 35% and 40% is used for agriculture. As populations grow, many fear that more land will be used up to grow more food. And land management has a lot to do with resource management - what we eat, how we grow it, and how we eat it.",
+        "To feed the world’s growing population, a study by researchers at Stanford University estimated that between 10,400-18,900 sq miles of additional land will be required, and that there is a reserve of 1.7 million sq miles thought to be suitable for growing crops left in the world.",
+        "The researchers predicted that increasing demand for food, biofuels, industrial forestry and the spread of urbanisation will result in this reserve of land being completely used up by 2050.",
+        "The bad news is that the demand for new cropland and pastures for animals is already thought to have caused 80% of the deforestation taking place around the world today, wiping out large areas of rich biodiversity and trees that act as natural sinks for greenhouse gases.",
+        "The way we use land right now is extremely inefficient, so much of our land is being used to grow food for livestock - 75% of the world’s agricultural land is used for feeding animals that we then eat ourselves. About 40% of the food grown in the world is also never eaten by anybody - it is thrown away."
+      ],
+      "start": 1,
+      "end": 12,
+      "groups": [
+        {
+          "type": "choice",
+          "title": "Questions 1–4",
+          "instructions": [
+            "Choose the correct answer."
+          ],
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "The height of most city buildings are now measured to be at a general level of",
+              "options": [
+                "25-storeys",
+                "2-storeys",
+                "8-storeys",
+                "40-storeys"
+              ]
+            },
+            {
+              "number": 2,
+              "prompt": "The estimated spare land available that is considered to be good for agricultural use, such as the growing of vegetables is",
+              "options": [
+                "51.7m sq miles",
+                "1.7m sq miles",
+                "10,000 sq miles",
+                "18,900 sq miles"
+              ]
+            },
+            {
+              "number": 3,
+              "prompt": "The current population figure produced by the United Nations for our planet is an estimated",
+              "options": [
+                "11.2 billion",
+                "11 billion",
+                "7.6 billion",
+                "9.8 billion"
+              ]
+            },
+            {
+              "number": 4,
+              "prompt": "The percentage figure for the food we humans grow on Earth that is discarded as waste is approximately",
+              "options": [
+                "75%",
+                "3%",
+                "52%",
+                "40%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "truth",
+          "title": "Questions 5–8",
+          "instructions": [
+            "Do the following statements agree with the information given in Reading Passage 1?"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 5,
+              "prompt": "From 2006 onwards, the rate of city dwellers in the Maldivian capital has grown at just under 50%."
+            },
+            {
+              "number": 6,
+              "prompt": "Walking single file is common on the pavement due to the crowding."
+            },
+            {
+              "number": 7,
+              "prompt": "Water shortages are an almost every day occurrence in the city mentioned."
+            },
+            {
+              "number": 8,
+              "prompt": "Large portions of the land on Earth are completely unsuited for human occupation."
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 9–12",
+          "instructions": [
+            "Complete the sentences below.",
+            "Write **ONE OR TWO WORDS ONLY** to complete the sentences."
+          ],
+          "paragraphs": [
+            "Almost 52 million sq miles of land is available to handle the more than 11 billion projected populations as it is classified as being {{9}}",
+            "Whereas cities account for less than 5% of land usage, just over a third of the land available on Earth is used for {{10}}",
+            "The loss of vast expanses of healthy forests that act naturally to absorb {{11}}",
+            "A brand new piece of man-made land has been formed besides the current city, jumping out from the sea itself, made solely by using unwanted {{12}}"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The monster ships that changed how we travel",
+      "paragraphs": [
+        "When the world’s then-largest ocean liner embarked on its first transatlantic voyage in September 1907, thousands of spectators gathered at the docks of Liverpool to watch. Cunard’s RMS Lusitania had been outfitted with a new type of engine that differed from that of its rivals - and it would go on to break the speed record for the fastest ocean crossing not once, but twice.",
+        "Between 1850 and 1900, three British passenger lines - Cunard, Inman and White Star -dominated transatlantic travel. Toward the end of the century, as increasing numbers of emigrants sought passage to the US and a growing class of Gilded Age travellers demanded speed and luxury, corporate rivalry intensified. Pressure from other European lines forced the British companies to add amenities like swimming pools and restaurants.",
+        "Not unlike today's rivalries between, say, aircraft manufacturers like Airbus and Boeing, each raced to make its ocean liners the largest, fastest and most opulent. In the process, they launched the modern age of leisure cruising - and developed innovations and technologies that continue to be used on cruise ships today.",
+        "In the mid-19th Century, there were two main players. Inman’s inaugural steamship, launched in 1850, made it the first major British line to replace traditional side-mounted paddlewheels with a screw propeller - an apparatus with fixed blades turning on a central axis. With the added speed and fuel efficiency this brought, plus a sleek iron hull that was more durable than wood, Inman established itself as a company unafraid to try new technology for faster crossings.",
+        "Inman’s main rival, Cunard, focused on safety instead. The Cunard way was to let competitors introduce new-fangled technology and let them deal with the setbacks, once that technology had proved itself, only then would Cunard consider using it.",
+        "But Cunard risked being left behind both by Inman and by a new rival which burst onto the scene in 1870 - the White Star line’s splashy debut included five huge ocean liners, dubbed floating hotels. Their flagship, RMS Oceanic, launched in 1871 and the contrast with Cunard was stark, for example where Oceanic had bathtubs, Cunard offered a sink.",
+        "In 1888, Inman introduced ships which no longer required auxiliary sails, giving ocean liners a similar look to the one they have today.",
+        "Cunard, meanwhile, ventured into the new world of telecommunications by installing the first Marconi wireless stations, which allowed radio operators to transmit messages at sea, on its sister ships RMS Lucania and RMS Campania. First-class passengers could even book European hotels by wireless before reaching port.",
+        "In 1897, Germany entered the fray with the SS Amerika, wowed its well-heeled guests by introducing the first à la carte restaurant at sea: the Ritz-Carlton, brainchild of Paris hotelier Cesar Ritz and renowned chef Auguste Escoffier. It allowed guests to order meals at their leisure and dine with their friends rather than attend rigidly scheduled seatings - a forerunner of the kind of freestyle dining seen on today’s cruise ships.",
+        "To complicate matters, American banking tycoon JP Morgan was buying up smaller companies to create a US-based shipping-and-railroad monopoly. In 1901, White Star became his biggest acquisition. Suddenly, the battles weren’t only in the boardrooms: building the world’s top ocean liners was now a point of national pride.",
+        "With the help of a £2.6 million government loan (equivalent to more than £261 million today), Britain’s Cunard line launched the massive twins RMS Lusitania and RMS Mauretania. Both had the first steam turbine engines of any superliner.",
+        "White Star fought back with RMS Olympic and RMS Titanic that would feature double hulls and watertight bulkheads. With standard reciprocating engines, they were slower than the Cunarders, but surpassed them in size and elegance, even debuted the first indoor swimming pools at sea.",
+        "History changed course when Titanic hit an iceberg on 14 April 1912 and sank on her first transatlantic voyage. As a result of the tragedy, safety regulations were updated to require lifeboat berths for every passenger and 24-hour radio surveillance (rules which are still in place).",
+        "But there were more challenges to come. World War One broke out in 1914 and European governments requisitioned liners for war service. Despite a post-war liner-building boom, US anti-immigration laws reduced the number of transatlantic emigrants - the liners’ bread and butter - in the 1920s.",
+        "In 1957, more people crossed the Atlantic by ship than ever before, but by the following year, jet passengers outnumbered them. Cunard said flying was a just fad, and that it was not a genuine concern.",
+        "Despite Cunard’s best efforts, by the late 1950s more people were flying than taking ships to their destinations. Air travel and high operating costs doomed most transatlantic liners by the 1970s - only Cunard’s RMS Queen Mary 2 makes regular transatlantic crossings now."
+      ],
+      "start": 13,
+      "end": 27,
+      "groups": [
+        {
+          "type": "truth",
+          "title": "Questions 13–18",
+          "instructions": [
+            "Do the following statements agree with the information given in passage 2?"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 13,
+              "prompt": "The competition between modern day airline manufacturers is very much like the early days of ship construction."
+            },
+            {
+              "number": 14,
+              "prompt": "Inman was fearful of using the latest available materials alongside progressive construction methods to cut crossing times."
+            },
+            {
+              "number": 15,
+              "prompt": "Following the invention of the radio, second class guests could reserve rooms to stay in the cities they were heading to from the ship they were on."
+            },
+            {
+              "number": 16,
+              "prompt": "With the help of a substantial government loan, Cunard launched two huge ships fitted with the first steam turbine engines of any superliner."
+            },
+            {
+              "number": 17,
+              "prompt": "Crossing the Atlantic is done by the one remaining cruise ship these days on a scheduled timetable."
+            },
+            {
+              "number": 18,
+              "prompt": "A German company introduced fixed and tightly controlled set-seating meal times on their newest ships."
+            }
+          ]
+        },
+        {
+          "type": "match",
+          "title": "Questions 19–23",
+          "instructions": [
+            "Match letters A–C to the statements below.",
+            "Which company does each of the following statements refer to?"
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "Cunard"
+            },
+            {
+              "label": "B",
+              "text": "Inman"
+            },
+            {
+              "label": "C",
+              "text": "White Star"
+            }
+          ],
+          "questions": [
+            {
+              "number": 19,
+              "prompt": "Being acquired by a high-powered financier meant that the proud thoughts of a nation were at stake."
+            },
+            {
+              "number": 20,
+              "prompt": "Claiming air travel was a short-term temporary fashionable form of travel not to be overly worried about."
+            },
+            {
+              "number": 21,
+              "prompt": "Using alternate newer technologies rendered older wind powered systems obsolete giving them the modern-day look."
+            },
+            {
+              "number": 22,
+              "prompt": "Patiently waiting for their rivals to prove that new technologies and systems worked before implementing them themselves."
+            },
+            {
+              "number": 23,
+              "prompt": "Producing massive ocean going vessels that gained them the nickname ‘hotels that float’."
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 24–27",
+          "instructions": [
+            "Complete the sentences below.",
+            "Choose **NO MORE THAN THREE WORDS** from the passage for each answer."
+          ],
+          "paragraphs": [
+            "It was a couple of times in the early 1900s that the newest ship of the day broke the {{24}}",
+            "As European firms excelled, it forced the U.K.-based companies to improve their ships and in particular to {{25}}",
+            "Due to a terrible disaster, new rules were put in place after that we can see today are {{26}}",
+            "It was often whole families in the early part of the 20th Century, moving from Europe to America that was known to the industry as their {{27}}"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Reading Passage 3",
+      "paragraphs": [
+        "A\nWhen you get tired of typical sight-seeing, when you have had enough of monuments, statues, and cathedrals, then think outside the box. Read the four paragraphs below about the innovative types of tourism emerging around the globe and discover ways to spice up your itinerary.",
+        "B\nOne could eat your way through your travels if one wished. A comparatively new kind of tourism is gaining popularity across the world. In this, food and beverages are the main factors that motivate a person to travel to a particular destination. Combining food, drink and culture, this type of travel provides for an authentic experience, the food and restaurants reflecting the local and unique flavors of a particular region or country. Studies conducted into this travel phenomenon have shown that food plays, consciously or unconsciously, an important part in the vacations of a good number of travelers. Those trying this are looking for a more participatory style of holiday experience. Analysts have noticed a shift from ‘passive observation’ to ‘interaction and involvement’ in tourists, whereby the visitor comes into close contact with locals and their way of life rather than remaining a mere spectator.",
+        "C\nThis is a novel approach to tourism in which visitors do not visit the ordinary tourist attractions in traditional fashion. Rather, they let their whims be their guides! Destinations are chosen not on their standard touristic merit but on the basis of an idea or concept often involving elements of humor, serendipity, and chance. One example is known as Monopoly-travel. Participants armed with the local version of a Monopoly game board explore a city at the whim of a dice roll, shuttling between elegant shopping areas and the local water plant – with the occasional visit to jail.",
+        "Another example is Counter-travel, which requires you to take snapshots with your back turned to landmarks like the Eiffel Tower or Big Ben. Joël Henry, the French founder of Latourex, has developed dozens of ideas since coming up with the concept in 1990. The traveler must increase his or her receptiveness, in this way, no trip is ever planned or predictable. Henry’s most unusual invention is known as “Erotravel”, where a couple heads to the same town but travels there separately. The challenge is to find one another abroad. He and his wife have engaged in the pursuit in five cities and have managed to meet up every time.",
+        "D\nThis involves any crop-based or animal based operation or activity that brings visitors to a farm or ranch. It has recently become widespread in America, and participants can choose from a wide range of activities that include picking fruits and vegetables, riding horses, tasting honey, learning about wine and cheese making, or shopping in farm gift shops for local and regional products or handicrafts. For rural economies struggling to stay afloat in this age of industrial farming, it has become an important and marketable opportunity for improving the incomes and potential economic viability of small farms and rural communities. In western North Carolina, the organization ‘HandMade in America’ is using this method to develop their local economy and craft trades, and to educate visitors about farming practices. On their website, it is described as a niche market. As people are becoming more interested in the ecological importance of local food production, related projects reinforce the need to support local growers and allow visitors to experience the relationship between food and our natural environment.",
+        "E\nThis is the trend of traveling to destinations that are first seen in movies, for instance, touring London in a high-speed boat like James Bond or visiting the stately homes that are seen in Jane Austin films. The term was first coined in the US press in the New York Post by journalist Gretchen Kelly, who wrote a 2007 article entitled “The sexiest film locations from 2007 to visit now.”",
+        "Currently, summer blockbuster movies are being used as themed marketing tools by companies like Expedia and Fandango, who are promoting trips to where the Steven Spielberg film, Indiana Jones and the Kingdom of the Crystal Skull was made. Corporations as well as convention and tourism boards are exploiting the trend, creating their own location based travel maps, like the Elizabeth: The Golden Age movie map published by VisitBritain, Britain’s official travel and tourism guide. Other travel itineraries have been created by tourism boards for movies including The Da Vinci Code (France), In Bruges (Belgium), and P.S. I Love You (Ireland). Although a new concept, it’s fast becoming a major factor in the choices travelers make in an increasingly tight economic climate. If a traveler has seen a site in a major motion picture, its media exposure makes it a compelling choice for a family vacation or honeymoon."
+      ],
+      "start": 28,
+      "end": 40,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 28–31",
+          "instructions": [
+            "Reading Passage 3 has five sections, A–E.",
+            "Choose the correct heading for sections B–E from the list of headings below.",
+            "Choose the correct number, i–ix, for each answer."
+          ],
+          "optionTitle": "List of Headings",
+          "options": [
+            {
+              "label": "i",
+              "text": "Experimental Tourism"
+            },
+            {
+              "label": "ii",
+              "text": "Cuisine Tourism"
+            },
+            {
+              "label": "iii",
+              "text": "Adventure Tourism"
+            },
+            {
+              "label": "iv",
+              "text": "Fashion Tourism"
+            },
+            {
+              "label": "v",
+              "text": "Photographic Travels"
+            },
+            {
+              "label": "vi",
+              "text": "Set-jetting."
+            },
+            {
+              "label": "vii",
+              "text": "Agritourism."
+            },
+            {
+              "label": "viii",
+              "text": "Introduction"
+            },
+            {
+              "label": "ix",
+              "text": "Capital Cities"
+            }
+          ],
+          "questions": [
+            {
+              "number": 28,
+              "prompt": "Section B"
+            },
+            {
+              "number": 29,
+              "prompt": "Section C"
+            },
+            {
+              "number": 30,
+              "prompt": "Section D"
+            },
+            {
+              "number": 31,
+              "prompt": "Section E"
+            }
+          ],
+          "examples": [
+            "Section A: viii"
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 32–35",
+          "instructions": [
+            "Look at the following statements (Questions 32–35).",
+            "Read Passage 3 and complete the sentences using **ONE WORD ONLY** from the text."
+          ],
+          "paragraphs": [
+            "Putting together and enjoying culinary delights ensures the trip is more {{32}}",
+            "Moving quickly between more mundane public service facilities and malls that are more {{33}}",
+            "Film sets for hugely popular blockbuster movies are attracting couples to go there for their {{34}}",
+            "In the USA, visiting a strawberry picking field or listening to lectures on producing good wine is becoming increasingly {{35}}"
+          ]
+        },
+        {
+          "type": "truth",
+          "title": "Questions 36–39",
+          "instructions": [
+            "Do the following statements agree with the information given in Reading Passage 3?"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 36,
+              "prompt": "Enjoying good foods is the most critical part of any good holiday for the majority of travellers."
+            },
+            {
+              "number": 37,
+              "prompt": "Taking photos facing directly opposite from and facing away from a popular tourist site is a need for Counter-travel."
+            },
+            {
+              "number": 38,
+              "prompt": "People are gaining appreciation for the need to back those producing local grown vegetables and other crops."
+            },
+            {
+              "number": 39,
+              "prompt": "The term for promoting travel related to the film industry was first used in the British media."
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "title": "Question 40",
+          "instructions": [
+            "Choose the best match for the phrase “think outside the box” in the text."
+          ],
+          "questions": [
+            {
+              "number": 40,
+              "prompt": "For people who are bored of doing the usual activities such as looking at the common tourist attractions, they need to reconsider things from a different perspective. This means to think is a way that is ………………….",
+              "options": [
+                "unique.",
+                "new.",
+                "creative."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

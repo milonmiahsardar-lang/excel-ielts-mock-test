@@ -1,0 +1,293 @@
+{
+  "number": 18,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–5",
+        "type": "fill",
+        "paragraphs": [
+          "**Client’s name:** Mrs Norma Willis",
+          "**Address:** Flat 8\n{{1}}\n23 Dene Road\nWestley",
+          "**Postcode:** {{2}}",
+          "**Home tel.:** none yet",
+          "**Mobile tel.:** {{3}} 745 642",
+          "**Car:**\n• Make: Toyota\n• Model: MR2 {{4}}\n• Age: 4 years\n• Engine size: 2 litre\n• Garaged: Yes",
+          "**No claims bonus:** {{5}}",
+          "**Endorsements:** 3 points"
+        ],
+        "limit": "NO MORE THAN THREE WORDS AND/OR A NUMBER, OR NUMBERS AND LETTERS",
+        "heading": "Tennants Insurance Brokers – Car Insurance Form",
+        "box": true,
+        "instruction": "Complete the form."
+      },
+      {
+        "title": "Questions 6–8",
+        "type": "fill",
+        "instruction": "Complete the list.",
+        "limit": "NO MORE THAN THREE WORDS",
+        "heading": "ITEMS TO COVER",
+        "box": true,
+        "paragraphs": [
+          "**Electrical goods including:**\nStereo system, television, video and {{6}}, 2 × radios, {{7}}",
+          "**Computer equipment including:**\nLaptop and printer",
+          "**Media including:**\nDVDs and CDs",
+          "**Jewellery including:**\nNecklaces, bracelets, {{8}} and brooches"
+        ]
+      },
+      {
+        "title": "Questions 9–10",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 9,
+            "prompt": "Which list correctly assesses the protection for Norma’s flat?",
+            "options": [
+              "Ground-floor flat, Good neighbours, Strong front door, Motion sensor, Double-glazed windows + extra locks, Smoke alarm",
+              "Ground-floor flat, Dead-bolt lock, Burglar alarm, Motion sensor, Double-glazed windows + extra locks, Smoke alarm",
+              "1st-floor flat, Simple front door lock, Burglar alarm connected with police station, Motion sensor, Normal single lock windows, but not many, Smoke alarm"
+            ]
+          },
+          {
+            "number": 10,
+            "prompt": "What does Norma buy at the end?",
+            "options": [
+              "Car insurance only",
+              "Contents insurance only",
+              "Car insurance + contents insurance"
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–15",
+        "type": "match",
+        "instruction": "Choose the correct location for each question. Choose the correct letter A–E for each answer.",
+        "questions": [
+          {
+            "number": 11,
+            "prompt": "is recommended as a temporary alternative?"
+          },
+          {
+            "number": 12,
+            "prompt": "is within walking distance of the halls?"
+          },
+          {
+            "number": 13,
+            "prompt": "can be reached by taking the number 39 bus?"
+          },
+          {
+            "number": 14,
+            "prompt": "should students go to for council tax registration?"
+          },
+          {
+            "number": 15,
+            "prompt": "offer registration services for students from abroad?"
+          }
+        ],
+        "options": [
+          {
+            "label": "A",
+            "text": "The police station"
+          },
+          {
+            "label": "B",
+            "text": "The public launderette"
+          },
+          {
+            "label": "C",
+            "text": "The Students’ Union"
+          },
+          {
+            "label": "D",
+            "text": "The town hall"
+          },
+          {
+            "label": "E",
+            "text": "The train station"
+          }
+        ]
+      },
+      {
+        "title": "Questions 16–20",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 16,
+            "prompt": "If there is a serious fire, students should",
+            "options": [
+              "assemble in the hall.",
+              "leave the building.",
+              "phone the fire brigade."
+            ]
+          },
+          {
+            "number": 17,
+            "prompt": "The most dangerous behaviour in a fire is",
+            "options": [
+              "not reading the safety notices.",
+              "not knowing where the fire exits are.",
+              "not keeping calm."
+            ]
+          },
+          {
+            "number": 18,
+            "prompt": "Fire drills will take place",
+            "options": [
+              "during the day.",
+              "during the night.",
+              "at an unspecified time."
+            ]
+          },
+          {
+            "number": 19,
+            "prompt": "Students who wish to watch late-night films",
+            "options": [
+              "are allowed to do so only in the TV room.",
+              "should do so quietly in their rooms.",
+              "are not permitted to do so because it disturbs other students."
+            ]
+          },
+          {
+            "number": 20,
+            "prompt": "The Mexican restaurant is the only restaurant which",
+            "options": [
+              "has special offers for students.",
+              "does not bring food to campus.",
+              "also sells fish and chips."
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Questions 21–24",
+        "type": "match",
+        "instruction": "What feature is there for each character in the novels? Choose FOUR answers from the box and write the correct letter below.",
+        "questions": [
+          {
+            "number": 21,
+            "prompt": "Rosy"
+          },
+          {
+            "number": 22,
+            "prompt": "Flory"
+          },
+          {
+            "number": 23,
+            "prompt": "Lizzie"
+          },
+          {
+            "number": 24,
+            "prompt": "Estelle"
+          }
+        ],
+        "options": [
+          {
+            "label": "A",
+            "text": "is deliberately cruel to other people."
+          },
+          {
+            "label": "B",
+            "text": "acts with childish innocence."
+          },
+          {
+            "label": "C",
+            "text": "resents previous events."
+          },
+          {
+            "label": "D",
+            "text": "pays attention to appearance."
+          },
+          {
+            "label": "E",
+            "text": "acts in a foolish way."
+          },
+          {
+            "label": "F",
+            "text": "has insight into human nature."
+          }
+        ]
+      },
+      {
+        "title": "Questions 25–26",
+        "type": "multiple",
+        "numbers": [
+          25,
+          26
+        ],
+        "prompt": "What are the speakers’ opinions about the literature lectures?",
+        "options": [
+          "They are too noisy for virtual learning.",
+          "They are well structured.",
+          "There is insufficient time for discussion.",
+          "They always start punctually.",
+          "They are too shy to take part in discussions."
+        ],
+        "instruction": "Choose TWO answers."
+      },
+      {
+        "title": "Questions 27–28",
+        "type": "multiple",
+        "numbers": [
+          27,
+          28
+        ],
+        "prompt": "What improvements can be made in the near future?",
+        "options": [
+          "enhancing IT support",
+          "providing more computers",
+          "finding a good librarian",
+          "buying some new photocopying machines",
+          "becoming a good group leader"
+        ],
+        "instruction": "Choose TWO answers."
+      },
+      {
+        "title": "Questions 29–30",
+        "type": "multiple",
+        "numbers": [
+          29,
+          30
+        ],
+        "prompt": "What do the speakers think of the group discussions?",
+        "options": [
+          "The class is too large.",
+          "It’s easy to find time to meet.",
+          "Group sizes are suitable.",
+          "The class time is properly managed.",
+          "They find that the class is very effective."
+        ],
+        "instruction": "Choose TWO answers."
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–35",
+        "type": "fill",
+        "paragraphs": [
+          "Mad Cow Disease attacks the {{31}} of the affected cows and causes strange behaviour.",
+          "BSE is thought to be caused by prions, which are an infectious type of {{32}}.",
+          "Abnormal prions in BSE infected cattle are first found in the small intestines, tonsils and the {{33}} making up the central nervous system.",
+          "Humans can take in the abnormal prions when they eat infected beef as the abnormal prions are resistant to the usual {{34}} applied to food, such as heat.",
+          "The one American case of CJD was a woman who caught it in {{35}} before going to the US."
+        ],
+        "limit": "NO MORE THAN THREE WORDS",
+        "instruction": "Complete the sentences."
+      },
+      {
+        "title": "Questions 36–40",
+        "type": "fill",
+        "paragraphs": [
+          "CJD causes rapid loss of mental function and {{36}} due to damage from abnormal prions. It can also possibly be genetically inherited. CJD usually affects younger people (from ages 20 to 70) and the patients’ {{37}} of starting symptoms is in their late 50s. Symptoms include personality changes and problems with coordination. Once symptoms appear, the disorder progresses quickly to {{38}} and death.",
+          "The exact causes of BSE are unknown but the first UK cases have indicated that it could come from a prion disease in {{39}} called scrapie. The infected meat was then fed to cattle. Dead cattle with scrapie were also fed to {{40}} making them cannibals. So, we are in turn infected by the disease that we created when we eat infected beef."
+        ],
+        "limit": "NO MORE THAN TWO WORDS",
+        "box": true,
+        "instruction": "Complete the summary."
+      }
+    ]
+  ]
+}

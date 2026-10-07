@@ -1,0 +1,243 @@
+{
+  "number": 15,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–10",
+        "type": "fill",
+        "paragraphs": [
+          "**Customer Information form**",
+          "**Date:** Sunday, 12th May",
+          "**What happened:** the screen {{1}}",
+          "**Troubleshooting checklist:**\n• restarted computer\n• The computer is {{2}} – not running on battery",
+          "**Activity when the problem occurred:** {{3}}",
+          "**Possible diagnosis:** a virus",
+          "**Name of** {{4}} **programme in use:** no answer.",
+          "**Appointment**",
+          "**Location:** {{5}}",
+          "**Time scheduled for visit:** {{6}}",
+          "**Street address:** 14 {{7}} Crescent, 2F3",
+          "**Customer name:** Sandra {{8}}",
+          "**Name on buzzer:** the same as above",
+          "**Fee:** £ {{9}} for the first hour’s work, then £40 per hour",
+          "**Estimated time for job:** less than {{10}}"
+        ],
+        "limit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+        "heading": "Tom’s Computer Maintenance",
+        "box": true,
+        "instruction": "Complete the form below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–17",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 11,
+            "prompt": "The speaker’s job requires",
+            "options": [
+              "a great deal of walking.",
+              "extensive travel.",
+              "clean water."
+            ]
+          },
+          {
+            "number": 12,
+            "prompt": "Why is this story being told?",
+            "options": [
+              "to promote Charity-Water",
+              "for entertainment purposes",
+              "to encourage Helen"
+            ]
+          },
+          {
+            "number": 13,
+            "prompt": "Why do the charity workers usually surprise communities?",
+            "options": [
+              "It makes people happy.",
+              "It is difficult to spread news.",
+              "It makes their work easier."
+            ]
+          },
+          {
+            "number": 14,
+            "prompt": "When villagers heard of the charity workers’ arrival, they",
+            "options": [
+              "had a party.",
+              "were suspicious.",
+              "took no notice."
+            ]
+          },
+          {
+            "number": 15,
+            "prompt": "Helen is feeling",
+            "options": [
+              "ecstatic about her new life.",
+              "curious about the charity workers.",
+              "nostalgic about her old life."
+            ]
+          },
+          {
+            "number": 16,
+            "prompt": "What did the speaker notice about Helen?",
+            "options": [
+              "that she had bathed recently",
+              "the care she took with her appearance",
+              "that she was wearing a green uniform"
+            ]
+          },
+          {
+            "number": 17,
+            "prompt": "Making someone feel beautiful was",
+            "options": [
+              "part of the speaker’s job description.",
+              "an unexpected bonus for the speaker.",
+              "of little importance to the speaker."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Questions 18–20",
+        "type": "multiple",
+        "numbers": [
+          18,
+          19,
+          20
+        ],
+        "prompt": "In what THREE ways did the new well improve Helen’s life?",
+        "options": [
+          "Her children enjoyed better health",
+          "It increased her household income",
+          "It gave her more free time",
+          "She got a leadership position",
+          "She had more choices and options",
+          "She made new friends in her village",
+          "It allowed her to go to school."
+        ],
+        "instruction": "Choose THREE answers."
+      }
+    ],
+    [
+      {
+        "title": "Questions 21–30",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 21,
+            "prompt": "One reason why Spiros felt happy about his marketing presentation was that",
+            "options": [
+              "he was not nervous",
+              "his style was good",
+              "the presentation was the best in his group"
+            ]
+          },
+          {
+            "number": 22,
+            "prompt": "What surprised Hiroko about the other students’ presentations?",
+            "options": [
+              "Their presentations were not interesting",
+              "They found their presentations stressful",
+              "They didn’t look at the audience enough"
+            ]
+          },
+          {
+            "number": 23,
+            "prompt": "After she gave her presentation, Hiroko felt",
+            "options": [
+              "delighted",
+              "dissatisfied",
+              "embarrassed"
+            ]
+          },
+          {
+            "number": 24,
+            "prompt": "How does Spiros feel about his performance in tutorials?",
+            "options": [
+              "not very happy",
+              "really pleased",
+              "fairly confident"
+            ]
+          },
+          {
+            "number": 25,
+            "prompt": "Why can the other students participate so easily in discussions?",
+            "options": [
+              "They are polite to each other",
+              "They agree to take turns in speaking",
+              "They know each other well"
+            ]
+          },
+          {
+            "number": 26,
+            "prompt": "Why is Hiroko feeling more positive about tutorials now?",
+            "options": [
+              "She finds the other students’ opinions more interesting",
+              "She is making more of a contribution",
+              "The tutor includes her in the discussion"
+            ]
+          },
+          {
+            "number": 27,
+            "prompt": "To help her understand lectures, Hiroko",
+            "options": [
+              "consulted reference materials",
+              "had extra tutorials with her lecturers",
+              "borrowed lecture notes from other students"
+            ]
+          },
+          {
+            "number": 28,
+            "prompt": "What does Spiros think of his reading skills?",
+            "options": [
+              "He reads faster than he used to",
+              "It still takes him a long time to read",
+              "He tends to struggle with new vocabulary"
+            ]
+          },
+          {
+            "number": 29,
+            "prompt": "What is Hiroko’s subject area?",
+            "options": [
+              "environmental studies",
+              "health education",
+              "engineering"
+            ]
+          },
+          {
+            "number": 30,
+            "prompt": "Hiroko thinks that in the reading classes the students should",
+            "options": [
+              "learn more vocabulary",
+              "read more in their own subject areas",
+              "develop better reading strategies"
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–40",
+        "type": "fill",
+        "paragraphs": [
+          "**Date:** 6th November",
+          "**Lecture Topic:** Primate Behaviour",
+          "Review – last lecture we talked about how physical features apply to:\n• living primates\n• classification\n• {{31}}",
+          "• Human evolution is not just about how people have {{32}}, but also about how our behaviour evolved.",
+          "• The most notable thing about humans is not just that they walk on two legs but that they can {{33}}",
+          "**Primate Cognitive Abilities**",
+          "Cognition = the amount of {{34}} that goes into a behaviour.",
+          "It’s difficult to come up with {{35}} to measure cognition.",
+          "How sentient are the {{36}}?",
+          "Sentient = there is {{37}} conscious thought",
+          "Behaviours that support the presence of conscious thought in primates:\n• Various sorts of {{38}} (helping others without benefit)\n• “Machiavellian intelligence” or deliberate {{39}}\n• Chimps can be language trained – highly intelligent\n• Cognition and intelligence in primates has deep {{40}} ramifications."
+        ],
+        "limit": "NO MORE THAN THREE WORDS",
+        "box": true,
+        "instruction": "Complete the notes below."
+      }
+    ]
+  ]
+}

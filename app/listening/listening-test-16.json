@@ -1,0 +1,279 @@
+{
+  "number": 16,
+  "parts": [
+    [
+      {
+        "title": "Questions 1–4",
+        "type": "fill",
+        "paragraphs": [
+          "**Facilities available:**\n• Golf\n• {{1}}\n• {{2}}",
+          "**Classes available:**\n• Kick-boxing\n• {{3}}",
+          "**Additional facility:**\n• {{4}} (restaurant opening soon)"
+        ],
+        "limit": "NO MORE THAN THREE WORDS",
+        "heading": "Notes on sports club",
+        "box": true,
+        "instruction": "Complete the notes below."
+      },
+      {
+        "title": "Questions 5–8",
+        "type": "table",
+        "columns": [
+          "Type",
+          "Use of facilities",
+          "Cost of classes",
+          "Times",
+          "Joining fee",
+          "Annual subscription fee"
+        ],
+        "rows": [
+          [
+            "GOLD",
+            "All",
+            "Free",
+            "Any time",
+            "£250",
+            "£ {{5}}"
+          ],
+          [
+            "SILVER",
+            "All",
+            "£ {{6}}",
+            "from {{7:0}} am to {{7:1}} pm",
+            "£225",
+            "£300"
+          ],
+          [
+            "BRONZE",
+            "Restricted",
+            "£3",
+            "from 10.30 to 3.30 weekdays only",
+            "£50",
+            "£ {{8}}"
+          ]
+        ],
+        "limit": "NO MORE THAN TWO NUMBERS",
+        "heading": "MEMBERSHIP SCHEMES"
+      },
+      {
+        "title": "Questions 9–10",
+        "type": "fill",
+        "paragraphs": [
+          "To join the centre, you need to book an instructor’s {{9}}.",
+          "To book a trial session, speak to David {{10}} (0458 9531)."
+        ],
+        "limit": "ONE WORD ONLY",
+        "instruction": "Complete the sentences below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 11–16",
+        "type": "match",
+        "heading": "RIVENDEN CITY THEATRE",
+        "instruction": "What change has been made to each part of the theatre? Choose the correct letter A–G for each answer.",
+        "options": [
+          {
+            "label": "A",
+            "text": "doubled in number"
+          },
+          {
+            "label": "B",
+            "text": "given separate entrance"
+          },
+          {
+            "label": "C",
+            "text": "reduced in number"
+          },
+          {
+            "label": "D",
+            "text": "increased in size"
+          },
+          {
+            "label": "E",
+            "text": "replaced"
+          },
+          {
+            "label": "F",
+            "text": "strengthened"
+          },
+          {
+            "label": "G",
+            "text": "temporarily closed"
+          }
+        ],
+        "questions": [
+          {
+            "number": 11,
+            "prompt": "box office"
+          },
+          {
+            "number": 12,
+            "prompt": "shop"
+          },
+          {
+            "number": 13,
+            "prompt": "ordinary seats"
+          },
+          {
+            "number": 14,
+            "prompt": "seats for wheelchair users"
+          },
+          {
+            "number": 15,
+            "prompt": "lifts"
+          },
+          {
+            "number": 16,
+            "prompt": "dressing rooms"
+          }
+        ]
+      },
+      {
+        "title": "Questions 17–20",
+        "type": "table",
+        "columns": [
+          "Play",
+          "Dates",
+          "Starting time",
+          "Tickets available",
+          "Price"
+        ],
+        "rows": [
+          [
+            "Royal Hunt of the Sun",
+            "October 13th to {{17}}",
+            "{{18}} pm",
+            "for {{19:0}} and {{19:1}}",
+            "£ {{20}}"
+          ]
+        ],
+        "limit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+        "heading": ""
+      }
+    ],
+    [
+      {
+        "title": "Question 21",
+        "type": "choice",
+        "questions": [
+          {
+            "number": 21,
+            "prompt": "What is Brian going to do before the course starts?",
+            "options": [
+              "attend a class",
+              "write a report",
+              "read a book"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Questions 22–25",
+        "type": "table",
+        "columns": [
+          "College Facility",
+          "Information"
+        ],
+        "rows": [
+          [
+            "Refectory",
+            "inform them {{22}} about special dietary requirements"
+          ],
+          [
+            "{{23}}",
+            "long waiting list, apply now"
+          ],
+          [
+            "Careers advice",
+            "drop-in centre for information"
+          ],
+          [
+            "Fitness centre",
+            "reduced {{24}} for students"
+          ],
+          [
+            "Library",
+            "includes books, journals, equipment room containing audio-visual materials"
+          ],
+          [
+            "Computers",
+            "ask your {{25}} to arrange a password with the technical support team"
+          ]
+        ],
+        "limit": "NO MORE THAN TWO WORDS",
+        "heading": ""
+      },
+      {
+        "title": "Questions 26–30",
+        "type": "fill",
+        "paragraphs": [
+          "The Business Resource Centre contains materials such as books and manuals to be used for training. It is possible to hire {{26}} and {{27}}. There are materials for working on study skills (e.g. {{28}}) and other subjects include finance and {{29}}.",
+          "{{30}} membership costs £50 per year."
+        ],
+        "limit": "NO MORE THAN TWO WORDS",
+        "heading": "Business Centre",
+        "box": true,
+        "instruction": "Complete the summary below."
+      }
+    ],
+    [
+      {
+        "title": "Questions 31–37",
+        "type": "table",
+        "columns": [
+          "Period",
+          "Situation"
+        ],
+        "rows": [
+          [
+            "1st–4th centuries",
+            "Produce from the area was used to {{31}} the people of London."
+          ],
+          [
+            "5th–10th centuries",
+            "New technology allowed the production of goods made of {{32:0}} and {{32:1}}."
+          ],
+          [
+            "11th century",
+            "Lack of {{33}} in the East End encouraged the growth of businesses."
+          ],
+          [
+            "16th century",
+            "• Construction of facilities for the building of {{34}} stimulated international trade.\n• Agricultural workers came from other parts of {{35}} to look for work."
+          ],
+          [
+            "17th century",
+            "Marshes were drained to provide land that could be {{36}} on."
+          ],
+          [
+            "19th century",
+            "Inhabitants lived in conditions of great {{37}} with very poor sanitation."
+          ]
+        ],
+        "limit": "NO MORE THAN TWO WORDS",
+        "heading": "Social history of the East End of London"
+      },
+      {
+        "title": "Questions 38–40",
+        "type": "multiple",
+        "numbers": [
+          38,
+          39,
+          40
+        ],
+        "prompt": "Which THREE of the following problems are mentioned in connection with 20th century housing in the East End?",
+        "options": [
+          "unsympathetic landlords",
+          "unclean water",
+          "heating problems",
+          "high rents",
+          "overcrowding",
+          "poor standards of building",
+          "houses catching fire"
+        ],
+        "instruction": "Choose THREE answers."
+      }
+    ]
+  ]
+}

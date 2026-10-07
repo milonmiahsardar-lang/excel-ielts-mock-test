@@ -1,0 +1,348 @@
+"use client";
+
+import { useEffect, useState, type PointerEvent as ReactPointerEvent, type CSSProperties } from "react";
+import { Bell, Menu, Wifi } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+
+const test1Task1Prompt =
+  "The graph below gives information about the number of jobs in four sectors of the economy in the US between 1960 and 2020.";
+
+const test1Task2Prompt =
+  "The best way to provide enough homes in large cities is to build tall apartment blocks.";
+
+const test2Task1Prompt =
+  "The chart below shows the amount spent on six consumer goods in four European countries.";
+
+const test2Task2Prompt =
+  "When a country develops its technology, the traditional skills and ways of life die out. It is pointless to try and keep them alive.";
+
+export default function WritingTest() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const isTest2 = searchParams.get("test") === "2";
+  const [activeTask, setActiveTask] = useState<1 | 2>(1);
+  const [timeLeft, setTimeLeft] = useState(60 * 60);
+  const [task1Answer, setTask1Answer] = useState("");
+  const [task2Answer, setTask2Answer] = useState("");
+  const [isReady, setIsReady] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
+  const [paneSplit, setPaneSplit] = useState(50);
+
+  const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!event.currentTarget.hasPointerCapture(event.pointerId)) return;
+    const bounds = event.currentTarget.parentElement?.getBoundingClientRect();
+    if (!bounds || bounds.width === 0) return;
+    const percentage = ((event.clientX - bounds.left) / bounds.width) * 100;
+    setPaneSplit(Math.min(75, Math.max(25, percentage)));
+  };
+
+  useEffect(() => {
+    sessionStorage.removeItem("ieltsWritingAnswers");
+    sessionStorage.removeItem("ieltsWritingTimeLeft");
+    sessionStorage.removeItem("ieltsWritingFinished");
+
+    setTask1Answer("");
+    setTask2Answer("");
+    setTimeLeft(60 * 60);
+    setIsFinished(false);
+    setIsReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isReady || isFinished || timeLeft <= 0) return;
+
+    const timer = window.setInterval(() => {
+      setTimeLeft((time) => {
+        if (time <= 1) {
+          window.clearInterval(timer);
+          return 0;
+        }
+
+        return time - 1;
+      });
+    }, 1000);
+
+    return () => window.clearInterval(timer);
+  }, [isReady, isFinished]);
+
+  useEffect(() => {
+    if (!isReady) return;
+
+    sessionStorage.setItem(
+      "ieltsWritingAnswers",
+      JSON.stringify({
+        task1: task1Answer,
+        task2: task2Answer,
+      })
+    );
+    sessionStorage.setItem(
+      "ieltsWritingTimeLeft",
+      String(timeLeft)
+    );
+  }, [isReady, task1Answer, task2Answer, timeLeft]);
+
+  const answer = activeTask === 1 ? task1Answer : task2Answer;
+  const setAnswer =
+    activeTask === 1 ? setTask1Answer : setTask2Answer;
+
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+
+  const finishTest = () => {
+    sessionStorage.setItem(
+      "ieltsWritingAnswers",
+      JSON.stringify({
+        task1: task1Answer,
+        task2: task2Answer,
+      })
+    );
+    sessionStorage.setItem(
+      "ieltsWritingTimeLeft",
+      String(timeLeft)
+    );
+    sessionStorage.setItem("ieltsWritingFinished", "true");
+    setIsFinished(true);
+    router.push("/test/writing/result");
+  };
+
+  return (
+    <main
+      className="flex h-screen flex-col bg-white text-black"
+      style={{ fontFamily: "Arial, sans-serif" }}
+    >
+      <header className="flex h-[60px] shrink-0 items-center justify-between border-y border-[#d5d5d5] bg-white px-4">
+        <div className="flex items-center gap-6">
+          <div className="text-[32px] font-black leading-none tracking-[-2.5px] text-[#e31837]">
+            IELTS
+            <sup className="ml-[-2px] align-top text-[9px] tracking-normal">
+              ™
+            </sup>
+          </div>
+
+          <div className="mt-1 self-start text-[14px] font-bold leading-5">
+            Test taker ID
+            <div className="text-[13px] font-normal">
+              Writing ·{" "}
+              {isFinished
+                ? "Completed"
+                : `${String(minutes).padStart(2, "0")}:${String(
+                    seconds
+                  ).padStart(2, "0")}`}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-5 text-[#222]">
+          <div
+            className="rounded border border-[#c9c9c9] px-3 py-1 text-[14px] font-bold tabular-nums"
+            aria-label="Time remaining"
+          >
+            {isFinished
+              ? "Completed"
+              : `Time ${String(minutes).padStart(2, "0")}:${String(
+                  seconds
+                ).padStart(2, "0")}`}
+          </div>
+          <button aria-label="Connection status">
+            <Wifi size={22} />
+          </button>
+          <button aria-label="Notifications">
+            <Bell size={22} />
+          </button>
+          <button aria-label="Menu">
+            <Menu size={24} />
+          </button>
+        </div>
+      </header>
+
+      <div className="mx-5 mt-2 flex min-h-[54px] shrink-0 items-center rounded border border-[#d5d5d5] bg-[#f2f2ef] px-4 py-1">
+        <div>
+          <h2 className="text-[14px] font-bold leading-5">
+            Writing Test
+          </h2>
+          <p className="text-[14px] leading-5">
+            Complete both tasks. You should spend about 20 minutes
+            on Task 1 and 40 minutes on Task 2.
+          </p>
+        </div>
+      </div>
+
+      <section className="mx-5 my-3 flex min-h-0 flex-1 flex-col overflow-hidden border border-[#c9c9c9]">
+        <div className="flex shrink-0 items-center gap-2 border-b border-[#d5d5d5] bg-white px-4 py-2">
+          {[1, 2].map((task) => (
+            <button
+              key={task}
+              onClick={() => setActiveTask(task as 1 | 2)}
+              className={`rounded-sm border px-4 py-2 text-[14px] font-bold ${
+                activeTask === task
+                  ? "border-[#2185d0] bg-[#eaf4fc] text-black"
+                  : "border-transparent hover:bg-[#f2f2f2]"
+              }`}
+              aria-current={
+                activeTask === task ? "page" : undefined
+              }
+            >
+              Task {task}
+            </button>
+          ))}
+          <span className="ml-auto text-[13px] text-[#444]">
+            Task {activeTask} of 2
+          </span>
+        </div>
+
+        <div className="relative grid min-h-0 flex-1 grid-cols-1 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] gap-3 overflow-hidden p-3 lg:grid-cols-[minmax(0,var(--writing-left))_12px_minmax(0,var(--writing-right))] lg:grid-rows-1 lg:gap-4" style={{ "--writing-left": `${paneSplit}fr`, "--writing-right": `${100 - paneSplit}fr` } as CSSProperties}>
+          {isFinished && (
+            <div
+              role="status"
+              className="absolute left-1/2 top-[132px] z-10 -translate-x-1/2 rounded border border-[#8abf91] bg-[#eff8f0] px-4 py-2 text-[14px] shadow"
+            >
+              Writing test completed. Your answers are saved.
+            </div>
+          )}
+
+          <div className="min-h-0 overflow-y-auto rounded border border-[#d5d5d5] bg-white p-4">
+            {activeTask === 1 ? (
+              <div>
+                <h1 className="mb-2 text-[18px] font-bold">
+                  Task 1
+                </h1>
+                <p className="mb-2 text-[16px] leading-6">
+                  You should spend about 20 minutes on this task.
+                </p>
+                <p className="mb-2 text-[16px] leading-6">
+                  {isTest2 ? test2Task1Prompt : test1Task1Prompt}
+                </p>
+                {isTest2 ? (
+                  <p className="mb-2 text-[16px] leading-6">
+                    Write a report for a university lecturer describing the information shown below.
+                    <br />
+                    You should write at least 150 words.
+                  </p>
+                ) : (
+                  <p className="mb-2 text-[16px] leading-6">
+                    Summarise the information by selecting and reporting
+                    the main features, and make comparisons where relevant.
+                    <br />
+                    Write at least 150 words.
+                  </p>
+                )}
+                <img
+                  src={isTest2 ? "/images/test2-writing-task-1.png" : "/images/writing-task-1.jpg"}
+                  alt={
+                    isTest2
+                      ? "Bar chart showing spending on six consumer goods in four European countries"
+                      : "Graph showing the number of jobs in four sectors of the US economy between 1960 and 2020"
+                  }
+                  className="my-4 h-[48vh] min-h-[300px] max-h-[620px] w-full border border-[#d5d5d5] bg-white object-contain"
+                />
+              </div>
+            ) : (
+              <div>
+                <h1 className="mb-2 text-[18px] font-bold">
+                  Task 2
+                </h1>
+                <p className="mb-2 text-[16px] leading-6">
+                  You should spend about 40 minutes on this task.
+                </p>
+                {isTest2 ? (
+                  <p className="mb-2 text-[16px] leading-6">
+                    Present a written argument or case to an educated reader with no specialist knowledge of the following topic.
+                  </p>
+                ) : (
+                  <p className="mb-2 text-[16px] leading-6">
+                    Write about the following topic:
+                  </p>
+                )}
+
+                <div className="my-4 rounded border border-[#bdbdbd] bg-[#f8f8f8] p-4">
+                  <p className="mb-3 text-[16px] font-bold leading-6">
+                    {isTest2 ? test2Task2Prompt : test1Task2Prompt}
+                  </p>
+                  <p className="text-[16px] leading-6">
+                    {isTest2
+                      ? "To what extent do you agree or disagree with this opinion?"
+                      : "To what extent do you agree or disagree with this statement?"}
+                  </p>
+                </div>
+
+                <p className="mb-4 text-[16px] leading-6">
+                  {isTest2
+                    ? "You should use your own ideas, knowledge and experience and support your arguments with examples and relevant evidence."
+                    : "Give reasons for your answer and include any relevant examples from your own knowledge or experience."}
+                  <br />
+                  Write at least 250 words.
+                </p>
+              </div>
+            )}
+          </div>
+
+          <div role="separator" aria-label="Resize task and writing panels" aria-orientation="vertical" aria-valuemin={25} aria-valuemax={75} aria-valuenow={Math.round(paneSplit)} tabIndex={0} onPointerDown={(event) => event.currentTarget.setPointerCapture(event.pointerId)} onPointerMove={movePaneDivider} onPointerUp={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onPointerCancel={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onKeyDown={(event) => { if (event.key === "ArrowLeft") setPaneSplit((value) => Math.max(25, value - 2)); if (event.key === "ArrowRight") setPaneSplit((value) => Math.min(75, value + 2)); }} className="relative hidden cursor-col-resize touch-none outline-none focus-visible:ring-2 focus-visible:ring-[#2185d0] lg:block">
+            <span className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-[#999]" />
+            <span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-[#555] bg-white text-[20px] leading-none shadow-sm">↔</span>
+          </div>
+          <div className="flex min-h-0 flex-col rounded border border-[#d5d5d5] bg-white p-4">
+            <label
+              htmlFor={`writing-task-${activeTask}`}
+              className="mb-2 text-[14px] font-bold"
+            >
+              Your answer
+            </label>
+            <textarea
+              id={`writing-task-${activeTask}`}
+              value={answer}
+              onChange={(event) => setAnswer(event.target.value)}
+              placeholder="Type your answer here…"
+              className="min-h-0 flex-1 resize-none rounded-sm border border-[#888] bg-white p-3 text-[16px] leading-6 outline-none focus:border-[#2185d0] focus:ring-1 focus:ring-[#2185d0]"
+            />
+            <div className="mt-2 self-end text-[13px] text-[#444]">
+              Word count:{" "}
+              {answer.trim()
+                ? answer.trim().split(/\s+/).length
+                : 0}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="flex h-[46px] shrink-0 items-center justify-between border-t border-[#d5d5d5] bg-[#f2f2f2] px-5">
+        <div className="flex items-center gap-4 text-[14px] font-bold">
+          <span>Writing</span>
+          {[1, 2].map((task) => (
+            <button
+              key={task}
+              onClick={() => setActiveTask(task as 1 | 2)}
+              className={`min-w-7 rounded-sm px-2 py-1 ${
+                activeTask === task
+                  ? "border border-[#2185d0] bg-white"
+                  : "hover:bg-white"
+              }`}
+              aria-label={`Go to Task ${task}`}
+            >
+              {task}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex gap-2">
+          <button
+            onClick={() =>
+              setActiveTask(activeTask === 2 ? 1 : 2)
+            }
+            className="rounded-sm bg-black px-4 py-2 text-[14px] font-bold text-white hover:bg-[#333]"
+          >
+            {activeTask === 1
+              ? "Next Task →"
+              : "← Previous Task"}
+          </button>
+          <button
+            onClick={finishTest}
+            disabled={isFinished}
+            className="rounded-sm bg-[#e31837] px-4 py-2 text-[14px] font-bold text-white hover:bg-[#bd1230] disabled:cursor-default disabled:bg-[#777]"
+          >
+            {isFinished ? "Test Finished" : "Finish Test"}
+          </button>
+        </div>
+      </footer>
+    </main>
+  );
+}

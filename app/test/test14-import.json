@@ -1,0 +1,422 @@
+{
+  "number": 14,
+  "passages": [
+    {
+      "title": "We hold an opinion on Language",
+      "paragraphs": [
+        "A\nIt is not easy to be systematic and objective about language study. Popular linguistic debate regularly deteriorates into invective and polemic. Language belongs to everyone, so most people feel they have a right to hold an opinion about it. And when opinions differ, emotions can run high. Arguments can start as easily over minor points of usage as over major policies of linguistic education.",
+        "B\nLanguage, moreover, is a very public behavior, so it is easy for different usages to be noted and criticized. No part of society or social behavior is exempt: linguistic factors influence how we judge personality, intelligence, social status, educational standards, job aptitude, and many other areas of identity and social survival. As a result, it is easy to hurt, and to be hurt, when language use is unfeelingly attacked.",
+        "C\nIn its most general sense, prescriptivism is the view that one variety of language has an inherently higher value than others, and that this ought to be imposed on the whole of the speech community. The view is propounded especially in relation to grammar and vocabulary, and frequently with reference to pronunciation. The variety which is favored, in this account, is usually a version of the ‘standard’ written language, especially as encountered in literature, or in the formal spoken language which most closely reflects this style. Adherents to this variety are said to speak or write ‘correctly’; deviations from it are said to be ‘incorrect’.",
+        "D\nAll the main languages have been studied prescriptively, especially in the 18th century approach to the writing of grammars and dictionaries. The aims of these early grammarians were threefold: (a) they wanted to codify the principles of their languages, to show that there was a system beneath the apparent chaos of usage, (b) they wanted a means of settling disputes over usage, and (c) they wanted to point out what they felt to be common errors, in order to ‘improve’ the language. The authoritarian nature of the approach is best characterized by its reliance on ‘rules 7 of grammar. Some usages are ‘prescribed’, to be learnt and followed accurately; others are ‘proscribed’, to be avoided. In this early period, there were no half-measures: usage was either right or wrong, and it was the task of the grammarian not simply to record alternatives, but to pronounce judgement upon them.",
+        "E\nThese attitudes are still with us, and they motivate a widespread concern that linguistic standards should be maintained. Nevertheless, there is an alternative point of view that is concerned less with standards than with the facts of linguistic usage. This approach is summarized in the statement that it is the task of the grammarian to describe, not prescribe-to record the facts of linguistic diversity, and not to attempt the impossible tasks of evaluating language variation or halting language change. In the second half of the 18th century, we already find advocates of this view, such as Joseph Priestley, whose Rudiments of English Grammar (1761) insists that ‘the custom of speaking is the original and only just standard of any language’. Linguistic issues, it is argued, cannot be solved by logic and legislation. And this view has become the tenet of the modern linguistic approach to grammatical analysis. In our own time, the opposition between ‘descriptivists’ and ‘prescriptivists’ has often become extreme, with both sides painting unreal pictures of the other. Descriptive grammarians have been presented as people who do not care about standards, because of the way they see all forms of usage as equally valid. Prescriptive grammarians have been presented as blind adherents to a historical tradition. The opposition has even been presented in quasi-political terms-of radical liberalism elitist conservatism."
+      ],
+      "start": 1,
+      "end": 13,
+      "groups": [
+        {
+          "type": "truth",
+          "title": "Questions 1-8",
+          "instructions": [
+            "Do the following statements agree with the claims of the writer in Reading Passage 1?"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "There are understandable reasons why arguments occur about language."
+            },
+            {
+              "number": 2,
+              "prompt": "People feel more strongly about policy of language education than about small differences in language usage."
+            },
+            {
+              "number": 3,
+              "prompt": "Our assessment of a person’s intelligence is affected by the way he or she uses language."
+            },
+            {
+              "number": 4,
+              "prompt": "Prescriptive grammar books cost a lot of money to buy in the 18th century."
+            },
+            {
+              "number": 5,
+              "prompt": "Prescriptivism still exists today."
+            },
+            {
+              "number": 6,
+              "prompt": "According to descriptivists it is pointless to try to stop language change."
+            },
+            {
+              "number": 7,
+              "prompt": "Descriptivism only appeared after the 18th century."
+            },
+            {
+              "number": 8,
+              "prompt": "Both descriptivists and prescriptivists have been misrepresented."
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 9-12",
+          "instructions": [
+            "Complete the summary using the list of words, A-I, below.",
+            "Write the correct letter, A-I, in boxes 9-12 on your answer sheet"
+          ],
+          "heading": "The language controversy",
+          "optionTitle": "List of Words",
+          "options": [
+            {
+              "label": "A",
+              "text": "descriptivists"
+            },
+            {
+              "label": "B",
+              "text": "evaluation"
+            },
+            {
+              "label": "C",
+              "text": "rules"
+            },
+            {
+              "label": "D",
+              "text": "formal language"
+            },
+            {
+              "label": "E",
+              "text": "change"
+            },
+            {
+              "label": "F",
+              "text": "modern linguists"
+            },
+            {
+              "label": "G",
+              "text": "language experts"
+            },
+            {
+              "label": "H",
+              "text": "prescriptivists"
+            },
+            {
+              "label": "I",
+              "text": "popular speech"
+            }
+          ],
+          "paragraphs": [
+            "According to {{9}}， there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical {{10}}. Conversely, the view of {{11}}, such as Joseph Priestley, is that grammar should be based on {{12}}."
+          ]
+        },
+        {
+          "type": "choice",
+          "title": "Question 13",
+          "instructions": [
+            "Choose the correct answer."
+          ],
+          "questions": [
+            {
+              "number": 13,
+              "prompt": "What is the writer’s purpose in Reading Passage 1?",
+              "options": [
+                "to argue in favor of a particular approach to writing dictionaries and grammar books",
+                "to present a historical account of differing views of language",
+                "to describe the differences between spoken and written language",
+                "to show how a certain view of language has been discredited"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Seed Hunters",
+      "paragraphs": [
+        "With quarter of the world’s plants set to vanish within the next 50 years, Dough Alexander reports on the scientists working against the clock the preserve the Earth’s botanical heritage.",
+        "They travel the four comers of the globe, scouring jungles, forests and savannas. But they’re not looking for ancient artefacts, lost treasure or undiscovered tombs. Just pods. It may lack the romantic allure of archaeology, or the whiff of danger that accompanies going after big game, but seed hunting is an increasingly serious business. Some seek seeds for profit—hunters in the employ of biotechnology firms, pharmaceutical companies and private corporations on the lookout for species that will yield the drugs or crops of the future. Others collect to conserve, working to halt the sad slide into extinction facing so many plant species.",
+        "Among the pioneers of this botanical treasure hunt was John Tradescant, an English royal gardener who brought back plants and seeds from his journeys abroad in the early 1600s. Later, the English botanist Sir Joseph Banks - who was the first director of the Royal Botanic Gardens at Kew and travelled with Captain James Cook on his voyages near the end of the 18th century—was so driven to expand his collections that he sent botanists around the world at his own expense.",
+        "Those heady days of exploration and discovery may be over, but they have been replaced by a pressing need to preserve our natural history for the future. This modem mission drives hunters such as Dr Michiel van Slageren, a good-natured Dutchman who often sports a wide-brimmed hat in the field—he could easily be mistaken for the cinematic hero Indiana Jones. He and three other seed hunters work at the Millennium Seed Bank, an 80 million [pounds sterling] international conservation project that aims to protect the world’s most endangered wild plant species",
+        "The group’s headquarters are in a modem glass-and-concrete structure on a 200-hectare Estate at Wakehurst Place in the West Sussex countryside. Within its underground vaults are 260 million dried seeds from 122 countries, all stored at -20 Celsius to survive for centuries. Among the 5，100 species represented are virtually all of Britain’s 1,400 native seed-bearing plants, the most complete such collection of any country’s flora.",
+        "Overseen by the Royal botanic gardens, the Millennium Seed Bank is the world’s largest wild-plant depository. It aims to collect 24,000 species by 2010. The reason is simple: thanks to humanity’s efforts, an estimated 25 per cent of the world’s plants are on the verge of extinction and may vanish within 50 years. We’re currently responsible for habitat destruction on an unprecedented scale, and during the past 400 years, plant species extinction rates have been about 70 times greater than those indicated by the geological record as being ’normal’. Experts predict that during the next 50 years a further one billion hectares of wilderness will be converted to farmland in developing countries alone.",
+        "The implications of this loss are enormous. Besides providing staple food crops, plants are a source of many machines and the principal supply of fuel and building materials in many parts of the world. They also protect soil and help regulate the climate. Yet, across the globe, plant species are being driven to extinction before their potential benefits are discovered.",
+        "The world Conservation Union has listed 5,714 threatened species is sure to be much higher. In the UK alone, 300 wild plant species are classified as endangered. The Millennium Seed Bank aims to ensure that even if a plant becomes extinct in the wild, it won’t be lost forever. Stored seeds can be used the help restore damaged or destroyed environments or in scientific research to find new benefits for society- in medicine, agriculture or local industry- that would otherwise be lost.",
+        "Seed banks are an insurance policy to protect the world’s plant heritage for the future, explains Dr Paul Smith, another Kew seed hunter. “Seed conservation techniques were originally developed by farmers/’ he says. “Storage is the basis of what we do, conserving seeds until you can use them - just as in farming.” Smith says there’s no reason why any plant species should become extinct, given today’s technology. But he admits that the biggest challenge is finding, naming and _ categorising all the world’s plants. And someone has to gather these seeds before it’s too late. “There aren’t a lot of people out there doing this,” he says” The key is to know the flora from a particular area, and that knowledge takes years to acquire.”",
+        "There are about 1,470 seed banks scattered around the globe, with a combined total of 5.4 million samples, of which perhaps two million are distinct non-duplicates. Most preserve genetic material for agriculture use in order to ensure crop diversity; others aim to conserve wild species, although only 15 per cent of all banked plants are wild.",
+        "Many seed banks are themselves under threat due to a lack of funds. Last year, Imperial College, London, examined crop collections from 151 countries and found that while the number of plant samples had increased in two thirds of the countries, budget had been cut in a quarter and remained static in another 35 per cent. The UN’s Food and Agriculture Organization and the Consultative Group on International Agricultural Research has since set up the Global Conservation Trust, which aims to raise US$260 million to protect seed banks in perpetuity."
+      ],
+      "start": 14,
+      "end": 26,
+      "groups": [
+        {
+          "type": "fill",
+          "title": "Questions 14-18",
+          "instructions": [
+            "Complete the summary below using **NO MORE THAN TWO WORDS** from the passage.",
+            "Write your answers in boxes 14-18 on your answer sheet."
+          ],
+          "paragraphs": [
+            "People collect seeds for different purposes: some collect to protect certain species from {{14}}; others collect seeds for their potential to produce {{15}}. They are called seed hunters. The {{16}} of them included both gardeners and botanists, such as {{17}}, who sponsored collectors out of his own pocket. The seeds collected are often stored in seed banks. The most famous among them is known as the Millennium Seed Bank, where seeds are all stored in the {{18}} at low temperature."
+          ]
+        },
+        {
+          "type": "truth",
+          "title": "Questions 19-24",
+          "instructions": [
+            "Do the following statements agree with the information given in Reading Passage 2?"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 19,
+              "prompt": "The reason to collect seeds is different from the past."
+            },
+            {
+              "number": 20,
+              "prompt": "The Millennium Seed Bank is one of the earliest seed banks."
+            },
+            {
+              "number": 21,
+              "prompt": "A major reason for plant species extinction is farmland expansion."
+            },
+            {
+              "number": 22,
+              "prompt": "The method scientists use to store seeds is similar to that used by farmers."
+            },
+            {
+              "number": 23,
+              "prompt": "Technological development is the only hope to save plant species."
+            },
+            {
+              "number": 24,
+              "prompt": "The works of seed conservation are often limited by insufficient financial resources."
+            }
+          ]
+        },
+        {
+          "type": "multiple",
+          "title": "Questions 25-26",
+          "instructions": [
+            "Choose **TWO** correct answers."
+          ],
+          "questions": [
+            {
+              "numbers": [
+                25,
+                26
+              ],
+              "prompt": "Which TWO of the following are provided by plants to the human world?",
+              "options": [
+                "food",
+                "artefact",
+                "treasure",
+                "energy",
+                "clothes"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Legend of Tea",
+      "paragraphs": [
+        "A\nThe story of tea began in ancient China over 5,000 years ago. According to the legend, Shen Nung, an early emperor was a skilled ruler, creative scientist and patron of the arts. His far-sighted edicts required, among other things, that all drinking water be boiled as a hygienic precaution. One summer day while visiting a distant region of his realm, he and the court stopped to rest. In accordance with his ruling, the servants began to boil water for the court to drink. Dried leaves from the nearby bush fell into the boiling water, and a brown liquid was infused into the water. As a scientist, the Emperor was interested in the new liquid, drank some, and found it very refreshing. And so, according to legend, tea was created.",
+        "B\nTea consumption spread throughout the Chinese culture reaching into every aspect of the society. In 800 A.D. Lu Yu wrote the first definitive book on tea, the Ch’a Ching. His work clearly showed the Zen Buddhist philosophy to which he was exposed as a child. It was this form of tea service that Zen Buddhist missionaries would later introduce to imperial Japan.",
+        "C\nThe first tea seeds were brought to Japan by the returning Buddhist priest Yeisei, who had seen the value of tea in China in enhancing religious mediation. As a result, he is known as the “Father of Tea” in Japan. Because of this early association, tea in Japan has always been associated with Zen Buddhism. Tea received almost instant imperial sponsorship and spread rapidly from the royal court and monasteries to the other sections of Japanese society.",
+        "D\nTea was elevated to an art form resulting in the creation of the Japanese Tea Ceremony. The best description of this complex art form was probably written by the Irish-Greek journalist- historian Lafcadio Hearn, one of the few foreigners ever to be granted Japanese citizenship during this era. He wrote from personal observation, “The Tea ceremony requires years of training and practice to graduate in art...yet the whole of this art, as to its detail, signifies no more than the making and serving of a cup of tea. The supremely important matter is that the act be performed in the most perfect, most polite, most graceful, most charming manner possible”.",
+        "E\nSuch a purity of form, of expression prompted the creation of supportive arts and services. A special form of architecture developed for “tea houses”, based on the duplication of the simplicity of a forest cottage. The cultural/artistic hostesses of Japan, the Geishi, began to specialize in the presentation of the tea ceremony. As more and more people became involved in the excitement surrounding tea, the purity of the original Zen concept was lost. The tea ceremony became corrupted, boisterous and highly embellished. “Tea Tournament” were held among the wealthy where nobles competed among each other for rich prizes in naming various tea blends. Rewarding winners with gifts of silk, armor, and jewelry was totally alien to the original Zen attitude of the ceremony.",
+        "F\nThe first European to personally encounter tea and write about it was the Portuguese Jesuit Father Jasper de Cruz in 1560. Portugal, with her technologically advanced navy, had been successful in gaining the first right of trade with China. The Portuguese developed a trade route by which they shipped their tea to Lisbon, and then Dutch ships transported it to France, Holland, and the Baltic countries. Because of the success of the Dutch navy in the Pacific, tea became very fashionable in the Dutch capital. This was due in part to the high cost of the tea (over $100 per pound) which immediately made it the domain of the wealthy. Slowly, as the amount of tea imported increased, the price fell as the volume of sale expanded.",
+        "G\nAs the consumption of tea increased dramatically in Dutch society, doctors and university authorities argued back and forth as to the negative and/or positive benefits of tea. Known as “tea heretics”, the public largely ignored the scholarly debate and continued to enjoy their new beverage though the controversy lasted from 1635 to roughly 1657. Throughout this period France and Holland led Europe in the use of tea.",
+        "H\nAs the craze for things oriental swept Europe, tea became part of the way of life. The social critic Marie de Rabutin made the first mention in 1680 of adding milk to tea. During the same period, Dutch inns provided the first restaurant service of tea. Tavern owners would furnish guests with a portable tea set complete with a heating unit. The independent Dutchman would then prepare tea for himself and his friends outside in the tavern’s garden. Tea remained popular in France for only about fifty years, being replaced by a stronger preference for wine, chocolate, and exotic coffees.",
+        "I\nBy 1650 the Dutch were actively involved in trade throughout the Weatern world. Peter Stuyvesant brought the first tea to America to the colonists in the Dutch settlement of New Amsterdam (later re-named New York by the English). Settlers here were confirmed tea drinkers. And indeed, on acquiring the colony, the English found that the small settlement consumed more tea at that time than all England put together.",
+        "J\nGreat Britain was the last of the three great sea-faring nations to break into the Chinese and East Indian trade routes. The first samples of tea reached England between 1652 and 1654. Tea quickly proved popular enough to replace ale as the national drink of England. Tea mania swept across England as it had earlier spread throughout France and Holland. Tea importation rose from 40,000 pounds in 1699 to an annual average of 240,000 pounds by 1708. Tea was drunk by all levels of society."
+      ],
+      "start": 27,
+      "end": 40,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 27-31",
+          "instructions": [
+            "Reading Passage 3 contains 10 paragraphs A-J.",
+            "Which paragraphs state the following information?",
+            "Write the appropriate letters A-J in boxes 27-31 on your answer sheet."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "A"
+            },
+            {
+              "label": "B",
+              "text": "B"
+            },
+            {
+              "label": "C",
+              "text": "C"
+            },
+            {
+              "label": "D",
+              "text": "D"
+            },
+            {
+              "label": "E",
+              "text": "E"
+            },
+            {
+              "label": "F",
+              "text": "F"
+            },
+            {
+              "label": "G",
+              "text": "G"
+            },
+            {
+              "label": "H",
+              "text": "H"
+            },
+            {
+              "label": "I",
+              "text": "I"
+            },
+            {
+              "label": "J",
+              "text": "J"
+            }
+          ],
+          "questions": [
+            {
+              "number": 27,
+              "prompt": "Coffee took the place of tea."
+            },
+            {
+              "number": 28,
+              "prompt": "Religious implications were abandoned."
+            },
+            {
+              "number": 29,
+              "prompt": "Tear aroused controversies in Europe."
+            },
+            {
+              "number": 30,
+              "prompt": "Tea was once the symbol of the wealth in the Netherlands."
+            },
+            {
+              "number": 31,
+              "prompt": "A kind of ceremonial art was born related to tea."
+            }
+          ]
+        },
+        {
+          "type": "truth",
+          "title": "Questions 32-35",
+          "instructions": [
+            "Do the following statements agree with the claims of the writer in Reading Passage 3?"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 32,
+              "prompt": "The introduction of tea to imperial Japan originates from missionary purposes."
+            },
+            {
+              "number": 33,
+              "prompt": "Tea had spread to all sections of Japanese society over a very long time."
+            },
+            {
+              "number": 34,
+              "prompt": "Drinking tea has significant health benefits."
+            },
+            {
+              "number": 35,
+              "prompt": "Dutchmen preferred to add milk to their tea."
+            }
+          ]
+        },
+        {
+          "type": "match",
+          "title": "Questions 36-40",
+          "instructions": [
+            "Use the information in the passage to match the people (listed 36-40) with opinions or deeds (listed A-J) below.",
+            "Write the appropriate letters A-J in boxes 36-40 on your answer sheet.",
+            "NB   Some discoveries may match more than one person."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "_________ discovered the value of tea as a refreshing drink."
+            },
+            {
+              "label": "B",
+              "text": "_________ published a book about tea and Buddhism."
+            },
+            {
+              "label": "C",
+              "text": "_________ introduced tea to Japanese society."
+            },
+            {
+              "label": "D",
+              "text": "_________ depicted the art of tea ceremony."
+            },
+            {
+              "label": "E",
+              "text": "_________ elevated tea drinking to an art."
+            },
+            {
+              "label": "F",
+              "text": "_________ realized the value of tea in strengthening religious intervention."
+            },
+            {
+              "label": "G",
+              "text": "_________ wrote about tea and his country started the first tea trade with China."
+            },
+            {
+              "label": "H",
+              "text": "_________ developed a trade route by shipping tea to Lisbon."
+            },
+            {
+              "label": "I",
+              "text": "_________ first brought tea to America."
+            },
+            {
+              "label": "J",
+              "text": "_________ brought the first tea to Americans in the Netherlands."
+            }
+          ],
+          "questions": [
+            {
+              "number": 36,
+              "prompt": "Jasper de Cruz"
+            },
+            {
+              "number": 37,
+              "prompt": "Peter Stuyvesant"
+            },
+            {
+              "number": 38,
+              "prompt": "Lu Yu"
+            },
+            {
+              "number": 39,
+              "prompt": "Lafcadio Hearn"
+            },
+            {
+              "number": 40,
+              "prompt": "Shen Nung"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
