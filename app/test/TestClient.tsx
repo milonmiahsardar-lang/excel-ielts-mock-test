@@ -1,5 +1,7 @@
 "use client";
 
+import PartNavigation from "./PartNavigation";
+
 import { useState, type PointerEvent as ReactPointerEvent } from "react";
 import { Wifi, Bell, Menu, NotebookPen } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -58,7 +60,7 @@ export default function TestPage() {
 
   const handleContinueToWriting = async () => {
     sessionStorage.setItem("ieltsAnswers", JSON.stringify(answers));
-    try { await saveSection("reading",testNumber,answers,true);router.replace(`/test/writing?test=${testNumber}`); }catch(error){window.alert((error as Error).message);}
+    try { await saveSection("reading",testNumber,answers,true);router.replace(`/listening/instructions?test=${testNumber}`); }catch(error){window.alert((error as Error).message);}
   };
 
   const minutes = Math.floor(timeLeft / 60);
@@ -83,14 +85,7 @@ export default function TestPage() {
           <div className="self-start mt-1 text-[14px] leading-5 font-bold">Test taker ID<div className="font-normal text-[13px]">Time remaining: {minutes}:{seconds}</div></div>
         </div>
         <div className="flex items-center gap-5 text-[#222]">
-          <button
-            aria-label="Continue to Writing section"
-            onClick={handleContinueToWriting}
-            disabled={timeLeft > 0 || !draftReady} title={timeLeft > 0 ? "Available when Reading time finishes" : "Continue to Writing"}
-            className="rounded-sm bg-black px-3 py-2 text-[14px] font-bold text-white hover:bg-[#333] disabled:cursor-not-allowed disabled:bg-[#777]"
-          >
-            Continue to Writing section <span aria-hidden="true">→</span>
-          </button>
+          
           <button aria-label="Notes" title="Notes"><NotebookPen size={22} /></button>
           <button aria-label="Connection status"><Wifi size={22} /></button>
           <button aria-label="Notifications"><Bell size={22} /></button>
@@ -117,7 +112,8 @@ export default function TestPage() {
       </div>
       {/* BOTTOM QUESTION NAVIGATION */}
 
-      <div className="relative bg-white border-t border-[#d5d5d5] px-3 py-1">
+      <PartNavigation current={currentSection} total={3} onChange={goToSection} />
+      <div data-ielts-test-footer className="relative bg-white border-t border-[#d5d5d5] px-3 py-1">
 
         <div className="grid w-full grid-cols-3 items-center justify-items-center gap-x-8">
 

@@ -1,7 +1,7 @@
 import { bootstrapAdmin, passwordHash, passwordMatches, setSession, userFromRow } from "@/lib/results/auth";
 import { db } from "@/lib/results/db";
 import { body, endpoint, reject, reply, text, testId } from "@/lib/results/http";
-import { assignmentFor, ownAssignments, resumePath } from "@/lib/results/assignments";
+import { assignmentFor, ownAssignments } from "@/lib/results/assignments";
 export const runtime="nodejs";
 const dummyHash=passwordHash("nonexistent-account-padding");
 export async function POST(request: Request) {return endpoint(async()=>{
@@ -18,7 +18,8 @@ export async function POST(request: Request) {return endpoint(async()=>{
   if(b.admin!==true&&b.testId!==undefined){
     const selected=testId(b.testId),assignment=assignmentFor(user,selected);
     const active=ownAssignments(user).find(a=>Number(a.test_id)===selected);
-    destination=assignment.status==="IN_PROGRESS"&&active?resumePath(active):`/confirm?test=${selected}`;
+    if(assignment.status==="IN_PROGRESS"&&active&&active.active_stage!=="NOT_STARTED")reject(403,"Unfinished tests cannot be resumed. Ask your administrator to reassign this test.");
+    destination=`/confirm?test=${selected}`;
   }
   await setSession(user);return reply({user,destination});
 });}

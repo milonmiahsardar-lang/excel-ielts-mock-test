@@ -17,8 +17,27 @@ export function score(answers: Answers, config: KeyConfig | null): SkillResult {
     return {number,answer,accepted:rule?.accepted || [],status:!answer.trim()?"unanswered":!ready?"pending":correct?"correct":"incorrect"};
   });
   if(ready) for(const group of config!.groups){
-    const remaining=group.map(n=>config!.questions[n]);
-    for(const number of group){const row=questions[number-1];if(!row.answer.trim())continue;const index=remaining.findIndex(rule=>rule.accepted.some(a=>normalize(a)===normalize(row.answer))&&(!rule.maxWords||wordCount(row.answer)<=rule.maxWords));row.status=index<0?"incorrect":"correct";row.accepted=group.flatMap(n=>config!.questions[n].accepted);if(index>=0)remaining.splice(index,1);}
+    const rules=group.map(n=>config!.questions[n]);
+    const assigned=new Map<number,number>(),seen=new Set<string>();
+    // Maximum matching handles overlapping accepted alternatives without making
+    // the mark depend on the order in which the candidate selected answers.
+    const match=(number:number,visited:Set<number>):boolean=>{
+      const row=questions[number-1];
+      for(let i=0;i<rules.length;i++){
+        const rule=rules[i];
+        if(visited.has(i)||!rule.accepted.some(a=>normalize(a)===normalize(row.answer))||(rule.maxWords&&wordCount(row.answer)>rule.maxWords))continue;
+        visited.add(i);const previous=assigned.get(i);
+        if(previous===undefined||match(previous,visited)){assigned.set(i,number);return true;}
+      }
+      return false;
+    };
+    for(const number of group){
+      const row=questions[number-1];row.accepted=group.flatMap(n=>config!.questions[n].accepted);
+      if(!row.answer.trim())continue;
+      row.status="incorrect";const answer=normalize(row.answer);
+      if(!seen.has(answer)){seen.add(answer);match(number,new Set());}
+    }
+    for(const number of assigned.values())questions[number-1].status="correct";
   }
   const raw=ready?questions.filter(q=>q.status==="correct").length:null;
   const band=raw===null?null:[...config!.bands].sort((a,b)=>b.minimum-a.minimum).find(b=>raw>=b.minimum)?.band ?? null;

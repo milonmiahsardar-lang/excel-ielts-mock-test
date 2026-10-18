@@ -54,7 +54,7 @@ export default function ConfirmTest() {
               <h2 className="text-sm font-semibold text-[#333]">At the venue</h2>
               <ul className="mt-3 space-y-2.5 text-sm leading-6 text-[#555]">
                 <li className="flex gap-3"><span className="text-[#c51f34]">•</span><span>Please be seated at your assigned computer before you begin.</span></li>
-                <li className="flex gap-3"><span className="text-[#c51f34]">•</span><span>Check that your headphones are working. Listening audio begins automatically when the test opens.</span></li>
+                <li className="flex gap-3"><span className="text-[#c51f34]">•</span><span>Check that your headphones are working. Listening audio begins when you select Start Listening after confirming the instructions.</span></li>
               </ul>
             </div>
 
@@ -65,7 +65,7 @@ export default function ConfirmTest() {
                 onChange={(event) => setConfirmed(event.target.checked)}
                 className="mt-1 h-4 w-4 accent-[#c51f34]"
               />
-              <span>I confirm that I am ready to start IELTS Mock Test {testNumber} and understand that the test will begin immediately.</span>
+              <span>I confirm that I am ready to start IELTS Mock Test {testNumber} and understand that each section begins when I select its Start button.</span>
             </label>
 
             {error&&<p role="alert" className="mt-4 text-red-700">{error}</p>}
@@ -78,7 +78,7 @@ export default function ConfirmTest() {
                   : "cursor-not-allowed bg-[#e8e8e8] text-[#888]"
               }`}
             >
-              {busy?"Starting…":"Start Test"} <span aria-hidden="true">→</span>
+              {busy?"Starting…":"Continue to test sections"} <span aria-hidden="true">→</span>
             </button>
           </div>
         </div>

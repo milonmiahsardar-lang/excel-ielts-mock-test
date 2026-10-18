@@ -25,9 +25,34 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-::highlight(ielts-marker) { background-color: #ffeb80; color: inherit; }
 .ielts-highlight-menu { position: fixed; z-index: 1000; display: flex; max-width: calc(100vw - 16px); padding: 3px; border: 1px solid #d1d5db; border-radius: 5px; background: white; color: #202124; box-shadow: 0 3px 12px #0002; font: 14px Arial, sans-serif; }
 .ielts-highlight-menu button { padding: 7px 10px; cursor: pointer; }
 .ielts-highlight-menu button:hover:not(:disabled) { background: #f3f4f6; }
 .ielts-highlight-menu button:focus-visible { outline: 2px solid #2185d0; }
 .ielts-highlight-menu button:disabled { opacity: .45; cursor: default; }
+
+/* Consistent, readable navigation sizes across the test screens. */
+[data-ielts-test-footer] {
+  height: auto;
+  min-height: 64px;
+  padding: 8px 12px;
+  font-size: 16px;
+  overflow-x: auto;
+}
+[data-ielts-test-footer] button {
+  min-width: 28px;
+  min-height: 32px;
+  height: auto;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-ielts-test-footer] > div > span { font-size: 16px; }
+
+/* Size changes apply inside scrolling test panes; exam controls stay fixed. */
+[data-ielts-test-content][data-ielts-zoom] .overflow-y-auto > * {
+  zoom: var(--ielts-test-zoom);
+}
+[data-ielts-test-content][data-ielts-zoom] textarea[id^="writing-task-"] {
+  font-size: calc(16px * var(--ielts-test-zoom));
+  line-height: calc(24px * var(--ielts-test-zoom));
+}

@@ -7,10 +7,10 @@ import { finishTestSafety } from "@/lib/results/safety-client";
 import { Bell, Menu, Wifi } from "lucide-react";
 import { writingPrompts } from "./writing-prompts";
 
-import { attemptKey, draftKey, resumeDraft, useCountdown, readAnswers, request } from "@/lib/results/client";
+import { attemptKey, draftKey, draftRevision, saveWritingDraft, useDraftAutosave, retryable, resumeDraft, useCountdown, readAnswers, request } from "@/lib/results/client";
 
 export default function WritingTest({ testNumber }: { testNumber: number | null }) {
-  const router=useRouter(),autoSubmitted=useRef(false);
+  const router=useRouter(),submissionBusy=useRef(false),autoRetryAllowed=useRef(true);
   const testPrompt = testNumber === null ? null : writingPrompts[testNumber - 1];
   const [activeTask, setActiveTask] = useState<1 | 2>(1);
   const [task1Answer, setTask1Answer] = useState("");
@@ -31,14 +31,14 @@ export default function WritingTest({ testNumber }: { testNumber: number | null 
   };
 
   useEffect(() => {
-    let active=true;
-    void resumeDraft(testNumber || 1).then(draft=>{
+    let active=true,retry:number|undefined;setIsReady(false);
+    const load=()=>{void resumeDraft(testNumber || 1).then(draft=>{
       if(!active)return;
       const saved=sessionStorage.getItem(draftKey(testNumber || 1,"writing"));
       let value=draft.writing;if(saved){try{const parsed=JSON.parse(saved);if(parsed&&typeof parsed.task1==="string"&&typeof parsed.task2==="string")value=parsed;}catch{}}setTask1Answer(value.task1 || "");setTask2Answer(value.task2 || "");
       setIsReady(true);
-    }).catch(error=>setSubmissionError((error as Error).message));
-    return()=>{active=false;};
+    }).catch(error=>{if(active){setSubmissionError((error as Error).message);if(retryable(error))retry=window.setTimeout(load,5000);}});};
+    load();return()=>{active=false;window.clearTimeout(retry);};
   }, [testNumber]);
 
   useEffect(() => {
@@ -47,12 +47,11 @@ export default function WritingTest({ testNumber }: { testNumber: number | null 
     sessionStorage.setItem(draftKey(testNumber || 1,"writing-time"),String(timeLeft));
   }, [isReady, task1Answer, task2Answer, timeLeft, testNumber]);
 
-  useEffect(()=>{
-    if(!isReady || isFinished || isSubmitting)return;
-    const save=()=>{const id=sessionStorage.getItem(attemptKey(testNumber || 1));if(!id)return;void request(`/api/attempts/${id}/draft`,{testId:testNumber || 1,task1:task1Answer,task2:task2Answer},"PATCH").catch(error=>setSubmissionError((error as Error).message));};
-    const timer=window.setTimeout(save,650);window.addEventListener("online",save);window.addEventListener("ielts:deadline",save);
-    return()=>{window.clearTimeout(timer);window.removeEventListener("online",save);window.removeEventListener("ielts:deadline",save);};
-  }, [isReady,isFinished,isSubmitting,task1Answer,task2Answer,testNumber]);
+  useDraftAutosave(testNumber || 1,"writing",{task1:task1Answer,task2:task2Answer},
+    isReady&&!isFinished&&!isSubmitting&&timeLeft>0,
+    value=>saveWritingDraft(testNumber || 1,value),
+    error=>setSubmissionError((error as Error).message),
+    ()=>setSubmissionError(""));
 
   const answer = activeTask === 1 ? task1Answer : task2Answer;
   const setAnswer = activeTask === 1 ? setTask1Answer : setTask2Answer;
@@ -60,26 +59,34 @@ export default function WritingTest({ testNumber }: { testNumber: number | null 
   const seconds = timeLeft % 60;
 
   const finishTest = async () => {
-    if(isSubmitting || isFinished || !isReady)return;
+    if(submissionBusy.current || isFinished || !isReady || timeLeft!==0)return;
+    submissionBusy.current=true;
     setIsSubmitting(true);setSubmissionError("");
     const test=testNumber || 1;
-    sessionStorage.setItem(draftKey(test,"writing"),JSON.stringify({task1:task1Answer,task2:task2Answer}));
     try {
+      sessionStorage.setItem(draftKey(test,"writing"),JSON.stringify({task1:task1Answer,task2:task2Answer}));
       const attemptId=sessionStorage.getItem(attemptKey(test));if(!attemptId)throw new Error("Please start your mock test from the candidate confirmation page.");
       const listening=readAnswers(test,"listening");
       const currentReading=readAnswers(test,"reading");
       const reading=currentReading;
-      const result=await request<{id:string}>("/api/submissions",{attemptId,testId:test,listening,reading,writing:{task1:task1Answer,task2:task2Answer}});
+      const result=await request<{id:string}>("/api/submissions",{attemptId,testId:test,listening,reading,writing:{task1:task1Answer,task2:task2Answer},revision:draftRevision(test,"writing")});
       setIsFinished(true);
       await finishTestSafety();
       router.replace(`/test/writing/result?id=${encodeURIComponent(result.id)}&signout=1`);
-    } catch(error){setSubmissionError((error as Error).message);}finally{setIsSubmitting(false);}
+    } catch(error){autoRetryAllowed.current=retryable(error);setSubmissionError((error as Error).message);}finally{submissionBusy.current=false;setIsSubmitting(false);}
   };
 
-  useEffect(()=>{if(isReady&&timeLeft===0&&!autoSubmitted.current){autoSubmitted.current=true;void finishTest();}},[isReady,timeLeft]);
+  const finishLatest=useRef(finishTest);
+  useEffect(()=>{finishLatest.current=finishTest;});
+  useEffect(()=>{
+    if(!isReady||timeLeft!==0||isFinished)return;
+    const finish=()=>{if(autoRetryAllowed.current)void finishLatest.current();};
+    finish();const retry=window.setInterval(finish,5000);window.addEventListener("online",finish);
+    return()=>{window.clearInterval(retry);window.removeEventListener("online",finish);};
+  },[isReady,timeLeft,isFinished]);
 
   return (
-    // Timer expiry uses the same guarded submission path as Finish Test.
+    // Submit automatically when the writing timer expires.
     <main className="flex h-screen flex-col bg-white text-black" style={{ fontFamily: "Arial, sans-serif" }}>
       <header className="flex h-[60px] shrink-0 items-center justify-between border-y border-[#d5d5d5] bg-white px-4">
         <div className="flex items-center gap-6">
@@ -128,16 +135,16 @@ export default function WritingTest({ testNumber }: { testNumber: number | null 
 
           <div className="flex min-h-0 flex-col rounded border border-[#d5d5d5] bg-white p-4">
             <label htmlFor={`writing-task-${activeTask}`} className="mb-2 text-[14px] font-bold">Your answer</label>
-            <textarea disabled={!isReady || isFinished || isSubmitting || timeLeft===0} id={`writing-task-${activeTask}`} value={answer} onChange={(event) => setAnswer(event.target.value)} placeholder="Type your answer here…" className="min-h-0 flex-1 resize-none rounded-sm border border-[#888] bg-white p-3 text-[16px] leading-6 outline-none focus:border-[#2185d0] focus:ring-1 focus:ring-[#2185d0]" />
+            <textarea spellCheck={false} autoCorrect="off" autoCapitalize="off" autoComplete="off" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false" disabled={!isReady || isFinished || isSubmitting || timeLeft===0} id={`writing-task-${activeTask}`} value={answer} onChange={(event) => setAnswer(event.target.value)} placeholder="Type your answer here…" className="min-h-0 flex-1 resize-none rounded-sm border border-[#888] bg-white p-3 text-[16px] leading-6 outline-none focus:border-[#2185d0] focus:ring-1 focus:ring-[#2185d0]" />
             <div className="mt-2 self-end text-[13px] text-[#444]">Word count: {answer.trim() ? answer.trim().split(/\s+/).length : 0}</div>
           </div>
         </div>
       </section>
 
       {submissionError&&<p role="alert" className="border-t border-red-200 bg-red-50 px-5 py-3 text-sm text-red-800">{submissionError}</p>}
-      <footer className="flex h-[46px] shrink-0 items-center justify-between border-t border-[#d5d5d5] bg-[#f2f2f2] px-5">
+      <footer data-ielts-test-footer className="flex h-[46px] shrink-0 items-center justify-between border-t border-[#d5d5d5] bg-[#f2f2f2] px-5">
         <div className="flex items-center gap-4 text-[14px] font-bold"><span>Writing</span>{[1, 2].map((task) => <button key={task} onClick={() => setActiveTask(task as 1 | 2)} className={`min-w-7 rounded-sm px-2 py-1 ${activeTask === task ? "border border-[#2185d0] bg-white" : "hover:bg-white"}`} aria-label={`Go to Task ${task}`}>{task}</button>)}</div>
-        <div className="flex gap-2"><button onClick={() => setActiveTask(activeTask === 2 ? 1 : 2)} className="rounded-sm bg-black px-4 py-2 text-[14px] font-bold text-white hover:bg-[#333]">{activeTask === 1 ? "Next Task →" : "← Previous Task"}</button><button onClick={finishTest} disabled={isFinished || isSubmitting || !isReady} className="rounded-sm bg-[#e31837] px-4 py-2 text-[14px] font-bold text-white hover:bg-[#bd1230] disabled:cursor-default disabled:bg-[#777]">{isSubmitting?"Submitting…":isFinished ? "Test Finished" : "Finish Test"}</button></div>
+        <div className="flex gap-2"><button onClick={() => setActiveTask(activeTask === 2 ? 1 : 2)} className="rounded-sm bg-black px-4 py-2 text-[14px] font-bold text-white hover:bg-[#333]">{activeTask === 1 ? "Next Task →" : "← Previous Task"}</button></div>
       </footer>
     </main>
   );

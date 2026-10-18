@@ -1,12 +1,19 @@
 import "server-only";
 import { DatabaseSync } from "node:sqlite";
 import { mkdirSync, existsSync, readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { dirname, resolve, sep } from "node:path";
 import { defaultBands } from "./scoring";
 let database: DatabaseSync | undefined;
+// Runtime databases live on writable storage and must not be bundled as source assets.
+export function databasePath(){return resolve(/*turbopackIgnore: true*/ process.env.RESULTS_DB_PATH||"private/results.sqlite");}
 export function db() {
   if(database) return database;
-  const path=resolve(/* turbopackIgnore: true */ process.env.RESULTS_DB_PATH || "private/results.sqlite");
+  const path=databasePath();
+  if(process.env.RAILWAY_ENVIRONMENT_NAME){
+    const mount=process.env.RAILWAY_VOLUME_MOUNT_PATH;
+    if(!mount||!process.env.RESULTS_DB_PATH||!path.startsWith(resolve(mount)+sep))throw new Error("Railway requires a persistent volume and RESULTS_DB_PATH inside that volume. See OPERATIONS.md.");
+    if(process.env.CLASSROOM_HTTP==="true")throw new Error("CLASSROOM_HTTP must not be enabled on Railway.");
+  }
   mkdirSync(dirname(path),{recursive:true});
   database=new DatabaseSync(path);
   database.exec(`PRAGMA journal_mode=WAL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=5000;
@@ -28,6 +35,12 @@ export function db() {
     deadline INTEGER,audio_duration REAL,audio_position REAL NOT NULL DEFAULT 0,
     audio_observed_at INTEGER,lease_owner TEXT,lease_until INTEGER NOT NULL DEFAULT 0
   ); PRAGMA user_version=3;`);
+  // Additive section preparation state preserves existing attempts and deadlines.
+  const flowColumns=database.prepare("PRAGMA table_info(attempt_progress)").all().map(c=>c.name);
+  for(const [name,definition] of [["pending_section","TEXT"],["instructions_confirmed","INTEGER NOT NULL DEFAULT 0"],["completion_acknowledged","INTEGER NOT NULL DEFAULT 0"]]){
+    if(!flowColumns.includes(name))database.exec(`ALTER TABLE attempt_progress ADD COLUMN ${name} ${definition}`);
+  }
+  database.exec("PRAGMA user_version=4");
   const seed=resolve("private/test-1-approved-keys.json");
   if(existsSync(seed)) {
     const keys=JSON.parse(readFileSync(seed,"utf8"));

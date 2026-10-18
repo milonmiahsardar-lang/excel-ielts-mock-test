@@ -35,7 +35,25 @@ export default function TestHighlighter({candidateId,children}:{candidateId:stri
   const section=pathname.startsWith("/listening")?"listening":pathname.startsWith("/test/writing")?"writing":"reading";
   useEffect(()=>{
     const container=root.current,registry=window.CSS?.highlights,HighlightClass=window.Highlight;
-    if(!container || !registry || !HighlightClass || pathname.includes("/result"))return;
+    if(!container || pathname.includes("/result"))return;
+    const native=!!registry&&!!HighlightClass,overlay=document.createElement("div");
+    overlay.setAttribute("aria-hidden","true");overlay.setAttribute("data-no-highlight","");
+    Object.assign(overlay.style,{position:"fixed",inset:"0",pointerEvents:"none",zIndex:"100",overflow:"hidden",mixBlendMode:"multiply"});
+    if(!native)document.body.appendChild(overlay);
+    const clear=()=>{if(native)registry!.delete("ielts-marker");else overlay.replaceChildren();};
+    const draw=(ranges:Range[])=>{
+      if(native){registry!.set("ielts-marker",new HighlightClass!(...ranges));return;}
+      const fragment=document.createDocumentFragment();
+      for(const range of ranges)for(const rect of range.getClientRects()){
+        let left=Math.max(0,rect.left),top=Math.max(0,rect.top),right=Math.min(innerWidth,rect.right),bottom=Math.min(innerHeight,rect.bottom);
+        for(let parent=range.startContainer.parentElement;parent;parent=parent.parentElement){const style=getComputedStyle(parent),bounds=parent.getBoundingClientRect();if(/auto|scroll|hidden|clip/.test(style.overflowX)){left=Math.max(left,bounds.left);right=Math.min(right,bounds.right);}if(/auto|scroll|hidden|clip/.test(style.overflowY)){top=Math.max(top,bounds.top);bottom=Math.min(bottom,bounds.bottom);}}
+        if(right<=left||bottom<=top)continue;const mark=document.createElement("div");Object.assign(mark.style,{position:"absolute",left:`${left}px`,top:`${top}px`,width:`${right-left}px`,height:`${bottom-top}px`,backgroundColor:"#ffeb80"});fragment.appendChild(mark);
+      }overlay.replaceChildren(fragment);
+    };
+    // Let the browser parse this modern selector directly; the CSS bundler rejects it.
+    const markerStyle=document.createElement("style");
+    markerStyle.textContent="::highlight(ielts-marker) { background-color: #ffeb80; color: inherit; }";
+    document.head.appendChild(markerStyle);
     let annotations:Annotations={},activeKey="",frame=0,alive=true;
     let current:Entry[]=[];
     const identity=()=>{
@@ -45,7 +63,7 @@ export default function TestHighlighter({candidateId,children}:{candidateId:stri
     };
     const syncIdentity=()=>{
       const key=identity();if(key===activeKey)return;
-      activeKey=key;annotations={};setPopup(null);registry.delete("ielts-marker");
+      activeKey=key;annotations={};setPopup(null);clear();
       if(key)try{annotations=readAnnotations(sessionStorage.getItem(key));}catch{}
     };
     const paint=()=>{
@@ -53,7 +71,7 @@ export default function TestHighlighter({candidateId,children}:{candidateId:stri
       const ranges:Range[]=[];
       if(activeKey)for(const {node,id} of current){const saved=annotations[id];if(saved?.text!==node.data)continue;
         for(const [start,end] of saved.ranges){if(end>node.length)continue;const range=document.createRange();range.setStart(node,start);range.setEnd(node,end);ranges.push(range);}}
-      registry.set("ielts-marker",new HighlightClass(...ranges));
+      draw(ranges);
     };
     const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{if(alive)paint();});};
     const store=()=>{if(activeKey)try{sessionStorage.setItem(activeKey,JSON.stringify(annotations));}catch{/* Keep working in memory if storage is full. */}};
@@ -91,7 +109,7 @@ export default function TestHighlighter({candidateId,children}:{candidateId:stri
     };
     const outside=(event:PointerEvent)=>{if(!menu.current?.contains(event.target as Node))setPopup(null);};
     const keyUp=(event:KeyboardEvent)=>{if(event.key==="Escape"){setPopup(null);window.getSelection()?.removeAllRanges();}else if(event.shiftKey)showSelection();};
-    const dismiss=()=>setPopup(null);
+    const dismiss=()=>{setPopup(null);if(!native)schedule();};
     // Double-click word selection can finish after pointerup's default action.
     const doubleClick=()=>{requestAnimationFrame(()=>{if(alive)showSelection();});};
     const action=(event:Event)=>{
@@ -109,7 +127,7 @@ export default function TestHighlighter({candidateId,children}:{candidateId:stri
     document.addEventListener("scroll",dismiss,true);window.addEventListener("resize",dismiss);container.addEventListener("ielts-highlight-action",action);
     const check=window.setInterval(()=>{if(identity()!==activeKey)paint();},400);
     paint();
-    return()=>{alive=false;cancelAnimationFrame(frame);clearInterval(check);observer.disconnect();registry.delete("ielts-marker");container.removeEventListener("pointerup",pointerUp);container.removeEventListener("dblclick",doubleClick);document.removeEventListener("pointerdown",outside);document.removeEventListener("keyup",keyUp);document.removeEventListener("scroll",dismiss,true);window.removeEventListener("resize",dismiss);container.removeEventListener("ielts-highlight-action",action);setPopup(null);};
+    return()=>{alive=false;cancelAnimationFrame(frame);clearInterval(check);observer.disconnect();clear();overlay.remove();markerStyle.remove();container.removeEventListener("pointerup",pointerUp);container.removeEventListener("dblclick",doubleClick);document.removeEventListener("pointerdown",outside);document.removeEventListener("keyup",keyUp);document.removeEventListener("scroll",dismiss,true);window.removeEventListener("resize",dismiss);container.removeEventListener("ielts-highlight-action",action);setPopup(null);};
   },[candidateId,test,section,pathname]);
   const act=(remove:boolean)=>{if(popup)root.current?.dispatchEvent(new CustomEvent("ielts-highlight-action",{detail:{popup,remove}}));};
   return <><div ref={root} style={{display:"contents"}}>{children}</div>{popup&&createPortal(<div ref={menu} role="group" aria-label="Text highlighting" className="ielts-highlight-menu" style={{left:popup.x,top:popup.y}} onPointerDown={e=>e.preventDefault()}><button type="button" onClick={()=>act(false)}>Highlight</button><button type="button" disabled={!popup.removable} onClick={()=>act(true)}>Unhighlight</button></div>,document.body)}</>;

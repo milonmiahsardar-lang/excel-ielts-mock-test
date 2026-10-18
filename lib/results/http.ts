@@ -9,7 +9,7 @@ export async function body(request: Request): Promise<Record<string,unknown>> {
   // Compare with the incoming Host, including its port, to retain same-origin protection.
   const host=request.headers.get("host") || url.host;
   let expectedOrigin: string;
-  try {expectedOrigin=new URL(`${url.protocol}//${host}`).origin;}
+  try {expectedOrigin=new URL(process.env.APP_ORIGIN||`${url.protocol}//${host}`).origin;}
   catch {reject(403,"Invalid request origin.");}
   if(!origin || origin!==expectedOrigin)reject(403,"Invalid request origin.");
   if(!request.headers.get("content-type")?.includes("application/json"))reject(415,"JSON required.");

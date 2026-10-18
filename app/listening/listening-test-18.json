@@ -71,7 +71,7 @@
           },
           {
             "number": 12,
-            "prompt": "is within walking distance of the halls?"
+            "prompt": "is about 500 metres from the halls and can be reached on foot?"
           },
           {
             "number": 13,
@@ -256,7 +256,7 @@
         "options": [
           "The class is too large.",
           "It’s easy to find time to meet.",
-          "Group sizes are suitable.",
+          "The groups are too small.",
           "The class time is properly managed.",
           "They find that the class is very effective."
         ],

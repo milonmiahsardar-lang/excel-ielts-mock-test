@@ -127,7 +127,7 @@
                 "Financial advantages",
                 "Ability to apply environmentally friendly products",
                 "Speed of application",
-                "Lack of effect on final harvest"
+                "Application without physically disrupting the crop"
               ]
             },
             {
@@ -190,7 +190,7 @@
             },
             {
               "number": 16,
-              "prompt": "Substances negatively affecting plankton ultimately lead to the creation of 'dead zones'."
+              "prompt": "Substances affecting plankton ultimately lead to the creation of 'dead zones'."
             },
             {
               "number": 17,
@@ -235,7 +235,7 @@
             "**Power problems**",
             "Jelly fish blocking {{25}} have caused nuclear shut-downs in energy plants in Sweden, California, Florida, Israel, Scotland, India and Japan, a conventional power station in the Philippines, and a nuclear-powered US aircraft carrier.",
             "**A solution?**",
-            "A South Korean team has been working on robots to travel the seas, locate jellyfish and destroy them with an {{26}} probably not a long-term answer."
+            "A South Korean team has been working on robots to travel the seas, locate jellyfish and destroy them with an {{26}}; probably not a long-term answer."
           ],
           "heading": "Notes on Today's Jellyfish Problem"
         }
@@ -351,7 +351,7 @@
           "paragraphs": [
             "Coffee beans are roasted and {{38}}",
             "Ground beans are treated with hot water to extract coffee flavour and aroma",
-            "Coffee-laden water left standing - water evaporates and leaves a {{39}} is sprayed from high tower in large hot chamber which",
+            "Coffee-laden water left standing - water evaporates and leaves a {{39}}, which is sprayed from a high tower in a large hot chamber",
             "Remaining water evaporates",
             "Coffee forms {{40}} and drops to the lower part of the chamber then the product is packaged"
           ],

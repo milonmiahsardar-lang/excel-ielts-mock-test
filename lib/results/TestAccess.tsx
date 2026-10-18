@@ -11,12 +11,13 @@ export async function accessError(query: TestQuery,section?:"listening"|"reading
   const value=query.test??"1";
   if(Array.isArray(value)||!/^([1-9]|1[0-9]|20)$/.test(value))return "Invalid mock test.";
   try {
-   const assignment=assignmentFor(user,Number(value));
+   const assignment=assignmentFor(user,Number(value),false,true);
    if(section){
     const row=db().prepare("SELECT * FROM attempts WHERE assignment_id=? AND student_id=? AND submitted_at IS NULL").get(String(assignment.id),user.id);
-    if(!row){if(section!=="confirm"&&section!=="instructions")redirect(`/confirm?test=${value}`);}
+    if(!row){assignmentFor(user,Number(value));if(section!=="confirm"&&section!=="instructions")redirect(`/confirm?test=${value}`);}
     else {const state=progress(row),active=sectionFor(state.stage);
-     if(state.stage==="NOT_STARTED"){if(section!=="confirm"&&section!=="instructions")redirect(`/listening/instructions?test=${value}`);}
+     if(state.pending_section){if(section!=="instructions")redirect(progressPath(state,Number(value)));}
+     else if(state.stage==="NOT_STARTED"){assignmentFor(user,Number(value));if(section!=="confirm"&&section!=="instructions")redirect(`/listening/instructions?test=${value}`);}
      else if(active!==section)redirect(progressPath(state,Number(value)));
     }
    }

@@ -8,7 +8,12 @@ const cached=new Map<number,{stamp:number;duration:number}>();
 // Client-provided metadata never determines the minimum listening duration.
 export function recordingDuration(test:number) {
  const path=resolve(`public/audio/listening-test-${test}.mp3`);
- let stamp:number;try{stamp=statSync(path).mtimeMs;}catch{reject(409,"The listening recording is unavailable. Please contact a staff member.");}
+ let stamp:number;try{stamp=statSync(path).mtimeMs;}catch(error){
+  // Allow question previews without a recording under next dev only.
+  // Keep a nominal duration so missing audio cannot signal immediate completion.
+  if(process.env.NODE_ENV==="development"&&(error as NodeJS.ErrnoException).code==="ENOENT")return 30*60;
+  reject(409,"The listening recording is unavailable. Please contact a staff member.");
+ }
  const previous=cached.get(test);if(previous?.stamp===stamp)return previous.duration;
  const bytes=readFileSync(path);let offset=0,seconds=0,frames=0;
  if(bytes.toString("ascii",0,3)==="ID3"&&bytes.length>=10)offset=10+((bytes[6]&127)<<21)+((bytes[7]&127)<<14)+((bytes[8]&127)<<7)+(bytes[9]&127)+(bytes[5]&16?10:0);

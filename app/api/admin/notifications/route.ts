@@ -1,0 +1,3 @@
+import {actor,body,endpoint,reply,text} from "@/lib/results/http";import {db} from "@/lib/results/db";
+export async function GET(){return endpoint(async()=>{await actor("admin");return reply({items:db().prepare("SELECT n.*,a.test_id,u.name,u.registration_id FROM notification_outbox n JOIN attempts a ON a.id=n.submission_id JOIN users u ON u.id=a.student_id ORDER BY n.created_at DESC LIMIT 100").all()});});}
+export async function POST(request:Request){return endpoint(async()=>{await actor("admin");const b=await body(request),id=text(b.id,80,true);db().prepare("UPDATE notification_outbox SET delivered_at=? WHERE id=? AND delivered_at IS NULL").run(new Date().toISOString(),id);return reply({read:true});});}

@@ -1,5 +1,7 @@
 "use client";
 
+import PartNavigation from "../test/PartNavigation";
+
 import { useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Wifi, Bell, Menu, NotebookPen } from "lucide-react";
@@ -18,7 +20,7 @@ import ListeningTestsFifteenEighteen from "./ListeningTestsFifteenEighteen";
 import ListeningTestsTwelveSixteen from "./ListeningTestsTwelveSixteen";
 import ListeningTestsThirteenNineteen from "./ListeningTestsThirteenNineteen";
 
-import { draftKey, saveSection, useAnswerDraft } from "@/lib/results/client";
+import { draftRevision, draftKey, request, RequestError, saveSection, useAnswerDraft } from "@/lib/results/client";
 import { lifecycle, statusSnapshot, publishStatus, useAttemptStatus } from "@/lib/results/safety-client";
 import { attemptKey } from "@/lib/results/client";
 
@@ -31,8 +33,14 @@ export default function ListeningTest() {
     : undefined;
 
   const audioRef = useRef<HTMLAudioElement>(null);
+  const intentionalAudioPause = useRef(false);
 
   const [isFinished, setIsFinished] = useState(false);
+  const finalSnapshot=useRef<{answers:Record<number,string>;revision:number}|null>(null);
+  const [audioRetry,setAudioRetry]=useState(0),[retryingAudio,setRetryingAudio]=useState(false);
+  const [recoverAudio,setRecoverAudio]=useState(false);
+  const retryBusy=useRef(false);
+  const progressBlocked=useRef(false);
   const state=useAttemptStatus();
   const [transitioning,setTransitioning]=useState(false),[audioError,setAudioError]=useState("");
   const reporting=useRef(false),lastReport=useRef(0),restored=useRef(false),pendingEnd=useRef(false);
@@ -45,32 +53,99 @@ export default function ListeningTest() {
   const [activePart, setActivePart] = useState(1);
 
   const [answers, setAnswers] = useState<Record<number, string>>({});
+  const latestAnswers=useRef(answers);latestAnswers.current=answers;
 
   const draftReady=useAnswerDraft("listening",testNumber,answers,setAnswers);
 
   useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio || !draftReady) return;
+    let disposed = false, resuming = false;
+    const resume = () => {
+      if (disposed || resuming || intentionalAudioPause.current || !restored.current ||
+          audio.ended || audio.error || finalSnapshot.current ||
+          statusSnapshot()?.stage === "LISTENING_COMPLETED") return;
+      resuming = true;
+      void audio.play().then(() => { if (!disposed) setPlaybackBlocked(false); })
+        .catch(() => { if (!disposed) setPlaybackBlocked(true); })
+        .finally(() => { resuming = false; });
+    };
+    const preventMediaKey = (event: KeyboardEvent) => {
+      if (["MediaPlayPause", "MediaPause", "MediaStop", "MediaTrackNext", "MediaTrackPrevious"].includes(event.key)) {
+        event.preventDefault(); event.stopImmediatePropagation();
+      }
+    };
+    const actions: MediaSessionAction[] = ["pause", "stop", "seekbackward", "seekforward", "seekto", "previoustrack", "nexttrack", "play"];
+    const mediaSession = "mediaSession" in navigator ? navigator.mediaSession : null;
+    for (const action of actions) {
+      try { mediaSession?.setActionHandler(action, () => { if (audio.paused) resume(); }); } catch {}
+    }
+    audio.addEventListener("pause", resume);
+    document.addEventListener("keydown", preventMediaKey, true);
+    return () => {
+      disposed = true;
+      audio.removeEventListener("pause", resume);
+      document.removeEventListener("keydown", preventMediaKey, true);
+      for (const action of actions) { try { mediaSession?.setActionHandler(action, null); } catch {} }
+    };
+  }, [testNumber, draftReady, audioRetry, hasAudio]);
+
+  useEffect(() => {
     if(!draftReady)return;
     const audio=audioRef.current;if(!audio)return;
-    const saved=state?.audioPosition??0;
-    const restore=()=>{if(Number.isFinite(audio.duration))audio.currentTime=Math.min(saved,audio.duration);restored.current=true;if(state?.stage!=="LISTENING_COMPLETED")void audio.play().then(()=>setPlaybackBlocked(false)).catch(()=>setPlaybackBlocked(true));};
+    const saved=statusSnapshot()?.audioPosition??0;
+    const restore=()=>{intentionalAudioPause.current=false;if(Number.isFinite(audio.duration))audio.currentTime=Math.min(saved,audio.duration);restored.current=true;if(state?.stage!=="LISTENING_COMPLETED")void audio.play().then(()=>setPlaybackBlocked(false)).catch(()=>setPlaybackBlocked(true));};
     if(audio.readyState>=1)restore();else audio.addEventListener("loadedmetadata",restore,{once:true});
-    return()=>{audio.removeEventListener("loadedmetadata",restore);audio.pause();};
-  }, [testNumber,draftReady]);
-  useEffect(()=>{const block=(event:Event)=>{if((event as CustomEvent).detail){audioRef.current?.pause();setPlaybackBlocked(true);}};window.addEventListener("ielts:safety-blocked",block);return()=>window.removeEventListener("ielts:safety-blocked",block);},[]);
+    return()=>{intentionalAudioPause.current=true;audio.removeEventListener("loadedmetadata",restore);audio.pause();};
+  }, [testNumber,draftReady,audioRetry]);
+  useEffect(()=>{const block=(event:Event)=>{if((event as CustomEvent).detail){intentionalAudioPause.current=true;audioRef.current?.pause();setPlaybackBlocked(true);}};window.addEventListener("ielts:safety-blocked",block);return()=>window.removeEventListener("ielts:safety-blocked",block);},[]);
   const reportAudio=async(ended=false)=>{
-    const audio=audioRef.current,id=sessionStorage.getItem(attemptKey(testNumber));if(!audio||!id||!draftReady||!restored.current||statusSnapshot()?.stage==="LISTENING_COMPLETED")return;
+    const audio=audioRef.current,id=sessionStorage.getItem(attemptKey(testNumber));if(!audio||!id||!draftReady||!restored.current||progressBlocked.current||statusSnapshot()?.stage==="LISTENING_COMPLETED")return;
     if(reporting.current){if(ended)pendingEnd.current=true;return;}
     reporting.current=true;lastReport.current=Date.now();
-    try{await lifecycle(id,testNumber,"audio",{position:audio.currentTime,ended});setAudioError("");}
-    catch(e){audio.pause();setPlaybackBlocked(true);setAudioError((e as Error).message);try{const response=await fetch(`/api/attempts/${id}/lifecycle`,{cache:"no-store"});if(response.ok){const saved=await response.json();publishStatus(saved);audio.currentTime=saved.audioPosition;}}catch{}}
+    try{await lifecycle(id,testNumber,"audio",{position:audio.currentTime,ended,...(ended?finalSnapshot.current:{})});setAudioError("");}
+    catch(e){
+      setAudioError((e as Error).message);
+      // A temporary save/network failure must not stop an otherwise healthy recording.
+      // Keep server rejections authoritative and recover from its saved position.
+      if(e instanceof RequestError && e.status>=400 && e.status<500 && ![408,429].includes(e.status)){
+        intentionalAudioPause.current=true;audio.pause();setPlaybackBlocked(true);
+        progressBlocked.current=true;
+        setRecoverAudio(e.status===409);
+      }
+    }
     finally{reporting.current=false;if(pendingEnd.current){pendingEnd.current=false;void reportAudio(true);}}
   };
 
+  const retryAudio=async()=>{
+    if(retryBusy.current)return;retryBusy.current=true;setRetryingAudio(true);
+    try{
+      const id=sessionStorage.getItem(attemptKey(testNumber));if(!id)throw new Error("No active test session.");
+      const saved=await request<NonNullable<ReturnType<typeof statusSnapshot>>>(`/api/attempts/${id}/lifecycle`,undefined,"GET");publishStatus(saved);
+      if(saved.stage!=="LISTENING_ACTIVE"){setRecoverAudio(false);return;}
+      restored.current=false;progressBlocked.current=false;setRecoverAudio(false);setAudioError("");setAudioUnavailableFor(null);setAudioRetry(value=>value+1);
+    }catch(error){setAudioError((error as Error).message);if(error instanceof RequestError&&[401,403,404].includes(error.status))setRecoverAudio(false);}finally{retryBusy.current=false;setRetryingAudio(false);}
+  };
+
+  const reportLatest=useRef(reportAudio),retryLatest=useRef(retryAudio);
+  useEffect(()=>{reportLatest.current=reportAudio;retryLatest.current=retryAudio;});
+  useEffect(()=>{
+    if(!draftReady||listeningComplete)return;
+    const recover=()=>{
+      if(recoverAudio){void retryLatest.current();return;}
+      // The ended event fires once: retry its final snapshot if the response was lost.
+      if(finalSnapshot.current)void reportLatest.current(true);
+    };
+    const timer=window.setInterval(recover,5000);
+    window.addEventListener("online",recover);
+    return()=>{window.clearInterval(timer);window.removeEventListener("online",recover);};
+  },[draftReady,listeningComplete,recoverAudio]);
+
   const handleContinueToReading = async () => {
-    if(!listeningComplete||transitioning)return;setTransitioning(true);
+    if((process.env.NODE_ENV !== "development" && !listeningComplete)||transitioning)return;setTransitioning(true);
     sessionStorage.setItem("ieltsListeningAnswers", JSON.stringify(answers));
     sessionStorage.setItem("ieltsListeningTest", testNumber);
-    try { await saveSection("listening",testNumber,answers,true); router.replace(`/test?test=${testNumber}`); } catch(error){window.alert((error as Error).message);setTransitioning(false);}
+    try { await saveSection("listening",testNumber,answers,true); router.replace(`/listening/instructions?test=${testNumber}`); } catch(error){window.alert((error as Error).message);setTransitioning(false);}
   };
 
   const formatTime = (time: number) => {
@@ -93,6 +168,7 @@ export default function ListeningTest() {
   );
 
   const updateAnswer = (questionNumber: number, value: string) => {
+    if(finalSnapshot.current||listeningComplete)return;
     setAnswers((previous) => ({
       ...previous,
       [questionNumber]: value,
@@ -121,14 +197,7 @@ export default function ListeningTest() {
           <div className="self-start mt-1 text-[14px] leading-5 font-bold">Test taker ID<div className="font-normal text-[13px]">{isFinished ? "Completed" : "Listening"} · {formatTime(hasAudio ? currentTime : 0)} / {formatTime(hasAudio ? duration : 0)}</div></div>
         </div>
         <div className="flex items-center gap-5 text-[#222]">
-          <button
-            onClick={handleContinueToReading}
-            disabled={!listeningComplete||transitioning}
-            title={listeningComplete?"Continue to Reading":"Available when the listening recording finishes"}
-            className="rounded-sm bg-black px-3 py-2 text-[14px] font-bold text-white hover:bg-[#333] disabled:cursor-not-allowed disabled:bg-[#777]"
-          >
-            Continue to Reading <span aria-hidden="true">→</span>
-          </button>
+          
           <button aria-label="Notes" title="Notes"><NotebookPen size={22} /></button>
           <button aria-label="Connection status"><Wifi size={22} /></button>
           <button aria-label="Notifications"><Bell size={22} /></button>
@@ -136,7 +205,7 @@ export default function ListeningTest() {
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#e5e5e5]"><div className="h-full bg-[#2185d0] transition-all duration-300" style={{ width: `${progress}%` }} /></div>
           {hasAudio ? <audio
-            key={testNumber}
+            key={`${testNumber}-${audioRetry}`}
             ref={audioRef}
             controls={false}
             controlsList="nodownload"
@@ -146,11 +215,13 @@ export default function ListeningTest() {
             onLoadStart={() => {
               setCurrentTime(0);
               setDuration(0);
-              setIsFinished(false);
+              setIsFinished(Boolean(finalSnapshot.current));
             }}
             onError={(event) => {
+              intentionalAudioPause.current=true;
               event.currentTarget.pause();
               setAudioUnavailableFor(testNumber);
+              setRecoverAudio(true);
               setCurrentTime(0);
               setDuration(0);
               setIsFinished(false);
@@ -169,6 +240,7 @@ export default function ListeningTest() {
             onSeeking={(e)=>{if(restored.current&&state&&e.currentTarget.currentTime>state.audioPosition+5)e.currentTarget.currentTime=state.audioPosition;}}
 
             onEnded={() => {
+              if(!finalSnapshot.current)finalSnapshot.current={answers:{...latestAnswers.current},revision:draftRevision(testNumber,"listening")};
               setIsFinished(true);
               setCurrentTime(duration);
               void reportAudio(true);
@@ -180,8 +252,8 @@ export default function ListeningTest() {
           /> : null}
       </header>
 
-      {hasAudio&&playbackBlocked&&<p role="status" className="mx-5 mt-2 text-sm">Your browser paused automatic playback. <button className="ml-2 border px-3 py-1 font-semibold" onClick={()=>{void audioRef.current?.play().then(()=>setPlaybackBlocked(false)).catch(()=>setPlaybackBlocked(true));}}>Play audio</button></p>}
-      {!hasAudio && <p role="status" className="mx-5 mt-2 text-sm">Audio for Test {testNumber} has not been added yet.</p>}
+      {hasAudio&&playbackBlocked&&<p role="status" className="mx-5 mt-2 text-sm">Your browser paused automatic playback. <button className="ml-2 border px-3 py-1 font-semibold" onClick={()=>{intentionalAudioPause.current=false;void audioRef.current?.play().then(()=>setPlaybackBlocked(false)).catch(()=>setPlaybackBlocked(true));}}>Play audio</button></p>}
+      {!hasAudio && <p role="status" className="mx-5 mt-2 text-sm">Audio for Test {testNumber} is unavailable. <button disabled={retryingAudio} className="ml-2 border px-3 py-1 font-semibold" onClick={()=>void retryAudio()}>{retryingAudio?"Retrying...":"Retry audio"}</button></p>}
       {audioError&&<p role="alert" className="mx-5 mt-2 text-sm text-red-700">{audioError}</p>}
 
       <div className="mx-2 mt-2 mb-1 shrink-0 rounded border border-[#d5d5d5] bg-[#f2f2ef] px-5 py-3">
@@ -190,7 +262,7 @@ export default function ListeningTest() {
       </div>
       {/* MAIN CONTENT */}
 
-      <section className="flex-1 min-h-0 overflow-y-auto bg-white px-5 py-3">
+      <section inert={isFinished||listeningComplete} className="flex-1 min-h-0 overflow-y-auto bg-white px-5 py-3">
                 {testNumber === "1" && activePart === 1 && (
           <div className="mx-auto w-full max-w-5xl space-y-8 py-3 text-[16px] leading-6">
             <section aria-label="Questions 1 to 4" className="space-y-4">
@@ -396,7 +468,8 @@ export default function ListeningTest() {
       </section>
 
 
-      <footer className="shrink-0 bg-white border-t border-[#d5d5d5] px-3 py-1">
+      <PartNavigation current={activePart} total={4} onChange={setActivePart} />
+      <footer data-ielts-test-footer className="shrink-0 bg-white border-t border-[#d5d5d5] px-3 py-1">
         <div className="grid w-full grid-cols-4 items-center justify-items-center gap-x-6">
           {[1, 2, 3, 4].map((part) => (
             <div key={part} className="flex flex-col items-center gap-0">

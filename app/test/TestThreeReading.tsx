@@ -1,4 +1,10 @@
 "use client";
+
+import PartNavigation from "./PartNavigation";
+import { HeadingBank, HeadingDrop } from "./HeadingDragAndDrop";
+
+import { SummaryGap } from "./SummaryWithoutClues";
+
 import { saveSection, useAnswerDraft, useCountdown } from "@/lib/results/client";
 
 import { useState, type PointerEvent as ReactPointerEvent } from "react";
@@ -20,6 +26,11 @@ const thamesAgencies = [
   ["D", "Thames Water"], ["E", "Port of London"], ["F", "Local boroughs"],
 ] as const;
 
+const paragraphHeadingGroup = {
+  options: deerHeadings.map(([label, text]) => ({ label, text })),
+  questions: "BCDEF".split("").map((letter, index) => ({ number: index + 14, prompt: "Paragraph " + letter })),
+};
+
 export default function TestThreeReading() {
   const router = useRouter();
   const [passageIndex, setPassageIndex] = useState(0);
@@ -38,7 +49,7 @@ export default function TestThreeReading() {
 
 const handleContinue = async () => {
     sessionStorage.setItem("ieltsAnswersTest3Reading", JSON.stringify(answers));
-    try { await saveSection("reading",3,answers,true); router.replace("/test/writing?test=3"); } catch(error){window.alert((error as Error).message);}
+    try { await saveSection("reading",3,answers,true); router.replace("/listening/instructions?test=3"); } catch(error){window.alert((error as Error).message);}
   };
   const minutes = Math.floor(timeLeft / 60);
   const seconds = String(timeLeft % 60).padStart(2, "0");
@@ -46,7 +57,7 @@ const handleContinue = async () => {
   const numberBadge = (number: number) => <span className="inline-flex h-8 min-w-8 shrink-0 items-center justify-center rounded-sm border border-[#2185d0] bg-white px-1 font-medium leading-none">{number}</span>;
   const headingAnswer = (number: number) => <select id={`answer-${number}`} aria-label={`Answer for question ${number}`} value={answers[number] || ""} onChange={(event) => setAnswer(number, event.target.value)} className="w-48 max-w-full border border-gray-400 bg-white px-2 py-1 outline-none focus:border-[#2185d0]"><option value="">Select</option>{deerHeadings.map(([key, label]) => <option key={key} value={key}>{key} — {label}</option>)}</select>;
   const agencyAnswer = (number: number) => <select id={`answer-${number}`} aria-label={`Answer for question ${number}`} value={answers[number] || ""} onChange={(event) => setAnswer(number, event.target.value)} className="w-48 max-w-full border border-gray-400 bg-white px-2 py-1 outline-none focus:border-[#2185d0]"><option value="">Select</option>{thamesAgencies.map(([key, label]) => <option key={key} value={key}>{key} — {label}</option>)}</select>;
-  const summaryInput = (number: number) => <><span className="mx-1 font-semibold">{number}.</span><input id={`question-${number}`} aria-label={`Answer for question ${number}`} value={answers[number] || ""} onChange={(event) => setAnswer(number, event.target.value)} className="mx-1 inline-block h-[42px] w-[198px] max-w-full border border-[#2185d0] bg-white px-2 align-middle outline-none focus:border-[#2185d0]" autoComplete="off" /></>;
+  const summaryInput = (number: number) => number >= 7 && number <= 13 ? <SummaryGap number={number} answers={answers} onAnswer={setAnswer} /> : <><span className="mx-1 font-semibold">{number}.</span><input id={`question-${number}`} aria-label={`Answer for question ${number}`} value={answers[number] || ""} onChange={(event) => setAnswer(number, event.target.value)} className="mx-1 inline-block h-[42px] w-[198px] max-w-full border border-[#2185d0] bg-white px-2 align-middle outline-none focus:border-[#2185d0]" autoComplete="off" /></>;
 
   const questions = <div className="space-y-8 px-5 py-5 text-[16px] leading-7">
     <section className="space-y-5" aria-label="Questions 1 to 6">
@@ -65,7 +76,7 @@ const handleContinue = async () => {
       <h2 className="font-bold">Questions 7–13</h2>
       <p>Complete the summary below.</p>
       <p>Write <b>NO MORE THAN TWO WORDS</b> from the text for each answer.</p>
-      <h3 className="pt-2 font-bold">Assessing mindfulness</h3>
+      <h3 className="pt-2 text-center font-bold">Assessing mindfulness</h3>
       <p className="py-2 leading-9">Mindfulness has been proven to have a positive impact on people’s wellbeing. One study in 2013 showed patients responding positively to {summaryInput(7)} involving mindfulness. This is due to a reduction in the size of the {summaryInput(8)}, which makes us react to danger. Mindfulness can also help cancer patients with negative emotions following {summaryInput(9)}.</p>
       <p className="py-2 leading-9">Many companies are dealing with their workers’ mental health issues by making {summaryInput(10)} responsible for mental well-being. Two writers give many examples of the {summaryInput(11)} of mindfulness. While the practice is intended to reduce {summaryInput(12)} and depression, some argue that it may be the cause of those conditions. Jon Kabat-Zinn sees mindfulness’s current shortfalls being a need for {summaryInput(13)} and lack of funding.</p>
   </section>
@@ -107,8 +118,7 @@ const handleContinue = async () => {
       <h2 className="font-bold">Questions 14–18</h2>
       <p>The text has six paragraphs.</p>
       <p>Choose the correct heading for each paragraph. Choose the appropriate number, i–ix.</p>
-      <div className="mx-auto w-fit min-w-48 max-w-full space-y-2 border border-[#aaa] bg-white px-8 py-4"><h3 className="text-center font-bold">List of Headings</h3>{deerHeadings.map(([key, label]) => <p key={key} className="py-1"><b className="mr-2">{key}</b>{label}</p>)}</div>
-      <div className="space-y-3">{"BCDEF".split("").map((paragraph, index) => { const number = index + 14; return <div id={`question-${number}`} key={number} className="flex scroll-m-6 items-start gap-3 py-3 leading-7"><span>{number}. Paragraph {paragraph}</span>{headingAnswer(number)}</div>; })}</div>
+      <h3 className="font-bold">List of Headings</h3><HeadingBank scope="reading-3-headings" group={paragraphHeadingGroup} answers={answers} onAnswer={setAnswer} />
     </section>
     <section className="space-y-5" aria-label="Questions 19 to 23">
       <h2 className="font-bold">Questions 19–23</h2>
@@ -138,7 +148,7 @@ const handleContinue = async () => {
           <div className="self-start mt-1 text-[14px] font-bold leading-5">Test taker ID<div className="text-[13px] font-normal">Time remaining: {minutes}:{seconds}</div></div>
         </div>
         <div className="flex items-center gap-5 text-[#222]">
-          <button onClick={handleContinue} disabled={timeLeft > 0 || !draftReady} title={timeLeft > 0 ? "Available when Reading time finishes" : "Continue to Writing"} className="rounded-sm bg-black px-3 py-2 text-[14px] font-bold text-white hover:bg-[#333] disabled:cursor-not-allowed disabled:bg-[#777]">Continue to Writing section <span aria-hidden="true">→</span></button>
+          
           <button aria-label="Notes" title="Notes"><NotebookPen size={22} /></button>
           <button aria-label="Connection status"><Wifi size={22} /></button>
           <button aria-label="Notifications"><Bell size={22} /></button>
@@ -157,7 +167,7 @@ const handleContinue = async () => {
             <h2 className="text-center text-xl font-bold">{passage.title}</h2>
             {splitParagraphs(passage.text).map((paragraph, index) => {
               const section = paragraph.match(/^([A-H])\.\s*([\s\S]*)$/);
-              return <section key={index} className="space-y-2">{section ? <><h3 className="font-bold">{section[1]}</h3><p>{section[2]}</p></> : <p>{paragraph}</p>}</section>;
+              return <section key={index} className="space-y-2">{section ? <><div className="flex items-center gap-2"><h3 className="shrink-0 font-bold">{section[1]}</h3>{passageIndex === 1 && <HeadingDrop scope="reading-3-headings" group={paragraphHeadingGroup} paragraph={section[1]} answers={answers} onAnswer={setAnswer} />}</div><p>{section[2]}</p></> : <p>{paragraph}</p>}</section>;
             })}
           </article>
         </section>
@@ -165,7 +175,8 @@ const handleContinue = async () => {
         <div role="separator" aria-label="Resize passage and question panels" aria-orientation="vertical" aria-valuemin={25} aria-valuemax={75} aria-valuenow={Math.round(paneSplit)} tabIndex={0} onPointerDown={(event) => event.currentTarget.setPointerCapture(event.pointerId)} onPointerMove={movePaneDivider} onPointerUp={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onPointerCancel={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onKeyDown={(event) => { if (event.key === "ArrowLeft") setPaneSplit((value) => Math.max(25, value - 2)); if (event.key === "ArrowRight") setPaneSplit((value) => Math.min(75, value + 2)); }} style={{ left: `${paneSplit}%` }} className="absolute top-0 z-20 h-full w-3 -translate-x-1/2 cursor-col-resize touch-none outline-none focus-visible:ring-2 focus-visible:ring-[#2185d0]"><span className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-[#999]" /><span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-[#555] bg-white text-[20px] leading-none shadow-sm">↔</span></div>
       </div>
 
-      <footer className="grid shrink-0 grid-cols-3 items-center justify-items-center gap-4 border-t border-[#d5d5d5] bg-white px-3 py-2">
+      <PartNavigation current={passageIndex + 1} total={3} onChange={(part) => setPassageIndex(part - 1)} />
+      <footer data-ielts-test-footer className="grid shrink-0 grid-cols-3 items-center justify-items-center gap-4 border-t border-[#d5d5d5] bg-white px-3 py-2">
         {testThreePassages.map((item, index) => { const start = index === 0 ? 1 : index === 1 ? 14 : 27; const count = 13 + (index === 2 ? 1 : 0); return <div key={item.title} className="flex flex-col items-center"><button type="button" onClick={() => setPassageIndex(index)} aria-current={passageIndex === index ? "page" : undefined} className={`px-3 py-1 text-[14px] ${passageIndex === index ? "font-bold text-[#111]" : "font-normal text-[#111] hover:underline"}`}>Passage {index + 1}</button><div className="mt-1 flex flex-wrap justify-center gap-1">{Array.from({ length: count }, (_, offset) => { const number = start + offset; return <button key={number} type="button" onClick={() => { setPassageIndex(index); window.setTimeout(() => document.getElementById(`question-${number}`)?.scrollIntoView({ behavior: "smooth", block: "center" }), 50); }} className={`h-6 min-w-6 rounded-sm border px-0.5 text-[13px] ${answers[number] ? "border-[#2185d0] font-semibold" : "border-transparent hover:border-[#2185d0]"}`}>{number}</button>; })}</div></div>; })}
       </footer>
     </main>

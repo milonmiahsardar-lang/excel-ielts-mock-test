@@ -2,18 +2,22 @@ import "server-only";
 import { db } from "./db";
 import { reject } from "./http";
 import type { User } from "./types";
-export function assignmentFor(user: User,test: number,allowSubmitted=false) {
+export function assignmentFor(user: User,test: number,allowSubmitted=false,allowExpired=false) {
   if(user.role!=="student")reject(403,"Candidate access required.");
   const row=db().prepare("SELECT * FROM test_assignments WHERE candidate_id=? AND test_id=?").get(user.id,test);
   if(!row)reject(403,"This test has not been assigned to your account.");
   if(row.status==="REVOKED")reject(403,"This test assignment has been revoked.");
-  if(row.expires_at && Date.parse(String(row.expires_at))<=Date.now())reject(403,"This test assignment has expired.");
+  if(!allowExpired && row.expires_at && Date.parse(String(row.expires_at))<=Date.now())reject(403,"This test assignment has expired.");
   if(!allowSubmitted && (row.status==="SUBMITTED"||Number(row.attempts_used)>=Number(row.attempt_limit)))reject(403,"This test has already been submitted. Ask your administrator to reassign it.");
   return row;
 }
 export function authorizeAttempt(user: User,row: Record<string,unknown>,allowSubmitted=false) {
   if(row.student_id!==user.id)reject(404,"Attempt not found.");
-  const assignment=assignmentFor(user,Number(row.test_id),allowSubmitted);
+  // Ownership of a completed result is independent of today's assignment.
+  if(allowSubmitted&&row.submitted_at)return db().prepare("SELECT * FROM test_assignments WHERE id=?").get(String(row.assignment_id))??{id:row.assignment_id};
+  const stage=db().prepare("SELECT stage FROM attempt_progress WHERE attempt_id=?").get(String(row.id));
+  const started=!!stage&&stage.stage!=="NOT_STARTED";
+  const assignment=assignmentFor(user,Number(row.test_id),allowSubmitted,started);
   if(!row.assignment_id||row.assignment_id!==assignment.id)reject(403,"This attempt is not attached to your current assignment.");
   return assignment;
 }

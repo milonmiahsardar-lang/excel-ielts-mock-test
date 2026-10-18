@@ -316,7 +316,7 @@
       "paragraphs": [
         "Skiing is one of the world’s most popular winter sports. With ever-increasing numbers of people taking part, questions have been raised about the effect skiing has on the mountain environments where it takes place. Most skiing today is divided into two disciplines. Firstly, there is on-piste skiing, which is done on prepared routes with controlled amounts of snow. The other form is off-piste skiing, which involves leaving the prepared tracks and skiing in natural surroundings.",
         "Many skiers now seek the delights of off-piste skiing on untouched snow through forests, but this pleasure comes at a significant cost to the environment. Young mountain trees have a difficult life, requiring 30 to 50 years to grow a mere four metres. They have a growing season of only three months and have to suffer intense cold, heat, frosts and thaws as well as acid rain, air pollution and viruses. Skiers frequently exacerbate the situation, as the edges of a ski are sharp enough to break the bark of a young tree and destroy buds, thereby preventing the growth of any new shoots. High altitude forest is an essential regulator of the mountain climate, and damage of this type can have serious long-term effects.",
-        "Off-piste skiing can also cause damage to fauna; mountain animals unaccustomed to human contact instinctively panic and run so hard to avoid skiers that they weaken themselves in the deep snow. These animals’ instinct is to keep on running, even if exhaustion finally kills them. Supporters of skiing claim that most animals avoid areas with skiers and many resorts say they protect wildlife by fencing off ski slopes and areas of hibernation; however, this fencing requires never-ending care and upkeep, which increase costs. In many resorts, sensitive mountain areas such as breeding and tree plantation zones are simply left undefended against off-piste skiers.",
+        "Off-piste skiing can also cause damage to fauna; mountain animals unaccustomed to human contact instinctively panic and run so hard to avoid skiers that they weaken themselves in the deep snow. These animals’ instinct is to keep on running, even if exhaustion finally kills them. Supporters of skiing claim that most animals avoid areas with skiers and many resorts say they protect wildlife by fencing off ski slopes and areas of hibernation; however, this fencing requires never-ending care and upkeep, which increase costs. In many resorts, sensitive mountain areas such as breeding and tree plantation zones are simply left undefended against off-piste skiers, as their owners are unwilling to pay to install and maintain the fencing.",
         "Some people maintain that off-piste skiing is a sustainable activity and that ecologists overstate the issues. Given the revenue that resorts earn from skiers, even critics of skiing realise that prohibiting off-piste skiing everywhere is unrealistic. The most effective way ahead is a mixture of compromise and education. Resort developers and forest managers must agree on banning skiing in sensitive areas and utilising less vulnerable areas for resorts. Resorts must ensure that all skiers are informed of areas to avoid, and that closed areas are clearly signposted. In these ways, damage to mountain environments can be minimised.",
         "Off-piste skiing is not the only source of problems, however. In times of low snowfall, resort operators are increasingly turning to the use of artificial snow. This is made by snow cannons spraying water at great pressure into the cold mountain air, as a result of which the water freezes and then falls as snow. To obtain good-quality artificial snow, bacteria are frequently mixed with the water to form better snowflakes. The long-term environmental effects of this are still uncertain. However, the manufacture of artificial snow is costly and uses large amounts of water, the same water which often shelters rare species of animal and which in itself is a commodity. According to some sources, one day’s use of snow cannons in a busy resort can consume as much water as a small town in two days. Water companies have stated that this can affect water supplies to ordinary households in the areas around snow resorts.",
         "Water for artificial snow can come from various sources. Natural lakes can be used, but environmentalists often disapprove of using this type of water source. Accordingly, the creation of an artificial lake sometimes becomes necessary. If this is well planned, it may also serve as a reservoir for fire-fighting water.",
@@ -338,7 +338,7 @@
           "questions": [
             {
               "number": 28,
-              "prompt": "Harm done to trees by skiers could change the weather in the future |"
+              "prompt": "Harm done to trees by skiers could change the weather in the future."
             },
             {
               "number": 29,
@@ -346,11 +346,11 @@
             },
             {
               "number": 30,
-              "prompt": "Animals on the mountain are unable to escape the skiers due to the level of the STOW"
+              "prompt": "Animals on the mountain are unable to escape the skiers due to the level of the snow."
             },
             {
               "number": 31,
-              "prompt": "Some resorts do not have barriers to protect habitats due to the high cast"
+              "prompt": "Some resorts do not have barriers to protect habitats due to the high cost."
             },
             {
               "number": 32,

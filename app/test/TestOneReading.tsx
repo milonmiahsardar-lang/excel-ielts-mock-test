@@ -1,3 +1,6 @@
+import SentenceEndings from "./SentenceEndings";
+import { HeadingBank, HeadingDrop } from "./HeadingDragAndDrop";
+import SummaryWithClues from "./SummaryWithClues";
 import type { ReactNode } from "react";
 
 type Props = {
@@ -100,6 +103,11 @@ const trueNoQuestions = [
   { number: 36, prompt: "In most everyday situations, people are capable of making calm and rational decisions." },
 ];
 
+const paragraphHeadingGroup = {
+  options: headings.map(([label, text]) => ({ label, text })),
+  questions: "BCDEFG".split("").map((letter, index) => ({ number: index + 1, prompt: "Paragraph " + letter })),
+};
+
 export default function TestOneReading({ pane, section, answers, onAnswer }: Props) {
   const input = (number: number) => (
     <input
@@ -149,7 +157,7 @@ export default function TestOneReading({ pane, section, answers, onAnswer }: Pro
         <h2 className="text-center text-xl font-bold">The Life of Sir Isaac Newton</h2>
         {paragraphs.map(({ label, text }) => (
           <section key={label} aria-label={`Paragraph ${label}`} className="scroll-m-6 space-y-2">
-            <h3 className="font-bold">{label}</h3>
+            <div className="flex items-center gap-2"><h3 className="shrink-0 font-bold">{label}</h3><HeadingDrop scope="reading-1-headings" group={paragraphHeadingGroup} paragraph={label} answers={answers} onAnswer={onAnswer} /></div>
             <p>{text}</p>
           </section>
         ))}
@@ -193,16 +201,12 @@ export default function TestOneReading({ pane, section, answers, onAnswer }: Pro
       <section className="space-y-5" aria-label="Questions 22 to 26">
         <h2 className="font-bold">Questions 22–26</h2>
         <p>Complete the summary using the list of words A–G below. Write the correct letter, A–G, for each answer.</p>
-        <div className="mx-auto w-fit max-w-full space-y-2 border border-[#aaa] bg-white p-4">
-          <h3 className="text-center font-bold">Options</h3>
-          {summaryOptions.map(([letter, option]) => <p key={letter} className="py-1"><b className="mr-2">{letter}</b>{option}</p>)}
-        </div>
-        <h3 className="font-bold">Antarctica and the Changing Climate</h3>
-        <div className="space-y-3">
-          <p className="py-3">Antarctica plays an important role in regulating the Earth’s climate through the process of {numberBadge(22)} {selectAnswer(22, summaryOptions)}. {numberBadge(23)} {selectAnswer(23, summaryOptions)} is diverted away from the Earth by the huge Antarctic ice sheet.</p>
-          <p className="py-3">As the size and {numberBadge(24)} {selectAnswer(24, summaryOptions)} of the ice sheet have decreased, {numberBadge(25)} {selectAnswer(25, summaryOptions)} has caused melting in some parts of the continent.</p>
-          <p className="py-3">However, other areas of Antarctica have experienced falling temperatures in recent years, due to {numberBadge(26)} {selectAnswer(26, summaryOptions)}, climate patterns leading to reduced temperatures.</p>
-        </div>
+        <h3 className="text-center font-bold">Antarctica and the Changing Climate</h3>
+        <SummaryWithClues
+          paragraphs={["Antarctica plays an important role in regulating the Earth’s climate through the process of {{22}}. {{23}} is diverted away from the Earth by the huge Antarctic ice sheet.","As the size and {{24}} of the ice sheet have decreased, {{25}} has caused melting in some parts of the continent.","However, other areas of Antarctica have experienced falling temperatures in recent years, due to {{26}}, climate patterns leading to reduced temperatures."]}
+          options={summaryOptions.map(([label, text]) => ({ label, text }))}
+          answers={answers} onAnswer={onAnswer} optionTitle="Options"
+        />
       </section>
     </div>
   );
@@ -222,13 +226,7 @@ export default function TestOneReading({ pane, section, answers, onAnswer }: Pro
       <section className="space-y-5" aria-label="Questions 37 to 39">
         <h2 className="font-bold">Questions 37–39</h2>
         <p>Complete each sentence with the correct ending, A–E. Write the correct letter for each answer.</p>
-        <div className="mx-auto w-fit max-w-full space-y-2 border border-[#aaa] bg-white p-4">
-          <h3 className="text-center font-bold">Sentence endings</h3>
-          {sentenceEndings.map(([letter, ending]) => <p key={letter} className="py-1"><b className="mr-2">{letter}</b>{ending}</p>)}
-        </div>
-        {shortQuestion(37, <>In the course of evolutionary history System 1 has served humans well because {selectAnswer(37, sentenceEndings)}</>)}
-        {shortQuestion(38, <>Low blood sugar or tiredness may be factors in decision making because {selectAnswer(38, sentenceEndings)}</>)}
-        {shortQuestion(39, <>The ‘peak-end rule’ shows us that {selectAnswer(39, sentenceEndings)}</>)}
+        <SentenceEndings questions={[{"number":37,"prompt":"In the course of evolutionary history System 1 has served humans well because"},{"number":38,"prompt":"Low blood sugar or tiredness may be factors in decision making because"},{"number":39,"prompt":"The ‘peak-end rule’ shows us that"}]} options={sentenceEndings.map(([label, text]) => ({ label, text }))} answers={answers} onAnswer={onAnswer} />
       </section>
       <section className="space-y-5" aria-label="Question 40">
         <h2 className="font-bold">Question 40</h2>
@@ -247,25 +245,7 @@ export default function TestOneReading({ pane, section, answers, onAnswer }: Pro
           <p>Choose the correct headings for paragraphs B–G from the list below.</p>
           <p>Write the correct number, i–ix, in boxes 1–6.</p>
         </div>
-        <div className="mx-auto w-fit max-w-full space-y-2 border border-[#aaa] bg-white p-4">
-          <h3 className="text-center font-bold">List of Headings</h3>
-          {headings.map(([number, title]) => <p key={number} className="py-1">{number}　{title}</p>)}
-        </div>
-        <div className="space-y-3">
-          {"BCDEFG".split("").map((paragraph, index) => {
-            const number = index + 1;
-            return (
-              <div key={number} id={`question-${number}`} className="flex flex-wrap items-center gap-2 scroll-m-6">
-                {numberBadge(number)}
-                <label htmlFor={`heading-answer-${number}`} className="font-medium">Paragraph {paragraph}</label>
-                <select id={`heading-answer-${number}`} aria-label={`Heading for question ${number}, paragraph ${paragraph}`} value={answers[number] || ""} onChange={(event) => onAnswer(number, event.target.value)} className="w-48 max-w-full border border-gray-400 bg-white px-2 py-1 outline-none focus:border-[#2185d0]">
-                  <option value="">Select</option>
-                  {headings.map(([headingNumber, title]) => <option key={headingNumber} value={headingNumber}>{headingNumber} — {title}</option>)}
-                </select>
-              </div>
-            );
-          })}
-        </div>
+        <h3 className="font-bold">List of Headings</h3><HeadingBank scope="reading-1-headings" group={paragraphHeadingGroup} answers={answers} onAnswer={onAnswer} />
       </section>
 
       <section className="space-y-5" aria-label="Questions 7 and 8">

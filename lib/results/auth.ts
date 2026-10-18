@@ -48,5 +48,5 @@ export async function setSession(user: User) {
   const store=await cookies(),token=randomBytes(32).toString("hex"),maxAge=12*60*60;
   db().prepare("DELETE FROM sessions WHERE expires_at<?").run(Date.now());
   db().prepare("INSERT INTO sessions VALUES(?,?,?)").run(tokenHash(token),user.id,Date.now()+maxAge*1000);
-  store.set(sessionCookie(user.role),token,{httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"lax",path:"/",maxAge});
+  store.set(sessionCookie(user.role),token,{httpOnly:true,secure:process.env.NODE_ENV==="production"&&process.env.CLASSROOM_HTTP!=="true",sameSite:"lax",path:"/",maxAge});
 }
