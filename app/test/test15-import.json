@@ -2,222 +2,25 @@
   "number": 15,
   "passages": [
     {
-      "title": "The Forgotten Forest",
+      "title": "Timekeeper: Invention of Marine Chronometer",
       "paragraphs": [
-        "Found only in the Deep South of America, longleaf pine woodlands have dwindled to about 3 percent of their former range, but new efforts are under way to restore them.",
-        "The beauty and the biodiversity of the longleaf pine forest are well-kept secrets, even in its native South. Yet it is among the richest ecosystems in North America, rivaling tallgrass prairies and the ancient forests of the Pacific Northwest in the number of species it shelters. And like those two other disappearing wildlife habitats, longleaf is also critically endangered.",
-        "In longleaf pine forests, trees grow widely scattered, creating an open, parklike environment, more like a savanna than a forest. The trees are not so dense as to block the sun. This openness creates a forest 1oor that is among the most diverse in the world, where plants such as many-1owered grass pinks, trumpet pitcher plants, Venus 1ytraps, lavender ladies and pineland bog-buttons grow. As many as 50 different species of wild1owers, shrubs, grasses and ferns have been cataloged in just a single square meter.",
-        "Once, nearly 92 million acres of longleaf forest 1ourished from Virginia to Texas, the only place in the world where it is found. By the turn of the 2lst century, however, virtually all of it had been logged, paved or farmed into oblivion. Only about 3 percent of the original range still supports longleaf forest, and only about 10,000 acres of that is uncut old-growth—the rest is forest that has regrown after cutting. An estimated 100,000 of those acres are still vanishing every year. However, a quiet movement to reverse this trend is rippling across the region. Governments, private organisations (including NWF) and individual conservationists are looking for ways to protect and preserve the remaining longleaf and to plant new forests for future generations.",
-        "Figuring out how to bring back the piney woods also will allow biologists to help the plants and animals that depend on this habitat. Nearly two-thirds of the declining, threatened or endangered species in the southeastern United States are associated with longleaf. The outright destruction of longleaf is only part of their story, says Mark Danaher, the biologist for South Carolina's Francis Marion National Forest. He says the demise of these animals and plants also is tied to a lack of fire, which once swept through the southern forests on a regular basis. \"Fire is absolutely critical for this ecosystem and for the species that depend on it,\" says Danaher.",
-        "Name just about any species that occurs in longleaf and you can find a connection to fire. Bachman's sparrow is a secretive bird with a beautiful song that echoes across the longleaf flatwoods. It tucks its nest on the ground beneath clumps of wiregrass and little bluestem in the open under-story. But once fire has been absent for several years, and a tangle of shrubs starts to grow, the sparrows disappear. Gopher tortoises, the only native land tortoises east of the Mississippi, are also abundant in longleaf. A keystone species for these forests, its burrows provide homes and safety to more than 300 species of vertebrates and invertebrates ranging from eastern diamond-back rattlesnakes to gopher frogs. If fire is suppressed, however, the tortoises are choked out. \"If we lose fire,\" says Bob Mitchell, an ecologist at the Jones Center, \"we lose wildlife.\"",
-        "Without fire, we also lose longleaf. Fire knocks back the oaks and other hardwoods that can grow up to overwhelm longleaf forests. \"They are fire forests,\" Mitchell says. \"They evolved in the lightning capital of the eastern United States.\" And it wasn't only lightning strikes that set the forest aflame. \"Native Americans also lit fires to keep the forest open,\" Mitchell says. \"So did the early pioneers. They helped create the longleaf pine forests that we know today.\"",
-        "Fire also changes how nutrients flow throughout longleaf ecosystems, in ways we are just beginning to understand. For example, researchers have discovered that frequent fires provide extra calcium, which is critical for egg production, to endangered red-cockaded woodpeckers. Frances James, a retired avian ecologist from Florida State University, has studied these small black-and-white birds for more than two decades in Florida's sprawling Apalachicola National Forest. When she realised female woodpeckers laid larger clutches in the first breeding season after their territories were burned, she and her colleagues went searching for answers. \"We learned calcium is stashed away in woody shrubs when the forest is not burned,\" James says. \"But when there is a fire, a pulse of calcium moves down into the soil and up into the longleaf.\" Eventually, this calcium makes its way up the food chain to a tree-dwelling species of ant, which is the red-cockaded's favorite food. The result: more calcium for the birds, which leads to more eggs, more young and more woodpeckers.",
-        "Today, fire is used as a vital management tool for preserving both longleaf and its wildlife. Most of these fires are prescribed burns, deliberately set with a drip torch. Although the public often opposes any type of fire—and the smoke that goes with it—these frequent, low-intensity burns reduce the risk of catastrophic con1agrations. \"Forests are going to burn,\" says Amadou Diop, NWF's southern forests restoration manager. \"It's just a question of when. With prescribed burns, we can pick the time and the place.\"",
-        "Diop is spearheading a new NWF effort to restore longleaf. \"It's a species we need to go back to,\" he says. Educating landowners about the advantages of growing longleaf is part of the program, he adds, which will soon be under way in nine southern states. \"Right now, most longleaf is on public land,\" says Jerry McCollum, president of the Georgia Wildlife Federation. \"Private land is where we need to work,\" he adds, pointing out that more than 90 percent of the acreage within the historic range of longleaf falls under this category.",
-        "Interest among private landowners is growing throughout the South, but restoring longleaf is not an easy task. The herbaceous layer—the understory of wiregrasses and other plants - also needs to be re-created. In areas where the land has not been chewed up by farming, but converted to loblolly or slash pine plantations, the seed bank of the longleaf forest usually remains viable beneath the soil. In time, this original vegetation can be coaxed back. Where agriculture has destroyed the seeds, however, wiregrass must be replanted. Right now, the expense is prohibitive, but researchers are searching for low-cost solutions.",
-        "Bringing back longleaf is not for the short-sighted, however. Few of us will be alive when the pines being planted today become mature forests in 70 to 80 years. But that is not stopping longleaf enthusiasts. \"Today, it's getting hard to find longleaf seedlings to buy,\" one of the private landowners says. \"Everyone wants them. Longleaf is in a resurgence.\""
+        "A\nUp to the middle of the 18th century, the navigators were still unable to exactly identify the position at sea, so they might face a great number of risks such as the shipwreck or running out of supplies before arriving at the destination. Knowing one’s position on the earth requires two simple but essential coordinates, one of which is the longitude.",
+        "B\nThe longitude is a term that can be used to measure the distance that one has covered from one’s home to another place around the world without the limitations of naturally occurring baseline like the equator. To determine longitude, navigators had no choice but to measure the angle with the naval sextant between Moon centre and a specific star— lunar distance—along with the height of both heavenly bodies. Together with the nautical almanac, Greenwich Mean Time (GMT) was determined, which could be adopted to calculate longitude because one hour in GMT means 15-degree longitude. Unfortunately, this approach laid great reliance on the weather conditions, which brought great inconvenience to the crew members. Therefore, another method was proposed, that is, the time difference between the home time and the local time served for the measurement. Theoretically, knowing the longitude position was quite simple, even for the people in the middle of the sea with no land in sight. The key element for calculating the distance travelled was to know, at the very moment, the accurate home time. But the greatest problem is: how can a sailor know the home time at sea?",
+        "C\nThe simple and again obvious answer is that one takes an accurate clock with him, which he sets to the home time before leaving. A comparison with the local time (easily identified by checking the position of the Sun) would indicate the time difference between the home time and the local time, and thus the distance from home was obtained. The truth was that nobody in the 18th century had ever managed to create a clock that could endure the violent shaking of a ship and the fluctuating temperature while still maintaining the accuracy of time for navigation.",
+        "D\nAfter 1714, as an attempt to find a solution to the problem, the British government offered a tremendous amount of £20,000, which were to be managed by the magnificently named ‘Board of Longitude’. If timekeeper was the answer (and there could be other proposed solutions, since the money wasn’t only offered for timekeeper), then the error of the required timekeeping for achieving this goal needed to be within 2.8 seconds a day, which was considered impossible for any clock or watch at sea, even when they were in their finest conditions.",
+        "E\nThis award, worth about £2 million today, inspired the self-taught Yorkshire carpenter John Harrison to attempt a design for a practical marine clock. In the later stage of his early career, he worked alongside his younger brother James. The first big project of theirs was to build a turret clock for the stables at Brockelsby Park, which was revolutionary because it required no lubrication. Harrison designed a marine clock in 1730, and he travelled to London in seek of financial aid. He explained his ideas to Edmond Halley, the Astronomer Royal, who then introduced him to George Graham, Britain’s first-class clockmaker. Graham provided him with financial aid for his early-stage work on sea clocks. It took Harrison five years to build Harrison Number One or HI. Later, he sought the improvement from alternate design and produced H4 with the giant clock appearance. Remarkable as it was, the Board of Longitude wouldn’t grant him the prize for some time until it was adequately satisfied.",
+        "F\nHarrison had a principal contestant for the tempting prize at that time, an English mathematician called John Hadley, who developed sextant. The sextant is the tool that people adopt to measure angles, such as the one between the Sun and the horizon, for a calculation of the location of ships or planes. In addition, his invention is significant since it can help determine longitude.",
+        "G\nMost chronometer forerunners of that particular generation were English, but that doesn’t mean every achievement was made by them. One wonderful figure in the history is the Lancastrian Thomas Earnshaw, who created the ultimate form of chronometer escapement—the spring detent escapement—and made the final decision on format and productions system for the marine chronometer, which turns it into a genuine modem commercial product, as well as a safe and pragmatic way of navigation at sea over the next century and half."
       ],
       "start": 1,
-      "end": 13,
+      "end": 14,
       "groups": [
         {
-          "type": "fill",
+          "type": "match",
           "title": "Questions 1-5",
           "instructions": [
-            "Complete the notes below.",
-            "Choose **NO MORE THAN TWO WORDS** from the passage for each answer.",
-            "Write your answers in boxes 1-5 on your answer sheet."
-          ],
-          "paragraphs": [
-            "**Forest fire ensures that:**",
-            "Birds can locate their {{1}} in the ground.",
-            "The burrows of a species of {{2}} provide homes to many other animals.",
-            "Hardwoods such as {{3}} can grow and outnumber long-leaf trees.",
-            "**Apart from fires lit by lightning:**",
-            "Fires are created by {{4}} and settlers.",
-            "Fires deliberately lit are called {{5}}"
-          ]
-        },
-        {
-          "type": "fill",
-          "title": "Questions 6-9",
-          "instructions": [
-            "Complete the flow-chart below.",
-            "Choose **ONE WORD ONLY** from the passage for each answer.",
-            "Write your answers in boxes 6-9 on your answer sheet."
-          ],
-          "heading": "How to increase the number of cockaded woodpeckers",
-          "paragraphs": [
-            "Calcium stored in {{6}}\n↓\nShrubs are burned\n↓\nCalcium released into {{7}}\n↓\nTravel up to the leaves\n↓\n{{8}} are eaten\n↓\nNumber of {{9}} increases\n↓\nMore cockaded woodpeckers"
-          ]
-        },
-        {
-          "type": "truth",
-          "title": "Questions 10-13",
-          "instructions": [
-            "Do the following statements agree with the information given in Reading Passage 1?"
-          ],
-          "labels": [
-            "TRUE",
-            "FALSE",
-            "NOT GIVEN"
-          ],
-          "questions": [
-            {
-              "number": 10,
-              "prompt": "The sparse distribution of longleaf pine trees leads to the most diversity of species."
-            },
-            {
-              "number": 11,
-              "prompt": "It is easier to restore forests converted to farms than forests converted to plantations."
-            },
-            {
-              "number": 12,
-              "prompt": "The cost to restore forest is increasing recently."
-            },
-            {
-              "number": 13,
-              "prompt": "Few can live to see the replanted forest reach its maturity."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Tidal Power! in Britain",
-      "paragraphs": [
-        "Tidal power, also called tidal energy, is a form of hydropower that converts the energy of tides into useful forms of power-mainly electricity. Although not yet widely used, tidal power has potential for future electricity generation. Tides are more predictable than wind energy and solar power. Among sources of renewable energy, tidal power has traditionally suffered from relatively high cost and limited availability of sites with sufficiently high tidal ranges or flow velocities, thus constricting its total availability. However, many recent technological developments and improvements, both in design and turbine technology, indicate that the total availability of tidal power may be much higher than previously assumed, and that economic and environmental costs may be brought down to competitive levels. Undersea turbines which produce electricity from the tides are set to become an important source of renewable energy for Britain. It is still too early to predict the extent of the impact they may have, but all the signs are that they will play a significant role in the future.",
-        "A\nOperating on the same principle as wind turbines, the power in sea turbines comes from tidal currents which turn blades similar to ships’ propellers, but, unlike wind, the tides are predictable and the power input is constant. The technology raises the prospect of Britain becoming self-sufficient in renewable energy and drastically reducing its carbon dioxide emissions. If tide, wind and wave power are all developed, Britain would be able to close gas, coal and nuclear power plants and export renewable power to other parts of Europe. Unlike wind power, which Britain originally developed and then abandoned for 20 years allowing the Dutch to make it a major industry, undersea turbines could become a big export earner to island nations such as Japan and New Zealand.",
-        "B\nTidal sites have already been identified that will produce one sixth or more of the UK’s power and at prices competitive with modern gas turbines and undercutting those of the already ailing nuclear industry. One site alone, the Pentland Firth, between Orkney and mainland Scotland, could produce 10% of the country’s electricity with banks of turbines under the sea, and another at Alderney in the Channel Islands three times the 1,200 megawatts of Britain’s largest and newest nuclear plant, Sizewell B, in Suffolk. Other sites identified include the Bristol Channel and the west coast of Scotland, particularly the channel between Campbeltown and Northern Ireland.",
-        "C\nWork on designs for the new turbine blades and sites are well advanced at the University of Southampton’s sustainable energy research group. The first station is expected to be installed off Lynmouth in Devon shortly to test the technology in a venture jointly funded by the department of Trade and Industry and the European Union. AbuBakr Bahaj, in charge of the Southampton research, said: ‘The prospects for energy from tidal currents are far better than from wind because the flows of water are predictable and constant. The technology for dealing with the hostile saline environment under the sea has been developed in the North Sea oil industry and much is already known about turbine blade design, because of wind power and ship propellers. There are a few technical difficulties, but I believe in the next five to ten years we will be installing commercial marine turbine farms.’ Southampton has been awarded £215,000 over three years to develop the turbines and is working with Marine Current Turbines, a subsidiary of IT power, on the Lynmouth project. EU research has now identified 106 potential sites for tidal power, 80% round the coasts of Britain. The best sites are between islands or around heavily indented coasts where there are strong tidal currents.",
-        "D\nA marine turbine blade needs to be only one third of the size of a wind generator to produce three times as much power. The blades will be about 20 meters in diameter, so around 30 meters of water is required. Unlike wind power, there are unlikely to be environmental objections. Fish and other creatures are thought unlikely to be at risk from the relatively slow-turning blades. Each turbine will be mounted on a tower which will connect to the national power supply grid via underwater cables. The towers will stick out of the water and be lit, to warn shipping, and also be designed to be lifted out of the water for maintenance and to clean seaweed from the blades.",
-        "E\nDr. Bahaj has done most work on the Alderney site, where there are powerful currents. The single undersea turbine farm would produce far more power than needed for the Channel Islands and most would be fed into the French Grid and be re-imported into Britain via the cable under the Channel.",
-        "F\nOne technical difficulty is cavitation, where low pressure behind a turning blade causes air bubbles. These can cause vibration and damage the blades of the turbines. Dr. Bahaj said: “We have to test a number of blade types to avoid this happening or at least make sure it does not damage the turbines or reduce performance. Another slight concern is submerged debris floating into the blades. So far we do not know how much of a problem it might be. We will have to make the turbines robust because the sea is a hostile environment, but all the signs are good that we can do it.”"
-      ],
-      "start": 14,
-      "end": 26,
-      "groups": [
-        {
-          "type": "match",
-          "title": "Questions 14-17",
-          "instructions": [
-            "Reading Passage 2 has six paragraphs, A-F.",
-            "Which paragraph contains the following information?",
-            "Write the correct letter, A-F, in boxes 14-17 on your answer sheet",
-            "NB   You may use any letter more than once."
-          ],
-          "options": [
-            {
-              "label": "A",
-              "text": "A"
-            },
-            {
-              "label": "B",
-              "text": "B"
-            },
-            {
-              "label": "C",
-              "text": "C"
-            },
-            {
-              "label": "D",
-              "text": "D"
-            },
-            {
-              "label": "E",
-              "text": "E"
-            },
-            {
-              "label": "F",
-              "text": "F"
-            }
-          ],
-          "questions": [
-            {
-              "number": 14,
-              "prompt": "the location of the first test site"
-            },
-            {
-              "number": 15,
-              "prompt": "bringing the power produced on one site back into Britain again"
-            },
-            {
-              "number": 16,
-              "prompt": "a potentially promising alternative energy for island countries"
-            },
-            {
-              "number": 17,
-              "prompt": "possibility of applying technique from another field due to its stable feature"
-            }
-          ]
-        },
-        {
-          "type": "multiple",
-          "title": "Questions 18-22",
-          "instructions": [
-            "Choose **FIVE** answers."
-          ],
-          "questions": [
-            {
-              "numbers": [
-                18,
-                19,
-                20,
-                21,
-                22
-              ],
-              "prompt": "Which FIVE of the following statements about tidal power are made by the author?",
-              "options": [
-                "It is best produced in the scene of particular coastlines.",
-                "It would take place all other ways of energy in Britain.",
-                "It is a more reliable source of energy than wind power.",
-                "It would cut down on air pollution.",
-                "It could generate a lot of carbon dioxide to the environment.",
-                "It could contribute to the closure of many existing power stations in Britain.",
-                "It could be the most expensive energy in Britain.",
-                "It could be a means of increasing national income.",
-                "It could compensate for the shortage of inland sites."
-              ]
-            }
-          ]
-        },
-        {
-          "type": "fill",
-          "title": "Questions 23-26",
-          "instructions": [
-            "Complete the following summary of the paragraphs of Reading Passage, using **NO MORE THAN TWO WORDS** from the Reading Passage for each answer.",
-            "Write your answers in boxes 23-26 on your answer sheet."
-          ],
-          "heading": "Summary",
-          "paragraphs": [
-            "Marine turbine has small environmental impact, for example, sea life would not in danger due to the fact that blades are comparatively {{23}}. Each tower equipped with turbine can be raised for {{24}} and extracted seaweed from the blades. However, one practical issue is that air bubble may result from the {{25}} (behind blades). This is known as {{26}}."
-          ]
-        }
-      ]
-    },
-    {
-      "title": "The Columbian Exchange",
-      "paragraphs": [
-        "A\nMillions of years ago, continental drift carried the Old World and New World apart, splitting North and South America from Eurasia and Africa. That separation lasted so long that it fostered divergent evolution; for instance, the development of rattlesnakes on one side of the Atlantic and of vipers on the other. After 1492, human voyagers in part reversed this tendency. Their artificial re-establishment of connections through the commingling of Old and New World plants, animals, and bacteria, commonly known as the Columbian Exchange, is one of the more spectacular and significant ecological events of the past millennium.",
-        "B\nWhen Europeans first touched the shores of the Americas, Old World crops such as wheat, barley, rice, and turnips had not travelled west across the Atlantic, and New World crops such as maize, white potatoes, sweet potatoes, and manioc had not travelled east to Europe. In the Americas, there were no horses, cattle, sheep, or goats, all animals of Old World origin. Except for the llama, alpaca, dog, a few fowl, and guinea pig, the New World had no equivalents to the domesticated animals associated with the Old World, nor did it have the pathogens associated with the Old World’s dense populations of humans and such associated creatures as chickens, cattle, black rats, and Aedes aegypti mosquitoes. Among these germs were those that carried smallpox, measles, chickenpox, influenza, malaria, and yellow fever.",
-        "C\nAs might be expected, the Europeans who settled on the east coast of the United States cultivated crops like wheat and apples, which they had brought with them. European weeds, which the colonists did not cultivate, and, in fact, preferred to uproot, also fared well in the New World. John Josselyn, an Englishman and amateur naturalist who visited New England twice in the seventeenth century, left us a list, “Of Such Plants as Have Sprung Up since the English Planted and Kept Cattle in New England,” which included couch grass, dandelion, shepherd’s purse, groundsel, sow thistle, and chickweed.",
-        "One of these, a plantain (Plantago major), was named “Englishman’s Foot” by the Amerindians of New England and Virginia who believed that it would grow only where the English “have trodden, and was never known before the English came into this country”. Thus, as they intentionally sowed Old World crop seeds, the European settlers were unintentionally contaminating American fields with weed seeds. More importantly, they were stripping and burning forests, exposing the native minor flora to direct sunlight, and the hooves and teeth of Old World livestock. The native flora could not tolerate the stress. The imported weeds could, because they had lived with large numbers of grazing animals for thousands of years.",
-        "D\nCattle and horses were brought ashore in the early 1600s and found hospitable climate and terrain in North America. Horses arrived in Virginia as early as 1620 and in Massachusetts in 1629. Many wandered free with little more evidence of their connection to humanity than collars with a hook at the bottom to catch on fences as they tried to leap over them to get at crops. Fences were not for keeping livestock in, but for keeping livestock out.",
-        "E\nNative American resistance to the Europeans was ineffective. Indigenous peoples suffered from white brutality, alcoholism, the killing and driving off of game, and the expropriation of farmland, but all these together are insufficient to explain the degree of their defeat. The crucial factor was not people, plants, or animals, but germs. Smallpox was the worst and the most spectacular of the infectious diseases mowing down the Native Americans. The first recorded pandemic of that disease in British North America detonated among the Algonquin of Massachusetts in the early 1630s. William Bradford of Plymouth Plantation wrote that the victims “fell down so generally of this disease as they were in the end not able to help one another, no, not to make a fire nor fetch a little water to drink, nor any to bury the dead”. The missionaries and the traders who ventured into the American interior told the same appalling story about smallpox and the indigenes. In 1738 alone, the epidemic destroyed half the Cherokee; in 1759 nearly half the Catawbas; in the first years of the next century, two thirds of the Omahas and perhaps half the entire population between the Missouri River and New Mexico; in 1837-38 nearly every last one of the Mandans and perhaps half the people of the high plains.",
-        "F\nThe export of America’s native animals has not revolutionised Old World agriculture or ecosystems as the introduction of European animals to the New World did. America’s grey squirrels and muskrats and a few others have established themselves east of the Atlantic and west of the Pacific, but that has not made much of a difference. Some of America’s domesticated animals are raised in the Old World, but turkeys have not displaced chickens and geese, and guinea pigs have proved useful in laboratories, but have not usurped rabbits in the butcher shops.",
-        "G\nThe New World’s great contribution to the Old is in crop plants. Maize, white potatoes, sweet potatoes, various squashes, chiles, and manioc have become essentials in the diets of hundreds of millions of Europeans, Africans, and Asians. Their influence on Old World peoples, like that of wheat and rice on New World peoples, goes far to explain the global population explosion of the past three centuries. The Columbian Exchange has been an indispensable factor in that demographic explosion.",
-        "H\nAll this had nothing to do with superiority or inferiority of biosystems in any absolute sense. It has to do with environmental contrasts. Amerindians were accustomed to living in one particular kind of environment, Europeans and Africans in another. When the Old World peoples came to America, they brought with them all their plants, animals, and germs, creating a kind of environment to which they were already adapted, and so they increased in number. Amerindians had not adapted to European germs, and so initially their numbers plunged. That decline has reversed in our time as Amerindian populations have adapted to the Old World’s environmental influence, but the demographic triumph of the invaders, which was the most spectacular feature of the Old World’s invasion of the New, still stands."
-      ],
-      "start": 27,
-      "end": 40,
-      "groups": [
-        {
-          "type": "match",
-          "title": "Questions 27-34",
-          "instructions": [
-            "Reading Passage 3 has eight paragraphs A-H.",
-            "Which paragraph contains the following information?",
-            "Write the correct letter A-H in boxes 27-34 on your answer sheet."
+            "Reading Passage 1 has seven paragraphs, A-G.Which paragraph contains the following information?Write the correct letter, A-G, in boxes 1-5 on your answer sheet.",
+            "NB You may use any letter more than once."
           ],
           "options": [
             {
@@ -247,52 +50,39 @@
             {
               "label": "G",
               "text": "G"
-            },
-            {
-              "label": "H",
-              "text": "H"
             }
           ],
           "questions": [
             {
-              "number": 27,
-              "prompt": "A description of an imported species that is named after the English colonists"
+              "number": 1,
+              "prompt": "a description of Harrison’s background"
             },
             {
-              "number": 28,
-              "prompt": "The reason why both the New World and Old World experienced population growth"
+              "number": 2,
+              "prompt": "problems caused by poor ocean navigation"
             },
             {
-              "number": 29,
-              "prompt": "The formation of new continents explained"
+              "number": 3,
+              "prompt": "the person who gave financial support to Harrison"
             },
             {
-              "number": 30,
-              "prompt": "The reason why the indigenous population declined"
+              "number": 4,
+              "prompt": "an analysis of the long-term importance of sea clock invention"
             },
             {
-              "number": 31,
-              "prompt": "An overall description of the species lacked in the Old World and New World"
-            },
-            {
-              "number": 32,
-              "prompt": "A description of some animal species being ineffective in affecting the Old World"
-            },
-            {
-              "number": 33,
-              "prompt": "An overall explanation of the success of the Old World species invasion"
-            },
-            {
-              "number": 34,
-              "prompt": "An account of European animals taking roots in the New World"
+              "number": 5,
+              "prompt": "the practical usage of longitude"
             }
           ]
         },
         {
           "type": "truth",
-          "title": "Questions 35-38",
+          "title": "Questions 6-8",
           "instructions": [
-            "Do the following statements agree with the claims of the writer in Reading Passage 3?"
+            "Do the following statements agree with the information given in Reading Passage 1?In boxes 6-8 on your answer sheet, write",
+            "TRUE               if the statement is true",
+            "FALSE              if the statement is false",
+            "NOT GIVEN    if the information is not given in the passage"
           ],
           "labels": [
             "TRUE",
@@ -301,33 +91,237 @@
           ],
           "questions": [
             {
-              "number": 35,
-              "prompt": "European settlers built fences to keep their cattle and horses inside."
+              "number": 6,
+              "prompt": "In theory, sailors can easily calculate their longitude position at sea."
             },
             {
-              "number": 36,
-              "prompt": "The indigenous people had been brutally killed by the European colonists."
+              "number": 7,
+              "prompt": "To determine longitude, the measurement of the distance from the Moon to the given star is a must."
             },
             {
-              "number": 37,
-              "prompt": "America's domesticated animals, such as turkey, became popular in the Old World."
-            },
-            {
-              "number": 38,
-              "prompt": "Crop exchange between the two worlds played a major role in world population growth."
+              "number": 8,
+              "prompt": "Greenwich Mean Time was set up by the English navigators."
             }
           ]
         },
         {
           "type": "fill",
-          "title": "Questions 39-40",
+          "title": "Questions 9-14",
           "instructions": [
-            "Answer the questions below using **NO MORE THAN THREE WORDS** from the passage for each answer."
+            "Complete the sentences below.Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+            "Write your answers in boxes 9-14 on your answer sheet."
           ],
-          "shortAnswers": true,
           "paragraphs": [
-            "**39.** Who reported the same story of European diseases among the indigenes from the American interior?\n{{39}}",
-            "**40.** What is the still existing feature of the Old World's invasion of the New?\n{{40}}"
+            "Sailors were able to use the position of the Sun to calculate {{9}}",
+            "An invention that could win the competition would lose no more than {{10}} every day.",
+            "John and James Harrison’s clock worked accurately without {{11}}",
+            "Harrison’s main competitor’s invention was known as {{12}}",
+            "Hadley’s instrument can use {{13}} to make a calculation of location of ships or planes.",
+            "The modem version of Harrison’s invention is called {{14}}"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ancient People in Sahara",
+      "paragraphs": [
+        "On Oct. 13, 2000, Paul Sereno, a professor from the University of Chicago, guided a team of palaeontologists to climb out of three broken Land Rovers, contented their water bottles and walked across the toffee-coloured desert called Tenere Desert. Tenere, one of the most barren areas on the Earth, is located on the southern flank of Sahara. According to the turbaned nomads Tuareg who have ruled this infertile domain for a few centuries, this California-size ocean of sand and rock is a ‘desert within a desert’. In the Tenere Desert, massive dunes might stretch a hundred miles, as far as the eyes can reach. In addition, 120-degree heat waves and inexorable winds can take almost all the water from a human body in less than a day.",
+        "Mike Hettwer, a photographer in the team, was attracted by the amazing scenes and walked to several dunes to take photos of the amazing landscape. When reaching the first slope of the dune, he was shocked by the fact that the dunes were scattered with many bones. He photographed these bones with his digital camera and went to the Land Rover in a hurry. ‘I found some bones,’ Hettwer said to other group members, ‘to my great surprise, they do not belong to the dinosaurs. They are human bones.’",
+        "One day in the spring of 2005, Paul Sereno got in touch with Elena Garcea, a prestigious archaeologist at the University of Cassino in Italy, asking her to return to the site with him together. After spending 30 years in researching the history of Nile in Sudan and of the mountains in the Libyan Desert, Garcea got well acquainted with the life of the ancient people in Sahara. But she did not know Sereno before this exploration, whose claim of having found so many skeletons in Tenere desert was unreliable to some archaeologists, among whom one person considered Sereno just as a ‘moonlighting palaeontologist’. However, Garcea was so obsessive with his perspective as to accept his invitation willingly.",
+        "In the following three weeks, Sereno and Garcea (along with five excavators, five Tuareg guides, and five soldiers from Niger’s army) sketched a detailed map of the destined site, which was dubbed Gobero after the Tuareg name for the area, a place the ancient Kiffian and Tuareg nomads used to roam. After that, they excavated eight tombs and found twenty pieces of artefacts for the above mentioned two civilisations. From these artefacts, it is evidently seen that Kiffian fishermen caught not only the small fish, but also some huge ones: the remains of Nile perch, a fierce fish weighing about 300 pounds, along with those of the alligators and hippos, were left in the vicinity of dunes.",
+        "Sereno went back with some essential bones and artefacts, and planned for the next trip to the Sahara area. Meanwhile, he pulled out the teeth of skeletons carefully and sent them to a researching laboratory for radiocarbon dating. The results indicated that while the smaller ‘sleeping’ bones might date back to 6,000 years ago (well within the Tenerian period), the bigger compactly tied artefacts were approximately 9,000 years old, just in the heyday of Kiffian era. The scientists now can distinguish one culture from the other.",
+        "In the fall of 2006, for the purpose of exhuming another 80 burials, these people had another trip to Gobero, taking more crew members and six extra scientists specialising in different areas. Even at the site, Chris Stojanowski, bio-archaeologist in Arizona State University, found some clues by matching the pieces. Judged from the bones, the Kiffian could be a people of peace and hardworking. ‘No injuries in heads or forearms indicate that they did not fight too much,’ he said. ‘And they had strong bodies.’ He pointed at a long narrow femur and continued, ‘From this muscle attachment, we could infer the huge leg muscles, which means this individual lived a strenuous lifestyle and ate much protein. Both of these two inferences coincide with the lifestyle of the people living on fishing.’ To create a striking contrast, he displayed a femur of a Tenerian male. This ridge was scarcely seen. ‘This individual had a less laborious lifestyle, which you might expect of the herder.’",
+        "Stojanowski concluded that the Tenerian were herders, which was consistent with the other scholars’ dominant view of the lifestyle in Sahara area 6,000 years ago, when the dry climate favoured herding rather than hunting. But Sereno proposed some confusing points: if the Tenerian was herders, where were the herds? Despite thousands of animal bones excavated in Gobero, only three cow skeletons were found, and none of goats or sheep found. ‘It is common for the herding people not to kill the cattle, particularly in a cemetery.’ Elena Garcea remarked, ‘Even the modem pastoralists such as Niger’s Wodaabe are reluctant to slaughter the animals in their herd.’ Sereno suggested, ‘Perhaps the Tenerian in Gobero were a transitional group that had still relied greatly on hunting and fishing and not adopted herding completely.’"
+      ],
+      "start": 15,
+      "end": 27,
+      "groups": [
+        {
+          "type": "truth",
+          "title": "Questions 15-18",
+          "instructions": [
+            "Do the following statements agree with the information given in Reading Passage 2?In boxes 15-18 on your answer sheet, write",
+            "TRUE               if the statement is true",
+            "FALSE              if the statement is false",
+            "NOT GIVEN    if the information is not given in the passage"
+          ],
+          "labels": [
+            "TRUE",
+            "FALSE",
+            "NOT GIVEN"
+          ],
+          "questions": [
+            {
+              "number": 15,
+              "prompt": "The pictures of rock engravings found in. Green Sahara is similar to those in other places."
+            },
+            {
+              "number": 16,
+              "prompt": "Tenere Desert was quite a fertile area in Sahara Desert."
+            },
+            {
+              "number": 17,
+              "prompt": "Hettwer found human remains in the desert by chance."
+            },
+            {
+              "number": 18,
+              "prompt": "Sereno and Garcea have cooperated in some archaeological activities before studying ancient Sahara people."
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 19-21",
+          "instructions": [
+            "Answer the questions below.Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer.",
+            "Write your answers in boxes 19-21 on your answer sheet."
+          ],
+          "paragraphs": [
+            "What did Sereno and Garcea produce in the initial weeks before digging work? {{19}}",
+            "What did Sereno send to the research centre? {{20}}",
+            "How old were the bigger tightly bundled burials having been identified estimated to be? {{21}}"
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 22-27",
+          "instructions": [
+            "Complete the notes below.Choose ONE WORD ONLY from the passage for each answer.Write your answers in boxes 22-27 on your answer sheet."
+          ],
+          "heading": "A comparative study of two ancient cultures",
+          "paragraphs": [
+            "A comparative study of two ancient cultures",
+            "the Kiffian",
+            "—They seemed to be peaceful and industrious since the reseacher did not find {{22}} on their heads and forearms.",
+            "—Their lifestyle was {{23}}",
+            "—Through the observation on the huge leg muscles, it could be inferred that their diet had plenty of {{24}}",
+            "the Tenerian",
+            "—Stojanowski presumed that the Tenerian preferred herding to {{25}}",
+            "—But only the bones of individual animals such as {{26}} were found.",
+            "—Sereno supposed the Tenerian in Gobero lived in a {{27}} group at that time"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Quantitative Research in Education",
+      "paragraphs": [
+        "Many education researchers used to work on the assumption that children experience different phases of development, and that they cannot execute the most advanced level of cognitive operation until they have reached the most advanced forms of cognitive process. For example, one researcher Piaget had a well-known experiment in which he asked the children to compare the amount of liquid in containers with different shapes. Those containers had the same capacity, but even when the young children were demonstrated that the same amount of fluid could be poured between the containers, many of them still believed one was larger than the other. Piaget concluded that the children were incapable of performing the logical task in figuring out that the two containers were the same size even though they had different shapes, because their cognitive development had not reached the necessary phase. Critics on his work, such as Donaldson, have questioned this interpretation. They point out the possibility that the children were just unwilling to play the experimenter’s game, or that they did not quite understand the question asked by the experimenter. These criticisms surely do state the facts, but more importantly, it suggests that experiments are social situations where interpersonal interactions take place. The implication here is that Piaget’s investigation and his attempts to replicate it are not solely about measuring the children’s capabilities of logical thinking, but also the degree to which they could understand the directions for them, their willingness to comply with these requirements, how well the experimenters did in communicating the requirements and in motivating those children, etc.",
+        "The same kinds of criticisms have been targeted to psychological and educational tests. For instance, Mehan argues that the subjects might interpret the test questions in a way different from that meant by the experimenter. In a language development test, researchers show children a picture of a medieval fortress, complete with moat, drawbridge, parapets and three initial consonants in it: D, C, and G. The children are required to circle the correct initial consonant for ‘castle’. The answer is C, but many kids choose D. When asked what the name of the building was, the children responded ‘Disneyland’. They adopted the reasoning line expected by the experimenter but got to the wrong substantive answer. The score sheet with the wrong answers does not include in it a child’s lack of reasoning capacity; it only records that the children gave a different answer rather than the one the tester expected.",
+        "Here we are constantly getting questions about how valid the measures are where the findings of the quantitative research are usually based. Some scholars such as Donaldson consider these as technical issues, which can be resolved through more rigorous experimentation. In contrast, others like Mehan reckon that the problems are not merely with particular experiments or tests, but they might legitimately jeopardise the validity of all researches of this type.",
+        "Meanwhile, there are also questions regarding the assumption in the logic of quantitative educational research that causes can be identified through physical and/or statistical manipulation of the variables. Critics argue that this does not take into consideration the nature of human social life by assuming it to be made up of static, mechanical causal relationships, while in reality, it includes complicated procedures of interpretation and negotiation, which do not come with determinate results. From this perspective, it is not clear that we can understand the pattern and mechanism behind people’s behaviours simply in terms of the casual relationships, which are the focuses of quantitative research. It is implied that social life is much more contextually variable and complex.",
+        "Such criticisms of quantitative educational research have also inspired more and more educational researchers to adopt qualitative methodologies during the last three or four decades. These researchers have steered away from measuring and manipulating variables experimentally or statistically. There are many forms of qualitative research, which is loosely illustrated by terms like ‘ethnography’, ‘case study’, ‘participant observation’, ‘life history’, ‘unstructured interviewing’, ‘discourse analysis’ and so on. Generally speaking, though, it has characteristics as follows:",
+        "Qualitative researches have an intensive focus on exploring the nature of certain phenomena in the field of education, instead of setting out to test hypotheses about them. It also inclines to deal with ‘unstructured data’, which refers to the kind of data that have not been coded during the collection process regarding a closed set of analytical categories. As a result, when engaging in observation, qualitative researchers use audio or video devices to record what happens or write in detail open-ended field-notes, instead of coding behaviour concerning a pre-determined set of categories, which is what quantitative researchers typically would do when conducting ‘systematic observation’. Similarly, in an interview, interviewers will ask open-ended questions instead of ones that require specific predefined answers of the kind typical, like in a postal questionnaire. Actually, qualitative interviews are often designed to resemble casual conversations.",
+        "The primary forms of data analysis include verbal description and explanations and involve explicit interpretations of both the meanings and functions of human behaviours. At most, quantification and statistical analysis only play a subordinate role. The sociology of education and evaluation studies were the two areas of educational research where-criticism of quantitative research and the development of qualitative methodologies initially emerged in the most intense way. A series of studies conducted by Lacey, Hargreaves and Lambert in a boys’ grammar school, a boys’ secondary modem school, and a girls’ grammar school in Britain in the 1960s marked the beginning of the trend towards qualitative research in the sociology of education. Researchers employed an ethnographic or participant observation approach, although they did also collect some quantitative data, for instance on friendship patterns among the students. These researchers observed lessons, interviewed both the teachers and the students, and made the most of school records. They studied the schools for a considerable amount of time and spent plenty of months gathering data and tracking changes over all these years."
+      ],
+      "start": 28,
+      "end": 40,
+      "groups": [
+        {
+          "type": "match",
+          "title": "Questions 28-32",
+          "instructions": [
+            "Look at the following statements or descriptions (Questions 28-32) and the list of people below.Match each statement or description with the correct person or people, A, B, C or DWrite the correct letter, A, B, C or D, in boxes 28-32 on your answer sheet.",
+            "NB You may use any letter more than once."
+          ],
+          "optionTitle": "Lists of People",
+          "options": [
+            {
+              "label": "A",
+              "text": "Piaget"
+            },
+            {
+              "label": "B",
+              "text": "Mehan"
+            },
+            {
+              "label": "C",
+              "text": "Donaldson"
+            },
+            {
+              "label": "D",
+              "text": "Lacey, Hargreaves and Lambert"
+            }
+          ],
+          "questions": [
+            {
+              "number": 28,
+              "prompt": "A wrong answer indicates more of a child’s different perspective than incompetence in reasoning."
+            },
+            {
+              "number": 29,
+              "prompt": "Logical reasoning involving in the experiment is beyond children’s cognitive development."
+            },
+            {
+              "number": 30,
+              "prompt": "Children’s reluctance to comply with the game rules or miscommunication may be another explanation."
+            },
+            {
+              "number": 31,
+              "prompt": "There is an indication of a scientific observation approach in research."
+            },
+            {
+              "number": 32,
+              "prompt": "There is a detail of flaw in experiments on children’s language development."
+            }
+          ]
+        },
+        {
+          "type": "fill",
+          "title": "Questions 33-36",
+          "instructions": [
+            "Complete the sentences below.Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+            "Write your answers in boxes 33-36 on your answer sheet."
+          ],
+          "paragraphs": [
+            "In Piaget’s experiment, he asked the children to distinguish the amount of {{33}} in different containers.",
+            "Subjects with the wrong answer more inclined to answer ‘{{34}}’ instead of their wrong answer D in Mehan’s question.",
+            "Some people criticised the result of Piaget experiment, but Donaldson thought the flaw could be rectified by {{35}}",
+            "Most qualitative researches conducted by Lacey, Hargreaves and Lambert were done in a {{36}}"
+          ]
+        },
+        {
+          "type": "multiple",
+          "title": "Questions 37-39",
+          "instructions": [
+            "Choose THREE letters, A-F.Write the correct letters in boxes 37-39 on your answer sheet.The list below includes characteristics of the ‘qualitative research’."
+          ],
+          "questions": [
+            {
+              "numbers": [
+                37,
+                38,
+                39
+              ],
+              "prompt": "Which THREE are mentioned by the writer of the passage?",
+              "options": [
+                "Coding behavior in terms of predefined set of categories",
+                "Designing an interview as an easy conversation",
+                "Working with well-organised data in a closed set of analytical categories",
+                "Full of details instead of loads of data in questionnaires",
+                "Asking to give open-ended answers in questionnaires",
+                "Recording the researching situation and applying note-taking"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "title": "Question 40",
+          "instructions": [
+            "Choose the correct letter, A, B, C or D.Write the correct letter in box 40 on your answer sheet."
+          ],
+          "questions": [
+            {
+              "number": 40,
+              "prompt": "What is the main idea of the passage?",
+              "options": [
+                "to prove that quantitative research is most applicable to children’s education",
+                "to illustrate the society lacks of deep comprehension of educational approach",
+                "to explain the ideas of quantitative research and the characteristics of the related criticisms",
+                "to imply qualitative research is a flawless method compared with quantitative one"
+              ]
+            }
           ]
         }
       ]

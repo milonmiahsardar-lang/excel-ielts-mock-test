@@ -8,7 +8,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { attemptKey, draftKey, draftRevision, ensureAttempt, readAnswers, saveSection, request, RequestError } from "./client";
 
-import { finishTestSafety, requestTestFullscreen, tabId, useAttemptStatus } from "./safety-client";
+import { finishTestSafety, requestTestFullscreen, statusSnapshot, tabId, useAttemptStatus } from "./safety-client";
 
 
 
@@ -67,6 +67,14 @@ export default function TestSafety({children}:{children:React.ReactNode}){
   const recover=()=>{if(terminal)return;void ensureAttempt(selected).then(()=>{if(live){setError("");setErrorStatus(null);if(hadError.current){hadError.current=false;setRecovery(v=>v+1);}}}).catch(async e=>{
 
    if(!live)return;
+
+   // Keep an already active Listening player mounted during temporary heartbeat
+   // failures. The next heartbeat retries; access and lease rejections still block.
+   const current=statusSnapshot();
+   const temporary=!(e instanceof RequestError)||e.status===408||e.status===429||e.status>=500;
+   if(temporary&&!hadError.current&&path==="/listening"&&
+      current?.stage==="LISTENING_ACTIVE"&&current.testId===Number(selected)&&
+      current.id===sessionStorage.getItem(attemptKey(selected)))return;
 
    // A submission may have committed even when its response was lost.
 

@@ -24,6 +24,27 @@ import { draftRevision, draftKey, request, RequestError, saveSection, useAnswerD
 import { lifecycle, statusSnapshot, publishStatus, useAttemptStatus } from "@/lib/results/safety-client";
 import { attemptKey } from "@/lib/results/client";
 
+type AudioDiagnostic = Record<string, unknown> & { localId: string };
+const sendingDiagnostics = new Set<string>();
+function pendingDiagnostics(key: string): AudioDiagnostic[] {
+  try { const value = JSON.parse(sessionStorage.getItem(key) || "[]"); return Array.isArray(value) ? value.slice(-20) : []; } catch { return []; }
+}
+async function flushAudioDiagnostics(id: string, test: string) {
+  if (sendingDiagnostics.has(id)) return;
+  sendingDiagnostics.add(id);
+  const key = `ieltsAudioDiagnostics:${id}`;
+  try {
+    for (let sent = 0; sent < 20; sent++) {
+      const event = pendingDiagnostics(key)[0];
+      if (!event) break;
+      await request(`/api/attempts/${id}/audio-diagnostics`, { ...event, testId: Number(test) });
+      const remaining = pendingDiagnostics(key).filter(item => item.localId !== event.localId);
+      if (remaining.length) sessionStorage.setItem(key, JSON.stringify(remaining)); else sessionStorage.removeItem(key);
+    }
+  } catch { /* Retain bounded diagnostics in this tab for the next connection. */ }
+  finally { sendingDiagnostics.delete(id); }
+}
+
 export default function ListeningTest() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -57,6 +78,23 @@ export default function ListeningTest() {
 
   const draftReady=useAnswerDraft("listening",testNumber,answers,setAnswers);
 
+  const diagnoseAudio = (kind: string, error?: unknown, ended = false, audio = audioRef.current) => {
+    // Diagnostics must never interfere with playback or answer saving.
+    try {
+      const id = sessionStorage.getItem(attemptKey(testNumber)); if (!id) return;
+      const key = `ieltsAudioDiagnostics:${id}`;
+      const reason = error instanceof RequestError ? "server-response" : error instanceof Error && /too long/.test(error.message) ? "timeout" : error instanceof Error && /Unable to connect/.test(error.message) ? "connection" : "playback";
+      const event: AudioDiagnostic = { localId: `${Date.now()}-${Math.random()}`, kind, reason, position: audio?.currentTime ?? 0, duration: audio && Number.isFinite(audio.duration) ? audio.duration : null, mediaCode: audio?.error?.code ?? null, status: error instanceof RequestError ? error.status : null, networkState: audio?.networkState ?? null, readyState: audio?.readyState ?? null, retry: audioRetry, ended };
+      sessionStorage.setItem(key, JSON.stringify([...pendingDiagnostics(key), event].slice(-20)));
+      void flushAudioDiagnostics(id, testNumber);
+    } catch {}
+  };
+  useEffect(() => {
+    const flush = () => { const id = sessionStorage.getItem(attemptKey(testNumber)); if (id) void flushAudioDiagnostics(id, testNumber); };
+    flush();const timer = window.setInterval(flush, 15000);window.addEventListener("online", flush);
+    return () => { window.clearInterval(timer);window.removeEventListener("online", flush); };
+  }, [testNumber]);
+
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio || !draftReady) return;
@@ -67,7 +105,7 @@ export default function ListeningTest() {
           statusSnapshot()?.stage === "LISTENING_COMPLETED") return;
       resuming = true;
       void audio.play().then(() => { if (!disposed) setPlaybackBlocked(false); })
-        .catch(() => { if (!disposed) setPlaybackBlocked(true); })
+        .catch(error => { if (!disposed) { diagnoseAudio("play-blocked", error);setPlaybackBlocked(true); } })
         .finally(() => { resuming = false; });
     };
     const preventMediaKey = (event: KeyboardEvent) => {
@@ -94,7 +132,7 @@ export default function ListeningTest() {
     if(!draftReady)return;
     const audio=audioRef.current;if(!audio)return;
     const saved=statusSnapshot()?.audioPosition??0;
-    const restore=()=>{intentionalAudioPause.current=false;if(Number.isFinite(audio.duration))audio.currentTime=Math.min(saved,audio.duration);restored.current=true;if(state?.stage!=="LISTENING_COMPLETED")void audio.play().then(()=>setPlaybackBlocked(false)).catch(()=>setPlaybackBlocked(true));};
+    const restore=()=>{intentionalAudioPause.current=false;if(Number.isFinite(audio.duration))audio.currentTime=Math.min(saved,audio.duration);restored.current=true;if(state?.stage!=="LISTENING_COMPLETED")void audio.play().then(()=>setPlaybackBlocked(false)).catch(error=>{diagnoseAudio("play-blocked",error);setPlaybackBlocked(true);});};
     if(audio.readyState>=1)restore();else audio.addEventListener("loadedmetadata",restore,{once:true});
     return()=>{intentionalAudioPause.current=true;audio.removeEventListener("loadedmetadata",restore);audio.pause();};
   }, [testNumber,draftReady,audioRetry]);
@@ -105,6 +143,7 @@ export default function ListeningTest() {
     reporting.current=true;lastReport.current=Date.now();
     try{await lifecycle(id,testNumber,"audio",{position:audio.currentTime,ended,...(ended?finalSnapshot.current:{})});setAudioError("");}
     catch(e){
+      diagnoseAudio("progress-error",e,ended,audio);
       setAudioError((e as Error).message);
       // A temporary save/network failure must not stop an otherwise healthy recording.
       // Keep server rejections authoritative and recover from its saved position.
@@ -124,7 +163,7 @@ export default function ListeningTest() {
       const saved=await request<NonNullable<ReturnType<typeof statusSnapshot>>>(`/api/attempts/${id}/lifecycle`,undefined,"GET");publishStatus(saved);
       if(saved.stage!=="LISTENING_ACTIVE"){setRecoverAudio(false);return;}
       restored.current=false;progressBlocked.current=false;setRecoverAudio(false);setAudioError("");setAudioUnavailableFor(null);setAudioRetry(value=>value+1);
-    }catch(error){setAudioError((error as Error).message);if(error instanceof RequestError&&[401,403,404].includes(error.status))setRecoverAudio(false);}finally{retryBusy.current=false;setRetryingAudio(false);}
+    }catch(error){diagnoseAudio("recovery-error",error);setAudioError((error as Error).message);if(error instanceof RequestError&&[401,403,404].includes(error.status))setRecoverAudio(false);}finally{retryBusy.current=false;setRetryingAudio(false);}
   };
 
   const reportLatest=useRef(reportAudio),retryLatest=useRef(retryAudio);
@@ -218,6 +257,7 @@ export default function ListeningTest() {
               setIsFinished(Boolean(finalSnapshot.current));
             }}
             onError={(event) => {
+              diagnoseAudio("media-error",undefined,false,event.currentTarget);
               intentionalAudioPause.current=true;
               event.currentTarget.pause();
               setAudioUnavailableFor(testNumber);
@@ -230,6 +270,7 @@ export default function ListeningTest() {
             onLoadedMetadata={(e) => {
               setDuration(e.currentTarget.duration);
             }}
+            onStalled={(event) => diagnoseAudio("stalled",undefined,false,event.currentTarget)}
 
             onTimeUpdate={(e) => {
               setCurrentTime(e.currentTarget.currentTime);
