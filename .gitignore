@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Private results database and keys
 /private/
+answer-keys-export.json

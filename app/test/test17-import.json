@@ -2,242 +2,263 @@
   "number": 17,
   "passages": [
     {
-      "title": "A Short History of English Dictionaries",
-      "paragraphs": [
-        "The earliest English dictionaries were bilingual dictionaries, facilitating translation from one language to another. Three examples are Sir Thomas Elyot’s Latin–English dictionary published in 1538 (and, interestingly, the first English book to use the word \"dictionary\" in its title), Hollyband’s French–English dictionary (1593) and  Florio‘s 1598 Italian–English dictionary, A World of Words. However, there were also short English–English glossaries explaining difficult or technical words in books, such as the glossary of Bible words which William Tyndale attached to his 1530 translation of the first five books of the Bible.",
-        "The first true monolingual English dictionary is Robert Cawdrey’s A Table Alphabeticall (i.e. An Alphabetical Table) published in 1604 with definitions of some 3,000 words. The stated aim of the dictionary was to provide in \"plain English words\" the meanings of \"hard words\" derived from languages such as Greek, Hebrew, Latin and French for \"the benefit and help of ladies, gentlewomen or any other unskilful persons\" (a sentiment one could hardly get away with expressing nowadays!).",
-        "Among the dictionaries that followed Cawdrey’s were Edward Phillips’s The New World of English Words (a title reminiscent of that of Florio’s Italian dictionary) in 1658, and John Kersey’s A New English Dictionary in 1702. (Kersey was the first dictionary writer to provide proper coverage of everyday words as well as \"hard\" words.) And then there are Nathan Bailey’s Universal Etymological English Dictionary, published in 1721, and his even larger Dictionarium Britannicum (\"British Dictionary\") of 1730, which was later used by the more famous lexicographer Samuel Johnson as the working file for his own dictionary labours.",
-        "Around this time, many English scholars and writers were greatly concerned about \"ascertaining\" or \"fixing\" the English language, that is to say, establishing and codifying the rules of correct usage so that the language would, so they hoped, remain fixed and unchanging thereafter. It was generally agreed that one thing necessary for this process was a good, reliable dictionary, which, notwithstanding the works mentioned above, some scholars felt English still lacked. With financial backing from some London booksellers, a contract for a new dictionary was signed with the writer and critic Samuel Johnson, who in 1747 produced his dictionary proposal, the Plan of a Dictionary of the English Language. The dictionary itself was published in 1755.",
-        "Some of Johnson’s definitions are still famous, and some are quite amusing: for example, OATS – \"a grain, which in England is generally given to horses, but in Scotland supports the people.\" More importantly for modern English, with regard to spelling, Johnson mostly accepted established usage, including its inconsistencies such as 'convey' and 'inveigh', 'deceit' and 'receipt', 'fancy' and 'phantom'. Sadly, then, an opportunity to make English spelling simpler and more consistent was lost.",
-        "From Samuel Johnson, we now turn our attention to the work of the American lexicographer Noah Webster (1758–1843). Webster produced two major dictionaries: A Compendious Dictionary of the English Language (1806) and the much larger American Dictionary of the English Language (1828). At first, Webster was as conservative in his spellings as Johnson had been, but he later decided that spelling reform was both possible and desirable and advocated some quite radical changes, including the omission of silent letters such as the A in bread and head, the U of built and the E of give, and the replacement of some consonants and vowels by simpler equivalents, suggesting, for example, laf and tuf for laugh and tough. In Webster’s opinion, such changes would make English spelling \"sufficiently correct and regular\", and also, he noted as an American patriot, make American spelling quite different from British spelling. However, Webster’s new spellings found little support, and in his dictionaries he abandoned many of them in favour of more traditional spellings. Nevertheless, in 1864, the United States Government printing office adopted Webster-inspired spellings such as color and honor, characteristic of present day American English.",
-        "Returning now to the United Kingdom, we come finally to the Oxford English Dictionary. In 1857, members of the Philological Society of London decided that the current dictionaries of English were unsatisfactory and incomplete, although it was not until more than 20 years later, in 1879, that an agreement was made with James Murray and the Oxford University Press for work to begin on a completely new four-volume dictionary. The project was expected to take about ten years, but when the work completed had only progressed as far as the word 'ant' after five years, it was clear that the proposed schedule had been seriously over-optimistic. Although the first part of the dictionary was published in 1884, the last section did not appear until 1928. And instead of the four volumes originally proposed, the final dictionary comprised of ten volumes.",
-        "A one-volume supplement to the dictionary was published in 1933, and a new four-volume supplement was published between 1972 and 1986, including more scientific and technical terms and more words from beyond the United Kingdom. A second edition of the dictionary was published in twenty volumes in 1989. Fortunately, new technology has allowed a move away from paper and the book format altogether, and the Oxford English Dictionary made history when a CD-ROM version was published in 1992, reducing the space-consuming 20 volumes to a single disk. How dictionary publishing has progressed from Elyot’s Dictionary and Cawdrey’s A Table Alphabeticall!"
-      ],
+      "title": "Fatal Attraction",
       "start": 1,
       "end": 13,
+      "paragraphs": [
+        "Evolutionist Charles Darwin first marveled at flesh-eating plants in the mid-19th century. Today, biologists, using 21st-century tools to study cells and DNA, are beginning to understand how these plants hunt, eat and digest - and how such bizarre adaptations arose in the first place.",
+        "A\nThe leaves of the Venus flytrap plant are covered in hairs. When an insect brushes against them, this triggers a tiny electric charge, which travels down tunnels in the leaf and opens up pores in the leaf's cell membranes. Water surges from the cells on the inside of the leaf to those on the outside, causing the leaf to rapidly flip in shape from convex to concave, like a soft contact lens. As the leaves flip, they snap together, trapping the insect in their sharp-toothed jaws.",
+        "B\nThe bladderwort has an equally sophisticated way of setting its underwater trap. It pumps water out of tiny bag-like bladders, making a vacuum inside. When small creatures swim past, they bend the hairs on the bladder, causing a flap to open. The low pressure sucks water in, carrying the animal along with it. In one five-hundredth of a second, the door swings shut again. The Drosera sundew, meanwhile, has a thick, sweet liquid oozing from its leaves, which first attracts insects, then holds them fast before the leaves snap shut. Pitcher plants use yet another strategy, growing long tube-shaped leaves to imprison their prey. Raffles' pitcher plant, from the jungles of Borneo, produces nectar that both lures insects and forms a slick surface on which they can't get a grip. Insects that land on the rim of the pitcher slide on the liquid and tumble in.",
+        "C\nMany carnivorous plants secrete enzymes to penetrate the hard exoskeleton of insects so they can absorb nutrients from inside their prey. But the purple pitcher plant, which lives in bogs and infertile sandy soils in North America, enlists other organisms to process its food. It is home to an intricate food web of mosquito larvae, midges and bacteria, many of which can survive only in this unique habitat. These animals shred the prey that fall into the pitcher, and the smaller organisms feed on the debris. Finally, the plant absorbs the nutrients released.",
+        "D\nWhile such plants clearly thrive on being carnivorous, the benefits of eating flesh are not the ones you might expect. Carnivorous animals such as ourselves use the carbon in protein and the fat in meat to build muscles and store energy. Carnivorous plants instead draw nitrogen, phosphorus, and other critical nutrients from their prey in order to build light-harvesting enzymes. Eating animals, in other words, lets carnivorous plants do what all plants do: carry out photosynthesis, that is, grow by harnessing energy directly from the sun.",
+        "E\nCarnivorous plants are, in fact, very inefficient at converting sunlight into tissue. This is because of all the energy they expend to make the equipment to catch animals - the enzymes, the pumps, and so on. A pitcher or a flytrap cannot carry out much photosynthesis because, unlike plants with ordinary leaves, they do not have flat solar panels that can grab lots of sunlight. There are, however, some special conditions in which the benefits of being carnivorous do outweigh the costs. The poor soil of bogs, for example, offers little nitrogen and phosphorus, so carnivorous plants enjoy an advantage over plants that obtain these nutrients by more conventional means. Bogs are also flooded with sunshine, so even an inefficient carnivorous plant can photosynthesise enough light to survive.",
+        "F\nEvolution has repeatedly made this trade-off. By comparing the DNA of carnivorous plants with other species, scientists have found that they evolved independently on at least six separate occasions. Some carnivorous plants that look nearly identical turn out to be only distantly related. The two kinds of pitcher plants - the tropical genus Nepenthes and the North American Sarracenia - have, surprisingly, evolved from different ancestors, although both grow deep pitchershaped leaves and employ the same strategy for capturing prey.",
+        "G\nIn several cases, scientists can see how complex carnivorous plants evolved from simpler ones. Venus flytraps, for example, share an ancestor with Portuguese sundews, which only catch prey passively, via 'flypaper' glands on their stems. They share a more recent ancestor with Drosera sundews, which can also curl their leaves over their prey. Venus flytraps appear to have evolved an even more elaborate version of this kind of trap, complete with jaw-like leaves.",
+        "H\nUnfortunately, the adaptations that enable carnivorous plants to thrive in marginal habitats also make them exquisitely sensitive. Agricultural run-off and pollution from power plants are adding extra nitrogen to many bogs in North America. Carnivorous plants are so finely tuned to low levels of nitrogen that this extra fertilizer is overloading their systems, and they eventually burn themselves out and die.",
+        "Humans also threaten carnivorous plants in other ways. The black market trade in exotic carnivorous plants is so vigorous now that botanists are keeping the location of some rare species a secret. But even if the poaching of carnivorous plants can be halted, they will continue to suffer from other assaults. In the pine savannah of North Carolina, the increasing suppression of fires is allowing other plants to grow too quickly and outcompete the flytraps in their native environment. Good news, perhaps, for flies. But a loss for all who, like Darwin, delight in the sheer inventiveness of evolution."
+      ],
       "groups": [
         {
-          "title": "Questions 1–6",
+          "type": "fill",
+          "title": "Questions 1-5",
           "instructions": [
-            "Match each statement with the correct option."
+            "Complete the notes below.",
+            "Write NO MORE THAN TWO WORDS from the passage for each answer."
           ],
+          "heading": "How a Venus flytrap traps an insect",
+          "paragraphs": [
+            "• Insect touches {{1}} on leaf of plant",
+            "• Small  {{2}} passes through leaf",
+            "•  {{3}} in cell membrane open",
+            "• Outside cells of leaves fill with {{4}}",
+            "• Leaves change so that they have a {{5}} shape and snap nut"
+          ]
+        },
+        {
           "type": "match",
+          "title": "Questions 6-9",
+          "instructions": [
+            "Look at the following statements (Questions 6-9) and the list of plants.",
+            "Match each statement with the correct plant, A. B. C, D or E.",
+            "Choose the correct letter, A, B, C, D or E, in boxes 6-9 below."
+          ],
+          "optionTitle": "List of plants",
+          "options": [
+            {
+              "label": "A",
+              "text": "Venus flytrap"
+            },
+            {
+              "label": "B",
+              "text": "bladderwort"
+            },
+            {
+              "label": "C",
+              "text": "Drosera sundew"
+            },
+            {
+              "label": "D",
+              "text": "Raffles’ pitcher plant"
+            },
+            {
+              "label": "E",
+              "text": "purple pitcher plant"
+            }
+          ],
           "questions": [
             {
-              "number": 1,
-              "prompt": "His was the first dictionary to look at commonly used vocabulary."
-            },
-            {
-              "number": 2,
-              "prompt": "One of the aims of his dictionary was to stop the English language changing."
-            },
-            {
-              "number": 3,
-              "prompt": "Before his dictionary, dictionaries were only used for translation purposes."
-            },
-            {
-              "number": 4,
-              "prompt": "The spelling changes he made are one reason for the different varieties of English."
-            },
-            {
-              "number": 5,
-              "prompt": "His work is one reason why words with similar sounds are still spelt differently today."
-            },
-            {
               "number": 6,
-              "prompt": "His dictionary had a similar name to a book which was written earlier."
+              "prompt": "It uses other creatures to help it digest insects"
+            },
+            {
+              "number": 7,
+              "prompt": "It produces a slippery substance to make insects fall inside it."
+            },
+            {
+              "number": 8,
+              "prompt": "It creates an empty space into which insects are sucked."
+            },
+            {
+              "number": 9,
+              "prompt": "It produces a sticky substance which traps insects on its surface."
             }
+          ]
+        },
+        {
+          "type": "match",
+          "title": "Questions 10-13",
+          "instructions": [
+            "Reading Passage has nine paragraphs, A-l.",
+            "Which paragraph contains the following information?"
           ],
           "options": [
             {
-              "label": "EP",
-              "text": "Edward Phillips"
+              "label": "A",
+              "text": "A"
             },
             {
-              "label": "JK",
-              "text": "John Kersey"
+              "label": "B",
+              "text": "B"
             },
             {
-              "label": "NW",
-              "text": "Noah Webster"
+              "label": "C",
+              "text": "C"
             },
             {
-              "label": "RC",
-              "text": "Robert Cawdrey"
+              "label": "D",
+              "text": "D"
             },
             {
-              "label": "SJ",
-              "text": "Samuel Johnson"
+              "label": "E",
+              "text": "E"
+            },
+            {
+              "label": "F",
+              "text": "F"
+            },
+            {
+              "label": "G",
+              "text": "G"
+            },
+            {
+              "label": "H",
+              "text": "H"
+            },
+            {
+              "label": "I",
+              "text": "I"
             }
           ],
-          "optionTitle": "List of People"
-        },
-        {
-          "title": "Questions 7–13",
-          "instructions": [
-            "Complete the summary below.",
-            "Write **NO MORE THAN TWO WORDS** from the passage for each answer."
-          ],
-          "type": "fill",
-          "paragraphs": [
-            "The most comprehensive dictionary ever written is the Oxford English Dictionary. Work began on the dictionary in 1879 as previous efforts were thought to be inadequate and {{7}} The writers clearly underestimated how long the {{8}} would take and it was eventually completed some thirty years after the proposal in the original {{9}} The dictionary was also much longer than originally anticipated with the final version containing six more {{10}} than was originally thought necessary.",
-            "Over the following decades more supplements were published in order to include more technical {{11}} Just over a hundred years after the original section was published an updated {{12}} was released. At twenty volumes, this was twice the length of the original. The Oxford English Dictionary was also the first ever dictionary to be available in a new {{13}} digital with the release of a CD-ROM. This means that as the English language grows. the space needed to store the dictionary has shrunk enormously!"
-          ],
-          "heading": "The Oxford English Dictionary"
+          "questions": [
+            {
+              "number": 10,
+              "prompt": "A mention of a disadvantage of the leaf shape of some carnivorous plants"
+            },
+            {
+              "number": 11,
+              "prompt": "An example of an effort made to protect carnivorous plants"
+            },
+            {
+              "number": 12,
+              "prompt": "Unexpected information about the origins of certain carnivorous plants"
+            },
+            {
+              "number": 13,
+              "prompt": "An example of environmental changes that shorten the life cycles of carnivorous plants"
+            }
+          ]
         }
       ]
     },
     {
-      "title": "Göbekli Tepe",
-      "paragraphs": [
-        "A\nEvery year, hundreds of thousands of tourists flock to Turkey for its remarkable wealth of historical sites, from the mosques and minarets of Istanbul to the Roman ruins lying along the western and southern coasts. Further inland, in Cappadocia, they admire ruins from the prehistoric Hittite civilisation that dwelt there well over a millennium before the Greeks and Romans settled along the coast. In the south-east of the region, far from the tourist trail, archaeologists have recently unearthed a mysterious site known as Göbekli Tepe, which is believed to have flourished a further 8,000 years back and has challenged many assumptions about prehistory.",
-        "B\nIt all started in the early 1960s, when the top of a pillar jutting out of a dusty mound was noticed by a shepherd working in the area. Archaeologists from the University of Chicago arrived at the site, but quickly dismissed it as being of little interest. Their explanation was that although some signs of Neolithic settlement were possible, the site was in fact predominantly a Byzantine or Islamic cemetery. Some years later, Klaus Schmidt of the German Archaeological Institute happened upon the previous researchers' brief description of the hilltop. Having recently completed work on another Neolithic site in the region, Schmidt was eager to further his work in the area and was immediately intrigued by what he saw.",
-        "C\nSoon after his arrival, it became clear to Schmidt that Göbekli Tepe's significance had been incorrectly assessed. Flint chips found in the area suggested to him that the location had been a working site at some point prior to the development of metal tools and pottery, while he viewed the limestone slabs previously believed to be Byzantine graves as in fact something much older. As the dig progressed, the team first found a ring of standing pillars similar to those at Stonehenge, but predating them by almost half a millennium. Limestone blocks over 2 metres tall formed a ring facing inwards towards a pair of pillars more than twice the size. Three further similar enclosures have since been excavated, and geophysical surveys suggest there may be as many as 20 in total, at different depths below the surface.",
-        "D\nThe most striking visual difference between the blocks found at Göbekli Tepe and those at Stonehenge is the addition of extraordinary bas-reliefs depicting an array of animals – including lions, snakes, foxes, scorpions and wild boars – to the former, although their precise role is not yet known. What is particularly interesting about the construction of the site is that it would have required a far larger gathering of people than had probably ever happened before, all working without the assistance of the wheel or beasts of burden. No signs of a mess kitchen, cooking fires or lodgings for the hundreds of workers that would have been required for the construction of the site have yet been unearthed. Furthermore, at this point in mankind's evolution, proximity to some kind of fresh water would have been imperative, yet the nearest stream to Göbekli Tepe was at least 5 kilometres away.",
-        "E\nAs is to be expected given the mystery of the site and the novelty of its discovery, there has been much disagreement as to its purpose and meaning. Due to the presence of what is believed to be the world's oldest known temple at Göbekli Tepe, some have argued that this site is the earliest known example of a pilgrimage site. They believe it may have played a key part in alleviating tensions between groups of hunter-gatherers who were settling down to create larger societies. In comparison with their earlier semi-nomadic existence, which focussed mainly on day-to-day existence, a settled society required longer term projects which could only be accomplished if its citizens were able to work together without hostility.",
-        "F\nIndeed, Schmidt believes that this role came prior to many other key features accompanying the dawn of civilisation, including most notably the development of agriculture. He asserts that a way of providing sufficient quantities of food for those gathering at Göbekli Tepe was required and that this in turn led to intensive cultivation of wild crops and the first instances of plant domestication. This is corroborated by independent research suggesting that one centre of early agriculture emerged in the same area of southern Turkey during precisely the same period, as well as discoveries of the closest known wild ancestors of modern wheat just 100 kilometres from the site.",
-        "G\nHowever, not everyone agrees with Schmidt's theories. A number of his colleagues have queried his assumption about the site's role and that a lack of evidence of houses means that nobody lived at Göbekli Tepe. In addition, archaeologists are increasingly sceptical of the one-size-fits-all scenario to explain the origins of civilisation as having one fundamental trigger. Instead, they suggest that Göbekli Tepe is an example of numerous experiments taking place throughout the area – in agriculture, art, religion, technology, social organisation - that ultimately combined at a later point.",
-        "H\nGiven the outlined ambiguities concerning the purpose and nature of the site, it is no surprise that Professor Schmidt feels there is much work yet to be done. He compares the scale of the project to that of other key archaeological sites – among them Troy and Pergamon – where excavation work began more than a century ago. “It’s hard to give a detailed schedule on how long further excavation will take,” he comments, before adding, “There's work for more than one generation of archaeologists at the place.”"
-      ],
+      "title": "Eco-Resort Management",
       "start": 14,
-      "end": 27,
+      "end": 26,
+      "paragraphs": [
+        "Ecotourism is often regarded as a form of nature-based tourism and has become an important alternative source of tourists. In addition to providing the traditional resort-leisure product, it has been argued that ecotourism resort management should have a particular focus on best-practice environmental management. an educational and interpretive component, and direct anil indirect contributions to the conservation of the natural and cultural environment (Ayala. I996).",
+        "Conran Cove Island Resort is a large integrated ecotourism-based resort located south of Brisbane on the Gold Coast, Queensland. Australia. As the world's population becomes increasingly urbanised, the demand for tourist attractions which are environmentally friendly, serene and offer amenities of a unique nature has grown rapidly. Couran Cove Resort, which is one such tourist attractions, is located on South Stradbroke Island, occupying approximately 150 hectares of the island. South Stradbroke Island is separated from die mainland by the Broadwater, a stretch of sea, kilometres wide. More than a century ago. There was only one Stradbroke Island, and there were at least four Aboriginal tribes living and limiting on the island. Regrettably, most of the original island dwellers were eventually killed by diseases such as tuberculosis, smallpox and influenza by the end of the 19th century. The second ship wrecked on the island in 1894, and the subsequent destruction of the ship (the Cambus Wallace) because it contained dynamite, caused a large crater in the sandhills on Stradbroke Island.",
+        "Eventually, the ocean bloke through the weakened land form and Stradbroke became two islands. Conran Cove Island Resort is built on one of the world's lew naturally -occurring sand lands, which is home to a wide range of plant communities and one of the largest remaining remnants of the rare livistona rainforest left on the Gold Coast. Many mangrove and rainforest areas, and Malaleuca Wetlands on South Stradbroke Island (and in Queensland), have been cleared, drained or filled for residential, industrial, agricultural or urban development in the first half of the 20th century. Farmers and graziers finally abandoned South Stradbroke Island in 1959 because the vegetation and the soil conditions there were not suitable for agricultural activities.",
+        "SUSTAINABLE PRACTICES OF COUKAN COVE RESORT",
+        "Being located on an offshore island, the resort is only accessible by means of water transport. The resort provides hourly ferry service from the marina on the mainland to and from the island. Within the resort. transport modes include walking trails, bicycle tracks and the beach train. The reception area is the counter of the shop which has not changed for 8 years at least. The accommodation is an octagonal \"Bure''. These are large rooms that are clean but the equipment is tiled and in some cases just working. Our ceiling fan only worked on high speed for example. Beds are hard but clean. There is a television, a radio, an old air conditioner and a small fridge. These \"Bures\" are right on top of each other and night noises do carry. so he careful what you say and do. The only tiling is the mosquitoes, but if you forget to bring mosquito repellant they sell some oil the island.mosquito. As an ecotourism-based resort most of the planning and development of the attraction lias been concentrated on the need lo co-exist with the fragile natural environment of South Stradbroke Island io achieve sustainable development.",
+        "WATER AND ENERGY MANAGEMENT",
+        "South Stradbroke Island has groundwater at the centre of the island, which has a maximum height of 3 metres above sea level. The water supply is recharged by rainfall and is commonly known as an unconfined freshwater aquifer. Couran Cove Island Resort obtains its water supply by tapping into this aquifer and extracting it via a bore system. Some of the problems which have threatened the island's freshwater supply include pollution, contamination and over-consumption. In order to minimise some of these problems, all laundry activities are carried out on the mainland. The resort considers washing machines as onerous to the island's freshwater supply, and that the detergents contain a high level of phosphates which are a major source of water pollution. The resort uses LPG-power generation rather than a diesel-powered plant for its energy supply, supplemented by wind turbine, which has reduced greenhouse emissions by 70% of diesel-equivalent generation methods. Excess heat recovered from the generator is used to heat the swimming pool. Hot water in the eco-cabins and for some of the resort's vehicles are solar-powered. Water efficient fittings are also installed in showers and toilets. However, not all the appliances used by the resort arc energy efficient, such as refrigerators. Visitors who stay at the resort are encouraged to monitor their water and energy usage via the in-house television systems, and are rewarded with prizes (such as a free return trip to the resort) accordingly if their usage level is low.",
+        "CONCLUDING REMARKS",
+        "We examined a case study of good management practice and a pro-active sustainable tourism stance of an eco-resort. In three years of operation, Couran Cove Island Resort has won 23 international and national awards, including the 2001 Australian Tourism Award in the 4-Star Accommodation category. The resort has embraced and has effectively implemented contemporary environmental management practices. It has been argued that the successful implementation of the principles of sustainability should promote long-term social, economic and environmental benefits, while ensuring and enhancing the prospects of continued viability for the tourism enterprise. Couran Cove Island Resort does not conform to the characteristics of the Resort Development Spectrum, as proposed by Pridcaux (2000). According to Pridcaux. the resort should be at least at Phase 3 of the model (the National tourism phase), which describes an integrated resort providing 3-4 star hotel-type accommodation. The primary tourist market in Phase 3 of the model consists mainly of interstate visitors. However, the number of interstate and international tourists visiting the resort is small, with the principal visitor markets comprising locals and residents front nearby towns and the Gold Coast region. The carrying capacity of Couran Cove docs not seem to be of any concern to the Resort management. Given that it is a private commercial ecotourist enterprise, regulating the number of visitors to the resort to minimise damage done to the natural environment on South Stradbrokc Island is not a binding constraint. However, the Resort's growth will eventually be constrained by its carrying capacity, and quantity control should be incorporated in the management strategy of the resort."
+      ],
       "groups": [
         {
-          "title": "Questions 14–20",
+          "type": "choice",
+          "title": "Questions 14-18",
           "instructions": [
-            "Choose the correct heading for each paragraph."
+            "Choose the correct letter, A, B, C or D.",
+            "Choose the correct letter in boxes 14-18 below."
           ],
-          "type": "match",
           "questions": [
             {
               "number": 14,
-              "prompt": "Paragraph B"
+              "prompt": "The Stradbroke became two islands",
+              "options": [
+                "by an intended destruction of the ship of the Cambus Wallace.",
+                "by an explosion of dynamite on a ship and following nature erosion.",
+                "by the movement sandhills on Stradbroke Island.",
+                "by the volcanic eruption on island."
+              ]
             },
             {
               "number": 15,
-              "prompt": "Paragraph C"
+              "prompt": "Why are laundry activities for the resort carried out on the mainland?",
+              "options": [
+                "to obtain its water supply via a bore system",
+                "to preserve the water and anti-pollution",
+                "to save the cost of installing onerous washing machines",
+                "to reduce the level of phosphates in water around"
+              ]
             },
             {
               "number": 16,
-              "prompt": "Paragraph D"
+              "prompt": "The major water supplier in South Stradbroke Island is by",
+              "options": [
+                "desalining the sea water.",
+                "collecting the rainfall.",
+                "transporting from the mainland.",
+                "boring ground water."
+              ]
             },
             {
               "number": 17,
-              "prompt": "Paragraph E"
+              "prompt": "What is applied for heating water on Couran Cove Island Resort?",
+              "options": [
+                "the LPG-power",
+                "a diesel-powered plant",
+                "the wind power",
+                "the solar-power"
+              ]
             },
             {
               "number": 18,
-              "prompt": "Paragraph F"
-            },
-            {
-              "number": 19,
-              "prompt": "Paragraph G"
-            },
-            {
-              "number": 20,
-              "prompt": "Paragraph H"
+              "prompt": "What does, as the managers of resorts believe, the prospective future focus on?",
+              "options": [
+                "more awards for resort’s accommodation",
+                "sustainable administration and development in a long run",
+                "economic and environmental benefits for the tourism enterprise",
+                "successful implementation of the Resort Development Spectrum"
+              ]
             }
-          ],
-          "options": [
-            {
-              "label": "i",
-              "text": "An ongoing project"
-            },
-            {
-              "label": "ii",
-              "text": "Picking up where others left off"
-            },
-            {
-              "label": "iii",
-              "text": "A country rich in archaeological sites"
-            },
-            {
-              "label": "iv",
-              "text": "The influence of Göbekli Tepe on future sites"
-            },
-            {
-              "label": "v",
-              "text": "Göbekli Tepe as a precursor to modern farming"
-            },
-            {
-              "label": "vi",
-              "text": "Keeping the peace"
-            },
-            {
-              "label": "vii",
-              "text": "Unanswered questions about the construction of Göbekli Tepe"
-            },
-            {
-              "label": "viii",
-              "text": "Similar discoveries in Troy and Pergamon"
-            },
-            {
-              "label": "ix",
-              "text": "Who built Göbekli Tepe?"
-            },
-            {
-              "label": "x",
-              "text": "A series of discoveries"
-            },
-            {
-              "label": "xi",
-              "text": "Various independent explorations at the dawn of civilisation"
-            }
-          ],
-          "optionTitle": "List of Headings",
-          "examples": [
-            "Paragraph A: **iii**"
           ]
         },
         {
-          "title": "Questions 21–24",
-          "instructions": [
-            "Complete the sentences below.",
-            "Write **NO MORE THAN THREE WORDS** from the passage for each answer."
-          ],
           "type": "fill",
+          "title": "Questions 19-23",
+          "instructions": [
+            "Complete the summary below.",
+            "Choose NO MORE THAN TWO WORDS from the Passage for each answer.",
+            "Write your answers in boxes 19-23 below."
+          ],
           "paragraphs": [
-            "It was the presence of {{21}} at the Gobekli Tepe site that led Professor Schmidt to believe that it was very old.",
-            "These blocks were originally thought to be {{22}}.",
-            "The pillars at Gobekli Tepe are roughly {{23}} older than those at Stonehenge.",
-            "Images of various {{24}} have been carved on the limestone blocks at Gobekli Tepe."
+            "Being located away from the mainland, tourists can attain the resort only by {{19}} in a regular service provided by the resort itself. Within the resort, transports include trails for walking or tracks for both {{20}} and the beach train. The on-island equipment is old-fashioned which is barely working such as the {{21}} overhead. There is television, radio, an old {{22}} and a small fridge. And you can buy the repellent for {{23}} if you forget to bring some."
           ]
         },
         {
-          "title": "Questions 25–27",
+          "type": "multiple",
+          "title": "Questions 24-26",
           "instructions": [
-            "Choose the correct answer."
+            "Choose THREE letters, A-E.",
+            "Choose the correct letters in boxes 38-40 below."
           ],
-          "type": "choice",
           "questions": [
             {
-              "number": 25,
-              "prompt": "One of the main mysteries about Gobekli Tepe concerns...",
+              "numbers": [
+                24,
+                25,
+                26
+              ],
+              "prompt": "Which THREE of the following statements are true as to the contemporary situation of Couran Cove Island Resort in the last paragraph?",
               "options": [
-                "who sculpted the bas-reliefs.",
-                "how people travelled there without wheeled transport.",
-                "where the people who built it cooked.",
-                "why it wasn't built closer to a source of water."
-              ]
-            },
-            {
-              "number": 26,
-              "prompt": "Professor Schmidt theorises that the site may have",
-              "options": [
-                "been built as a temple for hunter-gatherers.",
-                "acted as a catalyst to the development of civilisation.",
-                "been a centre for experimentation in agriculture.",
-                "been the birthplace of a religious cult."
-              ]
-            },
-            {
-              "number": 27,
-              "prompt": "Other archaeologists believe that...",
-              "options": [
-                "Gobekli Tepe was a pilgrimage site.",
-                "people could have lived at Gobekli Tepe.",
-                "Professor Schmidt's conclusions are premature.",
-                "a lot more excavation is needed before conclusions can be drawn."
+                "Couran Cove Island Resort goes for more eco-friendly practices.",
+                "The accommodation standard only conforms to the Resort Development Spectrum of Phase 3.",
+                "Couran Cove Island Resort should raise the accommodation standard and build more facilities.",
+                "The principal group visiting the resort is international tourists.",
+                "Its carrying capacity will restrict the future businesses' expansion."
               ]
             }
           ]
@@ -245,84 +266,163 @@
       ]
     },
     {
-      "title": "Stammering",
-      "paragraphs": [
-        "The terms stammering and stuttering both refer to the same speech disorder. The word stammering is mostly used in British English, while the word stuttering is more common in American English. A person who stammers has trouble producing words fluently. The disorder causes them to repeat or elongate sounds, words or syllables. A stammer can also manifest itself as pauses in speech.",
-        "In order to understand stammering, we first need to understand how the voice is produced. The human voice begins when air is pushed from the lungs through the vocal folds, which are more commonly known as the vocal cords. These vocal folds are housed within the larynx, or voice box, which serves the dual purposes of producing sound and stopping food from entering your lungs. The muscles of the lungs, throat and body are precisely coordinated by the brain to produce intelligible speech. People stammer because their brain has trouble coordinating all these muscles.",
-        "There are three types of speech disorder which can affect the human voice. Articulation disorders involve substitution, omission or distortion of sounds such as the pronunciation of the word \"rabbit\" as \"wabbit\". Voice disorders affect the sound of the voice itself, like laryngitis, which can cause hoarseness or a temporary loss of voice. Finally, fluency disorders affect the flow of speaking. Stammering is a relatively rare fluency disorder affecting around 1 per cent of the adult population in the UK and 5 per cent of preschool children, according to The British Stammering Association.",
-        "The two main types of stammering are developmental stammering and neurogenic stammering. Developmental stammering is common in young children who are learning to speak, and it probably begins as their brain is developing in early life. Neurogenic stammering, on the other hand, usually begins in later life. It can be the result of brain injury such as that produced following a stroke or severe head trauma. A third type of stammering, psychogenic stammering, is caused by emotional trauma. Historically, this was believed to be the prime cause of stammering; however, it has since been found that this type of stammering is rare and can almost always be overcome.",
-        "In their book \"Stammering: Advice for all ages,\" Byrne and Wright stress that stammering which happens in a child's early years is not the same as established stammering later in life. Early stammerers may go on to develop a chronic disorder but, as Dr Ehud Yairi explains, many preschool children grow out of stammering without a need for formal therapy. Researchers have shown that three quarters of stammering children can recover completely, without treatment, within four years.",
-        "Scholars have researched the causes of stammering since as far back as the Ancient Greeks, although the most enlightening research is more recent. Current research using Magnetic Resonance Imaging (MRI) scanners has found that stammerers have an abnormality in part of the brain called Broca's area, which is involved in moving the mouth muscles and producing speech. Researchers have also found that stammering has a genetic element. Dr Dennis Drayma identified three gene mutations which are very common in families that have a history of stammering. Therefore, if someone in your family had a stammer, there is a higher likelihood that you or your children will also stammer.",
-        "People have tried to find a cure for stammering since 300 BC. The Greek politician Demosthenes had several problems with his voice, including a stammer and trouble pronouncing the letter \"r\". He enlisted the help of actor Satyrus, who told him to put pebbles in his mouth to cure the stammer. This has the effect of slowing down the speech, which can ease stammering. It is still a recommended strategy these days, although there are more effective strategies. Throughout history, people have also resorted to surgery to try and cure their stammering, including cutting the frenulum (the connective membrane which attaches the underside of the tongue to the floor of the mouth), stretching the tongue and cutting the nerves which control it. Given what we now know about stammering, it seems unlikely that these strategies were successful.",
-        "Modern treatments help stammerers to manage the disorder. Many treatments are forms of speech therapy, although there are also a range of technologies and medications. There is currently no known cure for stammering, but with training stammerers can learn how to speak fluently. However, research suggests that the neurological abnormality that produces the stammer does not go away completely, even if the person trains themselves to speak without stammering. Christian Kell of the Frankfurt Brain Institute found that recovered stammerers use another part of their brain to control speech, effectively bypassing the area of the brain which is damaged. This area is not specialised in speech, so the stammer will be reduced but not cured completely.",
-        "Despite the challenges of living with a stammer, many public figures have a history of stammering. Some have even made successful careers using their voice such as: UK prime minister Winston Churchill, famed for his rousing speeches; Hollywood actor Samuel L. Jackson; and actress and singer Marilyn Monroe. James Earl Jones, who played Darth Vader in the original Star Wars movies, says that his stammer was so strong as a child that he barely ever spoke. His voice went on to become one of the most iconic voices of the 20th century."
-      ],
-      "start": 28,
+      "title": "Why Babies Don’t Talk",
+      "start": 27,
       "end": 40,
+      "paragraphs": [
+        "Kids go from 'goo-goo' to talkative one step at a time",
+        "A recent e-trade advertisement shows a baby speaking directly to the camera: 'Look at this,' he says, I'm a free man. I go anywhere I want now.' He describes his stock-buying activities, and then his phone rings. This advertisement proves what comedians have known for years: few things are as funny as a baby who talks like an adult. But it also raises an important question: Why don't young children express themselves clearly like adults?",
+        "Many people assume children learn to talk by copying what they hear. In other words, they listen to the words adults use and the situations in which they use them and imitate accordingly. Behaviourism, the scientific approach that dominated American cognitive science for the first half of the 20th century, made exactly this argument.",
+        "However, this 'copycat' theory can't explain why toddlers aren't as conversational as adults. After all, you never hear literate adults express themselves in one-word sentences like 'bottle' or 'doggie'. In fact, it's easy for scientists to show that a copycat theory of language acquisition can't explain children's first words. What is hard for them to do is to explain these first words, and how they fit into the language acquisition pattern.",
+        "Over the past half-century, scientists have settled on two reasonable possibilities. The first of these is called the 'mental-developmental hypothesis'. It states that one-year-olds speak in baby talk because their immature brains can't handle adult speech. Children don't learn to walk until their bodies are ready. Likewise, they don't speak multi-word sentences or use word endings and function words ('Mummy opened the boxes') before their brains are ready.",
+        "The second is called the 'stages-of-language hypothesis', which states that the stages of progress in child speech are necessary stages in language development.",
+        "A basketball player can't perfect his or her jump shot before learning to (1) jump and (2) shoot. Similarly, children learn to multiply after they have learned to add. This is the order in which children are taught - not the reverse. There's evidence, for instance, that children don't usually begin speaking in two-word sentences until they've learned a certain number of single words.",
+        "In other words, until they've crossed that linguistic threshold, the word-combination process doesn't get going.",
+        "The difference between these theories is this: under the mental-development hypothesis, language learning should depend on the child's age and level of mental development when he or she starts learning a language. Linder the stages-of-language hypothesis, however, it shouldn't depend on such patterns, but only on the completion of previous stages.",
+        "In 2007, researchers at Harvard University, who were studying the two theories, found a clever way to test them. More than 20,000 internationally adopted children enter the US each year. Many of them no longer hear their birth language after they arrive, and they must learn English more or less the same way infants do - that is, by listening and by trial and error. International adoptees don't take classes or use a dictionary when they are learning their new tongue and most of them don't have a well-developed first language. All of these factors make them an ideal population in which to test these competing hypotheses about how language is learned.",
+        "Neuroscientists Jesse Snedeker, Joy Geren and Carissa Shafto studied the language development of 27 children adopted from China between the ages of two and five years. These children began learning English at an older age than US natives and had more mature brains with which to tackle the task. Even so, just as with American-born infants, their first English sentences consisted of single words and were largely bereft of function words, word endings and verbs. The adoptees then went through the same stages as typical American- born children, albeit at a faster clip. The adoptees and native children started combining words in sentences when their vocabulary reached the same sizes, further suggesting that what matters is not how old you are or how mature your brain is, but the number of words you know.",
+        "This finding - that having more mature brains did not help the adoptees avoid the toddler-talk stage - suggests that babies speak in babytalk not because they have baby brains, but because they have only just started learning and need time to gain enough vocabulary to be able to expand their conversations. Before long, the one-word stage will give way to the two-word stage and so on. Learning how to chat like an adult is a gradual process.",
+        "But this potential answer also raises an even older and more difficult question. Adult immigrants who learn a second language rarely achieve the same proficiency in a foreign language as the average child raised as a native speaker. Researchers have long suspected there is a 'critical period' for language development, after which it cannot proceed with full success to fluency. Yet we still do not understand this critical period or know why it ends."
+      ],
       "groups": [
         {
-          "title": "Questions 28–36",
-          "instructions": [],
           "type": "truth",
+          "title": "Questions 27-30",
+          "instructions": [
+            "Do the following statements agree with the claims of the writer in the reading passage?",
+            "In boxes 27-30 below, choose:",
+            "YES if the statement agrees with the claims of the writer",
+            "NO if the statement contradicts the claims of the writer",
+            "NOT GIVEN if it is impossible to say what the writer thinks about this"
+          ],
           "labels": [
-            "TRUE",
-            "FALSE",
+            "YES",
+            "NO",
             "NOT GIVEN"
           ],
           "questions": [
             {
+              "number": 27,
+              "prompt": "People are extremely amused when they see a baby talk like an adult."
+            },
+            {
               "number": 28,
-              "prompt": "Stammering originates in the brain, not in the organs that are used to produce speech."
+              "prompt": "Behaviourists of the early 20th century argued that children learn to speak by copying adults."
             },
             {
               "number": 29,
-              "prompt": "The percentage of British pre-school children affected by stammering is steadily on the rise."
+              "prompt": "Children have more conversations with adults than with other children."
             },
             {
               "number": 30,
-              "prompt": "The most common trigger of stammering is psychological trauma."
-            },
-            {
-              "number": 31,
-              "prompt": "In some cases, stammering disappears spontaneously."
-            },
-            {
-              "number": 32,
-              "prompt": "The underlying cause of stammering may be genetic."
-            },
-            {
-              "number": 33,
-              "prompt": "Speaking more slowly makes stammering worse."
-            },
-            {
-              "number": 34,
-              "prompt": "Surgical procedures for dealing with stammering are now thought to be ineffective."
-            },
-            {
-              "number": 35,
-              "prompt": "Modern techniques focus on overcoming the problem rather than curing it."
-            },
-            {
-              "number": 36,
-              "prompt": "People who stammer are particularly drawn to roles that involve using the voice."
+              "prompt": "Scientists have found it easy to work out why babies use one-word sentences."
             }
           ]
         },
         {
-          "title": "Questions 37–40",
+          "type": "fill",
+          "title": "Questions 31-35",
           "instructions": [
-            "Label the diagram below.",
-            "Write **NO MORE THAN TWO WORDS** from the passage for each answer."
+            "Complete the summary using the list of words and phrases, A-H, below."
           ],
-          "type": "diagram",
-          "image": "/images/test17-image1.png",
-          "numbers": [
-            37,
-            38,
-            39,
-            40
+          "heading": "Two theories about babytalk",
+          "paragraphs": [
+            "According to the writer, there are two main theories related to babytalk. One states that a young child’s brain needs {{31}} to master language, in the same way that it does to master other abilities such as {{32}}. The second theory states that a child’s {{33}} is the key factor. According to this theory, some key steps have to occur in a logical sequence before {{34}} occurs. Children's {{35}} develops in the same way."
           ],
-          "alt": "Human voice production diagram with label locations 37–40."
+          "options": [
+            {
+              "label": "A",
+              "text": "vocabulary level"
+            },
+            {
+              "label": "B",
+              "text": "mathematical knowledge"
+            },
+            {
+              "label": "C",
+              "text": "physical movement"
+            },
+            {
+              "label": "D",
+              "text": "sentence formation"
+            },
+            {
+              "label": "E",
+              "text": "time"
+            },
+            {
+              "label": "F",
+              "text": "learning"
+            },
+            {
+              "label": "G",
+              "text": "attention"
+            },
+            {
+              "label": "H",
+              "text": "teaching"
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "title": "Questions 36-40",
+          "instructions": [
+            "Choose the correct letter A, B, C or D.",
+            "Choose your answers in boxes 36-40 below."
+          ],
+          "questions": [
+            {
+              "number": 36,
+              "prompt": "What is the writer’s main purpose in the seventh paragraph?",
+              "options": [
+                "to give reasons why adopted children were used in the study",
+                "to reject the view that adopted children need two languages",
+                "to argue that culture affects the way children learn a language",
+                "to justify a particular approach to language learning"
+              ]
+            },
+            {
+              "number": 37,
+              "prompt": "Snedeker, Geren and Shafto based their study on children who",
+              "options": [
+                "were finding it difficult to learn English.",
+                "had come from a number of language backgrounds.",
+                "were learning English at a later age than US children.",
+                "had taken English lessons in China."
+              ]
+            },
+            {
+              "number": 38,
+              "prompt": "What aspect of the adopted children's language development differed from that of US-born children?",
+              "options": [
+                "their first words",
+                "the way they learnt English",
+                "the rate at which they acquired language",
+                "the point at which they started producing sentences"
+              ]
+            },
+            {
+              "number": 39,
+              "prompt": "What did the Harvard finding show?",
+              "options": [
+                "Not all toddlers use babytalk.",
+                "Language learning takes place in ordered steps.",
+                "Some children need more conversation than others.",
+                "Not all brains work in the same way."
+              ]
+            },
+            {
+              "number": 40,
+              "prompt": "When the writer says ‘critical period’, he means a period when.",
+              "options": [
+                "studies produce useful results.",
+                "adults need to be taught like children.",
+                "immigrants want to learn another language.",
+                "language learning takes place effectively."
+              ]
+            }
+          ]
         }
       ]
     }

@@ -28,6 +28,45 @@ export function start(user: User,test: number,owner?:string) {return transaction
   progress({id,test_id:test});return {id,testId:test,startedAt,studentId:user.id};
 });}
 export function getSubmission(id: string): Submission|null {const row=db().prepare("SELECT a.data,a.released,u.name,u.registration_id,u.contact FROM attempts a JOIN users u ON u.id=a.student_id WHERE a.id=? AND a.submitted_at IS NOT NULL").get(id);if(!row)return null;const submission=JSON.parse(String(row.data)) as Submission;return {...submission,student:{...submission.student,name:String(row.name),registrationId:String(row.registration_id),contact:String(row.contact)},released:!!row.released};}
+// Called inside a transaction by both browser submission and deadline recovery.
+function completeSubmission(user: User,row: Record<string,unknown>,listening: Answers,reading: Answers,task1: string,task2: string) {
+  const id=String(row.id),test=Number(row.test_id);
+  const submission: Submission={id,student:user,testId:test,testName:`Full Mock Test ${String(test).padStart(2,"0")}`,startedAt:String(row.started_at),submittedAt:new Date().toISOString(),listening:scoredWithRevision(listening,config(test,"listening")),reading:scoredWithRevision(reading,config(test,"reading")),writing:{task1,task2,task1WordCount:wordCount(task1),task2WordCount:wordCount(task2)},marking:null,released:false,speaking:null};
+  db().prepare("UPDATE attempts SET submitted_at=?,data=? WHERE id=?").run(submission.submittedAt,JSON.stringify(submission),id);
+  db().prepare("UPDATE attempt_progress SET stage='COMPLETED',lease_owner=NULL,lease_until=0 WHERE attempt_id=?").run(id);
+  db().prepare("UPDATE test_assignments SET status='SUBMITTED',attempts_used=attempts_used+1 WHERE id=?").run(String(row.assignment_id));
+  db().prepare("INSERT INTO notification_outbox VALUES(?,?,?,?,NULL)").run(randomUUID(),id,"mock-test.submitted",submission.submittedAt);
+  audit(user.id,"submission.created",id);return submission;
+}
+
+export function finalizeExpiredWriting() {
+  // Respect the existing final-save grace period. No candidate session or live
+  // tab is needed, but the attempt must still belong to its active assignment.
+  const eligible=`SELECT a.* FROM attempts a
+    JOIN attempt_progress p ON p.attempt_id=a.id
+    JOIN test_assignments t ON t.id=a.assignment_id
+    WHERE a.submitted_at IS NULL AND p.stage='WRITING_ACTIVE'
+      AND p.pending_section IS NULL AND p.deadline IS NOT NULL AND p.deadline+5000<?
+      AND t.status='IN_PROGRESS' AND t.attempts_used<t.attempt_limit
+      AND t.candidate_id=a.student_id AND t.test_id=a.test_id`;
+  const rows=db().prepare(eligible+" ORDER BY p.deadline LIMIT 100").all(Date.now());
+  for(const candidate of rows){
+    try{transaction(()=>{
+      // Recheck inside the transaction so a browser submission, revocation or
+      // reassignment cannot cause duplicate results or consume a fresh attempt.
+      const row=db().prepare(eligible+" AND a.id=?").get(Date.now(),String(candidate.id));
+      if(!row)return;
+      const account=db().prepare("SELECT id,name,registration_id,contact FROM users WHERE id=? AND role='student'").get(String(row.student_id));
+      if(!account)return;
+      const user: User={id:String(account.id),name:String(account.name),registrationId:String(account.registration_id),contact:String(account.contact),role:"student"};
+      const draft=row.data?JSON.parse(String(row.data)):{};
+      const stored=(skill:string)=>Object.fromEntries((draft[skill]?.questions??[]).map((q:{number:number;answer:string})=>[String(q.number),q.answer]));
+      const writing=draft.writingDraft??{task1:"",task2:""};
+      completeSubmission(user,row,answers(stored("listening")),answers(stored("reading")),text(writing.task1,100000),text(writing.task2,100000));
+      audit(user.id,"submission.deadline-finalized",String(row.id));
+    });}catch(error){console.error("Writing deadline finalization failed",String(candidate.id),error);}
+  }
+}
 export function submit(user: User,payload: Record<string,unknown>,tabId?:string|null) {return transaction(()=>{
   const id=text(payload.attemptId,80,true),row=db().prepare("SELECT * FROM attempts WHERE id=? AND student_id=?").get(id,user.id);
   if(!row)reject(404,"Test attempt not found.");
@@ -35,6 +74,8 @@ export function submit(user: User,payload: Record<string,unknown>,tabId?:string|
   authorizeAttempt(user,row,!!row.submitted_at);
   if(row.submitted_at)return getSubmission(id)!;
   requireLease(row,tabId);const state=requireSection(row,"writing");
+  // The server deadline also applies to direct submission requests.
+  if(state.deadline===null||!Number.isFinite(state.deadline)||Date.now()<state.deadline)reject(409,"Writing submits when its time has finished. Please continue your test.");
   const draft=row.data?JSON.parse(String(row.data)):{};
   const stored=(skill:string)=>Object.fromEntries((draft[skill]?.questions??[]).map((q:{number:number;answer:string})=>[String(q.number),q.answer]));
   const listening=answers(stored("listening")),reading=answers(stored("reading"));
@@ -42,13 +83,7 @@ export function submit(user: User,payload: Record<string,unknown>,tabId?:string|
   const incoming=writing as Record<string,unknown>;
   // Finish can retry after expiry without accepting late client edits.
   const w=answerWindowOpen(state)&&acceptDraftRevision(draft,"writing",payload.revision)?incoming:(draft.writingDraft??{task1:"",task2:""});
-  const task1=text(w.task1,100000),task2=text(w.task2,100000),test=Number(row.test_id);
-  const submission: Submission={id,student:user,testId:test,testName:`Full Mock Test ${String(test).padStart(2,"0")}`,startedAt:String(row.started_at),submittedAt:new Date().toISOString(),listening:scoredWithRevision(listening,config(test,"listening")),reading:scoredWithRevision(reading,config(test,"reading")),writing:{task1,task2,task1WordCount:wordCount(task1),task2WordCount:wordCount(task2)},marking:null,released:false,speaking:null};
-  db().prepare("UPDATE attempts SET submitted_at=?,data=? WHERE id=?").run(submission.submittedAt,JSON.stringify(submission),id);
-  db().prepare("UPDATE attempt_progress SET stage='COMPLETED',lease_owner=NULL,lease_until=0 WHERE attempt_id=?").run(id);
-  db().prepare("UPDATE test_assignments SET status='SUBMITTED',attempts_used=attempts_used+1 WHERE id=?").run(String(row.assignment_id));
-  db().prepare("INSERT INTO notification_outbox VALUES(?,?,?,?,NULL)").run(randomUUID(),id,"mock-test.submitted",submission.submittedAt);
-  audit(user.id,"submission.created",id);return submission;
+  return completeSubmission(user,row,listening,reading,text(w.task1,100000),text(w.task2,100000));
 });}
 export function criteria(value: unknown): Criteria {if(!value||typeof value!=="object"||Array.isArray(value))reject(400,"All writing criteria are required.");const result={} as Criteria;for(const key of ['achievement','coherence','vocabulary','grammar'] as const){const n=(value as Record<string,unknown>)[key];if(typeof n!=="number"||n<0||n>9||!Number.isInteger(n*2))reject(400,"Writing scores must be 0–9 in half-band steps.");result[key]=n;}return result;}
 export function mark(user: User,id: string,payload: Record<string,unknown>) {return transaction(()=>{const s=getSubmission(id);if(!s)reject(404,"Submission not found.");const task1=criteria(payload.task1),task2=criteria(payload.task2);s.marking={task1,task2,...writingBands(task1,task2),feedback:text(payload.feedback,20000),markedAt:new Date().toISOString(),markedBy:user.id};s.released=payload.released===true;db().prepare("UPDATE attempts SET data=?,released=? WHERE id=?").run(JSON.stringify(s),Number(s.released),id);audit(user.id,"writing.marked",id);return s;});}

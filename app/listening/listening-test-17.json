@@ -3,273 +3,289 @@
   "parts": [
     [
       {
-        "title": "Questions 1–6",
+        "title": "Questions 1-4",
+        "type": "fill",
+        "instruction": "Complete the notes below.",
+        "limit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+        "heading": "NOTES ON ISLAND HOTEL",
+        "paragraphs": [
+          "**Example** | **Answer**\nType of room required: | double room",
+          "Time",
+          "• The length of stay: approx 2 weeks",
+          "• Starting date: 25th April",
+          "Temperature",
+          "• Daytime: up to {{1}} °C",
+          "• Erratic weather",
+          "Transport",
+          "• Pick-up service is provided.",
+          "• Normally transferring to the airport takes about {{2}}",
+          "Facilities",
+          "• en-suite facilities and a {{3}}",
+          "• gym and spa facilities",
+          "• a large outdoor swimming pool",
+          "• three standard {{4}}"
+        ]
+      },
+      {
+        "title": "Questions 5-10",
         "type": "table",
-        "limit": "NO MORE THAN ONE WORD AND/OR A NUMBER",
-        "heading": "Community Centre Evening Classes",
+        "instruction": "Complete the table below.",
+        "limit": "NO MORE THAN TWO WORDS",
         "columns": [
-          "Class",
-          "Where",
-          "When",
-          "What to bring",
-          "Cost"
+          "Day",
+          "Entertainment activities",
+          "Transportation"
         ],
         "rows": [
           [
-            "Painting with watercolours",
-            "—",
-            "at {{1}} pm on Tuesdays",
-            "water jar and set of {{2}}",
-            "£45 – four classes"
+            "Tuesdays",
+            "• learning to make {{5}}\n• having a {{6}} in-house concert",
+            "• mini bus"
           ],
           [
-            "Maori language",
-            "the small room at the {{3}} of the building",
-            "starts in {{4}}",
-            "small recorder",
-            "£40 – five classes"
+            "Wednesdays",
+            "• enjoying mountain view\n• exploring a tropical {{7}}",
+            "• {{8}}\n• shuttle bus"
           ],
           [
-            "Digital photography",
-            "room 9",
-            "6 pm Wednesday evenings",
-            "the {{5}} for the camera",
-            "£{{6}} – eight classes"
+            "Thursdays",
+            "• having a fancy dinner\n• watching a spectacular display of {{9}}",
+            "{{10}}"
           ]
         ]
-      },
-      {
-        "title": "Questions 7–10",
-        "type": "fill",
-        "paragraphs": [
-          "The watercolours class suits people who are {{7}}.",
-          "To find out about the Maori language class, contact Jason {{8}}.",
-          "For the photography class, check the {{9}} for the camera.",
-          "There is a trip to a local {{10}} in the final week of the photography class."
-        ],
-        "limit": "ONE WORD ONLY",
-        "heading": null,
-        "box": false,
-        "instruction": "Complete the sentences below."
       }
     ],
     [
       {
-        "title": "Questions 11–12",
-        "type": "multiple",
-        "numbers": [
-          11,
-          12
-        ],
-        "prompt": "Which TWO tasks will the volunteers in Group A be responsible for?",
-        "options": [
-          "widening pathways",
-          "planting trees",
-          "picking up rubbish",
-          "putting up signs",
-          "building fences"
-        ]
-      },
-      {
-        "title": "Questions 13–14",
-        "type": "multiple",
-        "numbers": [
-          13,
-          14
-        ],
-        "prompt": "Which TWO items should volunteers in Group A bring with them?",
-        "options": [
-          "food and water",
-          "boots",
-          "gloves",
-          "raincoats",
-          "their own tools"
-        ]
-      },
-      {
-        "title": "Questions 15–20",
-        "type": "map",
-        "heading": "Hadley Park Community Gardens Project",
-        "image": "/images/listening-test-17-map.png",
-        "viewBox": "0 280 533 407",
-        "imageWidth": 533,
-        "imageHeight": 687,
-        "alt": "Hadley Park Community Gardens Project plan with areas A–I, island, bicycle track, fruit bushes, bamboo fences, footpaths and car park.",
+        "title": "Questions 11-14",
+        "type": "choice",
+        "instruction": "Choose the correct letter, A, B or C.",
+        "heading": "Online Exchange Business",
         "questions": [
           {
-            "number": 15,
-            "prompt": "Vegetable beds"
+            "number": 11,
+            "prompt": "The website is organised by",
+            "options": [
+              "family members.",
+              "friends",
+              "businessmen"
+            ]
           },
           {
-            "number": 16,
-            "prompt": "Bee hives"
+            "number": 12,
+            "prompt": "How long has the website been operated?",
+            "options": [
+              "about 3 weeks",
+              "about 3 months",
+              "about 6 months"
+            ]
           },
           {
-            "number": 17,
-            "prompt": "Seating"
+            "number": 13,
+            "prompt": "How many registered users are there in the website?",
+            "options": [
+              "1,000",
+              "1,500",
+              "2,000"
+            ]
           },
           {
-            "number": 18,
-            "prompt": "Adventure playground"
-          },
-          {
-            "number": 19,
-            "prompt": "Sand area"
-          },
-          {
-            "number": 20,
-            "prompt": "Pond"
+            "number": 14,
+            "prompt": "Which country has the most users in the website?",
+            "options": [
+              "Ireland",
+              "UK",
+              "Canada"
+            ]
           }
+        ]
+      },
+      {
+        "title": "Questions 15-16",
+        "type": "multiple",
+        "instruction": "Choose TWO letters, A-E.",
+        "numbers": [
+          15,
+          16
         ],
+        "prompt": "Which TWO things are most popular among users?",
         "options": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E",
-          "F",
-          "G",
-          "H",
-          "I"
+          "children’s books",
+          "textbooks",
+          "computer games",
+          "toys",
+          "tools"
+        ]
+      },
+      {
+        "title": "Questions 17-20",
+        "type": "fill",
+        "instruction": "Complete the sentences below.",
+        "limit": "ONE WORD ONLY",
+        "paragraphs": [
+          "The website will sort out {{17}} items to help those who can’t decide what to exchange.",
+          "Do not bother because people's {{18}} are different.",
+          "Users will give {{19}} on the completion of exchanges.",
+          "Criteria",
+          "• the quality of the item",
+          "• the ease of communication",
+          "• the {{20}} of delivering"
         ]
       }
     ],
     [
       {
-        "title": "Questions 21–25",
+        "title": "Questions 21-26",
         "type": "choice",
+        "instruction": "Choose the correct letter, A, B or C.",
+        "heading": "Reflective Journal Assignment",
         "questions": [
           {
             "number": 21,
-            "prompt": "What point does Robert make about the 2013 study in Britain?",
+            "prompt": "What should be firstly included in the reflective journal?",
             "options": [
-              "It focused more on packaging than wasted food.",
-              "It proved that households produced more waste than restaurants.",
-              "It included liquid waste as well as solid waste."
+              "topics he is going to talk about",
+              "study aims for the module",
+              "suggestions from others"
             ]
           },
           {
             "number": 22,
-            "prompt": "The speakers agree that food waste reports should emphasise the connection between carbon dioxide emissions and",
+            "prompt": "The woman has got",
             "options": [
-              "food production.",
-              "transport of food to landfill sites.",
-              "distribution of food products."
+              "a lot of friends to help her.",
+              "several books that may be useful.",
+              "sufficient resources showing that she is a good technology user."
             ]
           },
           {
             "number": 23,
-            "prompt": "Television programmes now tend to focus on",
+            "prompt": "What was the man’s biggest achievement in the past?",
             "options": [
-              "the nutritional value of food products.",
-              "the origin of food products.",
-              "the chemicals found in food products."
+              "He worked as a waiter in a restaurant.",
+              "He got an offer to lead a team.",
+              "He became the chairman of the Student Union."
             ]
           },
           {
             "number": 24,
-            "prompt": "For Anna, the most significant point about food waste is",
+            "prompt": "The man decides to",
             "options": [
-              "the moral aspect.",
-              "the environmental impact.",
-              "the economic effect."
+              "do it by himself.",
+              "find a tutor.",
+              "listen to others."
             ]
           },
           {
             "number": 25,
-            "prompt": "Anna and Robert decide to begin their presentation by",
+            "prompt": "What is the man’s attitude after the discussion?",
             "options": [
-              "handing out a questionnaire.",
-              "providing statistical evidence.",
-              "showing images of wasted food."
+              "He thinks it is useless.",
+              "He is looking forward to doing the assignment",
+              "He feels uncertain about it."
             ]
-          }
-        ],
-        "heading": "Food Waste"
-      },
-      {
-        "title": "Questions 26–30",
-        "type": "match",
-        "questions": [
+          },
           {
             "number": 26,
-            "prompt": "edible patch"
-          },
-          {
-            "number": 27,
-            "prompt": "ripeness sensor"
-          },
-          {
-            "number": 28,
-            "prompt": "waste tracking technology"
-          },
-          {
-            "number": 29,
-            "prompt": "smartphone application"
-          },
-          {
-            "number": 30,
-            "prompt": "food waste composting"
+            "prompt": "What should be shown in the man’s reflective journal?",
+            "options": [
+              "self-awareness",
+              "mistakes",
+              "achievements"
+            ]
           }
-        ],
+        ]
+      },
+      {
+        "title": "Questions 27-30",
+        "type": "match",
+        "instruction": "What is the woman’s attitude toward each of the following activities of study?\nChoose FOUR answers from the box and write the correct letter, A-E, next to questions 27-30.",
+        "heading": "Attitude",
         "options": [
           {
             "label": "A",
-            "text": "It should save time."
+            "text": "define a problem"
           },
           {
             "label": "B",
-            "text": "It will create new jobs."
+            "text": "independent learning"
           },
           {
             "label": "C",
-            "text": "It will benefit local communities."
+            "text": "develop study skills"
           },
           {
             "label": "D",
-            "text": "It will make money."
+            "text": "gain confidence"
           },
           {
             "label": "E",
-            "text": "It will encourage personal responsibility."
-          },
-          {
-            "label": "F",
-            "text": "It will be easy to advertise."
-          },
-          {
-            "label": "G",
-            "text": "It will involve very little cost."
+            "text": "find it difficult"
           }
         ],
-        "heading": "Advantages",
-        "instruction": "What advantage do the speakers identify for each of the following projects? Choose the correct letter, A–G."
+        "questions": [
+          {
+            "number": 27,
+            "prompt": "writing an essay"
+          },
+          {
+            "number": 28,
+            "prompt": "taking exams"
+          },
+          {
+            "number": 29,
+            "prompt": "making class notes"
+          },
+          {
+            "number": 30,
+            "prompt": "taking presentation notes"
+          }
+        ]
       }
     ],
     [
       {
-        "title": "Questions 31–40",
+        "title": "Questions 31-38",
         "type": "fill",
+        "instruction": "Complete the notes below.",
+        "limit": "ONE WORD ONLY",
+        "heading": "Chimpanzee behaviours",
         "paragraphs": [
-          "**Making and appearance of the kites**",
-          "The priests who made the kites had rules for size and scale",
-          "{{31}} was not allowed during a kite’s preparation",
-          "**Kites:**",
-          "often represented a bird, a god, or a {{32}}",
-          "had frames that were decorated with grasses and {{33}}",
-          "had a line of noisy {{34}} attached to them",
-          "could be triangular, rectangular or {{35}} shaped",
-          "had patterns made from clay mixed with {{36}} oil",
-          "sometimes had human-head masks with {{37}} and a tattoo",
-          "**Purpose and function of kites:**",
-          "a way of sending {{38}} to the gods",
-          "a way of telling other villages that a {{39}} was necessary",
-          "a means of {{40}} if enemies were coming"
+          "Species",
+          "• We can find Pan or Pan Troglodytes in West and Central Africa.",
+          "• The Bonobo or Pan Paniscus are found in Democratic Republic of Congo.",
+          "Current research",
+          "• rule out {{31}} and biological factors",
+          "• learn through {{32}} of other chimps’ behaviour",
+          "Discoveries",
+          "• The book The Third Chimpanzee by James Diamond discusses some physical features of chimpanzees.",
+          "• The discovery reported by Jane Goodall suggests that chimpanzees know how to use {{33}}",
+          "Chimpanzees in Senegal",
+          "• use spears sharpened with their teeth",
+          "• can {{34}} the shell of a coconut",
+          "• use a {{35}} hammer to crash nuts",
+          "• are capable of learning {{36}} and understanding human language",
+          "Sub-species",
+          "• Bonobos live on the other side of a {{37}}",
+          "• Both of them are reducing alarmingly in population {{38}}"
+        ]
+      },
+      {
+        "title": "Questions 39-40",
+        "type": "multiple",
+        "instruction": "Choose TWO letters, A-E.",
+        "numbers": [
+          39,
+          40
         ],
-        "limit": "ONE WORD",
-        "heading": "Kite-making by the Maori people of New Zealand",
-        "box": true,
-        "instruction": "Complete the notes below."
+        "prompt": "Which TWO topics about chimpanzees will the students discuss next week?",
+        "options": [
+          "They are slower than human in different ways.",
+          "They learn things by copying humans’ behaviour.",
+          "They develop behaviours generation by generation.",
+          "They have very strong ability of logical thinking.",
+          "They could be modified to adapt to the environment."
+        ]
       }
     ]
   ]

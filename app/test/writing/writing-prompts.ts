@@ -239,38 +239,38 @@ export const writingPrompts = [
   },
   {
     "task1": {
-      "title": "Fast Food in Britain",
-      "prompt": "The chart below shows the amount of money per week spent on fast foods in Britain. The graph shows the trends in consumption of fast foods.",
-      "instruction": "Write a report for a university lecturer describing the information shown below.",
+      "title": "Monthly Temperature and Precipitation in Kolkata",
+      "prompt": "The climograph below shows average monthly temperatures and rainfall in the city of Kolkata.",
+      "instruction": "",
       "image": {
-        "src": "/images/writing-test-17-task-1.jpeg",
-        "alt": "Bar chart of weekly fast-food spending in Britain by income group and a line graph of consumption from 1970 to 1990.",
-        "width": 791,
-        "height": 623
+        "src": "/images/writing-test-17-task-1.png",
+        "alt": "Climograph showing average monthly temperatures and rainfall in Kolkata.",
+        "width": 1432,
+        "height": 955
       }
     },
     "task2": {
-      "title": "News Editorial Decisions",
-      "prompt": "News editors decide what to broadcast on television and what to print in newspapers. What factors do you think influence these decisions? Do we become used to bad news? Would it be better if more good news was reported?",
-      "instruction": "Use your own ideas, knowledge and experience and support your arguments with examples and relevant evidence."
+      "title": "Writing task 2",
+      "prompt": "Explain some of the ways in which humans are damaging the environment. What can governments do to address these problems? What can individual people do?",
+      "instruction": ""
     }
   },
   {
     "task1": {
-      "title": "Development of Chorleywood",
-      "prompt": "Chorleywood is a village near London whose population has increased steadily since the middle of the nineteenth century. The map below shows the development of the village.",
-      "instruction": "Write a report for a university lecturer describing the development of the village.",
+      "title": "Living alone in England, 2011",
+      "prompt": "The bar chart below shows the proportions of English men and women of different ages who were living alone in 2011. The pie chart compares the numbers of bedrooms in these one-person households.",
+      "instruction": "",
       "image": {
-        "src": "/images/writing-test-18-task-1.jpeg",
-        "alt": "Map showing the development of Chorleywood from 1868 to 1994, including main roads, motorway, railway, station, park and golf course.",
-        "width": 808,
-        "height": 554
+        "src": "/images/writing-test-18-task-1.png",
+        "alt": "Bar chart of people living alone in England by age and gender, and a pie chart of bedrooms in one-person households in 2011.",
+        "width": 1128,
+        "height": 1394
       }
     },
     "task2": {
-      "title": "Careers and Lifelong Learning",
-      "prompt": "The idea of having a single career is becoming an old fashioned one. The new fashion will be to have several careers or ways of earning money and further education will be something that continues throughout life.",
-      "instruction": "Use your own ideas, knowledge and experience and support your arguments with examples and relevant evidence."
+      "title": "Writing task2",
+      "prompt": "In recent years, there has been growing interest in the relationship between equality and personal achievement. Some people believe that individuals can achieve more in egalitarian societies. Others believe that high levels of personal achievement are possible only if individuals are free to succeed or fail according to their individual merits. What is your view of the relationship between equality and personal success?",
+      "instruction": ""
     }
   },
   {

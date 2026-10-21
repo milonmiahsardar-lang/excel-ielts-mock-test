@@ -4,7 +4,8 @@ import { mkdirSync,readdirSync,statSync,renameSync,unlinkSync } from "node:fs";
 import { dirname,resolve,sep } from "node:path";
 import { randomUUID } from "node:crypto";
 import { db,databasePath } from "./db";
-const state=globalThis as typeof globalThis&{ieltsMaintenance?:{timer?:ReturnType<typeof setInterval>;running?:Promise<string>;lastBackup?:string;error?:string}};
+import { finalizeExpiredWriting } from "./store";
+const state=globalThis as typeof globalThis&{ieltsMaintenance?:{timer?:ReturnType<typeof setInterval>;writingTimer?:ReturnType<typeof setInterval>;running?:Promise<string>;lastBackup?:string;error?:string}};
 const current=state.ieltsMaintenance??={};
 export const backupDirectory=()=>resolve(/*turbopackIgnore: true*/ process.env.BACKUP_DIR||resolve(dirname(databasePath()),"backups"));
 export function listBackups(){const directory=backupDirectory();try{return readdirSync(/*turbopackIgnore: true*/ directory).filter(n=>/^results-[0-9TZ-]+-[a-f0-9-]+\.sqlite$/.test(n)).map(name=>({name,createdAt:statSync(resolve(directory,name)).mtime.toISOString(),bytes:statSync(resolve(directory,name)).size})).sort((a,b)=>b.createdAt.localeCompare(a.createdAt));}catch{return [];}}
@@ -22,6 +23,10 @@ export async function createBackup(){
  return current.running;
 }
 export function startMaintenance(){
+ if(!current.writingTimer){
+  const finalize=()=>{try{finalizeExpiredWriting();}catch(error){console.error("Writing deadline check failed",error);}};
+  finalize();current.writingTimer=setInterval(finalize,5000);current.writingTimer.unref?.();
+ }
  if(current.timer)return;
  const run=()=>{void createBackup().catch(e=>console.error("Automatic backup failed",e));};
  run();current.timer=setInterval(run,6*60*60*1000);current.timer.unref?.();
