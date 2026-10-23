@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { request } from "./client";
-export type AttemptStatus={id:string;testId:number;stage:string;pendingSection?:"reading"|"writing"|null;instructionsConfirmed?:boolean;completionAcknowledged?:boolean;section:"listening"|"reading"|"writing"|null;deadline:number|null;audioPosition:number;audioDuration:number|null;serverNow:number;path:string};
+export type AttemptStatus={id:string;testId:number;mode?:import("./modes").TestMode;firstSection?:"listening"|"reading"|"writing";stage:string;pendingSection?:"reading"|"writing"|null;instructionsConfirmed?:boolean;completionAcknowledged?:boolean;section:"listening"|"reading"|"writing"|null;deadline:number|null;audioPosition:number;audioDuration:number|null;serverNow:number;path:string};
 let owner:string|undefined;
 const navigationStateKey="ieltsProtectedAttempt";
 function savedNavigationStatus():AttemptStatus|null {

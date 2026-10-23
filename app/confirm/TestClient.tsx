@@ -6,11 +6,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import { beginAttempt } from "@/lib/results/client";
 import { requestTestFullscreen } from "@/lib/results/safety-client";
+import { isTestMode, modeLabel, modePath } from "@/lib/results/modes";
 
 export default function ConfirmTest() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const testNumber = searchParams.get("test") || "1";
+  const requestedMode=searchParams.get("mode")??"full",mode=isTestMode(requestedMode)?requestedMode:"full";
   const [confirmed, setConfirmed] = useState(false);
 
   const [busy,setBusy] = useState(false);
@@ -18,7 +20,7 @@ export default function ConfirmTest() {
   const handleStartTest = async () => {
     if (!confirmed || busy) return;setBusy(true);setError("");
     const fullscreen=requestTestFullscreen();
-    try { await Promise.all([beginAttempt(testNumber),fullscreen]); router.replace(`/listening/instructions?test=${testNumber}`); }
+    try { await Promise.all([beginAttempt(testNumber),fullscreen]); router.replace(modePath(`/listening/instructions?test=${testNumber}`,mode)); }
     catch(error){setError((error as Error).message);setBusy(false);}
   };
 
@@ -47,7 +49,7 @@ export default function ConfirmTest() {
             </div>
 
             <p className="mt-5 text-[15px] leading-6 text-[#555]">
-              You are about to begin IELTS Mock Test {testNumber}. Please review the information below before continuing.
+              You are about to begin IELTS Mock Test {testNumber}{mode!=="full"?` — ${modeLabel(mode)}`:""}. Please review the information below before continuing.
             </p>
 
             <div className="mt-6 border-y border-[#e5e5e5] py-5">

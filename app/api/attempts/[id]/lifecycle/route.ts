@@ -2,7 +2,8 @@ import { actor, body, candidatePayload, endpoint, reject, reply, text } from "@/
 import { db, transaction } from "@/lib/results/db";
 import { authorizeAttempt } from "@/lib/results/assignments";
 import { acceptDraftRevision, answerWindowOpen, acknowledgeCompletion, confirmInstructions, startSection, claimLease, observeAudio, progress, publicProgress, requireLease, sectionFor, transition } from "@/lib/results/lifecycle";
-import { answers, config } from "@/lib/results/store";
+import { answers, config, completeSingleModule } from "@/lib/results/store";
+import { modeOf } from "@/lib/results/modes";
 import { score } from "@/lib/results/scoring";
 type Context={params:Promise<{id:string}>};
 function owned(id:string,userId:string){const row=db().prepare("SELECT * FROM attempts WHERE id=? AND student_id=?").get(id,userId);if(!row)reject(404,"Attempt not found.");return row;}
@@ -17,7 +18,7 @@ export async function POST(request:Request,{params}:Context){return endpoint(asy
   if(b.action==="release"){
    db().prepare("UPDATE attempt_progress SET lease_owner=NULL,lease_until=0 WHERE attempt_id=? AND lease_owner=?").run(id,typeof b.tabId==="string"?b.tabId:"");return publicProgress(row);
   }
-  if(row.submitted_at)reject(409,"This test has already been submitted.");
+  if(row.submitted_at)return publicProgress(row);
   if(b.action==="claim"){claimLease(row,b.tabId);return publicProgress(row);}
   requireLease(row,b.tabId);
   if(b.action==="suspend"){
@@ -46,6 +47,7 @@ export async function POST(request:Request,{params}:Context){return endpoint(asy
     if(acceptDraftRevision(draft,"listening",b.revision))draft.listening=score(answers(b.answers),config(Number(row.test_id),"listening"));
     db().prepare("UPDATE attempts SET data=? WHERE id=?").run(JSON.stringify(draft),id);
    }
+   if(modeOf(row)==="listening"&&next.stage==="LISTENING_COMPLETED")completeSingleModule(user,row);
    return publicProgress(row);
   }
   if(b.action==="advance"){
@@ -54,11 +56,18 @@ export async function POST(request:Request,{params}:Context){return endpoint(asy
    // Retrying the same completed transition is safe and cannot overwrite answers.
    if((skill==="listening"&&(prior.pending_section==="reading"||stage==="READING_ACTIVE"))||(skill==="reading"&&(prior.pending_section==="writing"||stage==="WRITING_ACTIVE")))return publicProgress(row);
    const acceptFinal=answerWindowOpen(prior)&&!(skill==="listening"&&stage==="LISTENING_COMPLETED");
-   transition(row,skill);const draft=row.data?JSON.parse(String(row.data)):{};
+   const single=modeOf(row)!=="full";
+   if(single){
+    if(modeOf(row)!==skill)reject(403,"This module is not included in your assignment.");
+    if(skill==="listening"&&stage!=="LISTENING_COMPLETED")reject(409,"Finish the recording before submitting.");
+    if(skill==="reading"&&(!prior.deadline||prior.deadline>Date.now()||!["READING_ACTIVE","READING_COMPLETED"].includes(stage)))reject(409,"Reading submits when its time has finished.");
+   }else transition(row,skill);
+   const draft=row.data?JSON.parse(String(row.data)):{};
    // Late transitions retain the last server-saved answers. Revisions cannot
    // extend the deadline or overwrite a newer snapshot.
    if(acceptFinal&&acceptDraftRevision(draft,skill,b.revision))draft[skill]=score(answers(b.answers),config(Number(row.test_id),skill));
    db().prepare("UPDATE attempts SET data=? WHERE id=?").run(JSON.stringify(draft),id);
+   if(single)completeSingleModule(user,row);
    return publicProgress(row);
   }
   reject(400,"Invalid lifecycle action.");

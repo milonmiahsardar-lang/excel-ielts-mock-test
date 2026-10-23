@@ -9,7 +9,6 @@
         "limit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
         "heading": "NOTES ON ISLAND HOTEL",
         "paragraphs": [
-          "**Example** | **Answer**\nType of room required: | double room",
           "Time",
           "• The length of stay: approx 2 weeks",
           "• Starting date: 25th April",
@@ -250,6 +249,7 @@
         "instruction": "Complete the notes below.",
         "limit": "ONE WORD ONLY",
         "heading": "Chimpanzee behaviours",
+        "box": true,
         "paragraphs": [
           "Species",
           "• We can find Pan or Pan Troglodytes in West and Central Africa.",

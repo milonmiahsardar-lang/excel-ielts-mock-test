@@ -2,7 +2,7 @@ import { accessError, AccessDenied } from "@/lib/results/TestAccess";
 import WritingTest from "./WritingTestClient";
 
 type WritingRouteProps = {
-  searchParams: Promise<{ test?: string | string[] }>;
+  searchParams: Promise<{ test?: string | string[]; mode?: string | string[] }>;
 };
 
 export default async function WritingTestPage({ searchParams }: WritingRouteProps) {

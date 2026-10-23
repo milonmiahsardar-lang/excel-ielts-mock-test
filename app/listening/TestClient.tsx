@@ -65,7 +65,7 @@ export default function ListeningTest() {
   const state=useAttemptStatus();
   const [transitioning,setTransitioning]=useState(false),[audioError,setAudioError]=useState("");
   const reporting=useRef(false),lastReport=useRef(0),restored=useRef(false),pendingEnd=useRef(false);
-  const listeningComplete=state?.stage==="LISTENING_COMPLETED";
+  const listeningComplete=state?.stage==="LISTENING_COMPLETED"||state?.stage==="COMPLETED";
   const [playbackBlocked,setPlaybackBlocked]=useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -184,7 +184,7 @@ export default function ListeningTest() {
     if((process.env.NODE_ENV !== "development" && !listeningComplete)||transitioning)return;setTransitioning(true);
     sessionStorage.setItem("ieltsListeningAnswers", JSON.stringify(answers));
     sessionStorage.setItem("ieltsListeningTest", testNumber);
-    try { await saveSection("listening",testNumber,answers,true); router.replace(`/listening/instructions?test=${testNumber}`); } catch(error){window.alert((error as Error).message);setTransitioning(false);}
+    try { await saveSection("listening",testNumber,answers,true); router.replace(statusSnapshot()?.path||`/listening/instructions?test=${testNumber}`); } catch(error){window.alert((error as Error).message);setTransitioning(false);}
   };
 
   const formatTime = (time: number) => {

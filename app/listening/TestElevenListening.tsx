@@ -126,10 +126,12 @@ export default function TestElevenListening({ part, answers, updateAnswer }: Pro
       <section className="space-y-4" aria-label="Questions 7 to 10">
         {heading("7–10", "Complete the sentences below.", "NO MORE THAN TWO WORDS")}
         <h4 className="font-bold">Judging and Prize Details</h4>
-        <p>The competition is judged by {blank(7)}.</p>
-        <p>The top five stories will be available {blank(8)}.</p>
-        <p>The top story will be chosen by the {blank(9)}.</p>
-        <p>The first prize is a place at a writers’ workshop in {blank(10)}.</p>
+        <ul className="list-none space-y-4">
+          <li className="flex items-start gap-3"><span aria-hidden="true" className="mt-3 h-2 w-2 shrink-0 rounded-full bg-current" /><p>The competition is judged by {blank(7)}.</p></li>
+          <li className="flex items-start gap-3"><span aria-hidden="true" className="mt-3 h-2 w-2 shrink-0 rounded-full bg-current" /><p>The top five stories will be available {blank(8)}.</p></li>
+          <li className="flex items-start gap-3"><span aria-hidden="true" className="mt-3 h-2 w-2 shrink-0 rounded-full bg-current" /><p>The top story will be chosen by the {blank(9)}.</p></li>
+          <li className="flex items-start gap-3"><span aria-hidden="true" className="mt-3 h-2 w-2 shrink-0 rounded-full bg-current" /><p>The first prize is a place at a writers’ workshop in {blank(10)}.</p></li>
+        </ul>
       </section>
     </>}
     {part === 2 && <>
@@ -142,7 +144,7 @@ export default function TestElevenListening({ part, answers, updateAnswer }: Pro
         {heading("18–20", "What does the guide say about each attraction?")}
         <p>Choose the correct letter, <b>A–E</b>, for each answer.</p>
         <div className="mx-auto w-fit max-w-full space-y-2 border border-[#999] bg-white p-5">{attractions.map((name,index) => <p key={name} className="flex gap-3"><b>{String.fromCharCode(65+index)}</b><span>{name}</span></p>)}</div>
-        {[{number:18,prompt:"must not miss"},{number:19,prompt:"temporarily closed"},{number:20,prompt:"large queues"}].map(({number,prompt}) => <div key={number} className="flex flex-wrap items-center gap-2"><label htmlFor={`question-${number}`}><b>{number}</b> {prompt}</label><select id={`question-${number}`} aria-label={`Answer for question ${number}`} value={answers[number] || ""} onChange={event => updateAnswer(number,event.target.value)} className={`${answerStyle} scroll-m-6`}><option value="">Select</option>{attractions.map((name,index) => <option key={name} value={String.fromCharCode(65+index)}>{String.fromCharCode(65+index)}</option>)}</select></div>)}
+        {[{number:18,prompt:"must not miss"},{number:19,prompt:"temporarily closed"},{number:20,prompt:"large queues"}].map(({number,prompt}) => <div key={number} className="grid grid-cols-[minmax(0,1fr)_minmax(0,11rem)] items-center gap-x-6 sm:grid-cols-[14rem_11rem] sm:gap-x-8"><label htmlFor={`question-${number}`}><b>{number}</b> {prompt}</label><select id={`question-${number}`} aria-label={`Answer for question ${number}`} value={answers[number] || ""} onChange={event => updateAnswer(number,event.target.value)} className={`${answerStyle} scroll-m-6`}><option value="">Select</option>{attractions.map((name,index) => <option key={name} value={String.fromCharCode(65+index)}>{String.fromCharCode(65+index)}</option>)}</select></div>)}
       </section>
     </>}
     {part === 3 && <>

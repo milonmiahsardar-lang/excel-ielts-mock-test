@@ -15,6 +15,7 @@ import ImportedReadingTests from "./ImportedReadingTests";
 import ReadingTestsElevenToFifteen from "./ReadingTestsElevenToFifteen";
 import ReadingTestsSixteenToTwenty from "./ReadingTestsSixteenToTwenty";
 
+import { statusSnapshot } from "@/lib/results/safety-client";
 import { saveSection, useAnswerDraft, useCountdown } from "@/lib/results/client";
 
 export default function TestPage() {
@@ -60,7 +61,7 @@ export default function TestPage() {
 
   const handleContinueToWriting = async () => {
     sessionStorage.setItem("ieltsAnswers", JSON.stringify(answers));
-    try { await saveSection("reading",testNumber,answers,true);router.replace(`/listening/instructions?test=${testNumber}`); }catch(error){window.alert((error as Error).message);}
+    try { await saveSection("reading",testNumber,answers,true);router.replace(statusSnapshot()?.path||`/listening/instructions?test=${testNumber}`); }catch(error){window.alert((error as Error).message);}
   };
 
   const minutes = Math.floor(timeLeft / 60);

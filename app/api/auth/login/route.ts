@@ -1,7 +1,8 @@
 import { bootstrapAdmin, passwordHash, passwordMatches, setSession, userFromRow } from "@/lib/results/auth";
 import { db } from "@/lib/results/db";
 import { body, endpoint, reject, reply, text, testId } from "@/lib/results/http";
-import { assignmentFor, ownAssignments } from "@/lib/results/assignments";
+import { loginDestination } from "@/lib/results/assignment-login";
+import { isTestMode } from "@/lib/results/modes";
 export const runtime="nodejs";
 const dummyHash=passwordHash("nonexistent-account-padding");
 export async function POST(request: Request) {return endpoint(async()=>{
@@ -16,10 +17,8 @@ export async function POST(request: Request) {return endpoint(async()=>{
   db().prepare("DELETE FROM login_limits WHERE account=?").run(username);
   const user=userFromRow(row);let destination="/candidate";
   if(b.admin!==true&&b.testId!==undefined){
-    const selected=testId(b.testId),assignment=assignmentFor(user,selected);
-    const active=ownAssignments(user).find(a=>Number(a.test_id)===selected);
-    if(assignment.status==="IN_PROGRESS"&&active&&active.active_stage!=="NOT_STARTED")reject(403,"Unfinished tests cannot be resumed. Ask your administrator to reassign this test.");
-    destination=`/confirm?test=${selected}`;
+    const mode=b.mode??"full";if(!isTestMode(mode))reject(400,"Invalid test mode.");
+    destination=loginDestination(user,testId(b.testId),mode);
   }
   await setSession(user);return reply({user,destination});
 });}

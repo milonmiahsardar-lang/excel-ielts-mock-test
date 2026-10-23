@@ -118,7 +118,7 @@ export default function TestSafety({children}:{children:React.ReactNode}){
   if(!active||!state)return;
 
   const expected=new URL(state.path,location.origin);
-  if(path!==expected.pathname||query.get("test")!==String(state.testId)){
+  if(path!==expected.pathname||query.get("test")!==String(state.testId)||(query.get("mode")??"full")!==(state.mode??"full")){
    router.replace(state.path);return;
   }
 
@@ -194,6 +194,8 @@ export default function TestSafety({children}:{children:React.ReactNode}){
 
  },[active,path]);
 
+ useEffect(()=>{if(testRoute&&state?.stage==="COMPLETED"){void finishTestSafety().then(()=>router.replace(`/test/writing/result?id=${encodeURIComponent(state.id)}&signout=1`));}},[state,testRoute,router]);
+
  const finalizing=useRef(false);
 
  const [sectionSaveError,setSectionSaveError]=useState("");
@@ -209,7 +211,7 @@ export default function TestSafety({children}:{children:React.ReactNode}){
    finalizing.current=true;
    const skill=reading?"reading":"listening";
    void Promise.resolve().then(()=>saveSection(skill,state.testId,readAnswers(state.testId,skill),true)).then(()=>{
-    setSectionSaveError("");router.replace(`/listening/instructions?test=${state.testId}`);
+    setSectionSaveError("");router.replace(statusSnapshot()?.path||`/listening/instructions?test=${state.testId}`);
    }).catch(e=>setSectionSaveError((e as Error).message)).finally(()=>{finalizing.current=false;});
   };
   const deadline=()=>{if(reading){due=true;finish();}};

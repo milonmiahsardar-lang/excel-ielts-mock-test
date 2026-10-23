@@ -4,7 +4,7 @@ import { mkdirSync,readdirSync,statSync,renameSync,unlinkSync } from "node:fs";
 import { dirname,resolve,sep } from "node:path";
 import { randomUUID } from "node:crypto";
 import { db,databasePath } from "./db";
-import { finalizeExpiredWriting } from "./store";
+import { finalizeExpiredWriting, finalizeExpiredReadingModules } from "./store";
 const state=globalThis as typeof globalThis&{ieltsMaintenance?:{timer?:ReturnType<typeof setInterval>;writingTimer?:ReturnType<typeof setInterval>;running?:Promise<string>;lastBackup?:string;error?:string}};
 const current=state.ieltsMaintenance??={};
 export const backupDirectory=()=>resolve(/*turbopackIgnore: true*/ process.env.BACKUP_DIR||resolve(dirname(databasePath()),"backups"));
@@ -24,7 +24,7 @@ export async function createBackup(){
 }
 export function startMaintenance(){
  if(!current.writingTimer){
-  const finalize=()=>{try{finalizeExpiredWriting();}catch(error){console.error("Writing deadline check failed",error);}};
+  const finalize=()=>{try{finalizeExpiredWriting();finalizeExpiredReadingModules();}catch(error){console.error("Test deadline check failed",error);}};
   finalize();current.writingTimer=setInterval(finalize,5000);current.writingTimer.unref?.();
  }
  if(current.timer)return;

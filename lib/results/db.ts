@@ -3,6 +3,7 @@ import { DatabaseSync } from "node:sqlite";
 import { mkdirSync, existsSync, readFileSync } from "node:fs";
 import { dirname, resolve, sep } from "node:path";
 import { defaultBands } from "./scoring";
+import { inferHistoricalExposure } from "./exposure-history";
 let database: DatabaseSync | undefined;
 // Runtime databases live on writable storage and must not be bundled as source assets.
 export function databasePath(){return resolve(/*turbopackIgnore: true*/ process.env.RESULTS_DB_PATH||"private/results.sqlite");}
@@ -41,6 +42,51 @@ export function db() {
     if(!flowColumns.includes(name))database.exec(`ALTER TABLE attempt_progress ADD COLUMN ${name} ${definition}`);
   }
   database.exec("PRAGMA user_version=4");
+  // Preserve assignment IDs and every existing attempt/result while expanding
+  // uniqueness from candidate/test to candidate/test/mode. No result is rescored.
+  if(!database.prepare("PRAGMA table_info(test_assignments)").all().some(c=>c.name==="mode")){
+    database.exec("PRAGMA foreign_keys=OFF; BEGIN IMMEDIATE");
+    try{
+      database.exec(`CREATE TABLE test_assignments_modes(
+        id TEXT PRIMARY KEY,candidate_id TEXT NOT NULL REFERENCES users(id),
+        test_id INTEGER NOT NULL CHECK(test_id BETWEEN 1 AND 20),assigned_at TEXT NOT NULL,expires_at TEXT,
+        status TEXT NOT NULL CHECK(status IN ('ASSIGNED','IN_PROGRESS','SUBMITTED','REVOKED')),
+        attempt_limit INTEGER NOT NULL DEFAULT 1 CHECK(attempt_limit=1),
+        attempts_used INTEGER NOT NULL DEFAULT 0 CHECK(attempts_used BETWEEN 0 AND 1),
+        mode TEXT NOT NULL DEFAULT 'full' CHECK(mode IN ('full','listening','reading','writing')),
+        UNIQUE(candidate_id,test_id,mode));
+        INSERT INTO test_assignments_modes(id,candidate_id,test_id,assigned_at,expires_at,status,attempt_limit,attempts_used)
+          SELECT id,candidate_id,test_id,assigned_at,expires_at,status,attempt_limit,attempts_used FROM test_assignments;
+        DROP TABLE test_assignments;
+        ALTER TABLE test_assignments_modes RENAME TO test_assignments;`);
+      if(database.prepare("PRAGMA foreign_key_check").all().length)throw new Error("Assignment migration failed its relationship check.");
+      database.exec("COMMIT");
+    }catch(error){database.exec("ROLLBACK");throw error;}
+    finally{database.exec("PRAGMA foreign_keys=ON");}
+  }
+  if(!database.prepare("PRAGMA table_info(attempts)").all().some(c=>c.name==="mode"))database.exec("ALTER TABLE attempts ADD COLUMN mode TEXT NOT NULL DEFAULT 'full' CHECK(mode IN ('full','listening','reading','writing'))");
+  database.exec("PRAGMA user_version=5");
+  if(!database.prepare("PRAGMA table_info(test_assignments)").all().some(c=>c.name==="purpose"))database.exec("ALTER TABLE test_assignments ADD COLUMN purpose TEXT NOT NULL DEFAULT 'fresh' CHECK(purpose IN ('fresh','repeat'))");
+  if(!database.prepare("PRAGMA table_info(attempts)").all().some(c=>c.name==="purpose"))database.exec("ALTER TABLE attempts ADD COLUMN purpose TEXT NOT NULL DEFAULT 'legacy' CHECK(purpose IN ('fresh','repeat','legacy'))");
+  database.exec(`CREATE TABLE IF NOT EXISTS module_exposures(
+    attempt_id TEXT NOT NULL REFERENCES attempts(id),candidate_id TEXT NOT NULL REFERENCES users(id),
+    test_id INTEGER NOT NULL,skill TEXT NOT NULL CHECK(skill IN ('listening','reading','writing')),
+    first_seen_at TEXT NOT NULL,certainty TEXT NOT NULL CHECK(certainty IN ('seen','uncertain')),
+    source TEXT NOT NULL CHECK(source IN ('history','activation')),PRIMARY KEY(attempt_id,skill));
+    CREATE INDEX IF NOT EXISTS candidate_module_exposure ON module_exposures(candidate_id,test_id,skill);
+    CREATE TABLE IF NOT EXISTS results_migrations(name TEXT PRIMARY KEY,applied_at TEXT NOT NULL);`);
+  if(!database.prepare("SELECT 1 FROM results_migrations WHERE name='module-exposure-history-v1'").get()){
+    database.exec("BEGIN IMMEDIATE");
+    try{
+      const insert=database.prepare("INSERT OR IGNORE INTO module_exposures VALUES(?,?,?,?,?,?,'history')");
+      for(const row of database.prepare("SELECT a.*,p.stage history_stage,p.audio_position history_audio_position FROM attempts a LEFT JOIN attempt_progress p ON p.attempt_id=a.id").all()){
+        for(const exposure of inferHistoricalExposure(row))insert.run(String(row.id),String(row.student_id),Number(row.test_id),exposure.skill,String(row.started_at),exposure.certainty);
+      }
+      database.prepare("INSERT INTO results_migrations VALUES('module-exposure-history-v1',?)").run(new Date().toISOString());
+      database.exec("COMMIT");
+    }catch(error){database.exec("ROLLBACK");throw error;}
+  }
+  database.exec("PRAGMA user_version=6");
   const seed=resolve("private/test-1-approved-keys.json");
   if(existsSync(seed)) {
     const keys=JSON.parse(readFileSync(seed,"utf8"));

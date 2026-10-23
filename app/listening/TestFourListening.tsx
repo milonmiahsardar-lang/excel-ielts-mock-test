@@ -37,9 +37,9 @@ export default function TestFourListening({ part, answers, updateAnswer }: Props
     </div>;
   };
 
-  const letterAnswer = (number: number, letters: string[]) => (
-    <div id={`question-${number}`} key={number} className="flex scroll-m-6 items-center gap-3">
-      <b>{number}</b><select aria-label={`Answer for question ${number}`} value={answers[number] || ""} onChange={(event) => updateAnswer(number, event.target.value)} className="h-9 w-28 border border-[#2185d0] bg-white px-2 focus:outline-none focus:ring-1 focus:ring-[#2185d0]"><option value="">Select</option>{letters.map((letter) => <option key={letter} value={letter}>{letter}</option>)}</select>
+  const letterAnswer = (number: number, letters: string[], prompt: string) => (
+    <div id={`question-${number}`} key={number} className="flex flex-wrap scroll-m-6 items-center gap-3">
+      <b>{number}</b><span>{prompt}</span><select aria-label={`Answer for question ${number}`} value={answers[number] || ""} onChange={(event) => updateAnswer(number, event.target.value)} className="h-9 w-28 border border-[#2185d0] bg-white px-2 focus:outline-none focus:ring-1 focus:ring-[#2185d0]"><option value="">Select</option>{letters.map((letter) => <option key={letter} value={letter}>{letter}</option>)}</select>
     </div>
   );
 
@@ -126,10 +126,10 @@ export default function TestFourListening({ part, answers, updateAnswer }: Props
         <div className="space-y-1"><h4 className="font-bold">Questions 37–40</h4><p>Match each statement to a building from the list. Choose FOUR options.</p></div>
         <div className="grid gap-5 md:grid-cols-[minmax(0,1.4fr)_minmax(240px,0.8fr)]">
           <div className="space-y-4">
-            <p>If you go straight out those doors, the building directly opposite is:</p>{letterAnswer(37,["A","B","C","D","E","F","G"])}
-            <p>If you make a right turn outside the door and go to the second building, that is:</p>{letterAnswer(38,["A","B","C","D","E","F","G"])}
-            <p>You can see this if you look out of that window:</p>{letterAnswer(39,["A","B","C","D","E","F","G"])}
-            <p>The Media Centre is in front of this:</p>{letterAnswer(40,["A","B","C","D","E","F","G"])}
+            {letterAnswer(37,["A","B","C","D","E","F","G"],"If you go straight out those doors, the building directly opposite is:")}
+            {letterAnswer(38,["A","B","C","D","E","F","G"],"If you make a right turn outside the door and go to the second building, that is:")}
+            {letterAnswer(39,["A","B","C","D","E","F","G"],"You can see this if you look out of that window:")}
+            {letterAnswer(40,["A","B","C","D","E","F","G"],"The Media Centre is in front of this:")}
           </div>
           <div className="space-y-2 border border-[#777] p-4"><h5 className="text-center font-bold">Buildings</h5>{[["A","Student Union Building"],["B","Nursery"],["C","Media Centre"],["D","Medical Services Centre"],["E","Maths Department Building"],["F","new library"],["G","old library"]].map(([letter,label])=><p key={letter}><b>{letter}.</b> {label}</p>)}</div>
         </div>

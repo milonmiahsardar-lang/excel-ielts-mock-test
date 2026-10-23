@@ -2,6 +2,8 @@ import "server-only";
 import { db } from "./db";
 import { reject, text } from "./http";
 import { recordingDuration } from "./audio-duration";
+import { firstModule, includesModule, modeOf, modePath } from "./modes";
+import { recordModuleOpen } from "./exposure";
 
 export type Stage="NOT_STARTED"|"LISTENING_ACTIVE"|"LISTENING_COMPLETED"|"READING_ACTIVE"|"READING_COMPLETED"|"WRITING_ACTIVE"|"COMPLETED";
 export type Progress={attempt_id:string;stage:Stage;deadline:number|null;audio_duration:number|null;audio_position:number;audio_observed_at:number|null;lease_owner:string|null;lease_until:number;pending_section:"reading"|"writing"|null;instructions_confirmed:number;completion_acknowledged:number};
@@ -37,12 +39,15 @@ export function sectionFor(stage:Stage):"listening"|"reading"|"writing"|null {
  if(stage.startsWith("READING"))return "reading";
  return stage==="WRITING_ACTIVE"?"writing":null;
 }
-export function progressPath(state:Progress,test:number) {
- if(state.pending_section)return `/listening/instructions?test=${test}`;
+export function progressPath(state:Progress,test:number,mode=modeOf({})) {
+ const target=(path:string)=>modePath(path,mode);
+ if(state.stage==="COMPLETED")return `/test/writing/result?id=${encodeURIComponent(state.attempt_id)}&signout=1`;
+ if(state.pending_section)return target(`/listening/instructions?test=${test}`);
  const section=sectionFor(state.stage);
- return section==="writing"?`/test/writing?test=${test}`:section==="reading"?`/test?test=${test}`:section==="listening"?`/listening?test=${test}&autoplay=true`:`/listening/instructions?test=${test}`;
+ return target(section==="writing"?`/test/writing?test=${test}`:section==="reading"?`/test?test=${test}`:section==="listening"?`/listening?test=${test}&autoplay=true`:`/listening/instructions?test=${test}`);
 }
 export function requireSection(row:Record<string,unknown>,skill:string) {
+ if(!["listening","reading","writing"].includes(skill)||!includesModule(modeOf(row),skill as "listening"|"reading"|"writing"))reject(403,"This module is not included in your assignment.");
  const state=progress(row);
  if(row.submitted_at||state.stage==="COMPLETED")reject(409,"This test has already been submitted.");
  if(state.pending_section)reject(409,"This section is locked. Confirm the next section instructions before starting.");
@@ -62,10 +67,12 @@ export function requireLease(row:Record<string,unknown>,owner:unknown) {
  return state;
 }
 export function activateListening(row:Record<string,unknown>) {
+ if(!includesModule(modeOf(row),"listening"))reject(403,"Listening is not included in your assignment.");
  const state=progress(row);
  if(state.stage!=="NOT_STARTED")return state;
  if(!state.instructions_confirmed)reject(409,"Please confirm the Listening instructions before starting.");
  const duration=recordingDuration(Number(row.test_id));
+ recordModuleOpen(row,"listening");
  db().prepare("UPDATE attempt_progress SET stage='LISTENING_ACTIVE',audio_duration=?,audio_observed_at=? WHERE attempt_id=?").run(duration,Date.now(),String(row.id));
  return progress(row);
 }
@@ -84,6 +91,7 @@ export function observeAudio(row:Record<string,unknown>,position:unknown,ended:u
  return progress(row);
 }
 export function transition(row:Record<string,unknown>,skill:"listening"|"reading") {
+ if(modeOf(row)!=="full")reject(409,"Single-module tests finish after their assigned module.");
  const state=requireSection(row,skill),now=Date.now();
  // Development previews may advance early; production keeps exam timing enforced.
  if(process.env.NODE_ENV!=="development"&&skill==="listening"&&state.stage!=="LISTENING_COMPLETED")reject(409,"Please finish the listening recording before continuing to Reading.");
@@ -96,7 +104,7 @@ export function acknowledgeCompletion(row:Record<string,unknown>) {
  db().prepare("UPDATE attempt_progress SET completion_acknowledged=1 WHERE attempt_id=?").run(String(row.id));
 }
 export function confirmInstructions(row:Record<string,unknown>,skill:unknown) {
- const state=progress(row),expected=state.stage==="NOT_STARTED"?"listening":state.pending_section;
+ const state=progress(row),expected=state.stage==="NOT_STARTED"?firstModule(modeOf(row)):state.pending_section;
  if(!expected||skill!==expected)reject(409,"These instructions are not available yet.");
  if(state.pending_section&&!state.completion_acknowledged)reject(409,"Continue from the section completion screen first.");
  db().prepare("UPDATE attempt_progress SET instructions_confirmed=1 WHERE attempt_id=?").run(String(row.id));
@@ -105,10 +113,11 @@ export function startSection(row:Record<string,unknown>,skill:unknown) {
  const state=progress(row);
  // A retried Start request cannot restart its clock.
  if(!state.pending_section&&sectionFor(state.stage)===skill)return state;
- const expected=state.stage==="NOT_STARTED"?"listening":state.pending_section;
+ const expected=state.stage==="NOT_STARTED"?firstModule(modeOf(row)):state.pending_section;
  if(!expected||skill!==expected)reject(409,"This section is not available yet.");
  if(!state.instructions_confirmed)reject(409,"Please confirm the section instructions before starting.");
  if(skill==="listening")return activateListening(row);
+ recordModuleOpen(row,skill as "reading"|"writing");
  const deadline=Date.now()+3600000;
  db().prepare("UPDATE attempt_progress SET stage=?,deadline=?,pending_section=NULL WHERE attempt_id=?").run(skill==="reading"?"READING_ACTIVE":"WRITING_ACTIVE",deadline,String(row.id));
  const draft=row.data?JSON.parse(String(row.data)):{};draft.sectionClocks??={};draft.sectionClocks[String(skill)]=deadline;
@@ -116,5 +125,5 @@ export function startSection(row:Record<string,unknown>,skill:unknown) {
  return progress(row);
 }
 export function publicProgress(row:Record<string,unknown>) {
- const state=progress(row);return {id:String(row.id),testId:Number(row.test_id),stage:state.stage,pendingSection:state.pending_section,instructionsConfirmed:!!state.instructions_confirmed,completionAcknowledged:!!state.completion_acknowledged,section:state.pending_section?null:sectionFor(state.stage),deadline:state.deadline,audioPosition:state.audio_position,audioDuration:state.audio_duration,serverNow:Date.now(),path:progressPath(state,Number(row.test_id))};
+ const state=progress(row),mode=modeOf(row);return {id:String(row.id),testId:Number(row.test_id),mode,firstSection:firstModule(mode),stage:state.stage,pendingSection:state.pending_section,instructionsConfirmed:!!state.instructions_confirmed,completionAcknowledged:!!state.completion_acknowledged,section:state.pending_section?null:sectionFor(state.stage),deadline:state.deadline,audioPosition:state.audio_position,audioDuration:state.audio_duration,serverNow:Date.now(),path:progressPath(state,Number(row.test_id),mode)};
 }

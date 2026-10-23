@@ -272,7 +272,7 @@ export default function TestEightListening({ part, answers, updateAnswer }: Prop
       )}
 
       {part === 4 && (
-        <section className="space-y-5" aria-label="Questions 31 to 40">
+        <section className="space-y-5 border border-[#777] bg-white p-4 sm:p-5" aria-label="Questions 31 to 40">
           <div className="space-y-1">
             <h3 className="font-bold">Questions 31–40</h3>
             <p>Complete the sentences below.</p>

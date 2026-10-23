@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 
 import { request } from "@/lib/results/client";
 
-export default function VerifyTest({submitted=false,selectedTest}:{submitted?:boolean;selectedTest?:number}) {
+export default function VerifyTest({submitted=false,selectedTest,selectedMode="full"}:{submitted?:boolean;selectedTest?:number;selectedMode?:import("@/lib/results/modes").TestMode}) {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +13,7 @@ export default function VerifyTest({submitted=false,selectedTest}:{submitted?:bo
   const [busy, setBusy] = useState(false);
   const handleVerify = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); if(busy)return; setBusy(true); setError("");
-    try { const result=await request<{user:{id:string};destination?:string}>("/api/auth/login", {username,password,...(selectedTest?{testId:selectedTest}:{})}); if(sessionStorage.getItem("ieltsStudent")!==result.user.id){for(const key of Object.keys(sessionStorage)){if(key.startsWith("ielts"))sessionStorage.removeItem(key);}sessionStorage.setItem("ieltsStudent",result.user.id);} window.location.replace(result.destination||"/candidate"); }
+    try { const result=await request<{user:{id:string};destination?:string}>("/api/auth/login", {username,password,...(selectedTest?{testId:selectedTest,mode:selectedMode}:{})}); if(sessionStorage.getItem("ieltsStudent")!==result.user.id){for(const key of Object.keys(sessionStorage)){if(key.startsWith("ielts"))sessionStorage.removeItem(key);}sessionStorage.setItem("ieltsStudent",result.user.id);} window.location.replace(result.destination||"/candidate"); }
     catch(error){setError((error as Error).message);}finally{setBusy(false);}
   };
 

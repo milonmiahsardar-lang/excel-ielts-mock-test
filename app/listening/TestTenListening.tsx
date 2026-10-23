@@ -175,7 +175,7 @@ export default function TestTenListening({ part, answers, updateAnswer }: Props)
             </svg>
             <div className="space-y-4">
               {museumRooms.map(({ number, name }) => (
-                <div key={number} className="flex flex-wrap items-center gap-2">
+                <div key={number} className="grid grid-cols-[minmax(0,1fr)_minmax(0,11rem)] items-center gap-x-6 sm:grid-cols-[14rem_11rem] sm:gap-x-8">
                   <label htmlFor={`question-${number}`} className="inline-flex items-center gap-2"><b>{number}</b><span>{name}</span></label>
                   <select id={`question-${number}`} aria-label={`Answer for question ${number}: ${name}`} value={answers[number] || ""} onChange={(event) => updateAnswer(number, event.target.value)} className={`${answerStyle} scroll-m-6`}>
                     <option value="">Select</option>

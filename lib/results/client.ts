@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 import type { Answers, Skill } from "./types";
 import { lifecycle, statusSnapshot, tabId } from "./safety-client";
+import { isTestMode, type TestMode } from "./modes";
 export class RequestError extends Error {
   constructor(message: string, public readonly status: number) {
     super(message);
@@ -36,17 +37,24 @@ export async function saveWritingDraft(test: number|string,writing:{task1:string
  const revision=draftRevision(test,"writing");return reportSave(test,revision,()=>request(`/api/attempts/${id}/draft`,{testId:Number(test),...writing,revision},"PATCH"));
 }
 export function attemptKey(test: number|string) {return `ieltsAttempt:${test}`;}
+export function selectedMode(test:number|string):TestMode {
+ const query=new URLSearchParams(window.location.search);
+ const value=query.get("test")===String(test)?query.get("mode")??"full":sessionStorage.getItem(`ieltsMode:${test}`)??"full";
+ return isTestMode(value)?value:"full";
+}
 export function draftKey(test: number|string,skill: string) {return `ieltsDraft:${sessionStorage.getItem(attemptKey(test)) || "pending"}:${test}:${skill}`;}
 export async function beginAttempt(test: number|string) {
-  const attempt=await request<{id:string;testId:number;startedAt:string;studentId:string}>("/api/attempts/start",{testId:Number(test)});
+  const mode=selectedMode(test);
+  const attempt=await request<{id:string;testId:number;mode:TestMode;startedAt:string;studentId:string}>("/api/attempts/start",{testId:Number(test),mode});
   // Re-check identity after server validation, including when a shared browser switches users.
   if(sessionStorage.getItem("ieltsStudent")!==attempt.studentId){for(const key of Object.keys(sessionStorage)){if(key.startsWith("ielts"))sessionStorage.removeItem(key);}sessionStorage.setItem("ieltsStudent",attempt.studentId);}
   sessionStorage.setItem(attemptKey(test),attempt.id);
+  sessionStorage.setItem(`ieltsMode:${test}`,attempt.mode);
   await lifecycle(attempt.id,test,"claim");sessionStorage.setItem("ieltsActiveTest",String(test));return attempt;
 }
 const pendingAttempts=new Map<string,ReturnType<typeof beginAttempt>>();
 export async function ensureAttempt(test: number|string) {
- const key=String(test);let pending=pendingAttempts.get(key);
+ const key=`${test}:${selectedMode(test)}`;let pending=pendingAttempts.get(key);
  if(!pending){pending=beginAttempt(test);pendingAttempts.set(key,pending);}
  try{return await pending;}finally{if(pendingAttempts.get(key)===pending)pendingAttempts.delete(key);}
 }
@@ -140,7 +148,7 @@ export function useCountdown(test:number|string,skill:"reading"|"writing",enable
   return()=>{active=false;window.clearTimeout(retry);window.clearInterval(timer);window.removeEventListener("ielts:lifecycle",status);};
  },[test,skill,enabled]);return remaining;
 }
-export async function saveSection(skill: Skill,test: number|string,answers: Record<number,string>,finalize=false) {const id=sessionStorage.getItem(attemptKey(test))||(await ensureAttempt(test)).id;sessionStorage.setItem(draftKey(test,skill),JSON.stringify(answers));const revision=draftRevision(test,skill);await reportSave(test,revision,()=>finalize?lifecycle(id,test,"advance",{skill,answers,revision}):request(`/api/attempts/${id}/section`,{testId:Number(test),skill,answers,revision}));}
+export async function saveSection(skill: Skill,test: number|string,answers: Record<number,string>,finalize=false) {const id=sessionStorage.getItem(attemptKey(test))||(await ensureAttempt(test)).id;sessionStorage.setItem(draftKey(test,skill),JSON.stringify(answers));const revision=draftRevision(test,skill);return reportSave(test,revision,()=>finalize?lifecycle(id,test,"advance",{skill,answers,revision}):request(`/api/attempts/${id}/section`,{testId:Number(test),skill,answers,revision}));}
 export function readAnswers(test: number|string,skill: string): Answers {const raw=sessionStorage.getItem(draftKey(test,skill));if(!raw)return {};try{return safeAnswers(JSON.parse(raw));}catch{return {};}}
 
 export function clearCandidateStorage() {for(const key of Object.keys(sessionStorage)){if(key.startsWith("ielts"))sessionStorage.removeItem(key);}}
