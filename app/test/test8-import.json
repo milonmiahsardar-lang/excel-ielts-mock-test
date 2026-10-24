@@ -125,7 +125,7 @@
           "title": "Questions 10–14",
           "instructions": [
             "Complete the notes below.",
-            "Choose **NO MORE THAN TWO WORDS** from the passage for each answer."
+            "Choose **NO MORE THAN TWO WORDS AND/OR A NUMBER** from the passage for each answer."
           ],
           "heading": "How Cathy Freeman became a sports star",
           "paragraphs": [
@@ -213,7 +213,7 @@
               "options": [
                 "set fire to",
                 "put into boats at sea",
-                "put into garbage tips",
+                "put into rubbish dumps or the ocean",
                 "sent to companies"
               ],
               "prompt": "Most plastic bottles that aren’t recycled are…",
@@ -236,7 +236,7 @@
                 "33%",
                 "100%"
               ],
-              "prompt": "What is the percentage of drinks companies who have no plans to use more recyclable plastic in their products?",
+              "prompt": "What is the percentage of drinks companies who have no plans to use more recycled plastic in their products?",
               "number": 24
             },
             {
@@ -385,7 +385,7 @@
             },
             {
               "number": 40,
-              "prompt": "thinks that local attitude towards African wild dogs is changing in a positive way."
+              "prompt": "receives calls from people who spot wild dogs outside the reserve."
             }
           ]
         }

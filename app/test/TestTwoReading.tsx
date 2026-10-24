@@ -46,10 +46,10 @@ const multipleChoice = [
   { number: 9, prompt: "How could Esperanto help on a global level?", options: ["It would eliminate the need for conferences.", "More aid money would reach those who need it.", "The world population would be speaking only one language.", "More funds could be made available for learning foreign languages."] },
 ];
 
-function extractParagraphs(raw: string) {
+function extractParagraphs(raw: string, allowUndottedLabels = false) {
   return raw.split(/\n\s*\n/).map((block) => block.trim()).filter(Boolean).map((block) => {
     const clean = block.replace(/^---\s*$/gm, "").replace(/^You should spend[^\n]*\n?/m, "").trim();
-    const labelled = clean.match(/^([A-H])\.\s*([\s\S]*)$/);
+    const labelled = clean.match(allowUndottedLabels ? /^([A-H])(?:\.\s*|\s+)([\s\S]*)$/ : /^([A-H])\.\s*([\s\S]*)$/);
     return labelled ? { label: labelled[1], text: labelled[2] } : { label: "", text: clean };
   }).filter(({ text }) => text && !/^PART [123]$/i.test(text) && !/^READING PASSAGE [123]$/i.test(text));
 }
@@ -70,7 +70,7 @@ export default function TestTwoReading() {
   const [answers, setAnswers] = useState<Answers>({});
   const draftReady=useAnswerDraft("reading",2,answers,setAnswers);
   const [paneSplit, setPaneSplit] = useState(50);
-  const displayedPassage = useMemo(() => extractParagraphs(passageText[passage - 1]), [passage]);
+  const displayedPassage = useMemo(() => extractParagraphs(passageText[passage - 1], passage === 2), [passage]);
 
   const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (!event.currentTarget.hasPointerCapture(event.pointerId)) return;
@@ -115,7 +115,7 @@ const setAnswer = (number: number, value: string) => setAnswers((current) => ({ 
   </div>;
 
   const passageThreeQuestions = <div className="space-y-8 px-5 py-5 text-[16px] leading-7">
-    <section className="space-y-5"><h2 className="font-bold">Questions 27–31</h2><p>Reading Passage 3 has eight paragraphs, <b>A–H</b>.</p><p>Which paragraphs contain the following information?</p><p>Write the correct letter, <b>A–H</b>, in boxes <b>27–31</b> below.</p>
+    <section className="space-y-5"><h2 className="font-bold">Questions 27–31</h2><p>Reading Passage 3 has eight paragraphs, <b>A–H</b>.</p><p>Which paragraphs contain the following information?</p><p>Write the correct letter, <b>A–H</b>, in boxes <b>27–31</b> below.</p><p><b>NB</b> You may use any letter more than once.</p>
       <ParagraphInformationTable questions={[
         "the possibility of carrying out research on children before they start talking",
         "the difficulties in deducing theories from systematic experiment",
@@ -143,10 +143,10 @@ const setAnswer = (number: number, value: string) => setAnswers((current) => ({ 
     <div className="mx-5 mt-2 mb-1 min-h-[58px] shrink-0 rounded border border-[#d5d5d5] bg-[#f2f2ef] px-4 py-1 text-black"><h2 className="text-[14px] leading-5 font-bold">Part {passage}</h2><p className="text-[14px] leading-5">Read the text and answer questions {passageMarkers[passage - 1].range}.</p></div>
     <div className="relative flex min-h-0 flex-1 overflow-hidden bg-white">
       <section style={{ width: `${paneSplit}%` }} className="h-full min-w-0 shrink-0 overflow-y-auto border-r border-[#999] bg-white" aria-label="Reading passage area"><article className="space-y-4 px-5 py-4 text-[16px] leading-6"><h2 className="text-center text-xl font-bold">{passageMarkers[passage - 1].title}</h2>{displayedPassage.map(({ label, text }, index) => <section key={index} className="space-y-2">{label && <div className="flex items-center gap-2"><h3 className="shrink-0 font-bold">{label}</h3>{passage === 1 && <HeadingDrop scope="reading-2-headings" group={paragraphHeadingGroup} paragraph={label} answers={answers} onAnswer={setAnswer} />}</div>}<p>{text}</p></section>)}</article></section>
-      <section style={{ width: `${100 - paneSplit}%` }} className="h-full min-w-0 shrink-0 overflow-y-auto bg-white" aria-label="Reading question area">{questionPane}</section>
+      <section style={{ width: `${100 - paneSplit}%` }} className="h-full min-w-0 shrink-0 overflow-y-auto bg-white pb-20" aria-label="Reading question area">{questionPane}</section>
       <div role="separator" aria-label="Resize passage and question panels" aria-orientation="vertical" aria-valuemin={25} aria-valuemax={75} aria-valuenow={Math.round(paneSplit)} tabIndex={0} onPointerDown={(event) => event.currentTarget.setPointerCapture(event.pointerId)} onPointerMove={movePaneDivider} onPointerUp={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onPointerCancel={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onKeyDown={(event) => { if (event.key === "ArrowLeft") setPaneSplit((value) => Math.max(25, value - 2)); if (event.key === "ArrowRight") setPaneSplit((value) => Math.min(75, value + 2)); }} style={{ left: `${paneSplit}%` }} className="absolute top-0 z-20 h-full w-3 -translate-x-1/2 cursor-col-resize touch-none outline-none focus-visible:ring-2 focus-visible:ring-[#2185d0]"><span className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-[#999]" /><span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-[#555] bg-white text-[20px] leading-none shadow-sm">↔</span></div>
     </div>
-    <PartNavigation current={passage} total={3} onChange={setPassage} />
+    <PartNavigation floating current={passage} total={3} onChange={setPassage} />
       <footer data-ielts-test-footer className="grid shrink-0 grid-cols-3 items-center justify-items-center gap-4 border-t border-[#d5d5d5] bg-white px-3 py-1">{[1, 2, 3].map((item) => { const start = starts[item - 1]; const count = counts[item - 1]; return <div key={item} className="flex flex-col items-center"><button onClick={() => setPassage(item)} className="text-[14px] font-bold">Passage {item}</button><div className="mt-1 flex flex-wrap justify-center gap-1">{Array.from({ length: count }, (_, offset) => { const number = start + offset; return <button key={number} onClick={() => { setPassage(item); window.setTimeout(() => document.getElementById(`question-${number}`)?.scrollIntoView({ behavior: "smooth", block: "center" }), 50); }} className={`h-6 min-w-6 rounded-sm border px-0.5 text-[13px] ${answers[number] ? "border-[#2185d0] font-semibold" : "border-transparent hover:border-[#2185d0]"}`}>{number}</button>; })}</div></div>; })}</footer>
   </main>;
 }

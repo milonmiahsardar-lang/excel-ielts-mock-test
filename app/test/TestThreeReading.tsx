@@ -95,7 +95,7 @@ const handleContinue = async () => {
         "Collecting solid waste from the tideway",
         "Creating enlarged sewage works",
         "Controlling traffic on the river",
-      ].map((activity, index) => { const number = index + 27; return <div id={`question-${number}`} key={number} className="flex scroll-m-6 items-start gap-3 py-3 leading-7">{numberBadge(number)}<div className="min-w-0">{activity} {agencyAnswer(number)}</div></div>; })}
+      ].map((activity, index) => { const number = index + 27; return <div id={`question-${number}`} key={number} className="grid scroll-m-6 grid-cols-[2rem_minmax(0,1fr)] items-start gap-x-3 gap-y-2 py-3 leading-7 sm:grid-cols-[2rem_minmax(0,1fr)_12rem]">{numberBadge(number)}<p className="min-w-0">{activity}</p><div className="col-start-2 sm:col-start-3">{agencyAnswer(number)}</div></div>; })}
     </section>
     <section className="space-y-5" aria-label="Questions 33 to 40">
       <h2 className="font-bold">Questions 33–40</h2>
@@ -103,7 +103,7 @@ const handleContinue = async () => {
       {[
         "The Thames is now cleaner than it was in 1900.",
         "Swimming in the Thames now poses no health hazards.",
-        "Companies that pollute the river now have a responsibility to clean it.",
+        "It is now mainly the responsibility of those who pollute the Thames to clean their waste up.",
         "All London boroughs that the Thames passes through are now partly responsible for keeping the river clean.",
         "Transport for London now employs a type of River Police to enforce control of their regulations.",
         "Rubbish Munchers are now situated at various locations on the Thames.",
@@ -117,7 +117,8 @@ const handleContinue = async () => {
     <section className="space-y-5" aria-label="Questions 14 to 18">
       <h2 className="font-bold">Questions 14–18</h2>
       <p>The text has six paragraphs.</p>
-      <p>Choose the correct heading for each paragraph. Choose the appropriate number, i–ix.</p>
+      <p>Choose the correct headings for paragraphs B–F. Choose the appropriate number, i–ix.</p>
+      <p>Example: Paragraph A — iv</p>
       <h3 className="font-bold">List of Headings</h3><HeadingBank scope="reading-3-headings" group={paragraphHeadingGroup} answers={answers} onAnswer={setAnswer} />
     </section>
     <section className="space-y-5" aria-label="Questions 19 to 23">
@@ -171,11 +172,11 @@ const handleContinue = async () => {
             })}
           </article>
         </section>
-        <section className="h-full min-w-0 shrink-0 overflow-y-auto bg-white" style={{ width: `${100 - paneSplit}%` }} aria-label="Reading questions">{passageIndex === 0 ? questions : passageIndex === 1 ? deerQuestions : thamesQuestions}</section>
+        <section className="h-full min-w-0 shrink-0 overflow-y-auto bg-white pb-20" style={{ width: `${100 - paneSplit}%` }} aria-label="Reading questions">{passageIndex === 0 ? questions : passageIndex === 1 ? deerQuestions : thamesQuestions}</section>
         <div role="separator" aria-label="Resize passage and question panels" aria-orientation="vertical" aria-valuemin={25} aria-valuemax={75} aria-valuenow={Math.round(paneSplit)} tabIndex={0} onPointerDown={(event) => event.currentTarget.setPointerCapture(event.pointerId)} onPointerMove={movePaneDivider} onPointerUp={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onPointerCancel={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onKeyDown={(event) => { if (event.key === "ArrowLeft") setPaneSplit((value) => Math.max(25, value - 2)); if (event.key === "ArrowRight") setPaneSplit((value) => Math.min(75, value + 2)); }} style={{ left: `${paneSplit}%` }} className="absolute top-0 z-20 h-full w-3 -translate-x-1/2 cursor-col-resize touch-none outline-none focus-visible:ring-2 focus-visible:ring-[#2185d0]"><span className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-[#999]" /><span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-[#555] bg-white text-[20px] leading-none shadow-sm">↔</span></div>
       </div>
 
-      <PartNavigation current={passageIndex + 1} total={3} onChange={(part) => setPassageIndex(part - 1)} />
+      <PartNavigation floating current={passageIndex + 1} total={3} onChange={(part) => setPassageIndex(part - 1)} />
       <footer data-ielts-test-footer className="grid shrink-0 grid-cols-3 items-center justify-items-center gap-4 border-t border-[#d5d5d5] bg-white px-3 py-2">
         {testThreePassages.map((item, index) => { const start = index === 0 ? 1 : index === 1 ? 14 : 27; const count = 13 + (index === 2 ? 1 : 0); return <div key={item.title} className="flex flex-col items-center"><button type="button" onClick={() => setPassageIndex(index)} aria-current={passageIndex === index ? "page" : undefined} className={`px-3 py-1 text-[14px] ${passageIndex === index ? "font-bold text-[#111]" : "font-normal text-[#111] hover:underline"}`}>Passage {index + 1}</button><div className="mt-1 flex flex-wrap justify-center gap-1">{Array.from({ length: count }, (_, offset) => { const number = start + offset; return <button key={number} type="button" onClick={() => { setPassageIndex(index); window.setTimeout(() => document.getElementById(`question-${number}`)?.scrollIntoView({ behavior: "smooth", block: "center" }), 50); }} className={`h-6 min-w-6 rounded-sm border px-0.5 text-[13px] ${answers[number] ? "border-[#2185d0] font-semibold" : "border-transparent hover:border-[#2185d0]"}`}>{number}</button>; })}</div></div>; })}
       </footer>

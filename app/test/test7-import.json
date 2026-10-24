@@ -113,7 +113,7 @@
           "paragraphs": [
             "Almost 52 million sq miles of land is available to handle the more than 11 billion projected populations as it is classified as being {{9}}",
             "Whereas cities account for less than 5% of land usage, just over a third of the land available on Earth is used for {{10}}",
-            "The loss of vast expanses of healthy forests that act naturally to absorb {{11}}",
+            "Deforestation destroys large areas of forest whose trees naturally absorb {{11}}.",
             "A brand new piece of man-made land has been formed besides the current city, jumping out from the sea itself, made solely by using unwanted {{12}}"
           ]
         }
@@ -185,7 +185,8 @@
           "title": "Questions 19–23",
           "instructions": [
             "Match letters A–C to the statements below.",
-            "Which company does each of the following statements refer to?"
+            "Which company does each of the following statements refer to?",
+            "NB You may use any letter more than once."
           ],
           "options": [
             {
@@ -234,14 +235,14 @@
           "paragraphs": [
             "It was a couple of times in the early 1900s that the newest ship of the day broke the {{24}}",
             "As European firms excelled, it forced the U.K.-based companies to improve their ships and in particular to {{25}}",
-            "Due to a terrible disaster, new rules were put in place after that we can see today are {{26}}",
+            "Following the Titanic disaster, safety regulations were updated, and these rules are {{26}}.",
             "It was often whole families in the early part of the 20th Century, moving from Europe to America that was known to the industry as their {{27}}"
           ]
         }
       ]
     },
     {
-      "title": "Reading Passage 3",
+      "title": "Innovative Types of Tourism",
       "paragraphs": [
         "A\nWhen you get tired of typical sight-seeing, when you have had enough of monuments, statues, and cathedrals, then think outside the box. Read the four paragraphs below about the innovative types of tourism emerging around the globe and discover ways to spice up your itinerary.",
         "B\nOne could eat your way through your travels if one wished. A comparatively new kind of tourism is gaining popularity across the world. In this, food and beverages are the main factors that motivate a person to travel to a particular destination. Combining food, drink and culture, this type of travel provides for an authentic experience, the food and restaurants reflecting the local and unique flavors of a particular region or country. Studies conducted into this travel phenomenon have shown that food plays, consciously or unconsciously, an important part in the vacations of a good number of travelers. Those trying this are looking for a more participatory style of holiday experience. Analysts have noticed a shift from ‘passive observation’ to ‘interaction and involvement’ in tourists, whereby the visitor comes into close contact with locals and their way of life rather than remaining a mere spectator.",
@@ -332,7 +333,7 @@
           ],
           "paragraphs": [
             "Putting together and enjoying culinary delights ensures the trip is more {{32}}",
-            "Moving quickly between more mundane public service facilities and malls that are more {{33}}",
+            "Monopoly-travel participants move between public service facilities, such as the local water plant, and more {{33}} shopping areas.",
             "Film sets for hugely popular blockbuster movies are attracting couples to go there for their {{34}}",
             "In the USA, visiting a strawberry picking field or listening to lectures on producing good wine is becoming increasingly {{35}}"
           ]
@@ -376,7 +377,7 @@
           "questions": [
             {
               "number": 40,
-              "prompt": "For people who are bored of doing the usual activities such as looking at the common tourist attractions, they need to reconsider things from a different perspective. This means to think is a way that is ………………….",
+              "prompt": "For people who are bored of doing the usual activities such as looking at the common tourist attractions, they need to reconsider things from a different perspective. This means to think in a way that is ………………….",
               "options": [
                 "unique.",
                 "new.",

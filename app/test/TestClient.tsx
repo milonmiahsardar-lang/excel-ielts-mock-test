@@ -106,14 +106,14 @@ export default function TestPage() {
         <section style={{ width: `${paneSplit}%` }} className="h-full min-w-0 shrink-0 overflow-y-auto border-r border-[#999] bg-white" aria-label="Reading passage area">
           {testNumber === "1" && currentSection <= 3 && <TestOneReading pane="passage" section={currentSection} answers={answers} onAnswer={handleAnswer} />}
         </section>
-        <section style={{ width: `${100 - paneSplit}%` }} className="h-full min-w-0 shrink-0 overflow-y-auto bg-white" aria-label="Reading question area">
+        <section style={{ width: `${100 - paneSplit}%` }} className="h-full min-w-0 shrink-0 overflow-y-auto bg-white pb-20" aria-label="Reading question area">
           {testNumber === "1" && currentSection <= 3 && <TestOneReading pane="questions" section={currentSection} answers={answers} onAnswer={handleAnswer} />}
         </section>
         <div role="separator" aria-label="Resize passage and question panels" aria-orientation="vertical" aria-valuemin={25} aria-valuemax={75} aria-valuenow={Math.round(paneSplit)} tabIndex={0} onPointerDown={(event) => event.currentTarget.setPointerCapture(event.pointerId)} onPointerMove={movePaneDivider} onPointerUp={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onPointerCancel={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onKeyDown={(event) => { if (event.key === "ArrowLeft") setPaneSplit((value) => Math.max(25, value - 2)); if (event.key === "ArrowRight") setPaneSplit((value) => Math.min(75, value + 2)); }} style={{ left: `${paneSplit}%` }} className="absolute top-0 z-20 h-full w-3 -translate-x-1/2 cursor-col-resize touch-none outline-none focus-visible:ring-2 focus-visible:ring-[#2185d0]"><span className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-[#999]" /><span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-[#555] bg-white text-[20px] leading-none shadow-sm">↔</span></div>
       </div>
       {/* BOTTOM QUESTION NAVIGATION */}
 
-      <PartNavigation current={currentSection} total={3} onChange={goToSection} />
+      <PartNavigation floating current={currentSection} total={3} onChange={goToSection} />
       <div data-ielts-test-footer className="relative bg-white border-t border-[#d5d5d5] px-3 py-1">
 
         <div className="grid w-full grid-cols-3 items-center justify-items-center gap-x-8">

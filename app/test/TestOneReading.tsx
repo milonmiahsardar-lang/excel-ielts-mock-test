@@ -145,7 +145,10 @@ export default function TestOneReading({ pane, section, answers, onAnswer }: Pro
     <div key={number} id={`question-${number}`} className="scroll-m-6 space-y-3 py-4">
       <div className="flex items-start gap-3 leading-7">{numberBadge(number)}<p className="min-w-0 pt-0.5">{prompt}</p></div>
       <div className="space-y-3 pl-11">
-        {options.map((option) => <label key={option} className="flex cursor-pointer items-start gap-3 py-1 leading-6"><input className="mt-1.5" type="radio" name={`question-${number}-choice`} value={option} checked={answers[number] === option} onChange={() => onAnswer(number, option)} /><span>{option}</span></label>)}
+        {options.map((option, index) => {
+          const value = (number >= 27 && number <= 31) || number === 40 ? String.fromCharCode(65 + index) : option;
+          return <label key={option} className="flex cursor-pointer items-start gap-3 py-1 leading-6"><input className="mt-1.5" type="radio" name={`question-${number}-choice`} value={value} checked={answers[number] === value} onChange={() => onAnswer(number, value)} /><span>{option}</span></label>;
+        })}
       </div>
     </div>
   );
@@ -173,6 +176,7 @@ export default function TestOneReading({ pane, section, answers, onAnswer }: Pro
     return (
       <article className="space-y-4 px-5 py-4 text-[16px] leading-6">
         <p>You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3 below.</p>
+        <h2 className="text-center text-xl font-bold">Thinking, Fast and Slow</h2>
         {mindPassageParagraphs.map((text, index) => <p key={index}>{text}</p>)}
       </article>
     );
@@ -220,8 +224,8 @@ export default function TestOneReading({ pane, section, answers, onAnswer }: Pro
       </section>
       <section className="space-y-5" aria-label="Questions 32 to 36">
         <h2 className="font-bold">Questions 32–36</h2>
-        <p>Do the following statements agree with the claims of the writer? Choose TRUE, NO, or NOT GIVEN.</p>
-        {trueNoQuestions.map(({ number, prompt }) => radioQuestion({ number, prompt, options: ["TRUE", "NO", "NOT GIVEN"] }))}
+        <p>Do the following statements agree with the claims of the writer? Choose YES, NO, or NOT GIVEN.</p>
+        {trueNoQuestions.map(({ number, prompt }) => radioQuestion({ number, prompt, options: ["YES", "NO", "NOT GIVEN"] }))}
       </section>
       <section className="space-y-5" aria-label="Questions 37 to 39">
         <h2 className="font-bold">Questions 37–39</h2>

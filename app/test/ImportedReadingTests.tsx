@@ -86,7 +86,7 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
             const options = group.type === "truth" ? group.labels : (question as { options: string[] }).options;
             return <div id={`question-${question.number}`} key={question.number} className="scroll-m-6 space-y-3 py-3">
               <div className="flex items-start gap-3"><b>{question.number}.</b><p>{richText(question.prompt)}</p></div>
-              <div className="space-y-2 pl-8">{options.map((option) => <label key={option} className="flex cursor-pointer items-start gap-3 py-1">
+              <div className="space-y-2 pl-8">{options.map((option) => <label key={option} className={`flex cursor-pointer ${testNumber === 8 || testNumber === 9 || testNumber === 10 ? "items-center gap-5" : "items-start gap-3"} py-1`}>
                 <input type="radio" name={`question-${question.number}`} checked={answers[question.number] === option} onChange={() => setAnswer(question.number, option)} />
                 <span>{richText(option)}</span>
               </label>)}</div>
@@ -109,7 +109,7 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
             {group.options.map((option) => <p key={option.label} className="flex gap-3 py-1"><b>{option.label}</b><span>{richText(option.text)}</span></p>)}
           </div>}
           {group.examples?.map((example) => <p key={example}><b>Example:</b> {richText(example)}</p>)}
-          {group.questions.map((question) => <div id={`question-${question.number}`} key={question.number} className="flex scroll-m-6 items-start gap-3 py-2">
+          {group.questions.map((question) => <div id={`question-${question.number}`} key={question.number} className={(testNumber === 8 && group.questions[0]?.number === 36) || (testNumber === 10 && group.questions[0]?.number === 1) ? "grid scroll-m-6 grid-cols-[minmax(0,1fr)_5rem] items-center gap-x-6 py-2" : "flex scroll-m-6 items-start gap-3 py-2"}>
             <span><b>{question.number}.</b> {richText(question.prompt)}</span>
             <select aria-label={`Answer for question ${question.number}`} value={answers[question.number] || ""} onChange={(event) => setAnswer(question.number, event.target.value)} className="w-20 shrink-0 border border-gray-400 bg-white px-2 py-1 outline-none focus:border-[#2185d0]">
               <option value="">Select</option>{group.options.map((option) => <option key={option.label}>{option.label}</option>)}
@@ -118,12 +118,14 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
         </>;
       }
       case "fill":
+        if (testNumber === 10 && group.heading === "Effect of television on individual sports") return <ul className="list-disc space-y-3 pl-5">{group.paragraphs.map((paragraph, index) => <li key={index} className="pl-1 py-2 leading-9">{richText(paragraph)}</li>)}</ul>;
+        if (testNumber === 8 && group.heading === "How Cathy Freeman became a sports star") return <div className="border border-[#aaa] bg-white px-5 py-3"><ul className="list-disc space-y-3 pl-5">{group.paragraphs.map((paragraph, index) => <li key={index} className="pl-1 py-2 leading-9">{richText(paragraph.replace(/^\s*\u2022\s*/, ""))}</li>)}</ul></div>;
         if (/summary/i.test([group.heading, ...group.instructions].join(" "))) return <SummaryWithoutClues paragraphs={group.paragraphs} answers={answers} onAnswer={setAnswer} />;
         return group.paragraphs.map((paragraph, index) => <p key={index} className="py-2 leading-9">{richText(paragraph, !group.shortAnswers)}</p>);
       case "table":
         return <div className="overflow-x-auto"><table className="w-full border-collapse border border-[#aaa]">
           <thead><tr>{group.columns.map((column, index) => <th key={index} className="border border-[#aaa] px-3 py-2 text-left">{richText(column)}</th>)}</tr></thead>
-          <tbody>{group.rows.map((row, index) => <tr key={index}>{row.map((cell, cellIndex) => <td key={cellIndex} className="border border-[#aaa] px-3 py-3 align-top leading-9">{richText(cell)}</td>)}</tr>)}</tbody>
+          <tbody>{group.rows.map((row, index) => <tr key={index}>{row.map((cell, cellIndex) => <td key={cellIndex} className="border border-[#aaa] px-3 py-3 align-top leading-9">{testNumber === 9 && group.title === "Questions 30–35" && cellIndex === 1 ? <ul className="list-disc space-y-1 pl-5">{cell.split("\n").map((point, pointIndex) => <li key={pointIndex} className="pl-1">{richText(point)}</li>)}</ul> : richText(cell)}</td>)}</tr>)}</tbody>
         </table></div>;
       case "multiple":
         return group.questions.map((question) => {
@@ -131,7 +133,7 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
           return <div key={question.numbers[0]} className="space-y-3 py-3">
             {question.numbers.map((number) => <span key={number} id={`question-${number}`} className="block scroll-m-6" />)}
             <p><b>{question.numbers[0]}–{question.numbers[question.numbers.length - 1]}.</b> {richText(question.prompt)}</p>
-            <div className="space-y-2 pl-8">{question.options.map((option) => <label key={option} className="flex cursor-pointer items-start gap-3 py-1">
+            <div className="space-y-2 pl-8">{question.options.map((option) => <label key={option} className={`flex cursor-pointer ${testNumber === 8 || testNumber === 9 ? "items-center gap-5" : "items-start gap-3"} py-1`}>
               <input type="checkbox" aria-label={option} checked={selected.includes(option)} onChange={() => selectMultiple(question.numbers, option)} disabled={selected.length >= question.numbers.length && !selected.includes(option)} />
               <span>{richText(option)}</span>
             </label>)}</div>
@@ -150,11 +152,13 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
     <div className="relative flex min-h-0 flex-1 overflow-hidden bg-white">
       <section className="h-full min-w-0 shrink-0 overflow-y-auto border-r border-[#999] bg-white" style={{ width: `${paneSplit}%` }} aria-label={`Reading Passage ${passageIndex + 1}`}>
         <article className="space-y-4 px-5 py-4 text-[16px] leading-6"><h2 className="text-center text-xl font-bold">{passage.title}</h2>{passage.paragraphs.map((paragraph, index) => {
+          if (testNumber === 10 && (passageIndex === 1 || passageIndex === 2) && index === 0) return <section key={index} className="space-y-2"><h3 className="text-center font-bold italic">{richText(paragraph)}</h3></section>;
+          if (testNumber === 10 && passageIndex === 1 && paragraph.startsWith("1an excitant")) return <aside key={index} className="border-t border-[#aaa] pt-3"><sup>1</sup>{" "}{richText(paragraph.slice(1))}</aside>;
           const section = paragraph.match(/^([A-Z])\s*\n+([\s\S]*)$/);
-          return <section key={index} className="space-y-2">{section ? <><div className="flex items-center gap-2"><h3 className="shrink-0 font-bold">{section[1]}</h3>{headingSlot(section[1])}</div><p>{richText(section[2])}</p></> : <p>{richText(paragraph)}</p>}</section>;
+          return <section key={index} className="space-y-2">{section ? <><div className="flex items-center gap-2"><h3 className="shrink-0 font-bold">{section[1]}</h3>{headingSlot(section[1])}</div><p>{testNumber === 10 && passageIndex === 1 && section[1] === "A" && section[2].includes("excitant1") ? <>{richText(section[2].split("excitant1")[0])}excitant<sup>1</sup>{richText(section[2].split("excitant1")[1])}</> : richText(section[2])}</p></> : testNumber === 9 && passageIndex === 0 && index === 0 ? <h3 className="text-center font-bold italic">{richText(paragraph.charAt(0).toUpperCase() + paragraph.slice(1))}</h3> : <p>{richText(paragraph)}</p>}</section>;
         })}</article>
       </section>
-      <section className="h-full min-w-0 shrink-0 overflow-y-auto bg-white" style={{ width: `${100 - paneSplit}%` }} aria-label="Reading questions">
+      <section className="h-full min-w-0 shrink-0 overflow-y-auto bg-white pb-20" style={{ width: `${100 - paneSplit}%` }} aria-label="Reading questions">
         <div className="space-y-8 px-5 py-5 text-[16px] leading-7">{passage.groups.map((group, index) => <section key={index} className="space-y-5" aria-label={group.title}>
           <h2 className="font-bold">{group.title}</h2>{group.instructions.map((instruction, instructionIndex) => <p key={instructionIndex}>{richText(instruction)}</p>)}
           {group.heading && <h3 className={`pt-2 font-bold ${group.type === "fill" && /summary/i.test([group.heading, ...group.instructions].join(" ")) ? "text-center" : ""}`}>{group.heading}</h3>}{questionGroup(group)}
@@ -162,7 +166,7 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
       </section>
       <div role="separator" aria-label="Resize passage and question panels" aria-orientation="vertical" aria-valuemin={25} aria-valuemax={75} aria-valuenow={Math.round(paneSplit)} tabIndex={0} onPointerDown={(event) => event.currentTarget.setPointerCapture(event.pointerId)} onPointerMove={movePaneDivider} onPointerUp={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onPointerCancel={(event) => event.currentTarget.releasePointerCapture(event.pointerId)} onKeyDown={(event) => { if (event.key === "ArrowLeft") setPaneSplit((value) => Math.max(25, value - 2)); if (event.key === "ArrowRight") setPaneSplit((value) => Math.min(75, value + 2)); }} style={{ left: `${paneSplit}%` }} className="absolute top-0 z-20 h-full w-3 -translate-x-1/2 cursor-col-resize touch-none outline-none focus-visible:ring-2 focus-visible:ring-[#2185d0]"><span className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-[#999]" /><span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-[#555] bg-white text-[20px] leading-none shadow-sm">↔</span></div>
     </div>
-    <PartNavigation current={passageIndex + 1} total={3} onChange={(part) => setPassageIndex(part - 1)} />
+    <PartNavigation floating current={passageIndex + 1} total={3} onChange={(part) => setPassageIndex(part - 1)} />
       <footer data-ielts-test-footer className="grid shrink-0 grid-cols-3 items-center justify-items-center gap-4 border-t border-[#d5d5d5] bg-white px-3 py-2">{test.passages.map((item, index) => <div key={item.title} className="flex flex-col items-center"><button type="button" onClick={() => setPassageIndex(index)} aria-current={passageIndex === index ? "page" : undefined} className={`px-3 py-1 text-[14px] ${passageIndex === index ? "font-bold text-[#111]" : "font-normal text-[#111] hover:underline"}`}>Passage {index + 1}</button><div className="mt-1 flex flex-wrap justify-center gap-1">{Array.from({ length: item.end - item.start + 1 }, (_, offset) => {
       const number = item.start + offset;
       return <button key={number} type="button" onClick={() => { setPassageIndex(index); window.setTimeout(() => document.getElementById(`question-${number}`)?.scrollIntoView({ behavior: "smooth", block: "center" }), 50); }} className={`h-6 min-w-6 rounded-sm border px-0.5 text-[13px] ${answers[number] ? "border-[#2185d0] font-semibold" : "border-transparent hover:border-[#2185d0]"}`}>{number}</button>;
