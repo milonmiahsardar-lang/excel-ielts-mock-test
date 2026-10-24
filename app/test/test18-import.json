@@ -30,11 +30,7 @@
           "type": "truth",
           "title": "Questions 1-7",
           "instructions": [
-            "Do the following statements agree with the information given in Reading Passage.",
-            "In boxes 1-7 below, choose:",
-            "YES if the statement agrees with the information",
-            "NO if the statement contradicts the information",
-            "NOT GIVEN if there is no information on this in the passage"
+            "Do the following statements agree with the information given in Reading Passage."
           ],
           "labels": [
             "YES",
@@ -81,12 +77,12 @@
             "Write your answers in boxes 8-13 below."
           ],
           "paragraphs": [
-            "**8.** In the first strategy, wards with the lowest absenteeism in different periods would win prizes donated by {{8}}",
-            "**9.** In the second strategy, staff were given more control over their {{9}}",
-            "**10.** In the third strategy, nurses who appeared to be taking {{10}} sick leave or {{11}} were identified and counselled.",
-            "**11.** Initially, there was a {{12}} per cent decrease in absenteeism.",
-            "**12.** The first strategy was considered ineffective and stopped.",
-            "**13.** The second and third strategies generally resulted in better {{13}} among staff."
+            "In the first strategy, wards with the lowest absenteeism in different periods would win prizes donated by {{8}}",
+            "In the second strategy, staff were given more control over their {{9}}",
+            "In the third strategy, nurses who appeared to be taking {{10}} sick leave or {{11}} were identified and counselled.",
+            "Initially, there was a {{12}} per cent decrease in absenteeism.",
+            "The first strategy was considered ineffective and stopped.",
+            "The second and third strategies generally resulted in better {{13}} among staff."
           ]
         }
       ]

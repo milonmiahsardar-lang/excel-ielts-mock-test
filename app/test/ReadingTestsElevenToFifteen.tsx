@@ -106,7 +106,7 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
               <div className="flex items-start gap-3"><b>{question.number}.</b><p>{richText(question.prompt)}</p></div>
               <div className="space-y-2 pl-8">{options.map((option, index) => {
                 const value = group.type === "choice" ? readingOptionValue(testNumber, question.number, option, index) : option;
-                return <label key={option} className="flex cursor-pointer items-start gap-3 py-1">
+                return <label key={option} className={`flex cursor-pointer ${testNumber === 11 || testNumber === 14 || testNumber === 15 ? "items-center gap-5" : "items-start gap-3"} py-1`}>
                 <input type="radio" name={`question-${question.number}`} value={value} checked={answers[question.number] === value} onChange={() => setAnswer(question.number, value)} />
                 <span>{richText(option)}</span>
               </label>; })}</div>
@@ -128,7 +128,7 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
             {group.options.map((option) => <p key={option.label} className="flex gap-3 py-1"><b>{option.label}</b><span>{richText(option.text)}</span></p>)}
           </div>}
           {group.examples?.map((example) => <p key={example}><b>Example:</b> {richText(example)}</p>)}
-          {group.questions.map((question) => <div id={`question-${question.number}`} key={question.number} className="flex scroll-m-6 items-start gap-3 py-2">
+          {group.questions.map((question) => <div id={`question-${question.number}`} key={question.number} className={((testNumber === 11 && group.questions[0]?.number === 36) || (testNumber === 13 && group.questions[0]?.number === 14) || (testNumber === 14 && group.questions[0]?.number === 36) || (testNumber === 15 && group.questions[0]?.number === 28)) ? "grid scroll-m-6 grid-cols-[minmax(0,1fr)_5rem] items-center gap-x-6 py-2" : "flex scroll-m-6 items-start gap-3 py-2"}>
             <span><b>{question.number}.</b> {richText(question.prompt)}</span>
             <select aria-label={`Answer for question ${question.number}`} value={answers[question.number] || ""} onChange={(event) => setAnswer(question.number, event.target.value)} className="w-20 shrink-0 border border-gray-400 bg-white px-2 py-1 outline-none focus:border-[#2185d0]">
               <option value="">Select</option>{group.options.map((option) => <option key={option.label}>{option.label}</option>)}
@@ -137,6 +137,32 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
         </>;
       }
       case "fill":
+        if (testNumber === 15 && group.paragraphs.some(paragraph => paragraph.includes("{{33}}")) && group.paragraphs.some(paragraph => paragraph.includes("{{36}}"))) return <div className="space-y-4 border border-[#aaa] bg-white p-4">
+          <ul className="list-disc space-y-4 pl-6">
+            {group.paragraphs.map((paragraph, index) => <li key={index} className="py-2 leading-9">{richText(paragraph, !group.shortAnswers)}</li>)}
+          </ul>
+        </div>;
+        if (testNumber === 15 && group.paragraphs.some(paragraph => paragraph.includes("{{22}}")) && group.paragraphs.some(paragraph => paragraph.includes("{{27}}"))) return <div className="space-y-5">
+          {[0, 4].map(start => <section key={start} className="space-y-2">
+            <h4 className="font-bold">{richText(group.paragraphs[start])}</h4>
+            <ul className="list-disc space-y-2 pl-6">
+              {group.paragraphs.slice(start + 1, start + 4).map((paragraph, index) => <li key={index} className="leading-9">{richText(paragraph.replace(/^\s*\u2014\s*/, ""))}</li>)}
+            </ul>
+          </section>)}
+        </div>;
+        if (testNumber === 13 && group.paragraphs[0]?.startsWith("Forest fire") && group.paragraphs.some(paragraph => paragraph.includes("{{40}}"))) return <div className="space-y-4 border border-[#aaa] bg-white p-4">
+          <p>{richText(group.paragraphs[0])}</p>
+          <ul className="list-disc space-y-1 pl-6">
+            {group.paragraphs.slice(1, 4).map((paragraph, index) => <li key={index} className="leading-9 [&>div>p]:py-0"><SummaryWithoutClues paragraphs={[paragraph]} answers={answers} onAnswer={setAnswer} /></li>)}
+          </ul>
+          <div className="space-y-4 [&>div>p]:py-0">
+            {group.paragraphs.slice(4, 6).map((paragraph, index) => <SummaryWithoutClues key={index} paragraphs={[paragraph]} answers={answers} onAnswer={setAnswer} />)}
+          </div>
+          <div className="space-y-1 [&>div>p]:py-0">
+            <p className="font-bold">{richText(group.paragraphs[6])}</p>
+            <SummaryWithoutClues paragraphs={group.paragraphs.slice(7)} answers={answers} onAnswer={setAnswer} />
+          </div>
+        </div>;
         if (!group.options?.length && /summary/i.test([group.heading, ...group.instructions].join(" "))) return <SummaryWithoutClues paragraphs={group.paragraphs} answers={answers} onAnswer={setAnswer} />;
         if (group.options?.length) return <SummaryWithClues paragraphs={group.paragraphs} options={group.options} optionTitle={group.optionTitle} answers={answers} onAnswer={setAnswer} allowReuse={group.instructions.some(instruction => /more than once/i.test(instruction))} />;
         return <>
@@ -155,7 +181,7 @@ const movePaneDivider = (event: ReactPointerEvent<HTMLDivElement>) => {
             <p><b>{question.numbers[0]}–{question.numbers[question.numbers.length - 1]}.</b> {richText(question.prompt)}</p>
             <div className="space-y-2 pl-8">{question.options.map((option, index) => {
               const value = readingOptionValue(testNumber, question.numbers[0], option, index);
-              return <label key={option} className="flex cursor-pointer items-start gap-3 py-1">
+              return <label key={option} className={`flex cursor-pointer ${testNumber === 14 || testNumber === 15 ? "items-center gap-5" : "items-start gap-3"} py-1`}>
               <input type="checkbox" aria-label={option} value={value} checked={selected.includes(value)} onChange={() => selectMultiple(question.numbers, value)} disabled={selected.length >= question.numbers.length && !selected.includes(value)} />
               <span>{richText(option)}</span>
             </label>; })}</div>
