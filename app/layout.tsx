@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TestSafety from "@/lib/results/TestSafety";
@@ -25,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col"><Suspense fallback={null}><TestSafety>{children}</TestSafety></Suspense></body>
+      <body className="min-h-full flex flex-col"><Script id="hydration-attribute-cleanup" src="/hydration-attribute-cleanup.js" strategy="beforeInteractive" /><Suspense fallback={null}><TestSafety>{children}</TestSafety></Suspense></body>
     </html>
   );
 }
