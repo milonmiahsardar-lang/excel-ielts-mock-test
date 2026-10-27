@@ -12,4 +12,4 @@ export async function POST(request:Request,{params}:{params:Promise<{id:string}>
   if(!draft.sectionClocks[skill]){draft.sectionClocks[skill]=state.deadline||Date.now()+3600000;db().prepare("UPDATE attempt_progress SET deadline=? WHERE attempt_id=?").run(draft.sectionClocks[skill],id);db().prepare("UPDATE attempts SET data=? WHERE id=?").run(JSON.stringify(draft),id);}
   return Number(draft.sectionClocks[skill]);
  });return reply({deadline,serverNow:Date.now()});
-});}
+},request);}

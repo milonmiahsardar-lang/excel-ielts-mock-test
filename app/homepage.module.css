@@ -98,3 +98,17 @@
 
 .headerTestTitle { margin-left: 16px; padding-left: 16px; border-left: 1px solid #ddd; font-size: 16px; font-weight: 700; line-height: 1.3; }
 @media(max-width:560px) { .headerTestTitle { max-width: 80px; margin-left: 8px; padding-left: 8px; font-size: 13px; } }
+
+/* Student Portal entry: scoped additions, preserving the existing test library. */
+.portalChoices { padding: 32px 0; background: #fff; }
+.portalChoices > div { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+.portalChoice { padding: 30px; border: 1px solid #e3dadd; border-radius: 6px; background: #fff; transition: border-color .15s; }
+.portalChoice:hover { border-color: #b18b95; }
+.portalChoice .eyebrow { text-align: left; }
+.portalChoice h2 { margin: 10px 0; font-size: 25px; font-weight: 700; line-height: 1.25; }
+.portalChoice p:not(.eyebrow) { color: #666; font-size: 14px; line-height: 1.6; max-width: 470px; }
+.portalChoiceActions { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; margin-top: 20px; }
+.portalChoiceActions .primaryButton { margin-top: 0; }
+.portalChoiceActions .testButton { font-size: 14px; align-items: stretch; }
+.portalChoiceActions .testButton > span:first-child { display: flex; align-items: center; padding: 11px 18px; }
+@media(max-width:760px) { .portalChoices > div { grid-template-columns: 1fr; } .portalChoice { padding: 24px; } }

@@ -1,12 +1,14 @@
 "use client";
 
 import TestTools from "./TestTools";
+import {createRecoveryLoop} from "./reliability";
+import {clientDiagnostic} from "./client-diagnostics";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import { attemptKey, draftKey, draftRevision, ensureAttempt, readAnswers, saveSection, request, RequestError } from "./client";
+import { attemptKey, draftKey, draftRevision, ensureAttempt, readAnswers, saveSection, request, RequestError, retryable } from "./client";
 
 import { finishTestSafety, requestTestFullscreen, statusSnapshot, tabId, useAttemptStatus } from "./safety-client";
 
@@ -20,7 +22,8 @@ export default function TestSafety({children}:{children:React.ReactNode}){
 
  const [fullscreen,setFullscreen]=useState(true),[error,setError]=useState(""),[notice,setNotice]=useState("");
 
- const [recovery,setRecovery]=useState(0),hadError=useRef(false);
+ const recoveryAction=useRef<()=>Promise<void>>(()=>Promise.resolve());
+ const [recoveryBusy,setRecoveryBusy]=useState(false);
 
  const [zoom,setZoom]=useState(100);
 
@@ -52,60 +55,20 @@ export default function TestSafety({children}:{children:React.ReactNode}){
 
  const active=!accessBlocked&&testRoute&&!!state&&state.stage!=="NOT_STARTED"&&state.stage!=="COMPLETED";
 
+
  useEffect(()=>{
-
-  if(!testRoute){setError("");setErrorStatus(null);setNotice("");return;}
-
-  const selected=query.get("test")||sessionStorage.getItem("ieltsActiveTest");
-
-  const actual=path==="/listening"||path==="/test"||path==="/test/writing";
-
-  if(!selected||(!actual&&!sessionStorage.getItem(attemptKey(selected))))return;
-
-  let live=true,terminal=false;
-
-  const recover=()=>{if(terminal)return;void ensureAttempt(selected).then(()=>{if(live){setError("");setErrorStatus(null);if(hadError.current){hadError.current=false;setRecovery(v=>v+1);}}}).catch(async e=>{
-
-   if(!live)return;
-
-   // Keep an already active Listening player mounted during temporary heartbeat
-   // failures. The next heartbeat retries; access and lease rejections still block.
-   const current=statusSnapshot();
-   const temporary=!(e instanceof RequestError)||e.status===408||e.status===429||e.status>=500;
-   if(temporary&&!hadError.current&&path==="/listening"&&
-      current?.stage==="LISTENING_ACTIVE"&&current.testId===Number(selected)&&
-      current.id===sessionStorage.getItem(attemptKey(selected)))return;
-
-   // A submission may have committed even when its response was lost.
-
-   // Check this owned attempt before treating a used assignment as an access error.
-
-   const id=sessionStorage.getItem(attemptKey(selected));
-
-   if(id&&e instanceof RequestError&&(e.status===403||e.status===409)){
-
-    try{
-
-     const saved=await request<{stage:string}>(`/api/attempts/${id}/lifecycle`,undefined,"GET");
-
-     if(live&&saved.stage==="COMPLETED"){
-
-      terminal=true;await finishTestSafety();if(live)router.replace(`/test/writing/result?id=${encodeURIComponent(id)}&signout=1`);return;
-
-     }
-
-    }catch{}
-
-   }
-
-   if(live){hadError.current=true;terminal=e instanceof RequestError&&(e.status===401||e.status===403);recoveryError(e);}
-
-  });};
-
-  recover();const timer=window.setInterval(recover,5000);
-
-  return()=>{live=false;window.clearInterval(timer);};
-
+  if(!testRoute){setError('');setErrorStatus(null);setNotice('');return;}
+  const selected=query.get('test')||sessionStorage.getItem('ieltsActiveTest');const actual=path==='/listening'||path==='/test'||path==='/test/writing';if(!selected||(!actual&&!sessionStorage.getItem(attemptKey(selected))))return;
+  let live=true,failed=false;
+  const loop=createRecoveryLoop({
+   action:async()=>{try{await ensureAttempt(selected);}catch(error){const id=sessionStorage.getItem(attemptKey(selected));if(id&&error instanceof RequestError&&(error.status===403||error.status===409)){try{const saved=await request<{stage:string}>('/api/attempts/'+id+'/lifecycle',undefined,'GET');if(saved.stage==='COMPLETED'){loop.stop();await finishTestSafety();if(live)router.replace('/test/writing/result?id='+encodeURIComponent(id)+'&signout=1');return;}}catch{}}throw error;}},
+   success:()=>{if(!live)return;setError('');setErrorStatus(null);if(failed){failed=false;clientDiagnostic('recovery-success');window.dispatchEvent(new Event('ielts:recovered'));}},
+   failure:(error,status)=>{if(!live)return;failed=true;clientDiagnostic('recovery-failure',error instanceof RequestError?error.status:0,0,error instanceof RequestError?error.requestId:'');const current=statusSnapshot(),temporary=!(error instanceof RequestError)||error.status<400||error.status===408||error.status===429||error.status>=500;const sameActive=current&&current.testId===Number(selected)&&current.id===sessionStorage.getItem(attemptKey(selected))&&['LISTENING_ACTIVE','READING_ACTIVE','WRITING_ACTIVE'].includes(current.stage);if(temporary&&sameActive&&!status.exhausted)return;recoveryError(error);},
+   retryable
+  });
+  recoveryAction.current=()=>{clientDiagnostic('recovery-start');return loop.run(true);};
+  const online=()=>void loop.run(true);window.addEventListener('online',online);void loop.run();
+  return()=>{live=false;loop.stop();recoveryAction.current=()=>Promise.resolve();window.removeEventListener('online',online);};
  },[path,query,testRoute,router]);
 
  useEffect(()=>{
@@ -303,7 +266,7 @@ export default function TestSafety({children}:{children:React.ReactNode}){
 
  const blocked=testRoute&&(!!error||(active&&(!fullscreen||!!notice)));
 
- return <>{sectionSaveError&&<p role="alert" className="fixed bottom-0 left-0 right-0 z-[2147483500] bg-red-50 p-3 text-center text-red-800">{sectionSaveError} Retrying the section save…</p>}<TestTools enabled={testRoute&&!blocked} zoom={zoom} onZoom={changeZoom}/><div data-ielts-test-content data-ielts-zoom={zoomable?zoom:undefined} style={zoomable?({"--ielts-test-zoom":zoom/100} as CSSProperties):undefined} key={recovery} inert={blocked} aria-hidden={blocked||undefined}>{children}</div>{blocked&&<div role="dialog" aria-modal="true" aria-labelledby="test-safety-title" className="fixed inset-0 z-[2147483647] grid place-items-center bg-black/70 p-6 font-[Arial,sans-serif]"><section className="w-full max-w-lg border border-[#dedede] bg-white p-8 text-[#252525] shadow-lg"><h2 id="test-safety-title" className="mb-4 text-2xl font-bold">{error?"Test Recovery":!fullscreen?"Fullscreen Required":"Test Navigation Protected"}</h2><p className="mb-6 leading-6">{error||notice||"For test security and to prevent accidental navigation, please return to fullscreen mode to continue your test. Your answers are safe."}</p><button className="bg-[#c51f34] px-5 py-3 font-semibold text-white" onClick={()=>{
+ return <>{sectionSaveError&&<p role="alert" className="fixed bottom-0 left-0 right-0 z-[2147483500] bg-red-50 p-3 text-center text-red-800">{sectionSaveError} Retrying the section save…</p>}<TestTools enabled={testRoute&&!blocked} zoom={zoom} onZoom={changeZoom}/><div data-ielts-test-content data-ielts-zoom={zoomable?zoom:undefined} style={zoomable?({"--ielts-test-zoom":zoom/100} as CSSProperties):undefined} inert={blocked} aria-hidden={blocked||undefined}>{children}</div>{blocked&&<div role="dialog" aria-modal="true" aria-labelledby="test-safety-title" className="fixed inset-0 z-[2147483647] grid place-items-center bg-black/70 p-6 font-[Arial,sans-serif]"><section className="w-full max-w-lg border border-[#dedede] bg-white p-8 text-[#252525] shadow-lg"><h2 id="test-safety-title" className="mb-4 text-2xl font-bold">{error?"Test Recovery":!fullscreen?"Fullscreen Required":"Test Navigation Protected"}</h2><p className="mb-6 leading-6">{error||notice||"For test security and to prevent accidental navigation, please return to fullscreen mode to continue your test. Your answers are safe."}</p><button disabled={recoveryBusy} aria-busy={recoveryBusy} className="bg-[#c51f34] px-5 py-3 font-semibold text-white" onClick={()=>{
 
   setNotice("");
 
@@ -317,11 +280,11 @@ export default function TestSafety({children}:{children:React.ReactNode}){
 
   }
 
-  if(error){const test=query.get("test")||sessionStorage.getItem("ieltsActiveTest");if(test)void ensureAttempt(test).then(()=>{setError("");setErrorStatus(null);}).catch(recoveryError);}
+  if(error&&!recoveryBusy){setRecoveryBusy(true);void recoveryAction.current().finally(()=>setRecoveryBusy(false));}
 
-  if(!document.fullscreenElement)void requestTestFullscreen().then(()=>setFullscreen(true)).catch(recoveryError);
+  if(!document.fullscreenElement)void requestTestFullscreen().then(()=>setFullscreen(true)).catch(e=>setNotice(e instanceof Error?e.message:"Please return to fullscreen."));
 
- }}>{errorStatus===401?"Log in again":errorStatus===403?"View assigned tests":error?"Retry recovery":!fullscreen?"Return to Fullscreen":"Continue test"}</button></section></div>}</>;
+ }}>{recoveryBusy?"Recovering...":errorStatus===401?"Log in again":errorStatus===403?"View assigned tests":error?"Retry recovery":!fullscreen?"Return to Fullscreen":"Continue test"}</button></section></div>}</>;
 
 }
 

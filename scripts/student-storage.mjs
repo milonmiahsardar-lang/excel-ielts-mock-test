@@ -1,0 +1,3 @@
+import {DatabaseSync} from 'node:sqlite';
+import {dirname,resolve,sep} from 'node:path';
+export function openStudents(readOnly=false){const path=resolve(process.env.STUDENT_DB_PATH||resolve(dirname(process.env.RESULTS_DB_PATH||'private/results.sqlite'),'students.sqlite'));if(path===resolve(process.env.RESULTS_DB_PATH||'private/results.sqlite')||path.startsWith(resolve('public')+sep))throw Error('Invalid private Student database path.');const database=new DatabaseSync(path,{readOnly});database.exec('PRAGMA foreign_keys=ON;PRAGMA busy_timeout=5000');if(!database.prepare('SELECT 1 FROM student_migrations WHERE version=1').get())throw Error('Open the Student Portal once to apply its migration first.');return database;}

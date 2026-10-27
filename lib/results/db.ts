@@ -1,3 +1,4 @@
+import {diagnostic,databaseFailure} from "./diagnostics";
 import "server-only";
 import { DatabaseSync } from "node:sqlite";
 import { mkdirSync, existsSync, readFileSync } from "node:fs";
@@ -94,7 +95,5 @@ export function db() {
   }
   return database;
 }
-export function transaction<T>(action: ()=>T): T {
-  const database=db();database.exec("BEGIN IMMEDIATE");
-  try {const result=action();database.exec("COMMIT");return result;}catch(error){database.exec("ROLLBACK");throw error;}
-}
+
+export function transaction<T>(action:()=>T):T{const database=db(),started=performance.now();let begun=false;try{database.exec('BEGIN IMMEDIATE');begun=true;const result=action();database.exec('COMMIT');begun=false;return result;}catch(error){if(begun){try{database.exec('ROLLBACK');}catch{diagnostic('database-rollback-failed');}}if(databaseFailure(error)==='database-busy')diagnostic('database-busy',{operation:'transaction',durationMs:Math.round(performance.now()-started)});throw error;}finally{const durationMs=Math.round(performance.now()-started);if(durationMs>1000)diagnostic('database-slow-transaction',{durationMs});}}

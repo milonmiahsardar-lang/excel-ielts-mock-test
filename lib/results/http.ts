@@ -1,3 +1,4 @@
+import {diagnostic,requestContext,databaseFailure,errorMetadata} from "./diagnostics";
 import "server-only";
 import { currentUser } from "./auth";
 export class HttpError extends Error {constructor(public status: number,message: string){super(message);}}
@@ -21,7 +22,9 @@ export async function body(request: Request): Promise<Record<string,unknown>> {
   try{const value=JSON.parse(text);if(!value||Array.isArray(value)||typeof value!=="object")reject(400,"Invalid request.");return value;}catch(error){if(error instanceof HttpError)throw error;reject(400,"Invalid JSON.");}
 }
 export const reply=(value: unknown,status=200)=>Response.json(value,{status,headers:{"Cache-Control":"no-store"}});
-export async function endpoint(action: ()=>Promise<Response>): Promise<Response> {try{return await action();}catch(error){if(error instanceof HttpError)return reply({error:error.message},error.status);console.error("Results request failed",error);return reply({error:"Unable to save this request. Please retry. Your local answers have been kept."},500);}}
+
+export async function endpoint(action:()=>Promise<Response>,request?:Request):Promise<Response>{const started=performance.now(),context=requestContext(request);try{const response=await action();response.headers.set('X-IELTS-Request-ID',context.requestId);const durationMs=Math.round(performance.now()-started);if(request&&(durationMs>1000||Math.random()<0.01))diagnostic('request-complete',{...context,status:response.status,durationMs});return response;}catch(error){const expected=error instanceof HttpError,busy=!expected&&databaseFailure(error)==='database-busy',status=expected?error.status:busy?503:500;diagnostic(expected?(status===401?'session-validation-failed':'request-rejected'):databaseFailure(error),{...context,...(!expected?errorMetadata(error):{}),status,durationMs:Math.round(performance.now()-started)});const response=reply({error:expected?error.message:busy?'The test server is busy. Your local answers are kept. Please retry.':'Unable to save this request. Please retry. Your local answers have been kept.',requestId:context.requestId},status);response.headers.set('X-IELTS-Request-ID',context.requestId);if(busy)response.headers.set('Retry-After','1');return response;}}
+
 export function text(value: unknown,max: number,required=false) {if(typeof value!=="string"||value.length>max||value.includes("\0")||(required&&!value.trim()))reject(400,"Invalid or missing text field.");return value;}
 export function testId(value: unknown) {if(typeof value!=="number"||!Number.isInteger(value)||value<1||value>20)reject(400,"Invalid mock test.");return value;}
 

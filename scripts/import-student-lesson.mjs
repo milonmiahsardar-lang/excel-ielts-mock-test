@@ -1,0 +1,20 @@
+import {readFileSync} from 'node:fs';import {openStudents} from './student-storage.mjs';
+const [file,flag]=process.argv.slice(2);if(!file||flag!=='--confirm-import')throw Error('Usage: node scripts/import-student-lesson.mjs <private-lesson.json> --confirm-import');
+const input=JSON.parse(readFileSync(file,'utf8'));
+const validTypes=['multiple-choice','fill-in-the-blanks','short-answer','sentence-completion','matching','true-false','sentence-rearrangement','error-identification','free-text'];
+const text=(v,max=5000)=>typeof v==='string'&&v.trim().length>0&&v.length<=max;
+const id=v=>typeof v==='string'&&/^[a-z0-9][a-z0-9:_-]{0,79}$/.test(v);
+function ensure(value,message){if(!value)throw Error(message);}
+ensure(id(input.id)&&id(input.topicId)&&text(input.title,180)&&typeof input.instructions==='string'&&input.instructions.length<=5000&&typeof input.published==='boolean','Invalid lesson metadata.');
+ensure(Array.isArray(input.questions)&&input.questions.length>0&&input.questions.length<=100,'Provide 1-100 questions.');
+ensure(new Set(input.questions.map(q=>q.id)).size===input.questions.length,'Duplicate question IDs.');
+for(const q of input.questions){ensure(id(q.id)&&validTypes.includes(q.type)&&text(q.prompt)&&q.key&&typeof q.key.explanation==='string'&&q.key.explanation.length<=5000,'Invalid question or key.');if(q.maxWords!==undefined)ensure(Number.isInteger(q.maxWords)&&q.maxWords>0&&q.maxWords<=1000,'Invalid word limit.');
+ for(const list of [q.options,q.items])if(list!==undefined){ensure(Array.isArray(list)&&list.length>0&&list.length<=100,'Invalid options/items.');ensure(list.every(item=>typeof item.id==='string'&&/^[A-Za-z0-9][A-Za-z0-9:_-]{0,79}$/.test(item.id)&&text(item.text,300))&&new Set(list.map(item=>item.id)).size===list.length,'Invalid or repeated option/item IDs.');}
+ if(['multiple-choice','true-false','error-identification'].includes(q.type)){ensure(q.options?.length>=2&&Array.isArray(q.key.accepted)&&q.key.accepted.length===1&&q.options.some(o=>o.id===q.key.accepted[0]),'Choice key must contain one option ID (letter/code), not option text.');}
+ else if(q.type==='matching'){ensure(q.items?.length&&q.options?.length&&q.key.pairs&&Object.keys(q.key.pairs).length===q.items.length&&q.items.every(item=>q.options.some(o=>o.id===q.key.pairs[item.id])),'Matching key must map every item ID to an option ID.');}
+ else if(q.type==='sentence-rearrangement'){ensure(q.items?.length&&Array.isArray(q.key.sequence)&&q.key.sequence.length===q.items.length&&new Set(q.key.sequence).size===q.items.length&&q.items.every(item=>q.key.sequence.includes(item.id)),'Sequence key must contain each item exactly once.');}
+ else if(q.type!=='free-text'){ensure(Array.isArray(q.key.accepted)&&q.key.accepted.length>0&&q.key.accepted.every(a=>text(a)&&(!q.maxWords||a.trim().split(/\s+/).length<=q.maxWords)),'Invalid accepted answers or word limit.');}
+}
+const db=openStudents();db.exec('BEGIN IMMEDIATE');try{ensure(db.prepare('SELECT 1 FROM topics WHERE id=?').get(input.topicId),'Topic not found.');const prior=db.prepare('SELECT version FROM lessons WHERE id=?').get(input.id);for(const q of input.questions)ensure(!db.prepare('SELECT 1 FROM questions WHERE id=? AND lesson_id<>?').get(q.id,input.id),'Question ID belongs to a different lesson.');
+ db.prepare('INSERT INTO lessons(id,topic_id,title,instructions,published,version) VALUES(?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET topic_id=excluded.topic_id,title=excluded.title,instructions=excluded.instructions,published=excluded.published,version=excluded.version').run(input.id,input.topicId,input.title,input.instructions,Number(input.published),prior?Number(prior.version)+1:1);
+ db.prepare('DELETE FROM questions WHERE lesson_id=?').run(input.id);for(const [position,q] of input.questions.entries()){const {key,...content}=q;db.prepare('INSERT INTO questions VALUES(?,?,?,?,?)').run(q.id,input.id,position,JSON.stringify(content),JSON.stringify(key));}db.exec('COMMIT');console.log('Lesson imported. Existing attempt snapshots were preserved.');}catch(e){db.exec('ROLLBACK');throw e;}finally{db.close();}

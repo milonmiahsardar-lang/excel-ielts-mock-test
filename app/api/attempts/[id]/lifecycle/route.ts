@@ -9,7 +9,7 @@ type Context={params:Promise<{id:string}>};
 function owned(id:string,userId:string){const row=db().prepare("SELECT * FROM attempts WHERE id=? AND student_id=?").get(id,userId);if(!row)reject(404,"Attempt not found.");return row;}
 export async function GET(request:Request,{params}:Context){return endpoint(async()=>{
  const user=await actor("student",request),row=owned((await params).id,user.id);authorizeAttempt(user,row,!!row.submitted_at);return reply(publicProgress(row));
-});}
+},request);}
 export async function POST(request:Request,{params}:Context){return endpoint(async()=>{
  const user=await actor("student",request),b=await body(request),{id}=await params;candidatePayload(b);
  const result=transaction(()=>{
@@ -72,4 +72,4 @@ export async function POST(request:Request,{params}:Context){return endpoint(asy
   }
   reject(400,"Invalid lifecycle action.");
  });return reply(result);
-});}
+},request);}

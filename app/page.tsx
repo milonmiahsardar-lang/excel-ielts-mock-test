@@ -46,6 +46,23 @@ export default function Home() {
       </div>
     </section>
 
+    <section className={styles.portalChoices} aria-label="Choose your learning space">
+      <div className={styles.container}>
+        <article className={styles.portalChoice}>
+          <p className={styles.eyebrow}>Timed IELTS practice</p>
+          <h2>Choose Your Mock Test</h2>
+          <p>Continue to the existing Listening, Reading and Writing mock tests.</p>
+          <Link href="#mock-tests" className={styles.primaryButton}><span>Browse mock tests</span><Arrow /></Link>
+        </article>
+        <article className={styles.portalChoice}>
+          <p className={styles.eyebrow}>Your learning space</p>
+          <h2>Student Portal</h2>
+          <p>Your personal space to practise, improve, and track your English learning journey.</p>
+          <div className={styles.portalChoiceActions}><Link href="/student/login" className={styles.primaryButton}><span>Student Login</span><Arrow /></Link><Link href="/student/register" className={styles.testButton}><span>Create Account</span><Arrow /></Link></div>
+        </article>
+      </div>
+    </section>
+
     <section id="mock-tests" className={styles.tests}>
       <div className={styles.container}>
         <p className={styles.eyebrow}>Practice library</p>

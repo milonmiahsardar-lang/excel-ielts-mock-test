@@ -1,0 +1,13 @@
+import Link from 'next/link';
+import { requireStudent } from '@/lib/student/auth';
+import { history } from '@/lib/student/data';
+import {learningCategories} from '@/lib/learning/catalog';
+import { PageHeading, EmptyState, dateLabel } from '../../components/UI';
+import styles from '../../portal.module.css';
+export default async function History({ searchParams }: {
+    searchParams: Promise<{
+        category?: string;
+        date?: string;
+        status?: string;
+    }>;
+}) { const categories=learningCategories();const student = await requireStudent(), filters = await searchParams, rows = history(student.id, filters); return <><PageHeading label="Learning History" title="Your practice, in one place" description="Review up to 200 recent activities, including unfinished practice."/><form className={styles.filters}><label className={styles.field}>Category<select name="category" defaultValue={filters.category || ''}><option value="">All categories</option>{categories.map(c => <option value={c.slug} key={c.slug}>{c.name}</option>)}</select></label><label className={styles.field}>Date<input type="date" name="date" defaultValue={filters.date || ''}/></label><label className={styles.field}>Status<select name="status" defaultValue={filters.status || ''}><option value="">All statuses</option><option value="in-progress">In progress</option><option value="completed">Completed</option><option value="pending-review">Pending review</option></select></label><button className={styles.button}>Apply Filters</button><Link className={styles.textLink} href="/student/history">Clear</Link></form>{!rows.length ? <EmptyState title="No activities found" description="Your saved practice activities will appear here."/> : <div className={styles.tableWrap}><table className={styles.table}><thead><tr>{['Practice Date', 'Category / Topic', 'Questions', 'Correct', 'Accuracy', 'Time Spent', 'Status'].map(h => <th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{rows.map(r => <tr key={String(r.id)}><td>{dateLabel(String(r.started_at))}</td><td>{String(r.category)}<br /><Link className={styles.textLink} href={'/student/practice/lesson/' + encodeURIComponent(String(r.lesson_id)) + (r.activity_kind==='lesson'?'':'?attempt='+encodeURIComponent(String(r.id)))}>{String(r.topic)}</Link></td><td>{Number(r.question_count)}</td><td>{r.correct_count === null ? '-' : Number(r.correct_count)}</td><td>{r.correct_count === null ? '-' : Math.round(Number(r.correct_count) / Number(r.question_count) * 100) + '%'}</td><td>{r.elapsed_seconds === null ? '-' : Math.floor(Number(r.elapsed_seconds) / 60) + 'm ' + Number(r.elapsed_seconds) % 60 + 's'}</td><td>{String(r.status).replaceAll('-', ' ')}</td></tr>)}</tbody></table></div>}</>; }

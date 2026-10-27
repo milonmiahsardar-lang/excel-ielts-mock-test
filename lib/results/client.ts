@@ -4,8 +4,10 @@ import type { Dispatch, SetStateAction } from "react";
 import type { Answers, Skill } from "./types";
 import { lifecycle, statusSnapshot, tabId } from "./safety-client";
 import { isTestMode, type TestMode } from "./modes";
+import {createSaveScheduler} from "./reliability";
+import {clientDiagnostic,requestIdentifier} from "./client-diagnostics";
 export class RequestError extends Error {
-  constructor(message: string, public readonly status: number) {
+  constructor(message: string, public readonly status: number, public readonly requestId="") {
     super(message);
     this.name = "RequestError";
   }
@@ -13,23 +15,21 @@ export class RequestError extends Error {
 export function retryable(error: unknown) {
  return !(error instanceof RequestError)||error.status<400||error.status===408||error.status===409||error.status===429||error.status>=500;
 }
-export async function request<T>(url: string,payload?: unknown,method="POST"): Promise<T> {
- const controller=new AbortController(),timeout=window.setTimeout(()=>controller.abort(),15000);
- try {
-  let response:Response;
-  try{response=await fetch(url,{method,cache:"no-store",signal:controller.signal,headers:{"Content-Type":"application/json","X-IELTS-Tab":tabId(),...((url.startsWith("/api/attempts/")&&!url.endsWith("/start"))||url==="/api/submissions")&&sessionStorage.getItem("ieltsStudent")?{"X-IELTS-Candidate":sessionStorage.getItem("ieltsStudent")!}:{}},body:method==="GET"?undefined:JSON.stringify(payload)});}
-  catch{throw new Error(controller.signal.aborted?"The server took too long to respond. Your local answers are kept. Please retry.":"Unable to connect. Your local answers are kept. Check your connection and try again.");}
-  let data:Record<string,unknown>;
-  try{data=await response.json();}catch{throw new RequestError(response.status===401?"Your login session has expired. Please log in again.":response.status===403?"This test is no longer available to your account. Please contact your administrator.":"The server is temporarily unavailable. Your local answers are kept. Please try again.",response.status);}
-  if(!response.ok)throw new RequestError(typeof data.error==="string"?data.error:"Unable to save. Please retry.",response.status);return data as T;
- } finally {window.clearTimeout(timeout);}
+
+export async function request<T>(url:string,payload?:unknown,method='POST'):Promise<T>{
+ const controller=new AbortController(),requestId=requestIdentifier(),started=performance.now();let timeout:ReturnType<typeof setTimeout>|undefined;
+ const expired=new Promise<never>((_,reject)=>{timeout=setTimeout(()=>{controller.abort();reject(new RequestError('The server took too long to respond. Your local answers are kept. Please retry.',408,requestId));},15000);});
+ const action=async()=>{let response:Response;try{response=await fetch(url,{method,cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json','X-IELTS-Tab':tabId(),'X-IELTS-Request-ID':requestId,...(((url.startsWith('/api/attempts/')&&!url.endsWith('/start'))||url==='/api/submissions')&&sessionStorage.getItem('ieltsStudent')?{'X-IELTS-Candidate':sessionStorage.getItem('ieltsStudent')!}:{})},body:method==='GET'?undefined:JSON.stringify(payload)});}catch{throw new RequestError(controller.signal.aborted?'The server took too long to respond. Your local answers are kept. Please retry.':'Unable to connect. Your local answers are kept. Check your connection and try again.',controller.signal.aborted?408:0,requestId);}
+ const correlation=response.headers.get('x-ielts-request-id')||requestId;let data:Record<string,unknown>;try{data=await response.json();}catch{throw new RequestError(response.status===401?'Your login session has expired. Please log in again.':response.status===403?'This test is no longer available to your account. Please contact your administrator.':'The server is temporarily unavailable. Your local answers are kept. Please try again.',response.status,correlation);}if(!response.ok)throw new RequestError(typeof data.error==='string'?data.error:'Unable to save. Please retry.',response.status,correlation);return data as T;};
+ try{return await Promise.race([action(),expired]);}catch(error){clientDiagnostic(error instanceof RequestError&&error.status===408?'request-timeout':'request-failure',error instanceof RequestError?error.status:0,performance.now()-started,error instanceof RequestError?error.requestId:requestId);throw error;}finally{if(timeout!==undefined)clearTimeout(timeout);}
 }
+
 export function draftRevision(test: number|string,skill: string) {
  const key=draftKey(test,`${skill}-revision`),previous=Number(sessionStorage.getItem(key))||0;
  const next=Math.max(previous+1,Date.now()*1000);sessionStorage.setItem(key,String(next));return next;
 }
 export async function reportSave<T>(test:number|string,revision:number,action:()=>Promise<T>){
- const announce=(status:string)=>window.dispatchEvent(new CustomEvent("ielts:save-status",{detail:{testId:Number(test),revision,status}}));announce("saving");try{const result=await action();announce("saved");return result;}catch(e){announce("pending");throw e;}
+ const announce=(status:string)=>window.dispatchEvent(new CustomEvent("ielts:save-status",{detail:{testId:Number(test),revision,status}}));announce("saving");try{const result=await action();announce("saved");if(Math.random()<0.01)clientDiagnostic("save-success");return result;}catch(e){announce("pending");clientDiagnostic("save-failure",e instanceof RequestError?e.status:0,0,e instanceof RequestError?e.requestId:"");throw e;}
 }
 export async function saveWritingDraft(test: number|string,writing:{task1:string;task2:string}) {
  const id=sessionStorage.getItem(attemptKey(test))||(await ensureAttempt(test)).id;
@@ -52,12 +52,15 @@ export async function beginAttempt(test: number|string) {
   sessionStorage.setItem(`ieltsMode:${test}`,attempt.mode);
   await lifecycle(attempt.id,test,"claim");sessionStorage.setItem("ieltsActiveTest",String(test));return attempt;
 }
-const pendingAttempts=new Map<string,ReturnType<typeof beginAttempt>>();
-export async function ensureAttempt(test: number|string) {
- const key=`${test}:${selectedMode(test)}`;let pending=pendingAttempts.get(key);
- if(!pending){pending=beginAttempt(test);pendingAttempts.set(key,pending);}
+
+type AttemptIdentity={id:string;testId:number;mode:TestMode;studentId:string;startedAt?:string};
+const pendingAttempts=new Map<string,Promise<AttemptIdentity>>();
+export async function ensureAttempt(test:number|string):Promise<AttemptIdentity>{
+ const mode=selectedMode(test),key=test+':'+mode;let pending=pendingAttempts.get(key);
+ if(!pending){const id=sessionStorage.getItem(attemptKey(test)),studentId=sessionStorage.getItem('ieltsStudent');pending=id&&studentId?(async()=>{const state=await lifecycle(id,test,'claim');if(state.testId!==Number(test)||(state.mode&&state.mode!==mode))throw new RequestError('This tab belongs to a different test assignment.',403);sessionStorage.setItem('ieltsActiveTest',String(test));return {id,testId:Number(test),mode,studentId};})():beginAttempt(test);pendingAttempts.set(key,pending);}
  try{return await pending;}finally{if(pendingAttempts.get(key)===pending)pendingAttempts.delete(key);}
 }
+
 export type Draft={listening:Answers;reading:Answers;writing:{task1:string;task2:string}};
 export async function resumeDraft(test:number|string) {
  const attempt=await ensureAttempt(test),draft=await request<Draft>(`/api/attempts/${attempt.id}/draft`,undefined,"GET");
@@ -74,43 +77,20 @@ export function useDraftAutosave<T>(test:number|string,skill:string,value:T,enab
  const encoded=JSON.stringify(value);
  const latest=useRef({value,encoded,saveValue,onError,onSaved});
  latest.current={value,encoded,saveValue,onError,onSaved};
- const changedAt=useRef(0);
+
  useEffect(()=>{
   if(!enabled)return;
   sessionStorage.setItem(draftKey(test,skill),encoded);
-  changedAt.current=performance.now();
+  window.dispatchEvent(new Event("ielts:draft-changed"));
  },[encoded,enabled,test,skill]);
  useEffect(()=>{
   if(!enabled)return;
-  let active=true,busy=false,stopped=false,acknowledged:string|null=null,lastAttempt=performance.now(),retryAfter=0,forcePending=false;
-  const save=(force=false)=>{
-   if(!active||stopped)return;
-   if(busy){if(force)forcePending=true;return;}
-   const snapshot=latest.current;
-   if(snapshot.encoded===acknowledged)return;
-   const now=performance.now();
-   if(!force&&now<retryAfter)return;
-   if(!force&&now-changedAt.current<650&&now-lastAttempt<5000)return;
-   busy=true;lastAttempt=now;
-   void snapshot.saveValue(snapshot.value).then(()=>{
-    if(!active)return;
-    acknowledged=snapshot.encoded;retryAfter=0;
-    // A response for an earlier snapshot must not clear a newer save error.
-    if(latest.current.encoded===snapshot.encoded)latest.current.onSaved?.();
-   }).catch(error=>{
-    if(!active)return;
-    stopped=!retryable(error)||(error instanceof RequestError&&error.status===409&&/time has finished|section is locked|already submitted/i.test(error.message));
-    retryAfter=performance.now()+5000;
-    latest.current.onError?.(error);
-   }).finally(()=>{
-    busy=false;
-    if(active&&forcePending){forcePending=false;save(true);}
-   });
-  };
-  const tick=()=>save(),flush=()=>save(true);
-  const timer=window.setInterval(tick,250);
-  window.addEventListener("online",flush);window.addEventListener("ielts:deadline",flush);
-  return()=>{active=false;window.clearInterval(timer);window.removeEventListener("online",flush);window.removeEventListener("ielts:deadline",flush);};
+
+  const scheduler=createSaveScheduler<T>({snapshot:()=>latest.current,save:value=>latest.current.saveValue(value),saved:()=>latest.current.onSaved?.(),failed:error=>latest.current.onError?.(error),retryable:error=>retryable(error)&&!(error instanceof RequestError&&error.status===409&&/time has finished|section is locked|already submitted/i.test(error.message))});
+  const tick=()=>scheduler.tick(),flush=()=>scheduler.tick(true),changed=()=>scheduler.changed();
+  const timer=window.setInterval(tick,250);window.addEventListener('online',flush);window.addEventListener('ielts:deadline',flush);window.addEventListener('ielts:recovered',flush);window.addEventListener('ielts:draft-changed',changed);
+  return()=>{scheduler.stop();window.clearInterval(timer);window.removeEventListener('online',flush);window.removeEventListener('ielts:deadline',flush);window.removeEventListener('ielts:recovered',flush);window.removeEventListener('ielts:draft-changed',changed);};
+
  },[enabled,test,skill]);
 }
 export function useAnswerDraft(skill: Skill,test: number|string,answers: Record<number,string>,setAnswers: Dispatch<SetStateAction<Record<number,string>>>,enabled=true) {
@@ -134,7 +114,7 @@ export function useCountdown(test:number|string,skill:"reading"|"writing",enable
   if(!enabled)return;
   let active=true,due:number|undefined,retry:number|undefined;
   const tick=()=>{if(due!==undefined)setRemaining(Math.max(0,Math.min(3600,Math.ceil((due-performance.now())/1000))));};
-  const apply=(deadline:number,serverNow:number)=>{due=performance.now()+deadline-serverNow;tick();};
+  const apply=(deadline:number,serverNow:number)=>{const estimate=performance.now()+deadline-serverNow;due=due===undefined?estimate:Math.min(due,estimate);tick();};
   const status=()=>{
    const state=statusSnapshot();
    if(state&&state.testId===Number(test)&&state.section===skill&&state.deadline!==null)apply(state.deadline,state.serverNow);
