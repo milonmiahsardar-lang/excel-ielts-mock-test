@@ -6,6 +6,8 @@ Source inspection baseline: 25 October 2026. This document records local impleme
 
 ## 1. Scope, consent and preservation
 
+- Permanent owner requirement (28 October 2026): Every change, addition, fix or refactor anywhere in this project must keep the existing IELTS mock test sections and their mechanisms intact. This includes Listening, Reading and Writing content, interfaces, styles, question controls, navigation, assignments, authentication, timing, audio, autosaving, recovery, submission, answer keys, scoring and results. Student portal, materials, partial tests, booking and admin features must reuse or integrate with the existing mock tests without altering these protected sections or mechanisms. Permission to work on another feature does not authorize changing mock tests. If a requested task cannot be completed while preserving them, stop and obtain the owner's explicit approval for the specific mock-test change before proceeding. Verify that protected behaviour remains unchanged and report any verification limits.
+
 - Owner restriction (27 October 2026): Mock test sections and the mechanisms of the entire website are frozen. Do not change their content, interface, styles, settings, interactions or underlying behaviour as part of future additions or unrelated work. If a future request requires changing a protected section or mechanism, explain the conflict and obtain explicit consent for that specific change before editing.
 
 - Website root: `C:/Users/Asus/Desktop/ielts-reading`. These rules apply throughout it.

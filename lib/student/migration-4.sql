@@ -1,0 +1,4 @@
+CREATE TABLE partial_slots(id TEXT PRIMARY KEY,module TEXT NOT NULL CHECK(module IN('listening','reading','writing')),test_id INTEGER NOT NULL CHECK(test_id BETWEEN 1 AND 5),test_date TEXT NOT NULL,open INTEGER NOT NULL CHECK(open IN(0,1)),created_by TEXT NOT NULL,created_at TEXT NOT NULL,UNIQUE(module,test_id,test_date));
+CREATE TABLE partial_candidates(student_id TEXT PRIMARY KEY REFERENCES students(id),candidate_id TEXT NOT NULL UNIQUE);
+CREATE TABLE partial_bookings(id TEXT PRIMARY KEY,student_id TEXT NOT NULL REFERENCES students(id),slot_id TEXT NOT NULL REFERENCES partial_slots(id),module TEXT NOT NULL CHECK(module IN('listening','reading','writing')),test_id INTEGER NOT NULL CHECK(test_id BETWEEN 1 AND 5),test_date TEXT NOT NULL,created_at TEXT NOT NULL,UNIQUE(student_id,module,test_id));
+CREATE INDEX partial_booking_dates ON partial_bookings(test_date,created_at);

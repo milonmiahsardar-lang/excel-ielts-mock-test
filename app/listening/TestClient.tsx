@@ -1,4 +1,5 @@
 "use client";
+import { recoveryKind } from "@/lib/results/recovery-policy";
 
 import PartNavigation from "../test/PartNavigation";
 
@@ -21,7 +22,8 @@ import ListeningTestsTwelveSixteen from "./ListeningTestsTwelveSixteen";
 import ListeningTestsThirteenNineteen from "./ListeningTestsThirteenNineteen";
 
 import { draftRevision, draftKey, request, RequestError, saveSection, useAnswerDraft } from "@/lib/results/client";
-import { lifecycle, statusSnapshot, publishStatus, useAttemptStatus } from "@/lib/results/safety-client";
+import { statusSnapshot, publishStatus, tabId, useAttemptStatus } from "@/lib/results/safety-client";
+import { acceptAudioAcknowledgement, unauthorizedAudioSeek } from "@/lib/results/listening-progress";
 import { attemptKey } from "@/lib/results/client";
 
 type AudioDiagnostic = Record<string, unknown> & { localId: string };
@@ -55,6 +57,7 @@ export default function ListeningTest() {
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const intentionalAudioPause = useRef(false);
+  const lastPlayedPosition = useRef(0), authorizedSeek = useRef<number|null>(null);
 
   const [isFinished, setIsFinished] = useState(false);
   const finalSnapshot=useRef<{answers:Record<number,string>;revision:number}|null>(null);
@@ -132,7 +135,7 @@ export default function ListeningTest() {
     if(!draftReady)return;
     const audio=audioRef.current;if(!audio)return;
     const saved=statusSnapshot()?.audioPosition??0;
-    const restore=()=>{intentionalAudioPause.current=false;if(Number.isFinite(audio.duration))audio.currentTime=Math.min(saved,audio.duration);restored.current=true;if(state?.stage!=="LISTENING_COMPLETED")void audio.play().then(()=>setPlaybackBlocked(false)).catch(error=>{diagnoseAudio("play-blocked",error);setPlaybackBlocked(true);});};
+    const restore=()=>{intentionalAudioPause.current=false;if(Number.isFinite(audio.duration)){const target=Math.min(saved,audio.duration);authorizedSeek.current=target;lastPlayedPosition.current=target;audio.currentTime=target;}restored.current=true;if(state?.stage!=="LISTENING_COMPLETED")void audio.play().then(()=>setPlaybackBlocked(false)).catch(error=>{diagnoseAudio("play-blocked",error);setPlaybackBlocked(true);});};
     if(audio.readyState>=1)restore();else audio.addEventListener("loadedmetadata",restore,{once:true});
     return()=>{intentionalAudioPause.current=true;audio.removeEventListener("loadedmetadata",restore);audio.pause();};
   }, [testNumber,draftReady,audioRetry]);
@@ -141,13 +144,18 @@ export default function ListeningTest() {
     const audio=audioRef.current,id=sessionStorage.getItem(attemptKey(testNumber));if(!audio||!id||!draftReady||!restored.current||progressBlocked.current||statusSnapshot()?.stage==="LISTENING_COMPLETED")return;
     if(reporting.current){if(ended)pendingEnd.current=true;return;}
     reporting.current=true;lastReport.current=Date.now();
-    try{await lifecycle(id,testNumber,"audio",{position:audio.currentTime,ended,...(ended?finalSnapshot.current:{})});setAudioError("");}
+    try{
+      const next=await request<NonNullable<ReturnType<typeof statusSnapshot>>>(`/api/attempts/${id}/lifecycle`,{testId:Number(testNumber),tabId:tabId(),action:"audio",position:audio.currentTime,playbackRate:audio.playbackRate,ended,...(ended?finalSnapshot.current:{})});
+      if(acceptAudioAcknowledgement(statusSnapshot(),next))publishStatus(next);
+      setAudioError("");
+    }
     catch(e){
       diagnoseAudio("progress-error",e,ended,audio);
       setAudioError((e as Error).message);
+      if(ended&&audio.ended&&e instanceof RequestError&&e.code==="AUDIO_COMPLETION_INCOMPLETE")return;
       // A temporary save/network failure must not stop an otherwise healthy recording.
       // Keep server rejections authoritative and recover from its saved position.
-      if(e instanceof RequestError && e.status>=400 && e.status<500 && ![408,429].includes(e.status)){
+      if(e instanceof RequestError && recoveryKind(e)==="critical"){
         intentionalAudioPause.current=true;audio.pause();setPlaybackBlocked(true);
         progressBlocked.current=true;
         setRecoverAudio(e.status===409);
@@ -273,12 +281,22 @@ export default function ListeningTest() {
             onStalled={(event) => diagnoseAudio("stalled",undefined,false,event.currentTarget)}
 
             onTimeUpdate={(e) => {
+              if(!e.currentTarget.seeking){
+                if(authorizedSeek.current!==null&&Math.abs(e.currentTarget.currentTime-authorizedSeek.current)>0.25)authorizedSeek.current=null;
+                lastPlayedPosition.current=Math.max(lastPlayedPosition.current,e.currentTarget.currentTime);
+              }
               setCurrentTime(e.currentTarget.currentTime);
               if(draftReady)sessionStorage.setItem(draftKey(testNumber,"listening-audio-time"),String(e.currentTarget.currentTime));
               if(!e.currentTarget.paused&&Date.now()-lastReport.current>3000)void reportAudio();
             }}
             onRateChange={(e)=>{if(e.currentTarget.playbackRate!==1)e.currentTarget.playbackRate=1;}}
-            onSeeking={(e)=>{if(restored.current&&state&&e.currentTarget.currentTime>state.audioPosition+5)e.currentTarget.currentTime=state.audioPosition;}}
+            onSeeking={(e)=>{
+              if(!restored.current)return;
+              const audio=e.currentTarget;
+              if(authorizedSeek.current!==null&&Math.abs(audio.currentTime-authorizedSeek.current)<=0.25){authorizedSeek.current=null;return;}
+              authorizedSeek.current=null;
+              if(unauthorizedAudioSeek(audio.currentTime,lastPlayedPosition.current)){authorizedSeek.current=lastPlayedPosition.current;audio.currentTime=lastPlayedPosition.current;}
+            }}
 
             onEnded={() => {
               if(!finalSnapshot.current)finalSnapshot.current={answers:{...latestAnswers.current},revision:draftRevision(testNumber,"listening")};

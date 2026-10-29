@@ -6,22 +6,42 @@ import { lifecycle, statusSnapshot, tabId } from "./safety-client";
 import { isTestMode, type TestMode } from "./modes";
 import {createSaveScheduler} from "./reliability";
 import {clientDiagnostic,requestIdentifier} from "./client-diagnostics";
+import { recoveryKind, type RecoveryFailure } from "./recovery-policy";
+import { createLeaseCoordinator } from "./lease-renewal";
+const leaseClaims=createLeaseCoordinator<{id:string;testId:number;leaseExpiresAt?:number;serverNow?:number;stage?:string}>({now:()=>performance.now(),retryable:error=>recoveryKind(error)!=="critical"});
+function leaseKey(id:string){return id+":"+tabId()+":"+(sessionStorage.getItem("ieltsStudent")||"");}
+export function leaseRecoveryDelay(test:number|string,fallback:number,failures:number){const id=sessionStorage.getItem(attemptKey(test));return id?leaseClaims.delay(leaseKey(id),fallback,failures):fallback;}
+let requestSequence=0;
+const reconciled=new Map<string,{sequence:number;at:number}>();
+export function confirmedRecovery(id:string){return reconciled.get(id);}
+export type RecoveryRequestFailure=RecoveryFailure&{attemptId:string;operation:string};
 export class RequestError extends Error {
-  constructor(message: string, public readonly status: number, public readonly requestId="") {
+  constructor(message: string, public readonly status: number, public readonly requestId="", public readonly code?:string, public sequence=0) {
     super(message);
     this.name = "RequestError";
   }
 }
 export function retryable(error: unknown) {
- return !(error instanceof RequestError)||error.status<400||error.status===408||error.status===409||error.status===429||error.status>=500;
+ return recoveryKind(error)!=="critical";
 }
 
-export async function request<T>(url:string,payload?:unknown,method='POST'):Promise<T>{
+export async function request<T>(url:string,payload?:unknown,method='POST',options?:{forceLease?:boolean}):Promise<T>{
+ const match=/^\/api\/attempts\/([^/]+)\/(lifecycle|section|draft|clock)$/.exec(url),value=payload as {action?:string;testId?:number;attemptId?:string}|undefined;
+ if(match?.[2]==='lifecycle'&&method==='POST'&&value?.action==='claim'){
+  const key=leaseKey(match[1]);return leaseClaims.run(key,async valid=>{const state=await rawRequest<{id:string;testId:number;leaseExpiresAt?:number;serverNow?:number;stage?:string}>(url,payload,method,valid);if(state.id!==match[1]||state.testId!==value.testId)throw new RequestError('This tab belongs to a different test assignment.',403);return state;},options?.forceLease) as Promise<T>;
+ }
+ const id=match?.[1]||(url==='/api/submissions'?value?.attemptId:undefined),test=value?.testId;
+ const protectedWrite=method!=='GET'&&(!!match||url==='/api/submissions')&&value?.action!=='release';
+ if(protectedWrite&&id&&test&&sessionStorage.getItem(attemptKey(test))===id&&leaseClaims.needsRenewal(leaseKey(id)))await ensureAttempt(test);
+ return rawRequest<T>(url,payload,method);
+}
+async function rawRequest<T>(url:string,payload?:unknown,method='POST',validClaim?:()=>boolean):Promise<T>{
+ const sequence=++requestSequence;
  const controller=new AbortController(),requestId=requestIdentifier(),started=performance.now();let timeout:ReturnType<typeof setTimeout>|undefined;
  const expired=new Promise<never>((_,reject)=>{timeout=setTimeout(()=>{controller.abort();reject(new RequestError('The server took too long to respond. Your local answers are kept. Please retry.',408,requestId));},15000);});
  const action=async()=>{let response:Response;try{response=await fetch(url,{method,cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json','X-IELTS-Tab':tabId(),'X-IELTS-Request-ID':requestId,...(((url.startsWith('/api/attempts/')&&!url.endsWith('/start'))||url==='/api/submissions')&&sessionStorage.getItem('ieltsStudent')?{'X-IELTS-Candidate':sessionStorage.getItem('ieltsStudent')!}:{})},body:method==='GET'?undefined:JSON.stringify(payload)});}catch{throw new RequestError(controller.signal.aborted?'The server took too long to respond. Your local answers are kept. Please retry.':'Unable to connect. Your local answers are kept. Check your connection and try again.',controller.signal.aborted?408:0,requestId);}
- const correlation=response.headers.get('x-ielts-request-id')||requestId;let data:Record<string,unknown>;try{data=await response.json();}catch{throw new RequestError(response.status===401?'Your login session has expired. Please log in again.':response.status===403?'This test is no longer available to your account. Please contact your administrator.':'The server is temporarily unavailable. Your local answers are kept. Please try again.',response.status,correlation);}if(!response.ok)throw new RequestError(typeof data.error==='string'?data.error:'Unable to save. Please retry.',response.status,correlation);return data as T;};
- try{return await Promise.race([action(),expired]);}catch(error){clientDiagnostic(error instanceof RequestError&&error.status===408?'request-timeout':'request-failure',error instanceof RequestError?error.status:0,performance.now()-started,error instanceof RequestError?error.requestId:requestId);throw error;}finally{if(timeout!==undefined)clearTimeout(timeout);}
+ const correlation=response.headers.get('x-ielts-request-id')||requestId;let data:Record<string,unknown>;try{data=await response.json();}catch{throw new RequestError(response.status===401?'Your login session has expired. Please log in again.':response.status===403?'This test is no longer available to your account. Please contact your administrator.':'The server is temporarily unavailable. Your local answers are kept. Please try again.',response.status,correlation);}if(controller.signal.aborted)throw new RequestError('The server took too long to respond. Your local answers are kept. Please retry.',408,correlation);if(validClaim&&!validClaim())throw leaseClaims.error(leaseKey(url.split('/')[3]))??new RequestError('This test tab must verify ownership again.',409,correlation,'TAB_OWNERSHIP_CONFLICT');if(!response.ok)throw new RequestError(typeof data.error==='string'?data.error:'Unable to save. Please retry.',response.status,correlation,typeof data.code==='string'?data.code:undefined);if(url.endsWith('/lifecycle')&&method==='POST'&&(payload as {action?:string})?.action==='claim'){const id=url.split('/')[3];if(data.id===id&&data.testId===(payload as {testId?:number}).testId){const prior=reconciled.get(id);if(!prior||sequence>prior.sequence)reconciled.set(id,{sequence,at:performance.now()});}}const saved=/^\/api\/attempts\/([^/]+)\/(section|draft)$/.exec(url);if(saved&&method!=='GET'&&data.saved===true&&typeof window!=='undefined')window.dispatchEvent(new CustomEvent('ielts:request-succeeded',{detail:{attemptId:saved[1],operation:saved[2],sequence}}));return data as T;};
+ try{return await Promise.race([action(),expired]);}catch(error){if(error instanceof RequestError){error.sequence=sequence;const match=/^\/api\/attempts\/([^/]+)\/(lifecycle|section|draft|clock)$/.exec(url),id=match?.[1]||(url==='/api/submissions'?(payload as {attemptId?:string})?.attemptId:undefined);if(id&&([401,403,404].includes(error.status)||error.code==='TAB_OWNERSHIP_CONFLICT')&&(payload as {action?:string})?.action!=='claim')leaseClaims.invalidate(leaseKey(id),error);if(id&&typeof window!=='undefined')window.dispatchEvent(new CustomEvent<RecoveryRequestFailure>('ielts:request-failed',{detail:{attemptId:id,operation:match?.[2]||'submission',error,sequence}}));}clientDiagnostic(error instanceof RequestError&&error.status===408?'request-timeout':'request-failure',error instanceof RequestError?error.status:0,performance.now()-started,error instanceof RequestError?error.requestId:requestId);throw error;}finally{if(timeout!==undefined)clearTimeout(timeout);}
 }
 
 export function draftRevision(test: number|string,skill: string) {
@@ -55,9 +75,9 @@ export async function beginAttempt(test: number|string) {
 
 type AttemptIdentity={id:string;testId:number;mode:TestMode;studentId:string;startedAt?:string};
 const pendingAttempts=new Map<string,Promise<AttemptIdentity>>();
-export async function ensureAttempt(test:number|string):Promise<AttemptIdentity>{
+export async function ensureAttempt(test:number|string,options?:{forceLease?:boolean}):Promise<AttemptIdentity>{
  const mode=selectedMode(test),key=test+':'+mode;let pending=pendingAttempts.get(key);
- if(!pending){const id=sessionStorage.getItem(attemptKey(test)),studentId=sessionStorage.getItem('ieltsStudent');pending=id&&studentId?(async()=>{const state=await lifecycle(id,test,'claim');if(state.testId!==Number(test)||(state.mode&&state.mode!==mode))throw new RequestError('This tab belongs to a different test assignment.',403);sessionStorage.setItem('ieltsActiveTest',String(test));return {id,testId:Number(test),mode,studentId};})():beginAttempt(test);pendingAttempts.set(key,pending);}
+ if(!pending){const id=sessionStorage.getItem(attemptKey(test)),studentId=sessionStorage.getItem('ieltsStudent');pending=id&&studentId?(async()=>{const state=await lifecycle(id,test,'claim',{},options);if(state.testId!==Number(test)||(state.mode&&state.mode!==mode))throw new RequestError('This tab belongs to a different test assignment.',403);sessionStorage.setItem('ieltsActiveTest',String(test));return {id,testId:Number(test),mode,studentId};})():beginAttempt(test);pendingAttempts.set(key,pending);}
  try{return await pending;}finally{if(pendingAttempts.get(key)===pending)pendingAttempts.delete(key);}
 }
 

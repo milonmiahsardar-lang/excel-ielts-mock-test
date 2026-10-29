@@ -3,12 +3,13 @@
 import TestTools from "./TestTools";
 import {createRecoveryLoop} from "./reliability";
 import {clientDiagnostic} from "./client-diagnostics";
+import { recoveryKind, recoverySnapshot, safeRecoveryContinuation, staleRecoveryFailure } from "./recovery-policy";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import { attemptKey, draftKey, draftRevision, ensureAttempt, readAnswers, saveSection, request, RequestError, retryable } from "./client";
+import { attemptKey, draftKey, draftRevision, ensureAttempt, readAnswers, saveSection, RequestError, retryable, confirmedRecovery, leaseRecoveryDelay, type RecoveryRequestFailure } from "./client";
 
 import { finishTestSafety, requestTestFullscreen, statusSnapshot, tabId, useAttemptStatus } from "./safety-client";
 
@@ -22,6 +23,8 @@ export default function TestSafety({children}:{children:React.ReactNode}){
 
  const [fullscreen,setFullscreen]=useState(true),[error,setError]=useState(""),[notice,setNotice]=useState("");
 
+ const recoveryCondition=useRef<{sequence:number;error:unknown;operation:string}|null>(null);
+ const recoveryConditions=useRef(new Map<string,{sequence:number;error:unknown;operation:string}>());
  const recoveryAction=useRef<()=>Promise<void>>(()=>Promise.resolve());
  const [recoveryBusy,setRecoveryBusy]=useState(false);
 
@@ -57,18 +60,50 @@ export default function TestSafety({children}:{children:React.ReactNode}){
 
 
  useEffect(()=>{
-  if(!testRoute){setError('');setErrorStatus(null);setNotice('');return;}
+  if(!testRoute){recoveryConditions.current.clear();recoveryCondition.current=null;setError('');setErrorStatus(null);setNotice('');return;}
   const selected=query.get('test')||sessionStorage.getItem('ieltsActiveTest');const actual=path==='/listening'||path==='/test'||path==='/test/writing';if(!selected||(!actual&&!sessionStorage.getItem(attemptKey(selected))))return;
-  let live=true,failed=false;
+  let live=true,failed=false,riskTimer:ReturnType<typeof setTimeout>|undefined;
+  const attempt=()=>sessionStorage.getItem(attemptKey(selected))||'';
+  const clearRisk=()=>{if(riskTimer!==undefined)clearTimeout(riskTimer);riskTimer=undefined;};
+  const safe=()=>{
+   const current=statusSnapshot(),confirmed=confirmedRecovery(attempt());
+   let snapshot=false;try{const skill=current?.section;if(skill){snapshot=recoverySnapshot(JSON.parse(sessionStorage.getItem(draftKey(selected,skill))||'null'),skill);}else snapshot=!!current?.pendingSection;}catch{}
+   return safeRecoveryContinuation(current,Number(selected),attempt(),confirmed?.at,snapshot,performance.now());
+  };
+  const showCondition=()=>{const conditions=[...recoveryConditions.current.values()],condition=conditions.find(c=>c.error instanceof RequestError&&[401,403].includes(c.error.status))||conditions[0];recoveryCondition.current=condition??null;if(condition)recoveryError(condition.error);else {setError('');setErrorStatus(null);}};
+  const block=(error:unknown,sequence=0,operation='lifecycle')=>{if(!live)return;const key=operation+':'+(recoveryKind(error)==='critical'&&error instanceof RequestError?error.code||error.status:'communication'),prior=recoveryConditions.current.get(key);if(prior&&prior.sequence>sequence)return;recoveryConditions.current.set(key,{sequence,error,operation});showCondition();};
+  const failure=(error:unknown,sequence=0,operation='lifecycle')=>{
+   if(!live)return;failed=true;
+   const confirmed=confirmedRecovery(attempt());
+   if(staleRecoveryFailure(error,sequence,confirmed?.sequence))return;
+   clientDiagnostic('recovery-failure',error instanceof RequestError?error.status:0,0,error instanceof RequestError?error.requestId:'');
+   if(recoveryKind(error)!=='critical'&&safe()){
+    if(riskTimer===undefined){const remaining=Math.max(0,120000-(performance.now()-(confirmed?.at??0)));riskTimer=setTimeout(()=>{riskTimer=undefined;if(live&&!safe())block(new RequestError('The test connection could not be verified. Your local answers are kept. Please retry recovery before continuing.',408,'','RECOVERY_UNVERIFIED'),sequence);},remaining);}
+    return;
+   }
+   block(error,sequence,operation);
+  };
   const loop=createRecoveryLoop({
-   action:async()=>{try{await ensureAttempt(selected);}catch(error){const id=sessionStorage.getItem(attemptKey(selected));if(id&&error instanceof RequestError&&(error.status===403||error.status===409)){try{const saved=await request<{stage:string}>('/api/attempts/'+id+'/lifecycle',undefined,'GET');if(saved.stage==='COMPLETED'){loop.stop();await finishTestSafety();if(live)router.replace('/test/writing/result?id='+encodeURIComponent(id)+'&signout=1');return;}}catch{}}throw error;}},
-   success:()=>{if(!live)return;setError('');setErrorStatus(null);if(failed){failed=false;clientDiagnostic('recovery-success');window.dispatchEvent(new Event('ielts:recovered'));}},
-   failure:(error,status)=>{if(!live)return;failed=true;clientDiagnostic('recovery-failure',error instanceof RequestError?error.status:0,0,error instanceof RequestError?error.requestId:'');const current=statusSnapshot(),temporary=!(error instanceof RequestError)||error.status<400||error.status===408||error.status===429||error.status>=500;const sameActive=current&&current.testId===Number(selected)&&current.id===sessionStorage.getItem(attemptKey(selected))&&['LISTENING_ACTIVE','READING_ACTIVE','WRITING_ACTIVE'].includes(current.stage);if(temporary&&sameActive&&!status.exhausted)return;recoveryError(error);},
-   retryable
+   action:async(manual)=>{await ensureAttempt(selected,{forceLease:manual});},
+   success:()=>{if(!live)return;clearRisk();const confirmed=confirmedRecovery(attempt());let pendingSave=false;for(const [key,condition] of recoveryConditions.current){if(!confirmed||confirmed.sequence<=condition.sequence)continue;if(['section','draft','submission'].includes(condition.operation)&&condition.error instanceof RequestError&&![401,403,404].includes(condition.error.status)){pendingSave=true;continue;}recoveryConditions.current.delete(key);}showCondition();if(pendingSave)window.dispatchEvent(new Event('ielts:recovered'));if(failed&&!recoveryConditions.current.size){failed=false;clientDiagnostic('recovery-success');window.dispatchEvent(new Event('ielts:recovered'));}},
+   failure:(error)=>failure(error,error instanceof RequestError?error.sequence:0),
+   retryable,
+   delay:(fallback,failures)=>leaseRecoveryDelay?.(selected,fallback,failures)??fallback
   });
+  const requestFailed=(event:Event)=>{
+   const detail=(event as CustomEvent<RecoveryRequestFailure>).detail;if(!detail||detail.attemptId!==attempt())return;
+   // Playback integrity is handled by the existing audio-specific recovery UI.
+   // Renewing a lease cannot resolve an actual playback violation.
+   if(detail.error instanceof RequestError&&detail.error.code?.startsWith('AUDIO_'))return;
+   if(staleRecoveryFailure(detail.error,detail.sequence,confirmedRecovery(attempt())?.sequence))return;
+   if(recoveryKind(detail.error)==='reconcile'){failed=true;void loop.wake();return;}
+   failure(detail.error,detail.sequence,detail.operation);
+   if(recoveryKind(detail.error)!=='critical')void loop.wake();
+  };
+  const saved=(event:Event)=>{const detail=(event as CustomEvent<{attemptId:string;operation:string;sequence:number}>).detail;if(!live||detail.attemptId!==attempt())return;for(const [key,condition] of recoveryConditions.current){if(detail.operation!==condition.operation||detail.sequence<=condition.sequence)continue;if(condition.error instanceof RequestError&&[401,403,404].includes(condition.error.status))continue;recoveryConditions.current.delete(key);}showCondition();};
   recoveryAction.current=()=>{clientDiagnostic('recovery-start');return loop.run(true);};
-  const online=()=>void loop.run(true);window.addEventListener('online',online);void loop.run();
-  return()=>{live=false;loop.stop();recoveryAction.current=()=>Promise.resolve();window.removeEventListener('online',online);};
+  const online=()=>void loop.run(true);const visible=()=>{if(document.visibilityState==='visible')void loop.run(true);};if(typeof document!=='undefined')document.addEventListener('visibilitychange',visible);window.addEventListener('online',online);window.addEventListener('ielts:request-failed',requestFailed);window.addEventListener('ielts:request-succeeded',saved);void loop.run();
+  return()=>{live=false;clearRisk();loop.stop();recoveryAction.current=()=>Promise.resolve();if(typeof document!=='undefined')document.removeEventListener('visibilitychange',visible);window.removeEventListener('online',online);window.removeEventListener('ielts:request-failed',requestFailed);window.removeEventListener('ielts:request-succeeded',saved);};
  },[path,query,testRoute,router]);
 
  useEffect(()=>{
@@ -263,6 +298,9 @@ export default function TestSafety({children}:{children:React.ReactNode}){
   const blocked=testRoute&&!!error;window.dispatchEvent(new CustomEvent("ielts:safety-blocked",{detail:blocked}));
 
  },[error,testRoute]);
+
+ const recoveryShown=useRef(false);
+ useEffect(()=>{const shown=testRoute&&!!error;if(shown===recoveryShown.current)return;recoveryShown.current=shown;const cause=recoveryCondition.current?.error;clientDiagnostic(shown?'recovery-screen-shown':'recovery-screen-hidden',cause instanceof RequestError?cause.status:0,0,cause instanceof RequestError?cause.requestId:'',{code:cause instanceof RequestError?cause.code:undefined,stage:statusSnapshot()?.stage,operation:'recovery'});},[error,testRoute]);
 
  const blocked=testRoute&&(!!error||(active&&(!fullscreen||!!notice)));
 

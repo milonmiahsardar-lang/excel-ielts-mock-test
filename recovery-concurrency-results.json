@@ -1,0 +1,87 @@
+{
+  "startedAt": "2026-10-27T16:39:46.639Z",
+  "requestedMinutes": 0.5,
+  "framework": "Actual App Router handlers behind an isolated Node HTTP adapter; browser request/recovery/save modules in separate VM contexts. Not a physical-browser or Railway capacity certification.",
+  "cohorts": [
+    {
+      "students": 6,
+      "requests": 152,
+      "expectedFaultResponses": 28,
+      "unexpectedFailures": 0,
+      "recovered": 10,
+      "saveAcks": 66,
+      "latencyMs": {
+        "p50": 33,
+        "p95": 5460,
+        "p99": 5629,
+        "max": 5650
+      }
+    },
+    {
+      "students": 10,
+      "requests": 250,
+      "expectedFaultResponses": 50,
+      "unexpectedFailures": 0,
+      "recovered": 20,
+      "saveAcks": 110,
+      "latencyMs": {
+        "p50": 50,
+        "p95": 200,
+        "p99": 5477,
+        "max": 5480
+      }
+    },
+    {
+      "students": 20,
+      "requests": 500,
+      "expectedFaultResponses": 100,
+      "unexpectedFailures": 0,
+      "recovered": 40,
+      "saveAcks": 220,
+      "latencyMs": {
+        "p50": 84,
+        "p95": 235,
+        "p99": 5502,
+        "max": 5508
+      }
+    },
+    {
+      "students": 50,
+      "requests": 1250,
+      "expectedFaultResponses": 250,
+      "unexpectedFailures": 0,
+      "recovered": 100,
+      "saveAcks": 550,
+      "latencyMs": {
+        "p50": 138,
+        "p95": 284,
+        "p99": 5574,
+        "max": 5589
+      }
+    }
+  ],
+  "scenarios": {
+    "simultaneousStart": true,
+    "crossStudentDenied": true,
+    "renewalKeepsDeadline": true,
+    "staleRevisionRejected": true,
+    "rapidEdits": true,
+    "simultaneousNetworkRecovery": true,
+    "sessionExpiryIsolation": true,
+    "sqliteContention": true
+  },
+  "serverEvents": {
+    "runtime-start": 1,
+    "request-complete": 7,
+    "request-rejected": 1,
+    "session-validation-failed": 1,
+    "database-slow-transaction": 1,
+    "client-request-failure": 3,
+    "client-save-success": 1
+  },
+  "finishedAt": "2026-10-27T16:40:16.684Z",
+  "durationSeconds": 30,
+  "persistedCandidates": 86,
+  "completedCandidates": 0,
+  "integrity": "ok"
+}

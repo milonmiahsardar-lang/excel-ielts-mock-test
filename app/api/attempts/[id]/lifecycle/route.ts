@@ -41,7 +41,7 @@ export async function POST(request:Request,{params}:Context){return endpoint(asy
   if(b.action==="acknowledge-completion"){acknowledgeCompletion(row);return publicProgress(row);}
   if(b.action==="activate"){startSection(row,b.skill);return publicProgress(row);}
   if(b.action==="audio"){
-   const prior=progress(row),next=observeAudio(row,b.position,b.ended);
+   const prior=progress(row),next=observeAudio(row,b.position,b.ended,b.playbackRate);
    if(prior.stage==="LISTENING_ACTIVE"&&next.stage==="LISTENING_COMPLETED"){
     const draft=row.data?JSON.parse(String(row.data)):{};
     if(acceptDraftRevision(draft,"listening",b.revision))draft.listening=score(answers(b.answers),config(Number(row.test_id),"listening"));
@@ -59,8 +59,8 @@ export async function POST(request:Request,{params}:Context){return endpoint(asy
    const single=modeOf(row)!=="full";
    if(single){
     if(modeOf(row)!==skill)reject(403,"This module is not included in your assignment.");
-    if(skill==="listening"&&stage!=="LISTENING_COMPLETED")reject(409,"Finish the recording before submitting.");
-    if(skill==="reading"&&(!prior.deadline||prior.deadline>Date.now()||!["READING_ACTIVE","READING_COMPLETED"].includes(stage)))reject(409,"Reading submits when its time has finished.");
+    if(skill==="listening"&&stage!=="LISTENING_COMPLETED")reject(409,"Finish the recording before submitting.","TRANSITION_INVALID");
+    if(skill==="reading"&&(!prior.deadline||prior.deadline>Date.now()||!["READING_ACTIVE","READING_COMPLETED"].includes(stage)))reject(409,"Reading submits when its time has finished.","TRANSITION_INVALID");
    }else transition(row,skill);
    const draft=row.data?JSON.parse(String(row.data)):{};
    // Late transitions retain the last server-saved answers. Revisions cannot

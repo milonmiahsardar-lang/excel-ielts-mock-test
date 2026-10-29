@@ -55,6 +55,22 @@ export function studentDb() {
         database.prepare('INSERT INTO student_migrations VALUES(3,?)').run(now);database.exec('COMMIT');
       }catch(error){database.exec('ROLLBACK');database.close();throw error;}
     }
+    if (!database.prepare('SELECT 1 FROM student_migrations WHERE version=4').get()) {
+        database.exec('BEGIN IMMEDIATE');
+        try {
+            database.exec(readFileSync(resolve('lib/student/migration-4.sql'), 'utf8'));
+            database.prepare('INSERT INTO student_migrations VALUES(4,?)').run(new Date().toISOString());
+            database.exec('COMMIT');
+        } catch (error) { database.exec('ROLLBACK'); database.close(); throw error; }
+    }
+    if (!database.prepare('SELECT 1 FROM student_migrations WHERE version=5').get()) {
+        database.exec('BEGIN IMMEDIATE');
+        try {
+            database.exec(readFileSync(resolve('lib/student/migration-5.sql'), 'utf8'));
+            database.prepare('INSERT INTO student_migrations VALUES(5,?)').run(new Date().toISOString());
+            database.exec('COMMIT');
+        } catch (error) { database.exec('ROLLBACK'); database.close(); throw error; }
+    }
     connection = database;
     return database;
 }
