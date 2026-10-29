@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { request } from "./client";
 import { acceptRecoveryStatus } from "./recovery-policy";
-export type AttemptStatus={id:string;testId:number;mode?:import("./modes").TestMode;firstSection?:"listening"|"reading"|"writing";stage:string;pendingSection?:"reading"|"writing"|null;instructionsConfirmed?:boolean;completionAcknowledged?:boolean;section:"listening"|"reading"|"writing"|null;deadline:number|null;leaseExpiresAt?:number;audioPosition:number;audioDuration:number|null;serverNow:number;path:string};
+export type AttemptStatus={saveAcknowledgement?:import("./save-acknowledgement").SaveAcknowledgement;id:string;testId:number;mode?:import("./modes").TestMode;firstSection?:"listening"|"reading"|"writing";stage:string;pendingSection?:"reading"|"writing"|null;instructionsConfirmed?:boolean;completionAcknowledged?:boolean;section:"listening"|"reading"|"writing"|null;deadline:number|null;leaseExpiresAt?:number;audioPosition:number;audioDuration:number|null;serverNow:number;path:string};
 let owner:string|undefined;
 const navigationStateKey="ieltsProtectedAttempt";
 function savedNavigationStatus():AttemptStatus|null {
@@ -59,7 +59,7 @@ export function publishStatus(value:AttemptStatus){
 export function clearStatus(){current=null;try{sessionStorage.removeItem(navigationStateKey);}catch{}window.dispatchEvent(new Event("ielts:lifecycle"));}
 export function useAttemptStatus(){const [state,setState]=useState<AttemptStatus|null>(null);useEffect(()=>{const update=()=>setState(current);update();window.addEventListener("ielts:lifecycle",update);return()=>window.removeEventListener("ielts:lifecycle",update);},[]);return state;}
 export async function lifecycle(id:string,test:number|string,action:string,extra:Record<string,unknown>={},options?:{forceLease?:boolean}){
- const state=await request<AttemptStatus>(`/api/attempts/${id}/lifecycle`,{testId:Number(test),tabId:tabId(),action,...extra},'POST',options);publishStatus(state);return current?.id===state.id?current:state;
+ const state=await request<AttemptStatus>(`/api/attempts/${id}/lifecycle`,{testId:Number(test),tabId:tabId(),action,...extra},'POST',options);publishStatus(state);return current?.id===state.id?{...current,saveAcknowledgement:state.saveAcknowledgement}:state;
 }
 export function requestTestFullscreen(){
  if(document.fullscreenElement)return Promise.resolve();

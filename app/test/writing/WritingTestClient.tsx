@@ -3,11 +3,12 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from "react";
 import { useRouter } from "next/navigation";
+import { confirmsSave, isSaveAcknowledgement } from "@/lib/results/save-acknowledgement";
 import { finishTestSafety } from "@/lib/results/safety-client";
 import { Bell, Menu, Wifi } from "lucide-react";
 import { writingPrompts } from "./writing-prompts";
 
-import { attemptKey, draftKey, draftRevision, saveWritingDraft, useDraftAutosave, retryable, resumeDraft, useCountdown, readAnswers, request } from "@/lib/results/client";
+import { captureDraft, localDraft, attemptKey, draftKey, draftRevision, saveWritingDraft, useDraftAutosave, retryable, resumeDraft, useCountdown, readAnswers, request } from "@/lib/results/client";
 
 export default function WritingTest({ testNumber }: { testNumber: number | null }) {
   const router=useRouter(),submissionBusy=useRef(false),autoRetryAllowed=useRef(true);
@@ -34,8 +35,8 @@ export default function WritingTest({ testNumber }: { testNumber: number | null 
     let active=true,retry:number|undefined;setIsReady(false);
     const load=()=>{void resumeDraft(testNumber || 1).then(draft=>{
       if(!active)return;
-      const saved=sessionStorage.getItem(draftKey(testNumber || 1,"writing"));
-      let value=draft.writing;if(saved){try{const parsed=JSON.parse(saved);if(parsed&&typeof parsed.task1==="string"&&typeof parsed.task2==="string")value=parsed;}catch{}}setTask1Answer(value.task1 || "");setTask2Answer(value.task2 || "");
+      const saved=localDraft(testNumber || 1,"writing");
+      let value=draft.writing;if(saved&&typeof saved==="object"){const parsed=saved as {task1?:unknown;task2?:unknown};if(typeof parsed.task1==="string"&&typeof parsed.task2==="string")value={task1:parsed.task1,task2:parsed.task2};}setTask1Answer(value.task1 || "");setTask2Answer(value.task2 || "");
       setIsReady(true);
     }).catch(error=>{if(active){setSubmissionError((error as Error).message);if(retryable(error))retry=window.setTimeout(load,5000);}});};
     load();return()=>{active=false;window.clearTimeout(retry);};
@@ -43,8 +44,8 @@ export default function WritingTest({ testNumber }: { testNumber: number | null 
 
   useEffect(() => {
     if (!isReady) return;
-    sessionStorage.setItem(draftKey(testNumber || 1,"writing"),JSON.stringify({task1:task1Answer,task2:task2Answer}));
-    sessionStorage.setItem(draftKey(testNumber || 1,"writing-time"),String(timeLeft));
+    captureDraft(testNumber || 1,"writing",{task1:task1Answer,task2:task2Answer});
+    try{sessionStorage.setItem(draftKey(testNumber || 1,"writing-time"),String(timeLeft));}catch{}
   }, [isReady, task1Answer, task2Answer, timeLeft, testNumber]);
 
   useDraftAutosave(testNumber || 1,"writing",{task1:task1Answer,task2:task2Answer},
@@ -58,19 +59,23 @@ export default function WritingTest({ testNumber }: { testNumber: number | null 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
 
+  const finalSnapshot=useRef<{writing:{task1:string;task2:string};revision:number}|null>(null);
   const finishTest = async () => {
     if(submissionBusy.current || isFinished || !isReady || timeLeft!==0)return;
     submissionBusy.current=true;
     setIsSubmitting(true);setSubmissionError("");
     const test=testNumber || 1;
     try {
-      sessionStorage.setItem(draftKey(test,"writing"),JSON.stringify({task1:task1Answer,task2:task2Answer}));
+      captureDraft(test,"writing",{task1:task1Answer,task2:task2Answer});
+      finalSnapshot.current??={writing:{task1:task1Answer,task2:task2Answer},revision:draftRevision(test,"writing")};
       const attemptId=sessionStorage.getItem(attemptKey(test));if(!attemptId)throw new Error("Please start your mock test from the candidate confirmation page.");
       const listening=readAnswers(test,"listening");
       const currentReading=readAnswers(test,"reading");
       const reading=currentReading;
-      const result=await request<{id:string}>("/api/submissions",{attemptId,testId:test,listening,reading,writing:{task1:task1Answer,task2:task2Answer},revision:draftRevision(test,"writing")});
-      setIsFinished(true);
+      const result=await request<{id:string;saveAcknowledgement:unknown}>("/api/submissions",{attemptId,testId:test,listening,reading,...finalSnapshot.current});
+      const confirmed=confirmsSave(result.saveAcknowledgement,"writing",finalSnapshot.current.revision);
+      if(!isSaveAcknowledgement(result.saveAcknowledgement,"writing",finalSnapshot.current.revision))throw new Error("Submission received without a confirmed answer snapshot. Keep this tab open and contact your administrator.");
+      setIsFinished(confirmed);autoRetryAllowed.current=false;
       await finishTestSafety();
       router.replace(`/test/writing/result?id=${encodeURIComponent(result.id)}&signout=1`);
     } catch(error){autoRetryAllowed.current=retryable(error);setSubmissionError((error as Error).message);}finally{submissionBusy.current=false;setIsSubmitting(false);}
